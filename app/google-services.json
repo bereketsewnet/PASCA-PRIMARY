@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "656550353403",
+    "project_id": "pasca-primary-f4bcb",
+    "storage_bucket": "pasca-primary-f4bcb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:656550353403:android:7d4ce4dbfd836f9bb4935e",
+        "android_client_info": {
+          "package_name": "com.example.pasca_primary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "656550353403-nif4c1iodv3dqg2amj8ne0gkfq4u00gg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDC2ITac58qJ4be6mp7xAhNGRtqWjG7yK8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "656550353403-nif4c1iodv3dqg2amj8ne0gkfq4u00gg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
