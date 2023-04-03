@@ -19,7 +19,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-
 import com.example.pasca_primary.Model.Users;
 import com.example.pasca_primary.R;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -46,6 +45,7 @@ import java.util.List;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 import static android.app.Activity.RESULT_OK;
+
 
 public class ProfileFragment extends Fragment {
 
