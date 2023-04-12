@@ -57,7 +57,7 @@ public class UsersFragment extends Fragment {
 
         DatabaseReference reference  = FirebaseDatabase.getInstance().getReference("Users");
 
-        reference.addValueEventListener(new ValueEventListener() {
+       reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 usersList.clear();
@@ -70,8 +70,10 @@ public class UsersFragment extends Fragment {
 
                     if (!users.getId().equals(firebaseUser.getUid())) {
 
+                        if(users.getType().equals("Teacher")){
+                            usersList.add(users);
+                        }
 
-                        usersList.add(users);
 
                     }
 

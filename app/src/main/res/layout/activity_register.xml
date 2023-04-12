@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pagebkg"
+    android:gravity="center"
     tools:context=".RegisterActivity">
 
     <include layout="@layout/barlayout"
+        android:visibility="gone"
         android:id="@+id/toolbarregis"/>
 
 
@@ -14,11 +17,10 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="10dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:elevation="10dp"
+        app:cardCornerRadius="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:elevation="20dp"
         android:layout_below="@id/toolbarregis">
 
     <LinearLayout
@@ -44,7 +46,9 @@
             android:layout_height="50dp"
             android:hint="User Name"
             android:inputType="textPersonName"
-            android:layout_margin="20dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="30dp"
             android:id="@+id/reg_username"/>
 
 
@@ -53,7 +57,9 @@
             android:layout_height="50dp"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:layout_margin="20dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="30dp"
             android:id="@+id/reg_email"/>
 
 
@@ -62,18 +68,33 @@
             android:layout_height="50dp"
             android:hint="Password"
             android:inputType="textPassword"
-            android:layout_margin="20dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginBottom="30dp"
             android:id="@+id/reg_password"/>
+
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/r_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="-5sp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/spinner_back"/>
 
 
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_margin="30dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="30dp"
             android:id="@+id/register_Account_btn"
             android:text="Register"
-            android:background="@android:color/holo_red_light"
+            android:background="@drawable/btn_back"
             android:textColor="@android:color/white"/>
 
 
@@ -87,4 +108,4 @@
 
 
 
-</RelativeLayout>
+</LinearLayout>

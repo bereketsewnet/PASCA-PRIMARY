@@ -8,7 +8,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -27,6 +29,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     MaterialEditText et_username, et_password, et_email;
     Button registerbtn;
+    Spinner spinner;
     Toolbar toolbar;
 
     String username, email, password;
@@ -51,6 +54,9 @@ public class RegisterActivity extends AppCompatActivity {
         et_email = findViewById(R.id.reg_email);
         et_password = findViewById(R.id.reg_password);
         registerbtn = findViewById(R.id.register_Account_btn);
+        spinner = findViewById(R.id.r_spinner);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.usertype, com.karumi.dexter.R.layout.support_simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -64,6 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
                 email = et_email.getText().toString();
                 password = et_password.getText().toString();
                 username = et_username.getText().toString();
+                String type = spinner.getSelectedItem().toString();
 
 
                 if (TextUtils.isEmpty(email)) {
@@ -80,7 +87,7 @@ public class RegisterActivity extends AppCompatActivity {
                 } else {
 
 
-                    registerUser(username, password, email);
+                    registerUser(username, password, email, type);
                 }
 
                 }
@@ -92,7 +99,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void registerUser(final String username, String password, final String email) {
+    private void registerUser(final String username, String password, final String email ,final String type) {
 
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -110,6 +117,8 @@ public class RegisterActivity extends AppCompatActivity {
                         HashMap<String, Object> hashMap = new HashMap<>();
                         hashMap.put("username", username);
                         hashMap.put("email", email);
+                        hashMap.put("type",type);
+                        hashMap.put("password",password);
                         hashMap.put("id", user.getUid());
                         hashMap.put("imageURL", "default");
                         hashMap.put("status", "offline");
@@ -125,7 +134,7 @@ public class RegisterActivity extends AppCompatActivity {
                                     Toast.makeText(RegisterActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
 
                                     startActivity(new Intent(RegisterActivity.this,
-                                            StartActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK ));
+                                            LoginActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK ));
 
 
                                 }

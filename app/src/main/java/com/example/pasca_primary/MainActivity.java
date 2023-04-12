@@ -1,6 +1,6 @@
 package com.example.pasca_primary;
 
-import android.content.Intent;
+
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    class ViewPagerAdapter extends FragmentPagerAdapter{
+    public static class ViewPagerAdapter extends FragmentPagerAdapter{
 
         ArrayList<Fragment> fragments;
         ArrayList<String> titles;

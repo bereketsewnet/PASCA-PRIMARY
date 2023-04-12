@@ -3,10 +3,11 @@ package com.example.pasca_primary.Model;
 public class Users {
 
 
-    String username, imageURL, id, status;
+    String username, imageURL, id, status,type;
 
-    public Users(String username, String imageURL, String id, String status) {
+    public Users(String username, String imageURL, String id, String status, String type) {
         this.username = username;
+        this.type = type;
         this.imageURL = imageURL;
         this.id = id;
         this.status = status;
@@ -19,9 +20,15 @@ public class Users {
     public String getUsername() {
         return username;
     }
+    public String getType() {
+        return type;
+    }
 
     public void setUsername(String username) {
         this.username = username;
+    }
+    public void setType(String type) {
+        this.type = type;
     }
 
     public String getImageURL() {
