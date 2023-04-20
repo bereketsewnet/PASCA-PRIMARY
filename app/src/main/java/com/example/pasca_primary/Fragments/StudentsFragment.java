@@ -1,16 +1,18 @@
 package com.example.pasca_primary.Fragments;
+
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pasca_primary.Adapters.UserAdapter;
 import com.example.pasca_primary.Model.Users;
@@ -27,8 +29,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-
-public class UsersFragment extends Fragment {
+public class StudentsFragment extends Fragment {
 
     private RecyclerView recyclerView;
 
@@ -120,9 +121,10 @@ public class UsersFragment extends Fragment {
                         Users user = snapshot.getValue(Users.class);
 
                         if (!user.getId().equals(firebaseUser.getUid())) {
-                            if(user.getType().equals("Teacher")){
+                            if(user.getType().equals("Student")){
                                 mUsers.add(user);
                             }
+
                         }
 
                     }

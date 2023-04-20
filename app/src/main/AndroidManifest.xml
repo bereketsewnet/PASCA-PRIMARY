@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
@@ -17,30 +17,77 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheming"
-        tools:targetApi="31">
+        tools:targetApi="31" >
+        <activity
+            android:name=".PasswordTwoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UploadTActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProfilePhotoTActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PasswordOneActivity"
+            android:exported="false"
+            android:parentActivityName=".ProfilePhotoActivity" />
+        <activity
+            android:name=".ProfilePhotoActivity"
+            android:exported="false"
+            android:theme="@style/AppThemingActivity" />
+        <activity
+            android:name=".UploadActivity"
+            android:exported="false"
+            android:theme="@style/AppThemingActivity" />
+        <activity
+            android:name=".Main_twoActivity"
+            android:exported="false"
+            android:parentActivityName=".Home_twoActivity" />
+        <activity
+            android:name=".Home_twoActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TeachersProfileActivity"
+            android:exported="false" />
         <activity
             android:name=".Home_oneActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".RegisterActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true">
-
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".MessageActivity"
-            android:exported="false"/>
-        <activity android:name=".MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:parentActivityName=".Home_oneActivity" />
 
+        <service
+            android:name=".Notifications.MyFirebaseIdService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".Notifications.MyFirebaseMessaging"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

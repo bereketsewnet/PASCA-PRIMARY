@@ -44,7 +44,7 @@
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:hint="User Name"
+            android:hint="Name"
             android:inputType="textPersonName"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"

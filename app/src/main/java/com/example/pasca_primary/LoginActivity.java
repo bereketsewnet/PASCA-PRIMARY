@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.pasca_primary.Adapters.UserAdapter;
 import com.example.pasca_primary.Model.Users;
+import com.example.pasca_primary.additional.CustomProgressDialog;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -67,10 +68,10 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                final CustomProgressDialog dialog = new CustomProgressDialog(LoginActivity.this);
+
                 email = et_email.getText().toString();
                 password = et_password.getText().toString();
-
-
 
                 if (TextUtils.isEmpty(email)) {
 
@@ -80,6 +81,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     et_password.setError("Required");
                 } else {
+                    dialog.show();
                     LoginMeIn(email, password);
                 }
 
@@ -132,7 +134,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if (user!=null) {
 
-            startActivity(new Intent(LoginActivity.this, Home_oneActivity.class));
+            startActivity(new Intent(LoginActivity.this, Home_twoActivity.class));
 
         }
     }

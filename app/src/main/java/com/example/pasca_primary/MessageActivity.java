@@ -13,19 +13,27 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.bumptech.glide.Glide;
 
 import com.example.pasca_primary.Adapters.MessageAdapter;
+import com.example.pasca_primary.Fragments.APIService;
 import com.example.pasca_primary.Model.Chats;
 import com.example.pasca_primary.Model.Users;
+import com.example.pasca_primary.Notifications.Client;
+import com.example.pasca_primary.Notifications.Data;
+import com.example.pasca_primary.Notifications.MyResponse;
+import com.example.pasca_primary.Notifications.Sender;
+import com.example.pasca_primary.Notifications.Token;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
@@ -34,6 +42,9 @@ import java.util.HashMap;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MessageActivity extends AppCompatActivity {
 
@@ -53,6 +64,8 @@ public class MessageActivity extends AppCompatActivity {
     MessageAdapter messageAdapter;
     RecyclerView recyclerView;
     ValueEventListener seenlistener;
+    APIService apiService;
+    boolean notify;
 
 
     @Override
@@ -68,6 +81,7 @@ public class MessageActivity extends AppCompatActivity {
         imageViewOnToolbar = findViewById(R.id.profile_image_toolbar_message);
         usernameonToolbar = findViewById(R.id.username_ontoolbar_message);
 
+        apiService = Client.getClient("https://fcm.googleapis.com/").create(APIService.class);
         recyclerView = findViewById(R.id.recyclerview_messages);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
         layoutManager.setStackFromEnd(true);
@@ -214,11 +228,64 @@ public class MessageActivity extends AppCompatActivity {
             }
         });
 
+        final String msg = message;
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                Users users = dataSnapshot.getValue(Users.class);
+                if (notify) {
+                    sendNotifiaction(friendid, users.getUsername(), msg);
+                }
+                notify = false;
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
 
 
 
+    }
 
+    private void sendNotifiaction(String friendid, final String username, final String message){
+        DatabaseReference tokens = FirebaseDatabase.getInstance().getReference("Tokens");
+        Query query = tokens.orderByKey().equalTo(friendid);
+        query.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()){
+                    Token token = snapshot.getValue(Token.class);
+                    Data data = new Data(firebaseUser.getUid(), R.mipmap.ic_launcher, username+": "+message, "New Message",
+                            myid);
 
+                    Sender sender = new Sender(data, token.getToken());
+
+                    apiService.sendNotification(sender)
+                            .enqueue(new Callback<MyResponse>() {
+                                @Override
+                                public void onResponse(Call<MyResponse> call, Response<MyResponse> response) {
+                                    if (response.code() == 200){
+                                        if (response.body().success != 1){
+                                            Toast.makeText(MessageActivity.this, "Failed!", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                }
+
+                                @Override
+                                public void onFailure(Call<MyResponse> call, Throwable t) {
+
+                                }
+                            });
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private void readMessages(final String myid, final String friendid, final String imageURL) {

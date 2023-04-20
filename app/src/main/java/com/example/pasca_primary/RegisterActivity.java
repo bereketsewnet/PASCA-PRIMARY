@@ -1,9 +1,12 @@
 package com.example.pasca_primary;
 
+import static java.security.AccessController.getContext;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -13,6 +16,7 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.pasca_primary.additional.CustomProgressDialog;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -20,6 +24,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.core.Context;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
 import java.util.HashMap;
@@ -39,6 +44,7 @@ public class RegisterActivity extends AppCompatActivity {
     DatabaseReference reference;
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Register");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
+        final CustomProgressDialog dialog = new CustomProgressDialog(RegisterActivity.this);
         et_username = findViewById(R.id.reg_username);
         et_email = findViewById(R.id.reg_email);
         et_password = findViewById(R.id.reg_password);
@@ -66,6 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
         registerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                final CustomProgressDialog dialog = new CustomProgressDialog(RegisterActivity.this);
 
                 email = et_email.getText().toString();
                 password = et_password.getText().toString();
@@ -86,8 +93,9 @@ public class RegisterActivity extends AppCompatActivity {
                     et_password.setError("Length Must Be 6 or more");
                 } else {
 
-
+                    dialog.show();
                     registerUser(username, password, email, type);
+
                 }
 
                 }
@@ -119,6 +127,7 @@ public class RegisterActivity extends AppCompatActivity {
                         hashMap.put("email", email);
                         hashMap.put("type",type);
                         hashMap.put("password",password);
+                        hashMap.put("search",username);
                         hashMap.put("id", user.getUid());
                         hashMap.put("imageURL", "default");
                         hashMap.put("status", "offline");

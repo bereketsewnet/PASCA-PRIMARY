@@ -1,13 +1,5 @@
 package com.example.pasca_primary;
 
-
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,11 +9,19 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.bumptech.glide.Glide;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.example.pasca_primary.Fragments.ChatsFragment;
 import com.example.pasca_primary.Fragments.NewsFragment;
 import com.example.pasca_primary.Fragments.ProfileFragment;
+import com.example.pasca_primary.Fragments.StudentsFragment;
+import com.example.pasca_primary.Fragments.TeachersNewsFragment;
 import com.example.pasca_primary.Fragments.UsersFragment;
 import com.example.pasca_primary.Model.Users;
 import com.google.android.material.tabs.TabLayout;
@@ -38,7 +38,7 @@ import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MainActivity extends AppCompatActivity {
+public class Main_twoActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     Toolbar toolbar;
@@ -72,11 +72,11 @@ public class MainActivity extends AppCompatActivity {
 
         TabLayout tabLayout = findViewById(R.id.tablayout);
         ViewPager viewPager = findViewById(R.id.viewPager);
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+        MainActivity.ViewPagerAdapter viewPagerAdapter = new MainActivity.ViewPagerAdapter(getSupportFragmentManager());
 
         viewPagerAdapter.addFragment(new ChatsFragment(), "Daily");
-        viewPagerAdapter.addFragment(new UsersFragment(), "SUBJECT");
-        viewPagerAdapter.addFragment(new NewsFragment(), "News");
+        viewPagerAdapter.addFragment(new StudentsFragment(), "STUDENT");
+        viewPagerAdapter.addFragment(new TeachersNewsFragment(), "News");
         viewPagerAdapter.addFragment(new ProfileFragment(), "ID");
 
 
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-    public static class ViewPagerAdapter extends FragmentPagerAdapter{
+    public static class ViewPagerAdapter extends FragmentPagerAdapter {
 
         ArrayList<Fragment> fragments;
         ArrayList<String> titles;
@@ -181,9 +181,9 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.logout) {
 
 
-            Toast.makeText(MainActivity.this, "Logout Successfully", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Main_twoActivity.this, "Logout Successfully", Toast.LENGTH_SHORT).show();
 
-            startActivity(new Intent(MainActivity.this,
+            startActivity(new Intent(Main_twoActivity.this,
                     LoginActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK ));
 
             mAuth.signOut();
