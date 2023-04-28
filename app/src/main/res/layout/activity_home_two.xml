@@ -64,7 +64,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/information"
+            android:id="@+id/notepad"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:layout_row="0"
@@ -84,11 +84,11 @@
                 <ImageView
                     android:layout_width="70dp"
                     android:layout_height="65dp"
-                    android:src="@drawable/information"/>
+                    android:src="@drawable/notepad"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Information"
+                    android:text="Note Pad"
                     android:textColor="@color/lavender"
                     android:textStyle="bold"
                     android:textAlignment="center"/>
@@ -164,7 +164,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/complaint"
+            android:id="@+id/information"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:layout_row="1"
@@ -182,12 +182,12 @@
 
                 <ImageView
                     android:layout_width="70dp"
-                    android:layout_height="65dp"
-                    android:src="@drawable/information"/>
+                    android:layout_height="73dp"
+                    android:src="@drawable/information" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="complaint"
+                    android:text="Information"
                     android:textStyle="bold"
                     android:textColor="@color/lavender"
                     android:textAlignment="center"/>
@@ -196,7 +196,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/pasca"
+            android:id="@+id/advanced"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:layout_row="1"
@@ -215,11 +215,11 @@
                 <ImageView
                     android:layout_width="70dp"
                     android:layout_height="65dp"
-                    android:src="@drawable/about"/>
+                    android:src="@drawable/advanced"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pasca"
+                    android:text="Advanced"
                     android:textStyle="bold"
                     android:textColor="@color/lavender"
                     android:textAlignment="center"/>

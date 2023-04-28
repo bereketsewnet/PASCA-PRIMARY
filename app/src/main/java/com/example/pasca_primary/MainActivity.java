@@ -23,6 +23,7 @@ import com.example.pasca_primary.Fragments.ChatsFragment;
 import com.example.pasca_primary.Fragments.NewsFragment;
 import com.example.pasca_primary.Fragments.ProfileFragment;
 import com.example.pasca_primary.Fragments.UsersFragment;
+import com.example.pasca_primary.Model.Chats;
 import com.example.pasca_primary.Model.Users;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -70,18 +71,48 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        TabLayout tabLayout = findViewById(R.id.tablayout);
-        ViewPager viewPager = findViewById(R.id.viewPager);
-        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-
-        viewPagerAdapter.addFragment(new ChatsFragment(), "Daily");
-        viewPagerAdapter.addFragment(new UsersFragment(), "SUBJECT");
-        viewPagerAdapter.addFragment(new NewsFragment(), "News");
-        viewPagerAdapter.addFragment(new ProfileFragment(), "ID");
+      final  TabLayout tabLayout = findViewById(R.id.tablayout);
+      final   ViewPager viewPager = findViewById(R.id.viewPager);
 
 
-        viewPager.setAdapter(viewPagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
+        reference = FirebaseDatabase.getInstance().getReference("Chats");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+                int unread = 0;
+                for(DataSnapshot snapshot1 : snapshot.getChildren()){
+                    Chats chats = snapshot1.getValue(Chats.class);
+                    if(chats.getReciever().equals(firebaseUser.getUid()) && !chats.isIsseen()){
+                        unread ++;
+                    }
+                }
+
+                if(unread == 0){
+                    viewPagerAdapter.addFragment(new ChatsFragment(), "Daily");
+                }else{
+                    viewPagerAdapter.addFragment(new ChatsFragment(), "("+unread+")Daily");
+                }
+
+                viewPagerAdapter.addFragment(new UsersFragment(), "SUBJECT");
+                viewPagerAdapter.addFragment(new NewsFragment(), "News");
+                viewPagerAdapter.addFragment(new ProfileFragment(), "ID");
+
+
+                viewPager.setAdapter(viewPagerAdapter);
+                tabLayout.setupWithViewPager(viewPager);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 

@@ -28,7 +28,7 @@ public class PasswordTwoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 password_store = pass_two.getText().toString();
-
+                  // Teacher profile photo password here
                 if(password_store.equals("12345")){
                     Intent intent = new Intent(PasswordTwoActivity.this, UploadTActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);

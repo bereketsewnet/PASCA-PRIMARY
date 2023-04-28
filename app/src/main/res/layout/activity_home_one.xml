@@ -164,7 +164,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/complaint"
+            android:id="@+id/complain"
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:layout_row="1"
@@ -187,7 +187,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="complaint"
+                    android:text="complain"
                     android:textStyle="bold"
                     android:textColor="@color/lavender"
                     android:textAlignment="center"/>

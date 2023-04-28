@@ -38,7 +38,8 @@ public class LoginActivity extends AppCompatActivity {
     MaterialEditText et_email, et_password;
     Button loginBtn;
     Toolbar toolbar;
-    String email, password;
+    String email, password,uid2;
+    int usertype2;
     FirebaseAuth mAuth;
     FirebaseUser user;
 
@@ -73,6 +74,7 @@ public class LoginActivity extends AppCompatActivity {
                 email = et_email.getText().toString();
                 password = et_password.getText().toString();
 
+
                 if (TextUtils.isEmpty(email)) {
 
                     et_email.setError("Required");
@@ -89,11 +91,8 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
     }
+
 
     private void LoginMeIn(String email, String password) {
 
@@ -106,15 +105,34 @@ public class LoginActivity extends AppCompatActivity {
 
                 if (task.isSuccessful()) {
 
-                    Intent intent = new Intent(LoginActivity.this, Home_oneActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);
-                    finish();
-                    Toast.makeText(LoginActivity.this, "Logged In Successfully", Toast.LENGTH_SHORT).show();
-
-
                     //start of filter Student and  Teacher
+                    String uid = task.getResult().getUser().getUid();
+                    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+                    firebaseDatabase.getReference().child("Users").child(uid).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            int usertype = snapshot.getValue(Integer.class);
+                            if(usertype==0){
+                                Intent intent = new Intent(LoginActivity.this,Home_oneActivity.class);
+                                startActivity(intent);
+                                Toast.makeText(LoginActivity.this, "Welcome Student", Toast.LENGTH_SHORT).show();
+                                finish();
+                            }
 
+
+                            if(usertype==1){
+                                Intent intent = new Intent(LoginActivity.this,Home_twoActivity.class);
+                                startActivity(intent);
+                                Toast.makeText(LoginActivity.this, "Welcome Teacher", Toast.LENGTH_SHORT).show();
+                                finish();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
                     //end of filter
 
                 }
@@ -134,7 +152,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if (user!=null) {
 
-            startActivity(new Intent(LoginActivity.this, Home_twoActivity.class));
+            startActivity(new Intent(LoginActivity.this, CheckerActivity.class));
 
         }
     }

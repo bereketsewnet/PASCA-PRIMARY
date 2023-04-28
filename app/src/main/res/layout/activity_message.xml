@@ -78,7 +78,8 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:enabled="false"
-                android:background="@drawable/send"
+                android:background="@drawable/sendone"
+                android:backgroundTint="@color/lavender"
                 android:id="@+id/send_messsage_btn"
                 android:layout_margin="10dp"/>
 

@@ -120,9 +120,8 @@ public class UsersFragment extends Fragment {
                         Users user = snapshot.getValue(Users.class);
 
                         if (!user.getId().equals(firebaseUser.getUid())) {
-                            if(user.getType().equals("Teacher")){
                                 mUsers.add(user);
-                            }
+
                         }
 
                     }

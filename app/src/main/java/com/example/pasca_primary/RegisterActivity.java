@@ -60,9 +60,7 @@ public class RegisterActivity extends AppCompatActivity {
         et_email = findViewById(R.id.reg_email);
         et_password = findViewById(R.id.reg_password);
         registerbtn = findViewById(R.id.register_Account_btn);
-        spinner = findViewById(R.id.r_spinner);
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.usertype, com.karumi.dexter.R.layout.support_simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
+
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -77,7 +75,6 @@ public class RegisterActivity extends AppCompatActivity {
                 email = et_email.getText().toString();
                 password = et_password.getText().toString();
                 username = et_username.getText().toString();
-                String type = spinner.getSelectedItem().toString();
 
 
                 if (TextUtils.isEmpty(email)) {
@@ -94,7 +91,7 @@ public class RegisterActivity extends AppCompatActivity {
                 } else {
 
                     dialog.show();
-                    registerUser(username, password, email, type);
+                    registerUser(username, password, email);
 
                 }
 
@@ -107,7 +104,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void registerUser(final String username, String password, final String email ,final String type) {
+    private void registerUser(final String username, String password, final String email) {
 
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -125,12 +122,12 @@ public class RegisterActivity extends AppCompatActivity {
                         HashMap<String, Object> hashMap = new HashMap<>();
                         hashMap.put("username", username);
                         hashMap.put("email", email);
-                        hashMap.put("type",type);
                         hashMap.put("password",password);
                         hashMap.put("search",username);
                         hashMap.put("id", user.getUid());
                         hashMap.put("imageURL", "default");
                         hashMap.put("status", "offline");
+                        hashMap.put("usertype", 0);
 
 
                         reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {

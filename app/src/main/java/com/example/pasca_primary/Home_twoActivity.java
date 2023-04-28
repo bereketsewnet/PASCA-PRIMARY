@@ -9,7 +9,7 @@ import android.view.View;
 
 public class Home_twoActivity extends AppCompatActivity {
 
-    CardView daily,information,complaint,iq_test,pasca,s_profile;
+    CardView daily,information,notepad,iq_test,advanced,s_profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +18,9 @@ public class Home_twoActivity extends AppCompatActivity {
 
         daily = findViewById(R.id.daily);
         information = findViewById(R.id.information);
-        complaint = findViewById(R.id.complaint);
+        notepad = findViewById(R.id.notepad);
         iq_test = findViewById(R.id.iq_test);
-        pasca = findViewById(R.id.pasca);
+        advanced = findViewById(R.id.advanced);
         s_profile = findViewById(R.id.s_profile);
 
         daily.setOnClickListener(new View.OnClickListener() {
@@ -34,7 +34,7 @@ public class Home_twoActivity extends AppCompatActivity {
         information.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home_twoActivity.this, Main_twoActivity.class);
+                Intent intent = new Intent(Home_twoActivity.this, InformationListActivity.class);
                 startActivity(intent);
             }
         });
@@ -47,5 +47,35 @@ public class Home_twoActivity extends AppCompatActivity {
             }
         });
 
+        advanced.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home_twoActivity.this, PasswordThreeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        notepad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home_twoActivity.this, TeachersNotePadActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        iq_test.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home_twoActivity.this, IqDisplayTActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
+
+    public void onBackPressed(){
+        super.onBackPressed();
+        finishAffinity();
+    }
+
 }

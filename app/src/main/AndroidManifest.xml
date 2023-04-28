@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" >
+    xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -17,7 +17,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheming"
-        tools:targetApi="31" >
+        tools:targetApi="31">
+        <activity
+            android:name=".ComplainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IqDisplayActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PasswordFourActivity"
+            android:exported="false" />
+        <activity
+            android:name=".IqDisplayTActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UploadIqTActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CheckerActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TeachersNotePadActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PasswordThreeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".InformationListActivity"
+            android:exported="false" />
         <activity
             android:name=".PasswordTwoActivity"
             android:exported="false" />
@@ -29,8 +56,7 @@
             android:exported="false" />
         <activity
             android:name=".PasswordOneActivity"
-            android:exported="false"
-            android:parentActivityName=".ProfilePhotoActivity" />
+            android:exported="false" />
         <activity
             android:name=".ProfilePhotoActivity"
             android:exported="false"
@@ -41,23 +67,19 @@
             android:theme="@style/AppThemingActivity" />
         <activity
             android:name=".Main_twoActivity"
-            android:exported="false"
-            android:parentActivityName=".Home_twoActivity" />
-        <activity
-            android:name=".Home_twoActivity"
             android:exported="false" />
         <activity
-            android:name=".TeachersProfileActivity"
+            android:name=".Home_twoActivity"
             android:exported="false" />
         <activity
             android:name=".Home_oneActivity"
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
-            android:exported="false" />
+            android:exported="false"/>
         <activity
             android:name=".LoginActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -69,13 +91,12 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"
-            android:parentActivityName=".Home_oneActivity" />
+            android:exported="false" />
 
         <service
             android:name=".Notifications.MyFirebaseIdService"
             android:enabled="true"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
@@ -83,7 +104,7 @@
         <service
             android:name=".Notifications.MyFirebaseMessaging"
             android:enabled="true"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>

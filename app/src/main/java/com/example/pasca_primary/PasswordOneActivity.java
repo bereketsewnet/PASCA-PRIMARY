@@ -32,7 +32,7 @@ public class PasswordOneActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 password = go_password.getText().toString();
-
+                  // Student profile photo password here
                 if(password.equals("1234")){
 
                     Intent intent = new Intent(PasswordOneActivity.this, UploadActivity.class);

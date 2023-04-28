@@ -2,33 +2,27 @@ package com.example.pasca_primary.Model;
 
 public class Users {
 
+    public Users() {
 
-    String username, imageURL, id, status,type;
+    }
 
-    public Users(String username, String imageURL, String id, String status, String type) {
+    public Users(String username, String imageURL, String id, String status, int usertype) {
         this.username = username;
-        this.type = type;
         this.imageURL = imageURL;
         this.id = id;
         this.status = status;
+        this.usertype = usertype;
     }
 
-    public Users() {
-    }
-
+    private String username,imageURL,id,status;
+    private int usertype;
 
     public String getUsername() {
         return username;
     }
-    public String getType() {
-        return type;
-    }
 
     public void setUsername(String username) {
         this.username = username;
-    }
-    public void setType(String type) {
-        this.type = type;
     }
 
     public String getImageURL() {
@@ -53,5 +47,14 @@ public class Users {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+
+    public int getUsertype() {
+        return usertype;
+    }
+
+    public void setUsertype(int usertype) {
+        this.usertype = usertype;
     }
 }

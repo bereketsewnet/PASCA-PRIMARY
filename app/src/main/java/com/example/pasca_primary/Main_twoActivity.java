@@ -23,6 +23,7 @@ import com.example.pasca_primary.Fragments.ProfileFragment;
 import com.example.pasca_primary.Fragments.StudentsFragment;
 import com.example.pasca_primary.Fragments.TeachersNewsFragment;
 import com.example.pasca_primary.Fragments.UsersFragment;
+import com.example.pasca_primary.Model.Chats;
 import com.example.pasca_primary.Model.Users;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
@@ -70,18 +71,45 @@ public class Main_twoActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        TabLayout tabLayout = findViewById(R.id.tablayout);
-        ViewPager viewPager = findViewById(R.id.viewPager);
-        MainActivity.ViewPagerAdapter viewPagerAdapter = new MainActivity.ViewPagerAdapter(getSupportFragmentManager());
+     final   TabLayout tabLayout = findViewById(R.id.tablayout);
+     final   ViewPager viewPager = findViewById(R.id.viewPager);
 
-        viewPagerAdapter.addFragment(new ChatsFragment(), "Daily");
-        viewPagerAdapter.addFragment(new StudentsFragment(), "STUDENT");
-        viewPagerAdapter.addFragment(new TeachersNewsFragment(), "News");
-        viewPagerAdapter.addFragment(new ProfileFragment(), "ID");
+        reference =FirebaseDatabase.getInstance().getReference("Chats");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                MainActivity.ViewPagerAdapter viewPagerAdapter = new MainActivity.ViewPagerAdapter(getSupportFragmentManager());
+                int unread = 0;
+                for(DataSnapshot snapshot1 : snapshot.getChildren()){
+                    Chats chats = snapshot1.getValue(Chats.class);
+                    if(chats.getReciever().equals(firebaseUser.getUid()) && !chats.isIsseen()){
+                        unread ++;
+                    }
+                }
+
+                if(unread == 0){
+                    viewPagerAdapter.addFragment(new ChatsFragment(), "Daily");
+                }else{
+                    viewPagerAdapter.addFragment(new ChatsFragment(), "("+unread+")Daily");
+                }
+
+                viewPagerAdapter.addFragment(new StudentsFragment(), "STUDENT");
+                viewPagerAdapter.addFragment(new TeachersNewsFragment(), "News");
+                viewPagerAdapter.addFragment(new ProfileFragment(), "ID");
 
 
-        viewPager.setAdapter(viewPagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
+                viewPager.setAdapter(viewPagerAdapter);
+                tabLayout.setupWithViewPager(viewPager);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
