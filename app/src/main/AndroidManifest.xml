@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -18,6 +20,45 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheming"
         tools:targetApi="31">
+        <activity
+            android:name=".PasswordSevenActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PasswordsixActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UploadFeesInformationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UploadCalendarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HistoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StartChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PasswordFiveActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MapsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FeesInformationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AboutPascaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SchooCalendarActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SchoolLawActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UploadNewsTActivity"
+            android:exported="false" />
         <activity
             android:name=".ComplainActivity"
             android:exported="false" />
@@ -43,9 +84,6 @@
             android:name=".PasswordThreeActivity"
             android:exported="false" />
         <activity
-            android:name=".InformationListActivity"
-            android:exported="false" />
-        <activity
             android:name=".PasswordTwoActivity"
             android:exported="false" />
         <activity
@@ -67,7 +105,8 @@
             android:theme="@style/AppThemingActivity" />
         <activity
             android:name=".Main_twoActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".Home_twoActivity" />
         <activity
             android:name=".Home_twoActivity"
             android:exported="false" />
@@ -76,7 +115,7 @@
             android:exported="false" />
         <activity
             android:name=".RegisterActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
             android:exported="true">
@@ -91,24 +130,11 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false" />
-
-        <service
-            android:name=".Notifications.MyFirebaseIdService"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
-            </intent-filter>
-        </service>
-        <service
-            android:name=".Notifications.MyFirebaseMessaging"
-            android:enabled="true"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
+            android:exported="false"
+            android:parentActivityName=".Home_oneActivity" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDC2ITac58qJ4be6mp7xAhNGRtqWjG7yK8" />
     </application>
 
 </manifest>

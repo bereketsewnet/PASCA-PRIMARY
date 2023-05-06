@@ -121,7 +121,10 @@ public class StudentsFragment extends Fragment {
                         Users user = snapshot.getValue(Users.class);
 
                         if (!user.getId().equals(firebaseUser.getUid())) {
+                            if(user.getUsertype() == 0){
                                 mUsers.add(user);
+                            }
+
                         }
 
                     }

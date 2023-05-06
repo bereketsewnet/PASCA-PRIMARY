@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffff"
+    android:background="@color/white"
     tools:context=".UploadTActivity">
 
     <LinearLayout
@@ -23,6 +23,7 @@
             android:src="@drawable/uploadimg"
             android:id="@+id/uploadImaget"
             android:layout_marginTop="20dp"
+            android:background="@color/white"
             android:scaleType="fitXY"/>
         <ProgressBar
             android:layout_width="wrap_content"
@@ -35,7 +36,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="200dp"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:background="@color/white">
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="50dp"
@@ -51,7 +53,8 @@
                 android:layout_marginStart="10dp"
                 android:backgroundTint="@color/lavender"
                 android:src="@drawable/sendone"
-                app:tint = "#fff"/>
+                app:tint = "#fff"
+                android:background="@color/white"/>
         </LinearLayout>
     </LinearLayout>
 

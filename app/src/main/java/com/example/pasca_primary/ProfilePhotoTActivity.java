@@ -39,7 +39,10 @@ public class ProfilePhotoTActivity extends AppCompatActivity {
         fabt = findViewById(R.id.fabt);
         recyclerViewt = findViewById(R.id.recyclerViewt);
         recyclerViewt.setHasFixedSize(true);
-        recyclerViewt.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL,true));
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerViewt.setLayoutManager(layoutManager);
+        layoutManager.setReverseLayout(true);
+        layoutManager.setStackFromEnd(true);
         dataList = new ArrayList<>();
         adapter = new MyAdapter(this, dataList);
         recyclerViewt.setAdapter(adapter);

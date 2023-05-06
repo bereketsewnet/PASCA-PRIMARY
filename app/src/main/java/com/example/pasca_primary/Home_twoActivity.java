@@ -34,7 +34,7 @@ public class Home_twoActivity extends AppCompatActivity {
         information.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home_twoActivity.this, InformationListActivity.class);
+                Intent intent = new Intent(Home_twoActivity.this, SchoolLawActivity.class);
                 startActivity(intent);
             }
         });

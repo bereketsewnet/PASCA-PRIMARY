@@ -94,8 +94,6 @@ public class MainActivity extends AppCompatActivity {
                 }else{
                     viewPagerAdapter.addFragment(new ChatsFragment(), "("+unread+")Daily");
                 }
-
-                viewPagerAdapter.addFragment(new UsersFragment(), "SUBJECT");
                 viewPagerAdapter.addFragment(new NewsFragment(), "News");
                 viewPagerAdapter.addFragment(new ProfileFragment(), "ID");
 

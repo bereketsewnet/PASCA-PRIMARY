@@ -1,4 +1,5 @@
 package com.example.pasca_primary.Fragments;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -14,7 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pasca_primary.Adapters.UserAdapter;
 import com.example.pasca_primary.Model.Users;
+import com.example.pasca_primary.PasswordFiveActivity;
 import com.example.pasca_primary.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -38,11 +41,13 @@ public class UsersFragment extends Fragment {
     EditText search_users;
 
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_users, container, false);
+
 
         recyclerView = view.findViewById(R.id.recyclerview_users);
         recyclerView.setHasFixedSize(true);
@@ -53,6 +58,8 @@ public class UsersFragment extends Fragment {
         readUsers();
 
         search_users = view.findViewById(R.id.search_users);
+
+
         search_users.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -120,8 +127,9 @@ public class UsersFragment extends Fragment {
                         Users user = snapshot.getValue(Users.class);
 
                         if (!user.getId().equals(firebaseUser.getUid())) {
+                            if(user.getUsertype() == 1){
                                 mUsers.add(user);
-
+                            }
                         }
 
                     }

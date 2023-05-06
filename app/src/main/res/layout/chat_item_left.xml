@@ -19,7 +19,7 @@
         android:padding="8dp"
         android:id="@+id/show_message"
         android:text="Hello"
-        android:textColor="@android:color/white"
+        android:textColor="@android:color/black"
         android:textSize="18sp"
         android:layout_toRightOf="@id/chat_image"
         android:background="@drawable/background_left"/>

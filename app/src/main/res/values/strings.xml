@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PASCA-PRIMARY</string>
+    <string name="app_name">PASCA</string>
 
     <string-array name="usertype">
         <item>0</item>
@@ -7,4 +7,124 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="school_law">   <br><b>  Rules and Regulations for student\n</b>\n</br>
+
+        <br>1.Never bring a toy or real gun, or weapon to school. This includes sharp and dangerous items.\n</br>
+
+        <br>2.Never beat or engage in physical conflict with another student.\n</br>
+
+        <br>3.Never, in words or actions, disrespect teacher or any member of the school staff.\n</br>
+
+        <br>4.Never use foul or vulgar language.\n</br>
+
+        <br>5.Never leave the campus without a gate pass from the office.\n</br>
+
+        <br>6.Never play in the water or toilet area. Do not waste water.\n</br>
+
+        <br>7.Never go out to the classroom except break times or without a teacher permission.\n</br>
+
+        <br>8.Never bring electronics or mobile phones to school. Electronics found at school will be confiscated by the administration. Electronics will not be returned.\n</br>
+
+        <br>9.Never cheat be honest.\n</br>
+
+        <br>10.Never touch or disturb the property of others.\n</br>
+
+        <br>11.Never throw sharp objects the property of others.\n</br>
+
+        <br>12.Never disrespect another person culture or religion.\n</br>
+
+        <br>13.Never give gifts or money to any teacher staff member for any reason.\n</br>
+
+        <br>14.Never write on tables, walls or other school property.\n</br>
+
+        <br>15.Never damage or destroy school property.\n</br>
+
+        <br>16.Never bring gum or candy to school or use gum or candy to school.\n</br>
+
+        <br>17.Never play on the stairs or areas that are not play areas.\n</br>
+
+        <br>18.Never be absent from school without good cause. A medical certificate must be produced. In case of illness.\n</br>
+
+        <br>19.Never come late to school.\n</br>
+
+        <br>20.Always wear your uniform with shirt fucked in, stocks and closed sport shoes.\n</br>
+
+        <br>21.Always keep your hair and body well groomed.\n</br>
+
+        <br>22.Always raise your hand to speak in class.\n</br>
+
+        <br>23.Always write date and instructions before write anything else.\n</br>
+
+        <br>24.Always complete your class work and home word on time.\n</br>
+
+        <br>25.Always put your trash in the waste basket.\n</br>
+
+        <br>26.Always do you best in all things!!!\n</br></string>
+
+
+    <string name="pasca_info">   <br><b>  WHAT IS PASCA?\n</b>\n</br>
+
+        <br>The Word Pasca Stands From Parent And School Communication Application. \n</br>
+        <br><b> \n</b>\n</br>
+        <br><b>  DETAIL FOR PASCA\n</b>\n</br>
+        <br>Pasca is an android application.For the use of parent and teacher communicate easily for this app.This app is not only use communication purpose
+            there are many advantage such as \n</br>
+
+        <br>1.One Pasca Application Uses Many Students By Changing Login Information.\n</br>
+        <br>2.These App Contains Iq Test Future. Amin Post Question And You Will Answer That Question.\n</br>
+        <br>3.The Best Of This App Future Is You Will Get Many Information About Your School. Such as Information About School Law, School Calendar,
+            Fees Bank Information and e.t.c ..  .\n</br>
+        <br>4.Another Advantage Of This App You Will See Your Teacher Profile One By One .\n</br>
+        <br>5.And You Will Complain Your Teacher or Director By Individual.\n</br>
+        <br>This Is Not Only Done. There are So Much.\n</br>
+        <br><b> \n</b>\n</br>
+
+        <br><b>  WHO IS THE DESIGNER OF PASCA? \n</b>\n</br>
+
+        <br> * Bereket Sewnet and\n</br>
+        <br> * Eleta Technology Group \n</br>
+        <br><b> \n</b>\n</br>
+        <br><b>Version 1.0 2023 All Right Received \n</b>\n</br>
+
+       </string>
+
+    <string name="histoy">
+         <br><b>  HISTORY OF MY SCHOOL\n</b>\n</br>
+        <br><b> \n</b>\n</br>
+        Pasca is an android application.For the use of parent and teacher communicate easily for this app.This app is not only use communication purposethere are many advantage such as
+        Pasca is an android application.For the use of parent and teacher communicate easily for this app.This app is not only use communication purposethere are many advantage such as
+        Pasca is an android application.For the use of parent and teacher communicate easily for this app.This app is not only use communication purposethere are many advantage such as
+        Pasca is an android application.For the use of parent and teacher communicate easily for this app.This app is not only use communication purposethere are many advantage such as
+        Pasca is an android application.For the use of parent and teacher communicate easily for this app.This app is not only use communication purposethere are many advantage such as
+    </string>
+
+
+    <string name="phone_numbers">   <br><b>  HOW DO YOU FIND US?\n</b>\n</br>
+
+        <br>The Kindergarten Division:  +251965500639 \n</br>
+        <br>The Kindergarten Division:   0113694475 \n</br>
+        <br><b> \n</b>\n</br>
+        <br><b>  PRIMARY (1-4) COMP\n</b>\n</br>
+        <br>The Primary School Division:+251965500639 \n</br>
+        <br>The Primary School Division:0113694475 \n</br>
+        <br><b> \n</b>\n</br>
+        <br><b>  PRIMARY (5-8) COMP\n</b>\n</br>
+        <br>The Primary School Division:  +251965500639 \n</br>
+        <br>The Primary School Division:   0113694475 \n</br>
+        <br><b> \n</b>\n</br>
+        <br><b>  PRIMARY (9-12) COMP\n</b>\n</br>
+        <br>The Primary School Division:  +251965500639 \n</br>
+        <br>The Primary School Division:   0113694475 \n</br>
+        <br><b> \n</b>\n</br>
+        <br><b>  IN SOCIALS FOLLOW US\n</b>\n</br>
+        <br>Website:https://WWW.MountOliveInterNationSchool.com \n</br>
+        <br>Instagram: @mountschool \n</br>
+        <br>Telegram: @mountschool \n</br>
+        <br>FaceBook: @mountschool \n</br>
+        <br>Gmail: MountOliveInternationSchool@gmail.com \n</br>
+
+
+
+       </string>
+
 </resources>

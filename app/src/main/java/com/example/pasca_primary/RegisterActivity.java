@@ -92,7 +92,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                     dialog.show();
                     registerUser(username, password, email);
-
+                    dialog.dismiss();
                 }
 
                 }
@@ -139,8 +139,9 @@ public class RegisterActivity extends AppCompatActivity {
 
                                     Toast.makeText(RegisterActivity.this, "Registered Successfully", Toast.LENGTH_SHORT).show();
 
-                                    startActivity(new Intent(RegisterActivity.this,
-                                            LoginActivity.class).addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK ));
+                                   et_email.setText("");
+                                   et_password.setText("");
+                                   et_username.setText("");
 
 
                                 }

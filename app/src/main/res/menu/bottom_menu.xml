@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/bottom_schoollaw"
+        android:icon="@drawable/law"
+        android:title="Home" />
+
+    <item
+        android:id="@+id/bottom_schoolcalendar"
+        android:icon="@drawable/schoolcalendar"
+        android:title="Search" />
+
+    <item
+        android:id="@+id/bottom_feesinformation"
+        android:icon="@drawable/bill"
+        android:title="Settings" />
+
+    <item
+        android:id="@+id/bottom_maps"
+        android:icon="@drawable/advert"
+        android:title="Profile" />
+
+    <item
+        android:id="@+id/bottom_aboutpasca"
+        android:icon="@drawable/aboutus"
+        android:title="Profile" />
+
+
+</menu>

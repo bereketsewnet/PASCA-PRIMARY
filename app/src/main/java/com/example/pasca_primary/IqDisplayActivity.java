@@ -37,7 +37,10 @@ public class IqDisplayActivity extends AppCompatActivity {
         fab_iq_s = findViewById(R.id.fab_iq_s);
         recyclerView_iq_s = findViewById(R.id.recyclerView_iq_s);
         recyclerView_iq_s.setHasFixedSize(true);
-        recyclerView_iq_s.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL,true));
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView_iq_s.setLayoutManager(layoutManager);
+        layoutManager.setReverseLayout(true);
+        layoutManager.setStackFromEnd(true);
         dataList = new ArrayList<>();
         adapter = new MyAdapter(this, dataList);
         recyclerView_iq_s.setAdapter(adapter);

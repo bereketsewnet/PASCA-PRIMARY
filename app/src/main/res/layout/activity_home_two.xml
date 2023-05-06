@@ -32,8 +32,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/daily"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="0"
             android:layout_column="0"
             android:layout_gravity="bottom"
@@ -49,8 +49,8 @@
                 android:layout_gravity="center_vertical|center_horizontal">
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="65dp"
+                    android:layout_width="65dp"
+                    android:layout_height="60dp"
                     android:src="@drawable/daily"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -65,8 +65,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/notepad"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="0"
             android:layout_column="1"
             android:layout_gravity="bottom"
@@ -82,8 +82,8 @@
                 android:layout_gravity="center_vertical|center_horizontal">
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="65dp"
+                    android:layout_width="65dp"
+                    android:layout_height="60dp"
                     android:src="@drawable/notepad"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -98,8 +98,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/iq_test"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="0"
             android:layout_column="2"
             android:layout_gravity="bottom"
@@ -115,8 +115,8 @@
                 android:layout_gravity="center_vertical|center_horizontal">
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="65dp"
+                    android:layout_width="65dp"
+                    android:layout_height="60dp"
                     android:src="@drawable/iq" />
                 <TextView
                     android:layout_width="wrap_content"
@@ -132,8 +132,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/s_profile"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="1"
             android:layout_column="0"
             android:layout_margin="4dp"
@@ -148,8 +148,8 @@
                 android:layout_gravity="center_vertical|center_horizontal">
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="65dp"
+                    android:layout_width="65dp"
+                    android:layout_height="60dp"
                     android:src="@drawable/teacherprofile"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -165,8 +165,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/information"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="1"
             android:layout_column="1"
             android:layout_margin="4dp"
@@ -181,13 +181,13 @@
                 android:layout_gravity="center_vertical|center_horizontal">
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="73dp"
+                    android:layout_width="65dp"
+                    android:layout_height="60dp"
                     android:src="@drawable/information" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Information"
+                    android:text="Info"
                     android:textStyle="bold"
                     android:textColor="@color/lavender"
                     android:textAlignment="center"/>
@@ -197,8 +197,8 @@
 
         <androidx.cardview.widget.CardView
             android:id="@+id/advanced"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_row="1"
             android:layout_column="2"
             android:layout_margin="4dp"
@@ -213,8 +213,8 @@
                 android:layout_gravity="center_vertical|center_horizontal">
 
                 <ImageView
-                    android:layout_width="70dp"
-                    android:layout_height="65dp"
+                    android:layout_width="65dp"
+                    android:layout_height="60dp"
                     android:src="@drawable/advanced"/>
                 <TextView
                     android:layout_width="wrap_content"

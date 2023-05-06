@@ -1,5 +1,6 @@
 package com.example.pasca_primary.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -14,8 +15,9 @@ import android.view.ViewGroup;
 import com.example.pasca_primary.Adapters.UserAdapter;
 import com.example.pasca_primary.Model.Chatslist;
 import com.example.pasca_primary.Model.Users;
-import com.example.pasca_primary.Notifications.Token;
+import com.example.pasca_primary.PasswordFiveActivity;
 import com.example.pasca_primary.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -36,6 +38,7 @@ public class ChatsFragment extends Fragment {
     RecyclerView recyclerView;
     UserAdapter mAdapter;
     FirebaseUser firebaseUser;
+    FloatingActionButton fab_start_chat;
 
 
     @Override
@@ -47,6 +50,7 @@ public class ChatsFragment extends Fragment {
 
         userlist = new ArrayList<>();
 
+        fab_start_chat = view.findViewById(R.id.fab_start_chat);
         recyclerView = view.findViewById(R.id.chat_recyclerview_chatfrag);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -57,6 +61,13 @@ public class ChatsFragment extends Fragment {
                 .child(firebaseUser.getUid());
 
 
+        fab_start_chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), PasswordFiveActivity.class);
+                startActivity(intent);
+            }
+        });
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -81,17 +92,12 @@ public class ChatsFragment extends Fragment {
             }
         });
 
-        updateToken(FirebaseInstanceId.getInstance().getToken());
 
 
         return view;
     }
 
-    private void updateToken(String token){
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Tokens");
-        Token token1 = new Token(token);
-        reference.child(firebaseUser.getUid()).setValue(token1);
-    }
+
 
     private void ChatsListings() {
 

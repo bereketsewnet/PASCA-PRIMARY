@@ -18,11 +18,9 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.example.pasca_primary.Fragments.ChatsFragment;
-import com.example.pasca_primary.Fragments.NewsFragment;
+import com.example.pasca_primary.Fragments.NewsTFragment;
 import com.example.pasca_primary.Fragments.ProfileFragment;
 import com.example.pasca_primary.Fragments.StudentsFragment;
-import com.example.pasca_primary.Fragments.TeachersNewsFragment;
-import com.example.pasca_primary.Fragments.UsersFragment;
 import com.example.pasca_primary.Model.Chats;
 import com.example.pasca_primary.Model.Users;
 import com.google.android.material.tabs.TabLayout;
@@ -93,9 +91,8 @@ public class Main_twoActivity extends AppCompatActivity {
                 }else{
                     viewPagerAdapter.addFragment(new ChatsFragment(), "("+unread+")Daily");
                 }
-
+                viewPagerAdapter.addFragment(new NewsTFragment(), "News");
                 viewPagerAdapter.addFragment(new StudentsFragment(), "STUDENT");
-                viewPagerAdapter.addFragment(new TeachersNewsFragment(), "News");
                 viewPagerAdapter.addFragment(new ProfileFragment(), "ID");
 
 

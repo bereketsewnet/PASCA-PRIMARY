@@ -9,7 +9,7 @@ import android.view.View;
 
 public class Home_oneActivity extends AppCompatActivity {
 
-    CardView daily,information,complain,iq_test,pasca,t_profile;
+    CardView daily,information,complain,iq_test,history,t_profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class Home_oneActivity extends AppCompatActivity {
         information = findViewById(R.id.information);
         complain = findViewById(R.id.complain);
         iq_test = findViewById(R.id.iq_test);
-        pasca = findViewById(R.id.pasca);
+        history = findViewById(R.id.history);
         t_profile = findViewById(R.id.t_profile);
 
         daily.setOnClickListener(new View.OnClickListener() {
@@ -34,7 +34,7 @@ public class Home_oneActivity extends AppCompatActivity {
         information.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home_oneActivity.this, MainActivity.class);
+                Intent intent = new Intent(Home_oneActivity.this, SchoolLawActivity.class);
                 startActivity(intent);
             }
         });
@@ -59,6 +59,14 @@ public class Home_oneActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Home_oneActivity.this, ComplainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        history.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home_oneActivity.this, HistoryActivity.class);
                 startActivity(intent);
             }
         });
