@@ -38,7 +38,7 @@ public class CheckerActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int usertype = snapshot.getValue(Integer.class);
                 if(usertype==0){
-                    Intent intent = new Intent(CheckerActivity.this,Home_oneActivity.class);
+                    Intent intent = new Intent(CheckerActivity.this,StudentsHomeActivity.class);
                     startActivity(intent);
                     Toast.makeText(CheckerActivity.this, "Welcome Student", Toast.LENGTH_SHORT).show();
                     finish();
@@ -51,6 +51,18 @@ public class CheckerActivity extends AppCompatActivity {
                     Toast.makeText(CheckerActivity.this, "Welcome Teacher", Toast.LENGTH_SHORT).show();
                     finish();
                 }
+
+
+
+
+
+                if(usertype==2){
+                    Intent intent = new Intent(CheckerActivity.this,AdminHomeActivity.class);
+                    startActivity(intent);
+                    Toast.makeText(CheckerActivity.this, "Welcome Teacher", Toast.LENGTH_SHORT).show();
+                    finish();
+                }
+
             }
 
             @Override

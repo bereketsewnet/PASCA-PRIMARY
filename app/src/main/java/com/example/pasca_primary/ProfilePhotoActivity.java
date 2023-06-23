@@ -28,8 +28,7 @@ import java.util.ArrayList;
 
 public class ProfilePhotoActivity extends AppCompatActivity {
 
-
-    FloatingActionButton fab;
+    
     private RecyclerView recyclerView;
     private ArrayList<DataClass> dataList;
     private MyAdapter adapter;
@@ -41,7 +40,6 @@ public class ProfilePhotoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_photo);
 
-        fab = findViewById(R.id.fab);
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
@@ -67,16 +65,6 @@ public class ProfilePhotoActivity extends AppCompatActivity {
             }
         });
 
-
-
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ProfilePhotoActivity.this, PasswordOneActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
 
     }
 }

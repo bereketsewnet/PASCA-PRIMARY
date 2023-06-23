@@ -35,14 +35,27 @@
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
-                android:layout_height="80dp"
+                android:layout_height="wrap_content"
                 android:hint="Message.."
                 android:gravity="center"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginBottom="30dp"
+                android:padding="5dp"
+                android:id="@+id/notepad_edittext"/>
 
-                android:id="@+id/notemessage"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="30dp"
+                android:id="@+id/notepad_edittext_btn"
+                android:text="Copy"
+                android:background="@drawable/btn_back"
+                android:textColor="@android:color/white"/>
+
 
         </LinearLayout>
 

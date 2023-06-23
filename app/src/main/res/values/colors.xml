@@ -4,7 +4,8 @@
     <color name="colorPrimaryDark">#8995FA</color>
     <color name="colorAccent">#8591F6</color>
     <color name="lavender">#8692f7</color>
-    <color name="white">#ffffff</color>
+    <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
-    <color name="gray">#d2d2d2</color>
+    <color name="gray">#EAE6E6</color>
+    <color name="green">#4CAF50</color>
 </resources>

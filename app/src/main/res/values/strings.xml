@@ -1,10 +1,6 @@
 <resources>
     <string name="app_name">PASCA</string>
 
-    <string-array name="usertype">
-        <item>0</item>
-        <item>1</item>
-    </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="school_law">   <br><b>  Rules and Regulations for student\n</b>\n</br>
@@ -126,5 +122,16 @@
 
 
        </string>
+
+
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="nav_header_title">Hellow Welcome To</string>
+    <string name="nav_header_subtitle">Pasca International School</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 
 </resources>

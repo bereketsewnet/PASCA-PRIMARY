@@ -21,10 +21,34 @@
         android:theme="@style/AppTheming"
         tools:targetApi="31">
         <activity
-            android:name=".PasswordSevenActivity"
+            android:name=".ChatGptActivity"
             android:exported="false" />
         <activity
-            android:name=".PasswordsixActivity"
+            android:name=".CustomDialogActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RankActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RankFormActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AdminHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LocationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StudentsHomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LoginActivityTwo"
+            android:exported="false" />
+        <activity
+            android:name=".RankListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UploadPdfActivity"
             android:exported="false" />
         <activity
             android:name=".UploadFeesInformationActivity"
@@ -33,22 +57,16 @@
             android:name=".UploadCalendarActivity"
             android:exported="false" />
         <activity
-            android:name=".HistoryActivity"
+            android:name=".BooksActivity"
             android:exported="false" />
         <activity
             android:name=".StartChatActivity"
             android:exported="false" />
         <activity
-            android:name=".PasswordFiveActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MapsActivity"
+            android:name=".InfoActivity"
             android:exported="false" />
         <activity
             android:name=".FeesInformationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".AboutPascaActivity"
             android:exported="false" />
         <activity
             android:name=".SchooCalendarActivity"
@@ -66,9 +84,6 @@
             android:name=".IqDisplayActivity"
             android:exported="false" />
         <activity
-            android:name=".PasswordFourActivity"
-            android:exported="false" />
-        <activity
             android:name=".IqDisplayTActivity"
             android:exported="false" />
         <activity
@@ -81,19 +96,10 @@
             android:name=".TeachersNotePadActivity"
             android:exported="false" />
         <activity
-            android:name=".PasswordThreeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PasswordTwoActivity"
-            android:exported="false" />
-        <activity
             android:name=".UploadTActivity"
             android:exported="false" />
         <activity
             android:name=".ProfilePhotoTActivity"
-            android:exported="false" />
-        <activity
-            android:name=".PasswordOneActivity"
             android:exported="false" />
         <activity
             android:name=".ProfilePhotoActivity"
@@ -111,20 +117,8 @@
             android:name=".Home_twoActivity"
             android:exported="false" />
         <activity
-            android:name=".Home_oneActivity"
-            android:exported="false" />
-        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".MessageActivity"
             android:exported="false" />
@@ -132,9 +126,20 @@
             android:name=".MainActivity"
             android:exported="false"
             android:parentActivityName=".Home_oneActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDC2ITac58qJ4be6mp7xAhNGRtqWjG7yK8" />
+            android:value="AIzaSyDJFVGTtbH6q8XxhlZyVNslmcBTH7UkY6o" />
     </application>
 
 </manifest>

@@ -13,9 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.pasca_primary.Adapters.MyAdapter;
-import com.example.pasca_primary.IqDisplayActivity;
 import com.example.pasca_primary.Model.DataClass;
-import com.example.pasca_primary.PasswordFourActivity;
 import com.example.pasca_primary.R;
 import com.example.pasca_primary.UploadNewsTActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;

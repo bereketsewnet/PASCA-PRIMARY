@@ -22,7 +22,6 @@ import java.util.ArrayList;
 
 public class IqDisplayActivity extends AppCompatActivity {
 
-    FloatingActionButton fab_iq_s;
     private RecyclerView recyclerView_iq_s;
     private ArrayList<DataClass> dataList;
     private MyAdapter adapter;
@@ -34,7 +33,6 @@ public class IqDisplayActivity extends AppCompatActivity {
         setContentView(R.layout.activity_iq_display);
 
 
-        fab_iq_s = findViewById(R.id.fab_iq_s);
         recyclerView_iq_s = findViewById(R.id.recyclerView_iq_s);
         recyclerView_iq_s.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
@@ -60,16 +58,6 @@ public class IqDisplayActivity extends AppCompatActivity {
             }
         });
 
-
-
-        fab_iq_s.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(IqDisplayActivity.this, PasswordFourActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
 
     }
 }

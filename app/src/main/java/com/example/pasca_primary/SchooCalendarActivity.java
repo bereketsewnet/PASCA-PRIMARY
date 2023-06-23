@@ -23,7 +23,6 @@ import java.util.ArrayList;
 
 public class SchooCalendarActivity extends AppCompatActivity {
 
-    FloatingActionButton fab_calendar;
     private RecyclerView recyclerView_calendar;
     private ArrayList<DataClass> dataList;
     private MyAdapter adapter;
@@ -34,7 +33,6 @@ public class SchooCalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_schoo_calendar);
 
-        fab_calendar = findViewById(R.id.fab_calendar);
         recyclerView_calendar = findViewById(R.id.recyclerView_calendar);
         recyclerView_calendar.setHasFixedSize(true);
         recyclerView_calendar.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL,true));
@@ -57,49 +55,6 @@ public class SchooCalendarActivity extends AppCompatActivity {
             }
         });
 
-
-
-        fab_calendar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(SchooCalendarActivity.this, PasswordsixActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-
-//navigation bottom start
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
-        bottomNavigationView.setSelectedItemId(R.id.bottom_schoolcalendar);
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.bottom_schoollaw:
-                    startActivity(new Intent(getApplicationContext(), SchoolLawActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-                case R.id.bottom_schoolcalendar:
-                    return true;
-                case R.id.bottom_maps:
-                    startActivity(new Intent(getApplicationContext(), MapsActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-                case R.id.bottom_feesinformation:
-                    startActivity(new Intent(getApplicationContext(), FeesInformationActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-                case R.id.bottom_aboutpasca:
-                    startActivity(new Intent(getApplicationContext(), AboutPascaActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-            }
-            return false;
-        });
-        //navigation bottom end
 
     }
 }

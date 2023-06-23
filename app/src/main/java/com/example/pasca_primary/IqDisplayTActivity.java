@@ -8,10 +8,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.pasca_primary.Adapters.MyAdapter;
 import com.example.pasca_primary.Model.DataClass;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,10 +25,11 @@ import java.util.ArrayList;
 
 public class IqDisplayTActivity extends AppCompatActivity {
 
-    FloatingActionButton fab_iq;
     private RecyclerView recyclerView_iq;
     private ArrayList<DataClass> dataList;
     private MyAdapter adapter;
+    FirebaseAuth mAuth;
+    FloatingActionButton iq_upload_t;
     final private DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("IqPhoto");
 
     @Override
@@ -33,8 +37,7 @@ public class IqDisplayTActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iq_display_tactivity);
 
-
-        fab_iq = findViewById(R.id.fab_iq);
+        iq_upload_t = findViewById(R.id.iq_upload_t);
         recyclerView_iq = findViewById(R.id.recyclerView_iq);
         recyclerView_iq.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
@@ -44,6 +47,30 @@ public class IqDisplayTActivity extends AppCompatActivity {
         dataList = new ArrayList<>();
         adapter = new MyAdapter(this, dataList);
         recyclerView_iq.setAdapter(adapter);
+
+
+        // checker if user teacher or homeroom
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseDatabase.getReference().child("Users").child(user.getUid()).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int usertype = snapshot.getValue(Integer.class);
+
+                if(usertype==3){
+                    iq_upload_t.setVisibility(View.VISIBLE);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        // checker end
 
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -60,14 +87,14 @@ public class IqDisplayTActivity extends AppCompatActivity {
             }
         });
 
-
-
-        fab_iq.setOnClickListener(new View.OnClickListener() {
+        iq_upload_t.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(IqDisplayTActivity.this, PasswordFourActivity.class);
+            public void onClick(View v) {
+
+                Intent intent = new Intent(IqDisplayTActivity.this,UploadIqTActivity.class);
                 startActivity(intent);
                 finish();
+
             }
         });
 

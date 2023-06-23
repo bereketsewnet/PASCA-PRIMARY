@@ -31,7 +31,7 @@
         android:columnCount="3">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/daily"
+            android:id="@+id/teachers_daily"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_row="0"
@@ -64,7 +64,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/notepad"
+            android:id="@+id/teachers_notepad"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_row="0"
@@ -97,7 +97,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/iq_test"
+            android:id="@+id/teachers_gk"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_row="0"
@@ -121,7 +121,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="IQ-Test"
+                    android:text="G.k"
                     android:textColor="@color/lavender"
                     android:textStyle="bold"
                     android:textAlignment="center"/>
@@ -131,7 +131,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/s_profile"
+            android:id="@+id/teachers_s_profile"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_row="1"
@@ -164,7 +164,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/information"
+            android:id="@+id/teachers_rank"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_row="1"
@@ -187,7 +187,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Info"
+                    android:text="Rank"
                     android:textStyle="bold"
                     android:textColor="@color/lavender"
                     android:textAlignment="center"/>
@@ -196,7 +196,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/advanced"
+            android:id="@+id/teachers_books"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_row="1"
@@ -215,11 +215,11 @@
                 <ImageView
                     android:layout_width="65dp"
                     android:layout_height="60dp"
-                    android:src="@drawable/advanced"/>
+                    android:src="@drawable/bookshelve"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Advanced"
+                    android:text="Books"
                     android:textStyle="bold"
                     android:textColor="@color/lavender"
                     android:textAlignment="center"/>

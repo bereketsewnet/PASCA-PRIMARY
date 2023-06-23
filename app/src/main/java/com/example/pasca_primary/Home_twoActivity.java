@@ -9,21 +9,21 @@ import android.view.View;
 
 public class Home_twoActivity extends AppCompatActivity {
 
-    CardView daily,information,notepad,iq_test,advanced,s_profile;
+    CardView teachers_daily,teachers_rank,teachers_notepad,teachers_gk,teachers_books,teachers_s_profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_two);
 
-        daily = findViewById(R.id.daily);
-        information = findViewById(R.id.information);
-        notepad = findViewById(R.id.notepad);
-        iq_test = findViewById(R.id.iq_test);
-        advanced = findViewById(R.id.advanced);
-        s_profile = findViewById(R.id.s_profile);
+        teachers_daily = findViewById(R.id.teachers_daily);
+        teachers_rank = findViewById(R.id.teachers_rank);
+        teachers_notepad = findViewById(R.id.teachers_notepad);
+        teachers_gk = findViewById(R.id.teachers_gk);
+        teachers_books = findViewById(R.id.teachers_books);
+        teachers_s_profile = findViewById(R.id.teachers_s_profile);
 
-        daily.setOnClickListener(new View.OnClickListener() {
+        teachers_daily.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Home_twoActivity.this, Main_twoActivity.class);
@@ -31,15 +31,15 @@ public class Home_twoActivity extends AppCompatActivity {
             }
         });
 
-        information.setOnClickListener(new View.OnClickListener() {
+        teachers_rank.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home_twoActivity.this, SchoolLawActivity.class);
+                Intent intent = new Intent(Home_twoActivity.this, RankListActivity.class);
                 startActivity(intent);
             }
         });
 
-        s_profile.setOnClickListener(new View.OnClickListener() {
+        teachers_s_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Home_twoActivity.this, ProfilePhotoActivity.class);
@@ -47,15 +47,15 @@ public class Home_twoActivity extends AppCompatActivity {
             }
         });
 
-        advanced.setOnClickListener(new View.OnClickListener() {
+        teachers_books.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home_twoActivity.this, PasswordThreeActivity.class);
+                Intent intent = new Intent(Home_twoActivity.this, BooksActivity.class);
                 startActivity(intent);
             }
         });
 
-        notepad.setOnClickListener(new View.OnClickListener() {
+        teachers_notepad.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Home_twoActivity.this, TeachersNotePadActivity.class);
@@ -63,7 +63,7 @@ public class Home_twoActivity extends AppCompatActivity {
             }
         });
 
-        iq_test.setOnClickListener(new View.OnClickListener() {
+        teachers_gk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Home_twoActivity.this, IqDisplayTActivity.class);

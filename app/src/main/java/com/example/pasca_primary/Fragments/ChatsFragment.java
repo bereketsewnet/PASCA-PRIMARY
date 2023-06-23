@@ -13,9 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.pasca_primary.Adapters.UserAdapter;
+import com.example.pasca_primary.LoginActivityTwo;
 import com.example.pasca_primary.Model.Chatslist;
 import com.example.pasca_primary.Model.Users;
-import com.example.pasca_primary.PasswordFiveActivity;
 import com.example.pasca_primary.R;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,7 +25,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,6 +37,7 @@ public class ChatsFragment extends Fragment {
     RecyclerView recyclerView;
     UserAdapter mAdapter;
     FirebaseUser firebaseUser;
+    FirebaseAuth mAuth;
     FloatingActionButton fab_start_chat;
 
 
@@ -59,12 +59,13 @@ public class ChatsFragment extends Fragment {
 
         DatabaseReference reference  = FirebaseDatabase.getInstance().getReference("Chatslist")
                 .child(firebaseUser.getUid());
+        fab_start_chat.setVisibility(View.GONE);
 
 
         fab_start_chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), PasswordFiveActivity.class);
+                Intent intent = new Intent(getActivity(), LoginActivityTwo.class);
                 startActivity(intent);
             }
         });
@@ -121,11 +122,7 @@ public class ChatsFragment extends Fragment {
 
                         if (users.getId().equals(chatslist.getId())) {
 
-
                             mUsers.add(users);
-
-
-
 
                         }
 
@@ -147,6 +144,35 @@ public class ChatsFragment extends Fragment {
 
             }
         });
+
+        // start
+
+        mAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = mAuth.getCurrentUser();
+
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+        firebaseDatabase.getReference().child("Users").child(user.getUid()).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int usertype = snapshot.getValue(Integer.class);
+                if(usertype==0){
+                    fab_start_chat.setVisibility(View.VISIBLE);
+
+                }
+
+
+                if(usertype==1){
+
+                    fab_start_chat.setVisibility(View.GONE);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        //end
 
 
 

@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backtow"
+    tools:context=".AdminHomeActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        app:title="@string/app_name"
+        android:minHeight="?attr/actionBarSize"
+        app:titleTextColor="@color/cardview_light_background"
+        android:background="@color/lavender"/>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:id="@+id/drawer"
+        tools:openDrawer="start"
+        android:fitsSystemWindows="false">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <GridLayout
+                android:id="@+id/gridLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:rowCount="2"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="50dp"
+                android:columnCount="3">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/admin_show_gk"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical|center_horizontal">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/daily"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="G.k"
+                            android:textColor="@color/lavender"
+                            android:textStyle="bold"
+                            android:textSize="18dp"
+                            android:textAlignment="center"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/admin_show_books"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical|center_horizontal">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/notepad"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Books"
+                            android:textColor="@color/lavender"
+                            android:textStyle="bold"
+                            android:textSize="18dp"
+                            android:textAlignment="center"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/admin_show_student_profile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_row="0"
+                    android:layout_column="2"
+                    android:layout_gravity="bottom"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical|center_horizontal">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/iq" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Students"
+                            android:textColor="@color/lavender"
+                            android:textStyle="bold"
+                            android:textAlignment="center"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/admin_show_teachers_profile"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_row="1"
+                    android:layout_column="0"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical|center_horizontal">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/teacherprofile"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Teachers"
+                            android:textStyle="bold"
+                            android:textSize="18dp"
+                            android:textColor="@color/lavender"
+                            android:textAlignment="center"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/admin_show_calendar"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_row="1"
+                    android:layout_column="1"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical|center_horizontal">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/information" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Calendar"
+                            android:textStyle="bold"
+                            android:textSize="18dp"
+                            android:textColor="@color/lavender"
+                            android:textAlignment="center"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/admin_show_fees"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_row="1"
+                    android:layout_column="2"
+                    android:layout_margin="4dp"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:layout_gravity="center_vertical|center_horizontal">
+
+                        <ImageView
+                            android:layout_width="80dp"
+                            android:layout_height="70dp"
+                            android:src="@drawable/bookshelve"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fees"
+                            android:textStyle="bold"
+                            android:textSize="18dp"
+                            android:textColor="@color/lavender"
+                            android:textAlignment="center"/>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </GridLayout>
+        </LinearLayout>
+
+
+
+        <com.google.android.material.navigation.NavigationView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:itemTextAppearance="@style/DrawerTheme"
+            app:theme="@style/DrawerTheme"
+            android:id="@+id/navmenu"
+            app:menu="@menu/iconmenu"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/navheader"
+            android:backgroundTint="#ffffff"
+            app:itemBackground="@drawable/nav_item_background"
+            app:itemTextColor="@color/lavender"
+            app:itemIconTint="@color/lavender"
+            android:layout_gravity="start"/>
+
+
+
+    </androidx.drawerlayout.widget.DrawerLayout>
+
+
+</RelativeLayout>

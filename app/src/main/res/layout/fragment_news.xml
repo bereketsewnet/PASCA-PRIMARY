@@ -14,7 +14,7 @@ tools:context=".Fragments.NewsFragment">
     android:layout_alignParentEnd="true"
     android:layout_margin="40dp"
     android:backgroundTint="@color/lavender"
-    android:src="@drawable/add"
+    android:src="@drawable/news_add"
     android:visibility="gone"/>
 <androidx.recyclerview.widget.RecyclerView
     android:id="@+id/recyclerView_news"

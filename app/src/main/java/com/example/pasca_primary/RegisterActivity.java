@@ -6,11 +6,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -33,8 +36,9 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     MaterialEditText et_username, et_password, et_email;
+    Dialog SuccessDialog;
+    Dialog ErrorRegisterDialog;
     Button registerbtn;
-    Spinner spinner;
     Toolbar toolbar;
 
     String username, email, password;
@@ -49,6 +53,9 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+
+
 
         toolbar = findViewById(R.id.toolbarregis);
         setSupportActionBar(toolbar);
@@ -70,7 +77,7 @@ public class RegisterActivity extends AppCompatActivity {
         registerbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final CustomProgressDialog dialog = new CustomProgressDialog(RegisterActivity.this);
+
 
                 email = et_email.getText().toString();
                 password = et_password.getText().toString();
@@ -90,9 +97,8 @@ public class RegisterActivity extends AppCompatActivity {
                     et_password.setError("Length Must Be 6 or more");
                 } else {
 
-                    dialog.show();
                     registerUser(username, password, email);
-                    dialog.dismiss();
+
                 }
 
                 }
@@ -105,6 +111,54 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void registerUser(final String username, String password, final String email) {
+        final CustomProgressDialog dialog = new CustomProgressDialog(RegisterActivity.this);
+        dialog.show();
+
+        //Create the Dialog here
+        SuccessDialog = new Dialog(this);
+        SuccessDialog.setContentView(R.layout.custom_dialog_layout);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            SuccessDialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.custom_dialog_background));
+        }
+        SuccessDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        SuccessDialog.setCancelable(false); //Optional
+        SuccessDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation; //Setting the animations to dialog
+
+        Button Okay = SuccessDialog.findViewById(R.id.btn_okay);
+
+        Okay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(RegisterActivity.this, "Finish", Toast.LENGTH_SHORT).show();
+                SuccessDialog.dismiss();
+            }
+        });
+
+        // end of success dialog
+
+        //Create the Wrong Dialog here
+        ErrorRegisterDialog = new Dialog(this);
+        ErrorRegisterDialog.setContentView(R.layout.custom_register_error_dialog_layout);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ErrorRegisterDialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.custom_dialog_background));
+        }
+        ErrorRegisterDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        ErrorRegisterDialog.setCancelable(false); //Optional
+        ErrorRegisterDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation; //Setting the animations to dialog
+
+        Button ErrorOkay = ErrorRegisterDialog.findViewById(R.id.btn_okay_error_register);
+
+        ErrorOkay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(RegisterActivity.this, "Done", Toast.LENGTH_SHORT).show();
+                ErrorRegisterDialog.dismiss();
+            }
+        });
+
+        // end of Wrong dialog
 
         mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
@@ -115,7 +169,6 @@ public class RegisterActivity extends AppCompatActivity {
                     FirebaseUser user = mAuth.getCurrentUser();
 
                     reference = FirebaseDatabase.getInstance().getReference("Users").child(user.getUid());
-
 
                     if (user!=null) {
 
@@ -142,7 +195,8 @@ public class RegisterActivity extends AppCompatActivity {
                                    et_email.setText("");
                                    et_password.setText("");
                                    et_username.setText("");
-
+                                   dialog.dismiss();
+                                   SuccessDialog.show();
 
                                 }
                             }
@@ -156,6 +210,8 @@ public class RegisterActivity extends AppCompatActivity {
                     }
 
 
+                }else{
+                    ErrorRegisterDialog.show();
                 }
 
 

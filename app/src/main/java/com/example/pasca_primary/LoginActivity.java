@@ -4,10 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -36,6 +39,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     MaterialEditText et_email, et_password;
+    Dialog ErrorRegisterDialog;
     Button loginBtn;
     Toolbar toolbar;
     String email, password,uid2;
@@ -69,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                final CustomProgressDialog dialog = new CustomProgressDialog(LoginActivity.this);
+
 
                 email = et_email.getText().toString();
                 password = et_password.getText().toString();
@@ -83,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     et_password.setError("Required");
                 } else {
-                    dialog.show();
+                    
                     LoginMeIn(email, password);
                 }
 
@@ -95,6 +99,31 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private void LoginMeIn(String email, String password) {
+
+        final CustomProgressDialog dialog = new CustomProgressDialog(LoginActivity.this);
+            dialog.show();
+        //Create the Wrong Dialog here
+        ErrorRegisterDialog = new Dialog(this);
+        ErrorRegisterDialog.setContentView(R.layout.custom_register_error_dialog_layout);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ErrorRegisterDialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.custom_dialog_background));
+        }
+        ErrorRegisterDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        ErrorRegisterDialog.setCancelable(false); //Optional
+        ErrorRegisterDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation; //Setting the animations to dialog
+
+        Button ErrorOkay = ErrorRegisterDialog.findViewById(R.id.btn_okay_error_register);
+
+        ErrorOkay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(LoginActivity.this, "Done", Toast.LENGTH_SHORT).show();
+                ErrorRegisterDialog.dismiss();
+            }
+        });
+
+        // end of Wrong dialog
 
 
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -113,17 +142,26 @@ public class LoginActivity extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             int usertype = snapshot.getValue(Integer.class);
                             if(usertype==0){
-                                Intent intent = new Intent(LoginActivity.this,Home_oneActivity.class);
+                                Intent intent = new Intent(LoginActivity.this,StudentsHomeActivity.class);
                                 startActivity(intent);
                                 Toast.makeText(LoginActivity.this, "Welcome Student", Toast.LENGTH_SHORT).show();
                                 finish();
                             }
 
 
-                            if(usertype==1){
+                            if(usertype==1 || usertype==3){
                                 Intent intent = new Intent(LoginActivity.this,Home_twoActivity.class);
                                 startActivity(intent);
                                 Toast.makeText(LoginActivity.this, "Welcome Teacher", Toast.LENGTH_SHORT).show();
+                                finish();
+                            }
+
+
+
+                            if(usertype==2){
+                                Intent intent = new Intent(LoginActivity.this,AdminHomeActivity.class);
+                                startActivity(intent);
+                                Toast.makeText(LoginActivity.this, "Welcome Admin", Toast.LENGTH_SHORT).show();
                                 finish();
                             }
                         }
@@ -135,6 +173,9 @@ public class LoginActivity extends AppCompatActivity {
                     });
                     //end of filter
 
+                }else{
+                    ErrorRegisterDialog.show();
+                    dialog.dismiss();
                 }
 
             }

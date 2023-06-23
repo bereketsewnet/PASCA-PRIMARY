@@ -1,5 +1,4 @@
 package com.example.pasca_primary.Fragments;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,9 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pasca_primary.Adapters.UserAdapter;
 import com.example.pasca_primary.Model.Users;
-import com.example.pasca_primary.PasswordFiveActivity;
 import com.example.pasca_primary.R;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;

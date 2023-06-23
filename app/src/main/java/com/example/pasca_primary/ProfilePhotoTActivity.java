@@ -25,7 +25,7 @@ public class ProfilePhotoTActivity extends AppCompatActivity {
 
 
 
-    FloatingActionButton fabt;
+
     private RecyclerView recyclerViewt;
     private ArrayList<DataClass> dataList;
     private MyAdapter adapter;
@@ -36,7 +36,7 @@ public class ProfilePhotoTActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_photo_tactivity);
 
-        fabt = findViewById(R.id.fabt);
+
         recyclerViewt = findViewById(R.id.recyclerViewt);
         recyclerViewt.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
@@ -63,15 +63,6 @@ public class ProfilePhotoTActivity extends AppCompatActivity {
         });
 
 
-
-        fabt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(ProfilePhotoTActivity.this, PasswordTwoActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
 
     }
 }

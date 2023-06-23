@@ -8,12 +8,16 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -22,6 +26,7 @@ import android.widget.Toast;
 import com.example.pasca_primary.Model.DataClass;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -33,6 +38,8 @@ import com.google.firebase.storage.UploadTask;
 public class UploadIqTActivity extends AppCompatActivity {
 
     private FloatingActionButton uploadButton_iq;
+    Dialog SuccessDialog;
+    Dialog ErrorDialog;
     private ImageView uploadImage_iq;
     EditText uploadCaption_iq;
     ProgressBar progressBar_iq;
@@ -44,6 +51,54 @@ public class UploadIqTActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_iq_tactivity);
+
+
+        //Create the Dialog here
+        SuccessDialog = new Dialog(this);
+        SuccessDialog.setContentView(R.layout.custom_dialog_layout);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            SuccessDialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.custom_dialog_background));
+        }
+        SuccessDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        SuccessDialog.setCancelable(false); //Optional
+        SuccessDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation; //Setting the animations to dialog
+
+        Button Okay = SuccessDialog.findViewById(R.id.btn_okay);
+
+        Okay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(UploadIqTActivity.this, "Finish", Toast.LENGTH_SHORT).show();
+                SuccessDialog.dismiss();
+            }
+        });
+
+        // end of success dialog
+
+        //Create the Wrong Dialog here
+        ErrorDialog = new Dialog(this);
+        ErrorDialog.setContentView(R.layout.custom_wrong_dialog_layout);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ErrorDialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.custom_dialog_background));
+        }
+        ErrorDialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        ErrorDialog.setCancelable(false); //Optional
+        ErrorDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation; //Setting the animations to dialog
+
+        Button ErrorOkay = ErrorDialog.findViewById(R.id.btn_okay_error);
+
+        ErrorOkay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(UploadIqTActivity.this, "Done", Toast.LENGTH_SHORT).show();
+                ErrorDialog.dismiss();
+            }
+        });
+
+        // end of Wrong dialog
+
 
         uploadButton_iq = findViewById(R.id.uploadButton_iq);
         uploadCaption_iq = findViewById(R.id.uploadCaption_iq);
@@ -106,9 +161,7 @@ public class UploadIqTActivity extends AppCompatActivity {
                         databaseReference.child(key).setValue(dataClass);
                         progressBar_iq.setVisibility(View.INVISIBLE);
                         Toast.makeText(UploadIqTActivity.this, "Uploaded", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(UploadIqTActivity.this, IqDisplayTActivity.class);
-                        startActivity(intent);
-                        finish();
+                        SuccessDialog.show();
                     }
                 });
             }

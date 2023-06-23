@@ -6,6 +6,9 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -13,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import com.bumptech.glide.Glide;
@@ -45,7 +49,7 @@ public class MessageActivity extends AppCompatActivity {
     FirebaseUser firebaseUser;
 
     EditText et_message;
-    Button send;
+    Button send,paste;
 
     DatabaseReference reference;
 
@@ -75,6 +79,7 @@ public class MessageActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(layoutManager);
 
         send = findViewById(R.id.send_messsage_btn);
+        paste = findViewById(R.id.paste);
         et_message = findViewById(R.id.edit_message_text);
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
@@ -103,8 +108,6 @@ public class MessageActivity extends AppCompatActivity {
                 }
 
                 readMessages(myid, friendid, users.getImageURL());
-
-
 
             }
 
@@ -171,8 +174,26 @@ public class MessageActivity extends AppCompatActivity {
                 et_message.setText(" ");
 
 
+
             }
         });
+
+        paste.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+                android.content.ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clipData = clipboardManager.getPrimaryClip();
+                ClipData.Item item = clipData.getItemAt(0);
+                String text1 = item.getText().toString();
+                et_message.setText(text1);
+
+
+            }
+        });
+
 
 
 

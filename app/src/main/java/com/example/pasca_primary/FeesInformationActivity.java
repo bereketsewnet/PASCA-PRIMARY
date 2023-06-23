@@ -24,7 +24,6 @@ import java.util.ArrayList;
 public class FeesInformationActivity extends AppCompatActivity {
 
 
-    FloatingActionButton fab_fee;
     private RecyclerView recyclerView_fee;
     private ArrayList<DataClass> dataList;
     private MyAdapter adapter;
@@ -37,7 +36,7 @@ public class FeesInformationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fees_information);
 
-        fab_fee = findViewById(R.id.fab_fee);
+
         recyclerView_fee = findViewById(R.id.recyclerView_fee);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView_fee.setLayoutManager(layoutManager);
@@ -64,48 +63,6 @@ public class FeesInformationActivity extends AppCompatActivity {
         });
 
 
-
-        fab_fee.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(FeesInformationActivity.this, PasswordSevenActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-
-// bottom navigation start
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
-        bottomNavigationView.setSelectedItemId(R.id.bottom_feesinformation);
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.bottom_schoollaw:
-                    startActivity(new Intent(getApplicationContext(), SchoolLawActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-                case R.id.bottom_schoolcalendar:
-                    startActivity(new Intent(getApplicationContext(), SchooCalendarActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-                case R.id.bottom_maps:
-                    startActivity(new Intent(getApplicationContext(), MapsActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-                case R.id.bottom_feesinformation:
-                    return true;
-                case R.id.bottom_aboutpasca:
-                    startActivity(new Intent(getApplicationContext(), AboutPascaActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-            }
-            return false;
-        });
-        // bottom navigation end
 
     }
 }
