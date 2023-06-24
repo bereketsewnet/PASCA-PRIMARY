@@ -60,9 +60,9 @@
                         android:layout_gravity="center_vertical|center_horizontal">
 
                         <ImageView
-                            android:layout_width="65dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/daily"/>
+                            android:layout_width="55dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/problem"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -93,9 +93,9 @@
                         android:layout_gravity="center_vertical|center_horizontal">
 
                         <ImageView
-                            android:layout_width="65dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/notepad"/>
+                            android:layout_width="55dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/book"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -126,9 +126,9 @@
                         android:layout_gravity="center_vertical|center_horizontal">
 
                         <ImageView
-                            android:layout_width="65dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/iq" />
+                            android:layout_width="55dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/card" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -159,9 +159,9 @@
                         android:layout_gravity="center_vertical|center_horizontal">
 
                         <ImageView
-                            android:layout_width="65dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/teacherprofile"/>
+                            android:layout_width="55dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/card"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -192,9 +192,9 @@
                         android:layout_gravity="center_vertical|center_horizontal">
 
                         <ImageView
-                            android:layout_width="65dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/information" />
+                            android:layout_width="55dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/schedule" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -224,9 +224,9 @@
                         android:layout_gravity="center_vertical|center_horizontal">
 
                         <ImageView
-                            android:layout_width="65dp"
-                            android:layout_height="60dp"
-                            android:src="@drawable/bookshelve"/>
+                            android:layout_width="55dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/payment"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"

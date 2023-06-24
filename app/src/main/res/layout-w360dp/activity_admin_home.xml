@@ -63,7 +63,7 @@
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="70dp"
-                            android:src="@drawable/daily"/>
+                            android:src="@drawable/problem"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -97,7 +97,7 @@
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="70dp"
-                            android:src="@drawable/notepad"/>
+                            android:src="@drawable/book"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -131,7 +131,7 @@
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="70dp"
-                            android:src="@drawable/iq" />
+                            android:src="@drawable/card" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -164,7 +164,7 @@
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="70dp"
-                            android:src="@drawable/teacherprofile"/>
+                            android:src="@drawable/card"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -198,7 +198,7 @@
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="70dp"
-                            android:src="@drawable/information" />
+                            android:src="@drawable/schedule" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -231,7 +231,7 @@
                         <ImageView
                             android:layout_width="80dp"
                             android:layout_height="70dp"
-                            android:src="@drawable/bookshelve"/>
+                            android:src="@drawable/payment"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
