@@ -17,9 +17,9 @@ public class ChatGptActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chat_gpt);
 
         webView = findViewById(R.id.webview);
-        //webView.setWebViewClient(new WebViewClient());
-        webView.loadUrl("https://poe.com");
-       // webView.loadUrl("https://www.google.com");
+       // webView.setWebViewClient(new WebViewClient());
+       webView.loadUrl("https://poe.com");
+       //webView.loadUrl("https://www.google.com");
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);

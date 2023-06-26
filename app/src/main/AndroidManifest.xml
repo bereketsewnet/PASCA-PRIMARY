@@ -21,6 +21,9 @@
         android:theme="@style/AppTheming"
         tools:targetApi="31">
         <activity
+            android:name=".LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".ChatGptActivity"
             android:exported="false" />
         <activity
@@ -124,10 +127,9 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="false"
-            android:parentActivityName=".Home_oneActivity" />
+            android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".SplashScreenActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
