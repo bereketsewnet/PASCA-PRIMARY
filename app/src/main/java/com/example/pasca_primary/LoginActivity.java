@@ -145,7 +145,9 @@ public class LoginActivity extends AppCompatActivity {
                                 Intent intent = new Intent(LoginActivity.this,StudentsHomeActivity.class);
                                 startActivity(intent);
                                 Toast.makeText(LoginActivity.this, "Welcome Student", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
                                 finish();
+
                             }
 
 
@@ -153,6 +155,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Intent intent = new Intent(LoginActivity.this,Home_twoActivity.class);
                                 startActivity(intent);
                                 Toast.makeText(LoginActivity.this, "Welcome Teacher", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
                                 finish();
                             }
 
@@ -162,6 +165,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Intent intent = new Intent(LoginActivity.this,AdminHomeActivity.class);
                                 startActivity(intent);
                                 Toast.makeText(LoginActivity.this, "Welcome Admin", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
                                 finish();
                             }
                         }

@@ -3,6 +3,7 @@ package com.example.pasca_primary;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -24,7 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
-    private TextView logo_name, slogan;
+    private TextView logo_name, slogan,splash_screen_login;
     private ImageView logo;
     private View topView1,topView2,topView3;
     private View bottomView1,bottomView2,bottomView3;
@@ -58,6 +59,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
        logo = findViewById(R.id.splash_screen_logo);
         accelerate = findViewById(R.id.accelerate);
+        splash_screen_login = findViewById(R.id.splash_screen_login);
 
        topView1 = findViewById(R.id.topView1);
        topView2 = findViewById(R.id.topView2);
@@ -194,49 +196,10 @@ public class SplashScreenActivity extends AppCompatActivity {
                 final String animateTxt = slogan.getText().toString();
                 slogan.setText(" ");
                 count = 0;
-                // checker in
-                mAuth = FirebaseAuth.getInstance();
-                FirebaseUser user = mAuth.getCurrentUser();
-
-                FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-                firebaseDatabase.getReference().child("Users").child(user.getUid()).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        int usertype = snapshot.getValue(Integer.class);
-                        if(usertype==0){
-                            Intent intent = new Intent(SplashScreenActivity.this,StudentsHomeActivity.class);
-                            startActivity(intent);
-                            finish();
-                        }
 
 
-                        if(usertype==1){
-                            Intent intent = new Intent(SplashScreenActivity.this,Home_twoActivity.class);
-                            startActivity(intent);
-                            finish();
-                        }
-
-
-
-
-
-                        if(usertype==2){
-                            Intent intent = new Intent(SplashScreenActivity.this,AdminHomeActivity.class);
-                            startActivity(intent);
-                            finish();
-                        }
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-
-                // end
-
-                new CountDownTimer(animateTxt.length() * 100,100){
+                new CountDownTimer(animateTxt.length() * 10L,10){
+                    @SuppressLint("SetTextI18n")
                     @Override
                     public void onTick(long millisUntilFinished) {
                         slogan.setText(slogan.getText().toString()+animateTxt.charAt(count));
@@ -247,6 +210,75 @@ public class SplashScreenActivity extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
+
+
+
+                         // checker in
+                        FirebaseUser user1;
+
+                        user1 = FirebaseAuth.getInstance().getCurrentUser();
+                        if (user1 == null) {
+
+                            accelerate.setVisibility(View.INVISIBLE);
+                            splash_screen_login.setVisibility(View.VISIBLE);
+
+                        }else{
+                            mAuth = FirebaseAuth.getInstance();
+                            FirebaseUser user = mAuth.getCurrentUser();
+
+                            FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+
+                            firebaseDatabase.getReference().child("Users").child(user.getUid()).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    int usertype = snapshot.getValue(Integer.class);
+
+                                    FirebaseUser user;
+
+                                    user = FirebaseAuth.getInstance().getCurrentUser();
+
+
+
+                                    if(usertype==0){
+                                        Intent intent = new Intent(SplashScreenActivity.this,StudentsHomeActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+
+
+                                    if(usertype==1){
+                                        Intent intent = new Intent(SplashScreenActivity.this,Home_twoActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+
+
+
+
+
+                                    if(usertype==2){
+                                        Intent intent = new Intent(SplashScreenActivity.this,AdminHomeActivity.class);
+                                        startActivity(intent);
+                                        finish();
+                                    }
+
+
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+                        }
+
+
+
+
+
+
+                        // end
+
 
                     }
 
@@ -263,6 +295,15 @@ public class SplashScreenActivity extends AppCompatActivity {
 
 
 
+        splash_screen_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(SplashScreenActivity.this,LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
 
     }
+
 }
