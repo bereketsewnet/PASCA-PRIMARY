@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+
+
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:gravity="center"
+        android:background="@drawable/photo5"
+        android:layout_marginTop="-10dp"
+        android:layout_marginRight="-10dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_marginLeft="10dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/pppp"
+            android:id="@+id/Student_home_profile"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome Back"
+                android:textColor="#ffff"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:id="@+id/stubjectname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Name"
+                android:textColor="#ffff"
+                android:textSize="18dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/ll1"
+        android:layout_marginTop="10dp">
+
+
+        <LinearLayout
+            android:id="@+id/ll2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/teachers_daily"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                app:cardCornerRadius="15dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="#51a6ff">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/dailystud"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Daily"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/teachers_notepad"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                app:cardCornerRadius="15dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="#ff5b69">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/notepadtech"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NotePad"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/teachers_gk"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                app:cardCornerRadius="15dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="#feb05b">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/gkstud"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="General Knowledge"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/teachers_s_profile"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                app:cardCornerRadius="15dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="#b490fe">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/idcardstud"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Students"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/teachers_rank"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                app:cardCornerRadius="15dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="#ff69b0">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/progressstud"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Progress"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/teachers_books"
+                android:layout_width="105dp"
+                android:layout_height="105dp"
+                app:cardCornerRadius="15dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="#3bbdcd">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/librarystud"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Library"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

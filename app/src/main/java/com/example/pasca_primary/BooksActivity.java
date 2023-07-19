@@ -70,7 +70,7 @@ public class BooksActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int usertype = snapshot.getValue(Integer.class);
 
-                if(usertype==3){
+                if(usertype==2){
                     books_upload_t.setVisibility(View.VISIBLE);
                 }
 

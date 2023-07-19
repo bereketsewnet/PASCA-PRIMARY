@@ -134,8 +134,8 @@ public class RankActivity extends AppCompatActivity {
                     if(displayRank.getRcont9().equals("rcont9")){
                         cont_r9.setText(" ");
                     }else{
-                        cont_r8.setText(displayRank.getRcont8());
-                        value_r8.setText(displayRank.getRvalue8());
+                        cont_r9.setText(displayRank.getRcont9());
+                        value_r9.setText(displayRank.getRvalue9());
                     }
 
                     if(displayRank.getRcont10().equals("rcont10")){

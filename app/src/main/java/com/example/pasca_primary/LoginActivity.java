@@ -11,13 +11,9 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.pasca_primary.Adapters.UserAdapter;
-import com.example.pasca_primary.Model.Users;
 import com.example.pasca_primary.additional.CustomProgressDialog;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -26,14 +22,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -42,8 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     Dialog ErrorRegisterDialog;
     Button loginBtn;
     Toolbar toolbar;
-    String email, password,uid2;
-    int usertype2;
+    String email, password;
     FirebaseAuth mAuth;
     FirebaseUser user;
 
@@ -136,6 +127,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     //start of filter Student and  Teacher
                     String uid = task.getResult().getUser().getUid();
+
                     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
                     firebaseDatabase.getReference().child("Users").child(uid).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
@@ -143,16 +135,20 @@ public class LoginActivity extends AppCompatActivity {
                             int usertype = snapshot.getValue(Integer.class);
                             if(usertype==0){
                                 Intent intent = new Intent(LoginActivity.this,StudentsHomeActivity.class);
+                                intent.putExtra("MyId", uid);
                                 startActivity(intent);
                                 Toast.makeText(LoginActivity.this, "Welcome Student", Toast.LENGTH_SHORT).show();
                                 dialog.dismiss();
                                 finish();
 
+
+
                             }
 
 
-                            if(usertype==1 || usertype==3){
-                                Intent intent = new Intent(LoginActivity.this,Home_twoActivity.class);
+                            if(usertype==1 || usertype==2){
+                                Intent intent = new Intent(LoginActivity.this, TeachersHomeActivity.class);
+                                intent.putExtra("MyId", uid);
                                 startActivity(intent);
                                 Toast.makeText(LoginActivity.this, "Welcome Teacher", Toast.LENGTH_SHORT).show();
                                 dialog.dismiss();
@@ -161,8 +157,9 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
-                            if(usertype==2){
+                            if(usertype==3){
                                 Intent intent = new Intent(LoginActivity.this,AdminHomeActivity.class);
+                                intent.putExtra("MyId", uid);
                                 startActivity(intent);
                                 Toast.makeText(LoginActivity.this, "Welcome Admin", Toast.LENGTH_SHORT).show();
                                 dialog.dismiss();
@@ -197,7 +194,7 @@ public class LoginActivity extends AppCompatActivity {
 
         if (user!=null) {
 
-            startActivity(new Intent(LoginActivity.this, CheckerActivity.class));
+          // startActivity(new Intent(LoginActivity.this, UserCheckerActivity.class));
 
         }
     }

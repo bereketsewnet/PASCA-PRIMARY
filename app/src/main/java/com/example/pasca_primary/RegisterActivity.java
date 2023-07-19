@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
@@ -36,12 +37,13 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     MaterialEditText et_username, et_password, et_email;
+    Spinner reg_usertype,reg_class;
     Dialog SuccessDialog;
     Dialog ErrorRegisterDialog;
     Button registerbtn;
     Toolbar toolbar;
 
-    String username, email, password;
+    String username, email, password,usertype,student_class;
 
     FirebaseAuth mAuth;
 
@@ -55,7 +57,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
 
-
+String[] user_type = {"Student" , "Teacher", "HomeRoom Teacher", "Admin"};
 
         toolbar = findViewById(R.id.toolbarregis);
         setSupportActionBar(toolbar);
@@ -66,7 +68,19 @@ public class RegisterActivity extends AppCompatActivity {
         et_username = findViewById(R.id.reg_username);
         et_email = findViewById(R.id.reg_email);
         et_password = findViewById(R.id.reg_password);
+        reg_usertype = findViewById(R.id.reg_usertype);
+        reg_class = findViewById(R.id.reg_class);
         registerbtn = findViewById(R.id.register_Account_btn);
+
+       ArrayAdapter<CharSequence> adapter_usertype = ArrayAdapter.createFromResource(this, R.array.user_type, android.R.layout.simple_spinner_item);
+        adapter_usertype.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        reg_usertype.setAdapter(adapter_usertype);
+
+        ArrayAdapter<CharSequence> adapter_class = ArrayAdapter.createFromResource(this, R.array.student_class, android.R.layout.simple_spinner_item);
+        adapter_class.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        reg_class.setAdapter(adapter_class);
+
+
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -82,6 +96,23 @@ public class RegisterActivity extends AppCompatActivity {
                 email = et_email.getText().toString();
                 password = et_password.getText().toString();
                 username = et_username.getText().toString();
+                usertype = reg_usertype.getSelectedItem().toString();
+                student_class = reg_class.getSelectedItem().toString();
+
+                if(usertype.equals("Student")){
+                    usertype.equals(0);
+                }else if(usertype.equals("Teacher")){
+                    usertype.equals(1);
+                }else if(usertype.equals("HomeRoom Teacher")){
+                    usertype.equals(2);
+                }else{
+                    usertype.equals(3);
+                }
+
+
+
+
+
 
 
                 if (TextUtils.isEmpty(email)) {
@@ -92,12 +123,12 @@ public class RegisterActivity extends AppCompatActivity {
                 } else if (TextUtils.isEmpty(password)) {
                     et_password.setError("Required");
 
-                } else if (password.length() < 6) {
+                }else if (password.length() < 6) {
 
                     et_password.setError("Length Must Be 6 or more");
                 } else {
 
-                    registerUser(username, password, email);
+                    registerUser(username, password, email, Integer.parseInt(usertype));
 
                 }
 
@@ -110,7 +141,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private void registerUser(final String username, String password, final String email) {
+    private void registerUser(final String username, String password, final String email, final int usertype) {
         final CustomProgressDialog dialog = new CustomProgressDialog(RegisterActivity.this);
         dialog.show();
 
@@ -180,7 +211,7 @@ public class RegisterActivity extends AppCompatActivity {
                         hashMap.put("id", user.getUid());
                         hashMap.put("imageURL", "default");
                         hashMap.put("status", "offline");
-                        hashMap.put("usertype", 0);
+                        hashMap.put("usertype", usertype);
 
 
                         reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -198,6 +229,7 @@ public class RegisterActivity extends AppCompatActivity {
                                    dialog.dismiss();
                                    SuccessDialog.show();
 
+
                                 }
                             }
                         });
@@ -211,6 +243,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
                 }else{
+                    dialog.dismiss();
                     ErrorRegisterDialog.show();
                 }
 

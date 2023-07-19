@@ -20,6 +20,7 @@ import com.bumptech.glide.Glide;
 import com.example.pasca_primary.Fragments.ChatsFragment;
 import com.example.pasca_primary.Fragments.NewsTFragment;
 import com.example.pasca_primary.Fragments.ProfileFragment;
+import com.example.pasca_primary.Fragments.ProfilePasswordFragment;
 import com.example.pasca_primary.Fragments.StudentsFragment;
 import com.example.pasca_primary.Model.Chats;
 import com.example.pasca_primary.Model.Users;
@@ -47,6 +48,7 @@ public class Main_twoActivity extends AppCompatActivity {
 
     DatabaseReference reference;
     FirebaseUser firebaseUser;
+    String uid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,7 @@ public class Main_twoActivity extends AppCompatActivity {
         //casting of the views
         imageView = findViewById(R.id.profile_image);
         username = findViewById(R.id.usernameonmainactivity);
+        uid = getIntent().getStringExtra("uid");
 
 
 
@@ -72,6 +75,14 @@ public class Main_twoActivity extends AppCompatActivity {
      final   TabLayout tabLayout = findViewById(R.id.tablayout);
      final   ViewPager viewPager = findViewById(R.id.viewPager);
 
+     if(uid == null){
+         Intent intent = new Intent(Main_twoActivity.this,TeachersHomeActivity.class);
+         startActivity(intent);
+         Toast.makeText(this, "Please Back To Connection a Moment", Toast.LENGTH_SHORT).show();
+     }else{
+
+
+
         reference =FirebaseDatabase.getInstance().getReference("Chats");
         reference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -81,7 +92,7 @@ public class Main_twoActivity extends AppCompatActivity {
                 int unread = 0;
                 for(DataSnapshot snapshot1 : snapshot.getChildren()){
                     Chats chats = snapshot1.getValue(Chats.class);
-                    if(chats.getReciever().equals(firebaseUser.getUid()) && !chats.isIsseen()){
+                    if(chats.getReciever().equals(uid) && !chats.isIsseen()){
                         unread ++;
                     }
                 }
@@ -93,7 +104,7 @@ public class Main_twoActivity extends AppCompatActivity {
                 }
                 viewPagerAdapter.addFragment(new NewsTFragment(), "News");
                 viewPagerAdapter.addFragment(new StudentsFragment(), "STUDENT");
-                viewPagerAdapter.addFragment(new ProfileFragment(), "ID");
+                viewPagerAdapter.addFragment(new ProfilePasswordFragment(), "ID");
 
 
                 viewPager.setAdapter(viewPagerAdapter);
@@ -111,7 +122,7 @@ public class Main_twoActivity extends AppCompatActivity {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
 
-        reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(uid);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -138,7 +149,7 @@ public class Main_twoActivity extends AppCompatActivity {
         });
 
 
-
+     }
 
 
     }
@@ -225,7 +236,7 @@ public class Main_twoActivity extends AppCompatActivity {
     private void Status (final String status) {
 
 
-        final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+        final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(uid);
 
         HashMap<String, Object> hashMap = new HashMap<>();
         hashMap.put("status", status);

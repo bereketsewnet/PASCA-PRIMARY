@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+
+
+
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:gravity="center"
+        android:background="@drawable/photo5"
+        android:layout_marginTop="-10dp"
+        android:layout_marginRight="-10dp">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/pppp"
+            android:layout_gravity="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pasca Internation School"
+                android:textColor="#ffff"
+                android:textSize="18dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="welcome back"
+                android:textColor="#ffff"
+                android:textSize="16dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/ll1"
+        android:layout_marginTop="20dp">
+
+
+        <LinearLayout
+            android:id="@+id/ll2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/admin_show_gk"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:cardCornerRadius="15dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="#51a6ff">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/gkstud"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="General Knowledge"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/admin_show_books"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:cardCornerRadius="15dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="#ff5b69">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/librarystud"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Library"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/admin_show_student_profile"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:cardCornerRadius="15dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="#feb05b">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/idcardstud"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Students"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/admin_show_teachers_profile"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:cardCornerRadius="15dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="#b490fe">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/idcardstud"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Teachers"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/admin_show_calendar"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:cardCornerRadius="15dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="#ff69b0">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/caledarstud"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Calendar"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/admin_show_fees"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                app:cardCornerRadius="15dp"
+                android:layout_margin="10dp"
+                app:cardBackgroundColor="#3bbdcd">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center">
+
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:background="@drawable/feesstud"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fees Info"
+                        android:textSize="14sp"
+                        android:gravity="center"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/white"/>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+</RelativeLayout>

@@ -17,6 +17,7 @@ import com.example.pasca_primary.LoginActivityTwo;
 import com.example.pasca_primary.Model.Chatslist;
 import com.example.pasca_primary.Model.Users;
 import com.example.pasca_primary.R;
+import com.example.pasca_primary.StartChatPasswordActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -65,7 +66,7 @@ public class ChatsFragment extends Fragment {
         fab_start_chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), LoginActivityTwo.class);
+                Intent intent = new Intent(getActivity(), StartChatPasswordActivity.class);
                 startActivity(intent);
             }
         });
@@ -161,7 +162,7 @@ public class ChatsFragment extends Fragment {
                 }
 
 
-                if(usertype==1){
+                if(usertype==1 || usertype==2){
 
                     fab_start_chat.setVisibility(View.GONE);
                 }

@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.pasca_primary.Model.Users;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -20,53 +21,41 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class StudentsHomeActivity extends AppCompatActivity {
 
-    LinearLayout student_law, student_map, student_adv;
+    LinearLayout  student_law,student_map,student_adv;
     DatabaseReference reference;
     FirebaseUser firebaseUser;
+    String uid;
     TextView textView2;
-    ImageView imageView4;
-    ConstraintLayout student_daily, student_library, student_rank, student_gk, student_gkk, student_complain, student_calendar, student_fees;
+    CircleImageView imageView;
+    ConstraintLayout student_ai,student_daily, student_library, student_rank, student_gk, student_t, student_complain, student_calendar, student_fees;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_students_home);
 
-        // Upper 3 cards
-        student_adv = findViewById(R.id.student_adv);
-        student_map = findViewById(R.id.student_map);
+           // Upper 3 cards
         student_law = findViewById(R.id.student_law);
+        student_map = findViewById(R.id.student_map);
+        student_adv = findViewById(R.id.student_adv);
         //lower 8 cards
         student_daily = findViewById(R.id.student_daily);
         student_library = findViewById(R.id.student_library);
         student_rank = findViewById(R.id.student_rank);
         student_gk = findViewById(R.id.student_gk);
-        student_gkk = findViewById(R.id.student_gkk);
+        student_t = findViewById(R.id.student_t);
         student_calendar = findViewById(R.id.student_calendar);
         student_fees = findViewById(R.id.student_fees);
         student_complain = findViewById(R.id.student_complain);
+        student_ai = findViewById(R.id.student_ai);
         // others
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         textView2 = findViewById(R.id.textView2);
-        imageView4 = findViewById(R.id.imageView4);
-
-        imageView4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(StudentsHomeActivity.this, ChatGptActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        student_adv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(StudentsHomeActivity.this, InfoActivity.class);
-                startActivity(intent);
-            }
-        });
+        imageView = findViewById(R.id.imageView2);
 
 
         student_law.setOnClickListener(new View.OnClickListener() {
@@ -85,10 +74,29 @@ public class StudentsHomeActivity extends AppCompatActivity {
             }
         });
 
+        student_adv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(StudentsHomeActivity.this, InfoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        student_ai.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(StudentsHomeActivity.this, ChatGptActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
         student_daily.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(StudentsHomeActivity.this, MainActivity.class);
+                intent.putExtra("uid",uid);
                 startActivity(intent);
             }
         });
@@ -117,7 +125,7 @@ public class StudentsHomeActivity extends AppCompatActivity {
             }
         });
 
-        student_gkk.setOnClickListener(new View.OnClickListener() {
+        student_t.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(StudentsHomeActivity.this, ProfilePhotoTActivity.class);
@@ -155,6 +163,7 @@ public class StudentsHomeActivity extends AppCompatActivity {
 
 
         reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+         uid = firebaseUser.getUid();
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -164,6 +173,14 @@ public class StudentsHomeActivity extends AppCompatActivity {
 
                 textView2.setText(student_name.getUsername()); // set the text of the user on textivew in toolbar
 
+
+                if (student_name.getImageURL().equals("default")) {
+
+                    imageView.setImageResource(R.drawable.pppp);
+                } else {
+                    // imageView.setImageResource(R.drawable.pppp);
+                    Glide.with(getApplicationContext()).load(student_name.getImageURL()).into(imageView);
+                }
 
             }
 
@@ -175,8 +192,8 @@ public class StudentsHomeActivity extends AppCompatActivity {
 
 
 
-
 }
+
 
     @Override
     public void onBackPressed() {

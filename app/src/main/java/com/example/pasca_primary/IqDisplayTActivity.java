@@ -59,7 +59,7 @@ public class IqDisplayTActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int usertype = snapshot.getValue(Integer.class);
 
-                if(usertype==3){
+                if(usertype==2){
                     iq_upload_t.setVisibility(View.VISIBLE);
                 }
 

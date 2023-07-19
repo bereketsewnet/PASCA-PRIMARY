@@ -116,7 +116,7 @@ public class StartChatActivity extends AppCompatActivity {
                         Users user = snapshot.getValue(Users.class);
 
                         if (!user.getId().equals(firebaseUser.getUid())) {
-                            if(user.getUsertype() == 1){
+                            if(user.getUsertype() == 1 || user.getUsertype() == 2){
                                 mUsers.add(user);
                             }
                         }

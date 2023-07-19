@@ -22,9 +22,11 @@ import com.bumptech.glide.Glide;
 import com.example.pasca_primary.Fragments.ChatsFragment;
 import com.example.pasca_primary.Fragments.NewsFragment;
 import com.example.pasca_primary.Fragments.ProfileFragment;
+import com.example.pasca_primary.Fragments.ProfilePasswordFragment;
 import com.example.pasca_primary.Fragments.UsersFragment;
 import com.example.pasca_primary.Model.Chats;
 import com.example.pasca_primary.Model.Users;
+import com.example.pasca_primary.additional.CustomProgressDialog;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -46,6 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
     CircleImageView imageView;
     TextView username;
+    String uid;
 
     DatabaseReference reference;
     FirebaseUser firebaseUser;
@@ -62,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
         //casting of the views
         imageView = findViewById(R.id.profile_image);
         username = findViewById(R.id.usernameonmainactivity);
+        uid = getIntent().getStringExtra("uid");
+
+
 
 
 
@@ -73,7 +79,13 @@ public class MainActivity extends AppCompatActivity {
 
       final  TabLayout tabLayout = findViewById(R.id.tablayout);
       final   ViewPager viewPager = findViewById(R.id.viewPager);
+       // if user id is empty back to mainStudent activity and not other function done
+        if (uid == null) {
+            Intent intent = new Intent(MainActivity.this,StudentsHomeActivity.class);
+            startActivity(intent);
+            Toast.makeText(this, "Please Back To Connection a Moment", Toast.LENGTH_SHORT).show();
 
+        }else {
 
         reference = FirebaseDatabase.getInstance().getReference("Chats");
         reference.addValueEventListener(new ValueEventListener() {
@@ -84,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 int unread = 0;
                 for(DataSnapshot snapshot1 : snapshot.getChildren()){
                     Chats chats = snapshot1.getValue(Chats.class);
-                    if(chats.getReciever().equals(firebaseUser.getUid()) && !chats.isIsseen()){
+                    if(chats.getReciever().equals(uid) && !chats.isIsseen()){
                         unread ++;
                     }
                 }
@@ -95,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
                     viewPagerAdapter.addFragment(new ChatsFragment(), "("+unread+")Daily");
                 }
                 viewPagerAdapter.addFragment(new NewsFragment(), "News");
-                viewPagerAdapter.addFragment(new ProfileFragment(), "ID");
+                viewPagerAdapter.addFragment(new ProfilePasswordFragment(), "ID");
 
 
                 viewPager.setAdapter(viewPagerAdapter);
@@ -115,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
 
-        reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(uid);
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -142,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
+    }
 
 
     }
@@ -228,13 +240,22 @@ public class MainActivity extends AppCompatActivity {
 
     private void Status (final String status) {
 
+        if(uid == null){
 
-        final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+            Intent intent = new Intent(MainActivity.this,StudentsHomeActivity.class);
+            startActivity(intent);
+            Toast.makeText(this, "Please back to connection a moment!", Toast.LENGTH_SHORT).show();
 
-        HashMap<String, Object> hashMap = new HashMap<>();
-        hashMap.put("status", status);
+        }else{
 
-        reference.updateChildren(hashMap);
+            final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(uid);
+
+            HashMap<String, Object> hashMap = new HashMap<>();
+            hashMap.put("status", status);
+
+            reference.updateChildren(hashMap);
+
+        }
 
 
 

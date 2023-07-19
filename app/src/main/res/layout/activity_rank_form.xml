@@ -171,7 +171,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="1"
-                    android:hint="cont6"
+                    android:hint="cont5"
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:layout_marginEnd="5dp"
@@ -185,7 +185,7 @@
                     android:padding="5dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
-                    android:hint="value6"
+                    android:hint="value5"
                     android:textSize="20dp"
                     android:background="@drawable/rank_form_bkg"/>
 

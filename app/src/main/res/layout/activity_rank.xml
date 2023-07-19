@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/pagebkg"
     tools:context=".RankActivity">
 
     <ScrollView
@@ -24,7 +25,7 @@
             <TextView
                 android:width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Student Report"
+                android:text="@string/student_report"
                 android:textColor="@color/lavender"
                 android:padding="10sp"
                 android:textSize="14sp"
@@ -35,12 +36,12 @@
         </TableRow>
         <!--header "cont and values"-->
         <TableRow
-            android:background="@drawable/table_row_laveder">
+            android:background="@color/lavender">
 
             <TextView
                 android:width="0dp"
                 android:layout_height="wrap_content"
-                android:text="content"
+                android:text="@string/subject"
                 android:textColor="@color/white"
                 android:padding="10sp"
                 android:textSize="14sp"
@@ -50,7 +51,7 @@
             <TextView
                 android:width="0dp"
                 android:layout_height="wrap_content"
-                android:text="Value"
+                android:text="@string/mark"
                 android:textColor="@color/white"
                 android:padding="10sp"
                 android:textSize="14sp"

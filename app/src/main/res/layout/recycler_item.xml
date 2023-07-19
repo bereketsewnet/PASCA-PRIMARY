@@ -8,16 +8,16 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         android:layout_marginTop="20dp"
-        app:cardCornerRadius="20dp"
+        app:cardCornerRadius="8dp"
         android:elevation="10dp">
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="190dp"
             android:id="@+id/recyclerImage"
             android:src="@drawable/uploadimg"
             android:scaleType="centerCrop"

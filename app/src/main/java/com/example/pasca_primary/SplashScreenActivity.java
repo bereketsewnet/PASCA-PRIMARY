@@ -3,10 +3,8 @@ package com.example.pasca_primary;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.CountDownTimer;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -14,7 +12,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -64,7 +61,7 @@ public class SplashScreenActivity extends AppCompatActivity {
        topView1 = findViewById(R.id.topView1);
        topView2 = findViewById(R.id.topView2);
        topView3 = findViewById(R.id.topView3);
-       //00041c
+       //#00041c
 
        bottomView1 = findViewById(R.id.bottomView1);
        bottomView2 = findViewById(R.id.bottomView2);
@@ -101,6 +98,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
                 topView2.startAnimation(topView2Animation);
                 bottomView2.startAnimation(bottomView2Animation);
+                
             }
 
             @Override
@@ -168,122 +166,75 @@ public class SplashScreenActivity extends AppCompatActivity {
             @Override
             public void onAnimationEnd(Animation animation) {
 
-                logo_name.setVisibility(View.VISIBLE);
-                logo_name.startAnimation(nameAnimation);
-            }
-
-            @Override
-            public void onAnimationRepeat(Animation animation) {
-
-            }
-        });
 
 
-        nameAnimation.setAnimationListener(new Animation.AnimationListener() {
-            @Override
-            public void onAnimationStart(Animation animation) {
-
-
-
-
-            }
-
-            @Override
-            public void onAnimationEnd(Animation animation) {
-
-                slogan.setVisibility(View.VISIBLE);
                 accelerate.setVisibility(View.VISIBLE);
-                final String animateTxt = slogan.getText().toString();
-                slogan.setText(" ");
-                count = 0;
+             //  accelerate.getIndeterminateDrawable().setColorFilter();
 
 
-                new CountDownTimer(animateTxt.length() * 10L,10){
-                    @SuppressLint("SetTextI18n")
-                    @Override
-                    public void onTick(long millisUntilFinished) {
-                        slogan.setText(slogan.getText().toString()+animateTxt.charAt(count));
-                        count++;
+                // checker in
+                FirebaseUser user1;
+
+                user1 = FirebaseAuth.getInstance().getCurrentUser();
+                if (user1 == null) {
+
+                    accelerate.setVisibility(View.INVISIBLE);
+                    splash_screen_login.setVisibility(View.VISIBLE);
+
+                }else{
+                    mAuth = FirebaseAuth.getInstance();
+                    FirebaseUser user = mAuth.getCurrentUser();
+
+                    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+
+                    firebaseDatabase.getReference().child("Users").child(user.getUid()).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            int usertype = snapshot.getValue(Integer.class);
 
 
-                    }
+                            FirebaseUser user;
 
-                    @Override
-                    public void onFinish() {
-
-
-
-                         // checker in
-                        FirebaseUser user1;
-
-                        user1 = FirebaseAuth.getInstance().getCurrentUser();
-                        if (user1 == null) {
-
-                            accelerate.setVisibility(View.INVISIBLE);
-                            splash_screen_login.setVisibility(View.VISIBLE);
-
-                        }else{
-                            mAuth = FirebaseAuth.getInstance();
-                            FirebaseUser user = mAuth.getCurrentUser();
-
-                            FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-
-                            firebaseDatabase.getReference().child("Users").child(user.getUid()).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    int usertype = snapshot.getValue(Integer.class);
-
-                                    FirebaseUser user;
-
-                                    user = FirebaseAuth.getInstance().getCurrentUser();
+                            user = FirebaseAuth.getInstance().getCurrentUser();
 
 
 
-                                    if(usertype==0){
-                                        Intent intent = new Intent(SplashScreenActivity.this,StudentsHomeActivity.class);
-                                        startActivity(intent);
-                                        finish();
-                                    }
+                            if(usertype==0){
+                                Intent intent = new Intent(SplashScreenActivity.this,StudentsHomeActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
 
 
-                                    if(usertype==1){
-                                        Intent intent = new Intent(SplashScreenActivity.this,Home_twoActivity.class);
-                                        startActivity(intent);
-                                        finish();
-                                    }
+                            if(usertype==1 || usertype==2){
+                                Intent intent = new Intent(SplashScreenActivity.this, TeachersHomeActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
 
 
 
 
 
-                                    if(usertype==2){
-                                        Intent intent = new Intent(SplashScreenActivity.this,AdminHomeActivity.class);
-                                        startActivity(intent);
-                                        finish();
-                                    }
+                            if(usertype==3){
+                                Intent intent = new Intent(SplashScreenActivity.this,AdminHomeActivity.class);
+                                startActivity(intent);
+                                finish();
+                            }
 
 
-                                }
-
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError error) {
-
-                                }
-                            });
                         }
 
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+                }
 
 
 
-
-
-                        // end
-
-
-                    }
-
-
-                }.start();
+                // end
 
             }
 
@@ -292,6 +243,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
             }
         });
+
 
 
 

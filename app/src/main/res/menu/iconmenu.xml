@@ -2,43 +2,43 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/admin_register"
-        android:icon="@drawable/person"
-        android:title="Register"/>
+        android:icon="@drawable/register"
+        android:title="Register Users"/>
 
     <item android:id="@+id/admin_news"
         android:icon="@drawable/ringing"
         android:title="Post News"/>
 
     <item android:id="@+id/admin_rank"
-        android:icon="@drawable/ic_4"
+        android:icon="@drawable/progressstud"
         android:title="Post Grade"/>
 
     <item android:id="@+id/admin_iq"
-        android:icon="@drawable/thought"
+        android:icon="@drawable/gkstud"
         android:title="Post General Knowledge"/>
 
     <item android:id="@+id/admin_book"
-        android:icon="@drawable/books"
-        android:title="Upload Books"/>
+        android:icon="@drawable/librarystud"
+        android:title="Post Books"/>
 
     <item android:id="@+id/admin_student"
-        android:icon="@drawable/user"
-        android:title="Upload Students Profile"/>
+        android:icon="@drawable/idcardstud"
+        android:title="Post Students Profile"/>
 
     <item android:id="@+id/admin_teacher"
-        android:icon="@drawable/user"
-        android:title="Upload Teachers Profile"/>
+        android:icon="@drawable/idtech"
+        android:title="Post Teachers Profile"/>
 
     <item android:id="@+id/admin_calendar"
-        android:icon="@drawable/schoolcalendar"
+        android:icon="@drawable/caledarstud"
         android:title="Post Calendar"/>
 
     <item android:id="@+id/admin_fees"
-        android:icon="@drawable/bill"
+        android:icon="@drawable/feesstud"
         android:title="Post Fees Information"/>
 
     <item android:id="@+id/admin_logout"
-        android:icon="@drawable/logout_btn"
+        android:icon="@drawable/logout"
         android:title="Logout"/>
 
 
