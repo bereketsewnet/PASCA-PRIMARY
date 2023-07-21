@@ -43,8 +43,8 @@
                 android:layout_marginRight="-10dp">
 
                 <ImageView
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
                     android:src="@drawable/pppp"
                     android:layout_gravity="center"/>
 
@@ -59,14 +59,14 @@
                         android:layout_height="wrap_content"
                         android:text="Pasca Internation School"
                         android:textColor="#ffff"
-                        android:textSize="16dp"/>
+                        android:textSize="18dp"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="welcome back"
                         android:textColor="#ffff"
-                        android:textSize="14dp"/>
+                        android:textSize="16dp"/>
 
                 </LinearLayout>
 
@@ -84,12 +84,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_marginTop="10dp"
                     android:gravity="center">
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_gk"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
                         app:cardCornerRadius="15dp"
                         android:layout_margin="10dp"
                         app:cardBackgroundColor="#51a6ff">
@@ -102,15 +103,15 @@
 
                             <ImageView
                                 android:layout_gravity="center"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:background="@drawable/gkstud"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="General Knowledge"
-                                android:textSize="12sp"
+                                android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_gravity="center_horizontal"
                                 android:textColor="@color/white"/>
@@ -122,8 +123,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_books"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
                         app:cardCornerRadius="15dp"
                         android:layout_margin="10dp"
                         app:cardBackgroundColor="#ff5b69">
@@ -136,15 +137,15 @@
 
                             <ImageView
                                 android:layout_gravity="center"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:background="@drawable/librarystud"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Library"
-                                android:textSize="12sp"
+                                android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_gravity="center_horizontal"
                                 android:textColor="@color/white"/>
@@ -161,12 +162,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_marginTop="10dp"
                     android:gravity="center">
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_student_profile"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
                         app:cardCornerRadius="15dp"
                         android:layout_margin="10dp"
                         app:cardBackgroundColor="#feb05b">
@@ -179,15 +181,15 @@
 
                             <ImageView
                                 android:layout_gravity="center"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:background="@drawable/idcardstud"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Students"
-                                android:textSize="12sp"
+                                android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_gravity="center_horizontal"
                                 android:textColor="@color/white"/>
@@ -199,8 +201,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_teachers_profile"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
                         app:cardCornerRadius="15dp"
                         android:layout_margin="10dp"
                         app:cardBackgroundColor="#b490fe">
@@ -213,15 +215,15 @@
 
                             <ImageView
                                 android:layout_gravity="center"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:background="@drawable/idtech"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Teachers"
-                                android:textSize="12sp"
+                                android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_gravity="center_horizontal"
                                 android:textColor="@color/white"/>
@@ -238,12 +240,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_marginTop="10dp"
                     android:gravity="center">
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_calendar"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
                         app:cardCornerRadius="15dp"
                         android:layout_margin="10dp"
                         app:cardBackgroundColor="#ff69b0">
@@ -256,15 +259,15 @@
 
                             <ImageView
                                 android:layout_gravity="center"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:background="@drawable/caledarstud"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Calendar"
-                                android:textSize="12sp"
+                                android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_gravity="center_horizontal"
                                 android:textColor="@color/white"/>
@@ -276,8 +279,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_fees"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
+                        android:layout_width="120dp"
+                        android:layout_height="120dp"
                         app:cardCornerRadius="15dp"
                         android:layout_margin="10dp"
                         app:cardBackgroundColor="#3bbdcd">
@@ -290,15 +293,15 @@
 
                             <ImageView
                                 android:layout_gravity="center"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
                                 android:background="@drawable/feesstud"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Fees Info"
-                                android:textSize="12sp"
+                                android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_gravity="center_horizontal"
                                 android:textColor="@color/white"/>
@@ -335,6 +338,7 @@
             android:backgroundTint="#ffffff"
             app:itemBackground="@drawable/nav_item_background"
             app:itemTextColor="@color/lavender"
+            app:itemIconSize="35dp"
             app:itemIconTint="@color/lavender"
             android:layout_gravity="start"/>
 

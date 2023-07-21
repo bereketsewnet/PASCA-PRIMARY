@@ -4,14 +4,21 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.Resource;
 import com.example.pasca_primary.Model.Users;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -21,6 +28,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Locale;
+
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class StudentsHomeActivity extends AppCompatActivity {
@@ -29,8 +38,10 @@ public class StudentsHomeActivity extends AppCompatActivity {
     DatabaseReference reference;
     FirebaseUser firebaseUser;
     String uid;
+    public static final String[] language = {"Language", "English", "አማረኛ", "عربي", "Français"};
     TextView textView2;
     CircleImageView imageView;
+    Spinner spinner;
     ConstraintLayout student_ai,student_daily, student_library, student_rank, student_gk, student_t, student_complain, student_calendar, student_fees;
 
     @Override
@@ -56,7 +67,40 @@ public class StudentsHomeActivity extends AppCompatActivity {
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         textView2 = findViewById(R.id.textView2);
         imageView = findViewById(R.id.imageView2);
+        spinner = findViewById(R.id.lan);
 
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,language);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+        spinner.setSelection(0);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedLang = parent.getItemAtPosition(position).toString();
+                if(selectedLang.equals("English")){
+                    setLocal(StudentsHomeActivity.this,"en");
+                    finish();
+                    startActivity(getIntent());
+                }else if(selectedLang.equals("አማረኛ")){
+                    setLocal(StudentsHomeActivity.this,"am");
+                    finish();
+                    startActivity(getIntent());
+                }else if(selectedLang.equals("عربي")){
+                    setLocal(StudentsHomeActivity.this,"ar");
+                    finish();
+                    startActivity(getIntent());
+                }else if(selectedLang.equals("Français")){
+                    setLocal(StudentsHomeActivity.this,"fr");
+                    finish();
+                    startActivity(getIntent());
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         student_law.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -192,6 +236,15 @@ public class StudentsHomeActivity extends AppCompatActivity {
 
 
 
+}
+
+public void setLocal(Activity activity, String langCode){
+    Locale locale = new Locale(langCode);
+    locale.setDefault(locale);
+    Resources resources = activity.getResources();
+    Configuration config =resources.getConfiguration();
+    config.setLocale(locale);
+    resources.updateConfiguration(config,resources.getDisplayMetrics());
 }
 
 

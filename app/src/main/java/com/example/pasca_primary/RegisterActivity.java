@@ -37,13 +37,13 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     MaterialEditText et_username, et_password, et_email;
-    Spinner reg_usertype,reg_class;
+    Spinner reg_usertype,reg_class,reg_sex;
     Dialog SuccessDialog;
     Dialog ErrorRegisterDialog;
     Button registerbtn;
     Toolbar toolbar;
 
-    String username, email, password,usertype,student_class;
+    String username, email, password,usertype,student_class,student_sex;
 
     FirebaseAuth mAuth;
 
@@ -57,7 +57,6 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
 
-String[] user_type = {"Student" , "Teacher", "HomeRoom Teacher", "Admin"};
 
         toolbar = findViewById(R.id.toolbarregis);
         setSupportActionBar(toolbar);
@@ -70,6 +69,7 @@ String[] user_type = {"Student" , "Teacher", "HomeRoom Teacher", "Admin"};
         et_password = findViewById(R.id.reg_password);
         reg_usertype = findViewById(R.id.reg_usertype);
         reg_class = findViewById(R.id.reg_class);
+        reg_sex = findViewById(R.id.reg_sex);
         registerbtn = findViewById(R.id.register_Account_btn);
 
        ArrayAdapter<CharSequence> adapter_usertype = ArrayAdapter.createFromResource(this, R.array.user_type, android.R.layout.simple_spinner_item);
@@ -79,6 +79,10 @@ String[] user_type = {"Student" , "Teacher", "HomeRoom Teacher", "Admin"};
         ArrayAdapter<CharSequence> adapter_class = ArrayAdapter.createFromResource(this, R.array.student_class, android.R.layout.simple_spinner_item);
         adapter_class.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         reg_class.setAdapter(adapter_class);
+
+        ArrayAdapter<CharSequence> adapter_sex = ArrayAdapter.createFromResource(this, R.array.student_sex, android.R.layout.simple_spinner_item);
+        adapter_sex.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        reg_sex.setAdapter(adapter_sex);
 
 
 
@@ -98,15 +102,16 @@ String[] user_type = {"Student" , "Teacher", "HomeRoom Teacher", "Admin"};
                 username = et_username.getText().toString();
                 usertype = reg_usertype.getSelectedItem().toString();
                 student_class = reg_class.getSelectedItem().toString();
+                student_sex = reg_sex.getSelectedItem().toString();
 
                 if(usertype.equals("Student")){
-                    usertype.equals(0);
+                    usertype = "0";
                 }else if(usertype.equals("Teacher")){
-                    usertype.equals(1);
+                    usertype = "1";
                 }else if(usertype.equals("HomeRoom Teacher")){
-                    usertype.equals(2);
+                    usertype = "2";
                 }else{
-                    usertype.equals(3);
+                    usertype = "3";
                 }
 
 
@@ -212,6 +217,8 @@ String[] user_type = {"Student" , "Teacher", "HomeRoom Teacher", "Admin"};
                         hashMap.put("imageURL", "default");
                         hashMap.put("status", "offline");
                         hashMap.put("usertype", usertype);
+                        hashMap.put("student_class", student_class);
+                        hashMap.put("sex", student_sex);
 
 
                         reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {

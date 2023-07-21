@@ -75,6 +75,19 @@
                 android:background="@drawable/btn_back"
                 android:textColor="@android:color/white"/>
 
+            <TextView
+                android:id="@+id/forgot_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:padding="8dp"
+                android:text="Forgot Password?"
+                android:textColor="@color/lavender"
+                android:layout_marginBottom="30dp"
+                android:textSize="16sp" />
+
+
 
 
         </LinearLayout>

@@ -103,7 +103,7 @@ public class Main_twoActivity extends AppCompatActivity {
                     viewPagerAdapter.addFragment(new ChatsFragment(), "("+unread+")Daily");
                 }
                 viewPagerAdapter.addFragment(new NewsTFragment(), "News");
-                viewPagerAdapter.addFragment(new StudentsFragment(), "STUDENT");
+                viewPagerAdapter.addFragment(new StudentsFragment(), getString(R.string.main2_studnet));
                 viewPagerAdapter.addFragment(new ProfilePasswordFragment(), "ID");
 
 

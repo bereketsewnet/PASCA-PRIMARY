@@ -1,11 +1,17 @@
 package com.example.pasca_primary.Fragments;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -36,6 +42,7 @@ public class UsersFragment extends Fragment {
     private List<Users> mUsers;
 
     EditText search_users;
+    Spinner search_byClass_filter;
 
 
 
@@ -76,6 +83,7 @@ public class UsersFragment extends Fragment {
 
         return view;
     }
+
 
     private void searchUsers(String s) {
 

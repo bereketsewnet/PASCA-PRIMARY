@@ -21,15 +21,14 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <ImageView
+        <Spinner
             android:id="@+id/lan"
-            android:layout_width="35dp"
+            android:layout_width="100dp"
             android:layout_height="35dp"
-            android:layout_margin="20dp"
+            android:layout_margin="10dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/translation"
-            android:backgroundTint="@color/white"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/white_background"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

@@ -102,12 +102,12 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if(unread == 0){
-                    viewPagerAdapter.addFragment(new ChatsFragment(), "Daily");
+                    viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.main_daily));
                 }else{
-                    viewPagerAdapter.addFragment(new ChatsFragment(), "("+unread+")Daily");
+                    viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.main_daily)+unread);
                 }
-                viewPagerAdapter.addFragment(new NewsFragment(), "News");
-                viewPagerAdapter.addFragment(new ProfilePasswordFragment(), "ID");
+                viewPagerAdapter.addFragment(new NewsFragment(), getString(R.string.main_news));
+                viewPagerAdapter.addFragment(new ProfilePasswordFragment(), getString(R.string.main_id));
 
 
                 viewPager.setAdapter(viewPagerAdapter);

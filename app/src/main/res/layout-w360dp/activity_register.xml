@@ -43,7 +43,7 @@
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
             android:hint="Name"
             android:inputType="text"
@@ -55,7 +55,7 @@
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:hint="Email"
             android:inputType="textEmailAddress"
             android:layout_marginRight="30dp"
@@ -66,7 +66,7 @@
 
         <com.rengwuxian.materialedittext.MaterialEditText
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:hint="Password"
             android:inputType="textPassword"
             android:layout_marginRight="30dp"
@@ -84,7 +84,7 @@
 
             <Spinner
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_weight="1"
                 android:hint="Grade"
                 android:layout_margin="3dp"
@@ -94,7 +94,7 @@
 
             <Spinner
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="60dp"
                 android:layout_weight="1"
                 android:layout_margin="3dp"
                 android:hint="Section"
@@ -107,15 +107,16 @@
         <Spinner
             android:id="@+id/reg_usertype"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp"
             android:layout_marginBottom="30dp"
             android:background="@drawable/lavender_border"/>
 
         <Button
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="230dp"
+            android:layout_height="60dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="30dp"

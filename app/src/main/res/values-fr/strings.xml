@@ -2,15 +2,15 @@
     <string name="app_name">PASCA</string>
 
     <string-array name="user_type">
-        <item>Student</item>
-        <item>Teacher</item>
-        <item>HomeRoom Teacher</item>
-        <item>Admin</item>
+        <item>étudiant</item>
+        <item>Professeur</item>
+        <item>Professeur titulaire</item>
+        <item>Administrateur</item>
     </string-array>
 
     <string-array name="student_sex">
-        <item>Male</item>
-        <item>Female</item>
+        <item>Homme</item>
+        <item>Femme</item>
     </string-array>
 
     <string-array name="student_class">
@@ -95,7 +95,6 @@
         <br>26.Always do you best in all things!!!\n</br></string>
 
 
-
     <string name="phone_numbers">   <br><b>  HOW DO YOU FIND US?\n</b>\n</br>
 
         <br>The Kindergarten Division:  +251965500639 \n</br>
@@ -134,23 +133,24 @@
 
     <string name="open">Open</string>
     <string name="close">Close</string>
-    <string name="studnet_welcome">Welcome Back</string>
-    <string name="student_myactivity">My Activity</string>
-    <string name="student_daily">Daily</string>
-    <string name="student_library">Library</string>
-    <string name="student_rank">Rank</string>
-    <string name="gk">Questions</string>
-    <string name="ai">AI</string>
-    <string name="student_teachers">Teachers</string>
-    <string name="student_complain">Complain</string>
-    <string name="student_calendar">Calendar</string>
-    <string name="student_fees">Fees</string>
-    <string name="student_report">Student Report</string>
-    <string name="subject">Subject</string>
-    <string name="mark">Mark</string>
-    <string name="main_daily">Daily</string>
-    <string name="main_news">News</string>
-    <string name="main_id">ID</string>
-    <string name="main2_studnet">STUDENT</string>
+    <string name="studnet_welcome">Content de te revoir</string>
+    <string name="student_myactivity">Mon activité</string>
+    <string name="student_daily">Quotidien</string>
+    <string name="student_library">Bibliothèque</string>
+    <string name="student_rank">Rang</string>
+    <string name="gk">Des questions</string>
+    <string name="ai">IA</string>
+    <string name="student_teachers">Enseignants</string>
+    <string name="student_complain">Se plaindre</string>
+    <string name="student_calendar">Calendrier</string>
+    <string name="student_fees">Frais</string>
+    <string name="student_report">Rapport étudiant</string>
+    <string name="subject">Sujet</string>
+    <string name="mark">Marquer</string>
+    <string name="main_daily">Quotidien</string>
+    <string name="main_news">Nouvelles</string>
+    <string name="main_id">IDENTIFIANT</string>
+    <string name="main2_studnet">ÉTUDIANT</string>
+
 
 </resources>

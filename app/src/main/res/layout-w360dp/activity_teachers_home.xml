@@ -20,8 +20,8 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:layout_marginLeft="10dp"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
             android:src="@drawable/pppp"
             android:id="@+id/Student_home_profile"/>
 
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:text="Welcome Back"
                 android:textColor="#ffff"
-                android:textSize="22dp"/>
+                android:textSize="23dp"/>
 
             <TextView
                 android:id="@+id/stubjectname"
@@ -44,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:text="Name"
                 android:textColor="#ffff"
-                android:textSize="20dp"/>
+                android:textSize="22dp"/>
 
         </LinearLayout>
 
@@ -67,8 +67,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/teachers_daily"
-                android:layout_width="115dp"
-                android:layout_height="115dp"
+                android:layout_width="135dp"
+                android:layout_height="135dp"
                 app:cardCornerRadius="15dp"
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="#51a6ff">
@@ -81,15 +81,15 @@
 
                     <ImageView
                         android:layout_gravity="center"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
                         android:background="@drawable/dailystud"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Daily"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:gravity="center"
                         android:layout_gravity="center_horizontal"
                         android:textColor="@color/white"/>
@@ -101,8 +101,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/teachers_notepad"
-                android:layout_width="115dp"
-                android:layout_height="115dp"
+                android:layout_width="135dp"
+                android:layout_height="135dp"
                 app:cardCornerRadius="15dp"
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="#ff5b69">
@@ -115,15 +115,15 @@
 
                     <ImageView
                         android:layout_gravity="center"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
                         android:background="@drawable/notepadtech"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="NotePad"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:gravity="center"
                         android:layout_gravity="center_horizontal"
                         android:textColor="@color/white"/>
@@ -144,8 +144,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/teachers_gk"
-                android:layout_width="115dp"
-                android:layout_height="115dp"
+                android:layout_width="135dp"
+                android:layout_height="135dp"
                 app:cardCornerRadius="15dp"
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="#feb05b">
@@ -158,15 +158,15 @@
 
                     <ImageView
                         android:layout_gravity="center"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
                         android:background="@drawable/gkstud"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="General Knowledge"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:gravity="center"
                         android:layout_gravity="center_horizontal"
                         android:textColor="@color/white"/>
@@ -178,8 +178,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/teachers_s_profile"
-                android:layout_width="115dp"
-                android:layout_height="115dp"
+                android:layout_width="135dp"
+                android:layout_height="135dp"
                 app:cardCornerRadius="15dp"
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="#b490fe">
@@ -192,15 +192,15 @@
 
                     <ImageView
                         android:layout_gravity="center"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
                         android:background="@drawable/idcardstud"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Students"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:gravity="center"
                         android:layout_gravity="center_horizontal"
                         android:textColor="@color/white"/>
@@ -221,8 +221,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/teachers_rank"
-                android:layout_width="115dp"
-                android:layout_height="115dp"
+                android:layout_width="135dp"
+                android:layout_height="135dp"
                 app:cardCornerRadius="15dp"
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="#ff69b0">
@@ -235,15 +235,15 @@
 
                     <ImageView
                         android:layout_gravity="center"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
                         android:background="@drawable/progressstud"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Progress"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:gravity="center"
                         android:layout_gravity="center_horizontal"
                         android:textColor="@color/white"/>
@@ -255,8 +255,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/teachers_books"
-                android:layout_width="115dp"
-                android:layout_height="115dp"
+                android:layout_width="135dp"
+                android:layout_height="135dp"
                 app:cardCornerRadius="15dp"
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="#3bbdcd">
@@ -269,15 +269,15 @@
 
                     <ImageView
                         android:layout_gravity="center"
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
                         android:background="@drawable/librarystud"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Library"
-                        android:textSize="14sp"
+                        android:textSize="16sp"
                         android:gravity="center"
                         android:layout_gravity="center_horizontal"
                         android:textColor="@color/white"/>

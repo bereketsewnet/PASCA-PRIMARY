@@ -6,15 +6,16 @@ public class Users {
 
     }
 
-    public Users(String username, String imageURL, String id, String status, int usertype) {
+    public Users(String username, String imageURL, String id, String status, int usertype , String student_class) {
         this.username = username;
+        this.student_class = student_class;
         this.imageURL = imageURL;
         this.id = id;
         this.status = status;
         this.usertype = usertype;
     }
 
-    private String username,imageURL,id,status;
+    private String username,imageURL,id,status,student_class;
     private int usertype;
 
     public String getUsername() {
@@ -24,6 +25,9 @@ public class Users {
     public void setUsername(String username) {
         this.username = username;
     }
+
+    public String getStudent_class(){return student_class;}
+    public void setStudent_class(String student_class){this.student_class = student_class;}
 
     public String getImageURL() {
         return imageURL;

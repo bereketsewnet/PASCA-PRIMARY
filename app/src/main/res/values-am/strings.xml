@@ -1,0 +1,157 @@
+<resources>
+    <string name="app_name">PASCA</string>
+
+    <string-array name="user_type">
+        <item>ተማሪ</item>
+        <item>አስተማሪ </item>
+        <item>ስም ተሪ አስተማሪ </item>
+        <item>አስተዳደር</item>
+    </string-array>
+
+    <string-array name="student_sex">
+        <item>ወንድ</item>
+        <item>ሴት</item>
+    </string-array>
+
+    <string-array name="student_class">
+        <item>nursery</item>
+        <item>kg-1</item>
+        <item>kg-2</item>
+        <item>kg-3</item>
+        <item>1a</item>
+        <item>1b</item>
+        <item>2a</item>
+        <item>2b</item>
+        <item>3A</item>
+        <item>3B</item>
+        <item>4A</item>
+        <item>4B</item>
+        <item>5A</item>
+        <item>5B</item>
+        <item>6A</item>
+        <item>6B</item>
+        <item>7A</item>
+        <item>7B</item>
+        <item>8A</item>
+        <item>8B</item>
+    </string-array>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="school_law">   <br><b>  የተማሪዎች ህጎችና ደንቦች \n</b>\n</br>
+
+        <br>1.እንደ አሻንጉሊት ፣ ቢላዎች ፣ እንዲሁም አደገኛ መሳሪያዎች ይዞ ወደ ት / ቤት መምጣት የተከለከለ ነው።\n</br>
+
+        <br>2.በፍፁም ሌላ ተማሪ መምታትም ሆነ አካላዊ ደብድብ ማደረግ አይቻልም::\n</br>
+
+        <br>3.በፍፁም ምንም አይነት ቃላዊም ሆነ አካላዊ የንቀት ምልክት ለአስተማሪዎችም ሆነ ሌሎች የግቢው ማኅበረብ ማሳየት አይቻልም:: \n</br>
+
+        <br>4.መጥፎ ቃላትን በፍፁም መጠቀም የለብንም።  \n</br>
+
+        <br>5.ከቢሮ የመውጫ ወረቀት ሳይሆጥ ግቢን ትቶ መውጣት በፍፁም የተከለከለ ነው ።\n</br>
+
+        <br>6.ሽንት ቤትና ውሃ ስፈራዎች መጫወት ፍፁም የተከለከለ ነው።\n</br>
+
+        <br>7.ከምሳና ከቍርስ ሠዓት ውጪ ያለ አስተማሪ ፍቃድ ከማማሪያ ክፍል መውጣት አይቻም::\n</br>
+
+        <br>8.ስልክ እና  ኤሌክትሮኒክስ  መሳሪያዎችን ይዞ መገኘት በጥብቅ የተከለከለ ነው ፡ ፡ \n</br>
+
+        <br>9.አትዋሹ ሁሌም ታማኝ ሁኑ::  \n</br>
+
+        <br>10.የሌሎችን እቃ መንካት እና ማበላሽት አይቻልም::  \n</br>
+
+        <br>11.ክፋል ዉስጥ ሹል ነገሮች እና ሌሎች አይነት ቍሳቁስ መወርወር አይቻልም::\n</br>
+
+        <br>12.የሌሎችን ሀይማኖት ፣ ቋንቋ፣ ባህል መንቀፍ አይቻልም:: \n</br>
+
+        <br>13.በት/ቤቱ ጠረቤዛዎች እና ሌሎች ነገሮች ላይ መሞነጫጨርና  መፃፍ አይቻልም።\n</br>
+
+        <br>14.እንደ ማስቲካ እና ከረሜላ ይዞ ማምጣትም ሆነ መጠቀም አይቻልም::  \n</br>
+
+        <br>15.ያለ በቂ መረጃ ከት/ቤት መቅረት አይቻልም:: በህመም ጊዜ ህክምና ማስረጃ ወረቀት ማምጣት ይጠበቅባቸዋል::  \n</br>
+
+        <br>16.ማርፈድ አይቻልም::\n</br>
+
+        <br>17.ሁሌም ተማሪዎች ፀጉርና የውነት በጥሩ ሁኔታ መያዣ አለበት።  \n</br>
+
+        <br>18.ምንም ነገር ከመፃፍችሁ በፊት ቀን ፃፍ። \n</br>
+
+        <br>19.ሁሉም የክፍል ስራና የቤት ስራችሁን በሰዓቱ መጨረስ አለባችሁ::  \n</br>
+
+        <br>20.ሁሌም  ቆሻሻን  በቆሻሻ መጠራቀሚያ ውስጥ ጣሉ::  \n</br>
+
+        <br>21.ሁሌም ሞትችሉትን ሁሉ አደርጉ ::\n</br>
+
+        <br>22.Always raise your hand to speak in class.\n</br>
+
+        <br>23.Always write date and instructions before write anything else.\n</br>
+
+        <br>24.Always complete your class work and home word on time.\n</br>
+
+        <br>25.Always put your trash in the waste basket.\n</br>
+
+        <br>26.Always do you best in all things!!!\n</br></string>
+
+
+
+    <string name="phone_numbers">   <br><b>  HOW DO YOU FIND US?\n</b>\n</br>
+
+        <br>The Kindergarten Division:  +251965500639 \n</br>
+        <br>The Kindergarten Division:   0113694475 \n</br>
+        <br><b> \n</b>\n</br>
+        <br><b>  PRIMARY (1-4) COMP\n</b>\n</br>
+        <br>The Primary School Division:+251965500639 \n</br>
+        <br>The Primary School Division:0113694475 \n</br>
+        <br><b> \n</b>\n</br>
+        <br><b>  PRIMARY (5-8) COMP\n</b>\n</br>
+        <br>The Primary School Division:  +251965500639 \n</br>
+        <br>The Primary School Division:   0113694475 \n</br>
+        <br><b> \n</b>\n</br>
+        <br><b>  PRIMARY (9-12) COMP\n</b>\n</br>
+        <br>The Primary School Division:  +251965500639 \n</br>
+        <br>The Primary School Division:   0113694475 \n</br>
+        <br><b> \n</b>\n</br>
+        <br><b>  IN SOCIALS FOLLOW US\n</b>\n</br>
+        <br>Website:https://WWW.MountOliveInterNationSchool.com \n</br>
+        <br>Instagram: @mountschool \n</br>
+        <br>Telegram: @mountschool \n</br>
+        <br>FaceBook: @mountschool \n</br>
+        <br>Gmail: MountOliveInternationSchool@gmail.com \n</br>
+
+
+
+       </string>
+
+
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="nav_header_title">Hellow Welcome To</string>
+    <string name="nav_header_subtitle">Pasca International School</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="studnet_welcome">እንኳን ደህና መጣህ</string>
+    <string name="student_myactivity">ተግባራት</string>
+    <string name="student_daily">በየቀኑ</string>
+    <string name="student_library">ቤተ መጻሕፍት</string>
+    <string name="student_rank">ደረጃ</string>
+    <string name="gk">ጥያቄዎች</string>
+    <string name="ai">መሳሪያዎች</string>
+    <string name="student_teachers">አስተማሪዎች</string>
+    <string name="student_complain">ቅሬታ</string>
+    <string name="student_calendar">ካላንደር</string>
+    <string name="student_fees">ክፍያዎች</string>
+    <string name="student_report">የትምህርት መረጃ</string>
+    <string name="subject">የት/አይነት</string>
+    <string name="mark">ውጤት</string>
+    <string name="main_daily">በየቀኑ</string>
+    <string name="main_news">ማሳወቂያ</string>
+    <string name="main_id">መታወቂያ</string>
+    <string name="main2_studnet">ተማሪዎች</string>
+
+
+
+</resources>
