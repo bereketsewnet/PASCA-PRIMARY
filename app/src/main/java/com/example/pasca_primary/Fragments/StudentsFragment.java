@@ -12,7 +12,10 @@ import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.pasca_primary.Adapters.UserAdapter;
 import com.example.pasca_primary.Model.Users;
@@ -48,7 +51,6 @@ public class StudentsFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerview_users);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
         mUsers = new ArrayList<>();
 
         readUsers();

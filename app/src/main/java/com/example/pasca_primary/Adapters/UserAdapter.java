@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.pasca_primary.MessageActivity;
+import com.example.pasca_primary.MessageActivityT;
 import com.example.pasca_primary.Model.Chats;
 import com.example.pasca_primary.Model.Users;
 import com.example.pasca_primary.R;
@@ -35,6 +36,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyHolder> {
     boolean isChat;
 
     String friendid;
+    int userTypeR;
     String thelastmessage;
     FirebaseUser firebaseUser;
 
@@ -58,6 +60,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyHolder> {
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
 
         Users user = userlist.get(position);
+        userTypeR = user.getUsertype();
 
         friendid = user.getId();
 
@@ -145,9 +148,21 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyHolder> {
 
             friendid = users.getId();
 
-            Intent intent = new Intent(context, MessageActivity.class);
-            intent.putExtra("friendid", friendid);
-            context.startActivity(intent);
+            if(userTypeR == 0){
+                Intent intent = new Intent(context, MessageActivity.class);
+                intent.putExtra("friendid", friendid);
+                context.startActivity(intent);
+            }else if(userTypeR == 1 || userTypeR == 2){
+                Intent intent = new Intent(context, MessageActivityT.class);
+                intent.putExtra("friendid", friendid);
+                context.startActivity(intent);
+            }else{
+                Intent intent = new Intent(context, MessageActivityT.class);
+                intent.putExtra("friendid", friendid);
+                context.startActivity(intent);
+            }
+
+
 
 
 

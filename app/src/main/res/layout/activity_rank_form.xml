@@ -12,7 +12,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Set Student mark here"
+        android:text="@string/set_student_mark_here"
         android:textSize="20dp"
         android:textStyle="bold"
         android:gravity="center"
@@ -39,7 +39,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="1"
-                    android:hint="cont1"
+                    android:hint="Subject 1"
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:layout_marginEnd="5dp"
@@ -53,7 +53,7 @@
                     android:padding="5dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
-                    android:hint="value1"
+                    android:hint="Mark 1"
                     android:textSize="20dp"
                     android:background="@drawable/rank_form_bkg"/>
 
@@ -72,7 +72,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="1"
-                    android:hint="cont2"
+                    android:hint="Subject 2"
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:layout_marginEnd="5dp"
@@ -86,7 +86,7 @@
                     android:padding="5dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
-                    android:hint="value2"
+                    android:hint="Mark 2"
                     android:textSize="20dp"
                     android:background="@drawable/rank_form_bkg"/>
 
@@ -105,7 +105,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="1"
-                    android:hint="cont3"
+                    android:hint="Subject 3"
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:layout_marginEnd="5dp"
@@ -119,7 +119,7 @@
                     android:padding="5dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
-                    android:hint="value3"
+                    android:hint="Mark 3"
                     android:textSize="20dp"
                     android:background="@drawable/rank_form_bkg"/>
 
@@ -138,7 +138,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="1"
-                    android:hint="cont4"
+                    android:hint="Subject 4"
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:layout_marginEnd="5dp"
@@ -152,7 +152,7 @@
                     android:padding="5dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
-                    android:hint="value4"
+                    android:hint="Mark 4"
                     android:textSize="20dp"
                     android:background="@drawable/rank_form_bkg"/>
 
@@ -171,7 +171,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="1"
-                    android:hint="cont5"
+                    android:hint="Subject 5"
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:layout_marginEnd="5dp"
@@ -185,7 +185,7 @@
                     android:padding="5dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
-                    android:hint="value5"
+                    android:hint="Mark 5"
                     android:textSize="20dp"
                     android:background="@drawable/rank_form_bkg"/>
 
@@ -204,7 +204,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="1"
-                    android:hint="cont6"
+                    android:hint="Subject 6"
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:layout_marginEnd="5dp"
@@ -218,7 +218,7 @@
                     android:padding="5dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
-                    android:hint="value6"
+                    android:hint="Mark 6"
                     android:textSize="20dp"
                     android:background="@drawable/rank_form_bkg"/>
 
@@ -237,7 +237,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="1"
-                    android:hint="cont7"
+                    android:hint="Subject 7"
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:layout_marginEnd="5dp"
@@ -251,7 +251,7 @@
                     android:padding="5dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
-                    android:hint="value7"
+                    android:hint="Mark 7"
                     android:textSize="20dp"
                     android:background="@drawable/rank_form_bkg"/>
 
@@ -270,7 +270,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="1"
-                    android:hint="cont8"
+                    android:hint="Subject 8"
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:layout_marginEnd="5dp"
@@ -284,7 +284,7 @@
                     android:padding="5dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
-                    android:hint="value8"
+                    android:hint="Mark 8"
                     android:textSize="20dp"
                     android:background="@drawable/rank_form_bkg"/>
 
@@ -303,7 +303,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="1"
-                    android:hint="cont9"
+                    android:hint="Subject 9"
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:layout_marginEnd="5dp"
@@ -317,7 +317,7 @@
                     android:padding="5dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
-                    android:hint="value9"
+                    android:hint="Mark 9"
                     android:textSize="20dp"
                     android:background="@drawable/rank_form_bkg"/>
 
@@ -336,7 +336,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="1"
-                    android:hint="cont10"
+                    android:hint="Subject 10"
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:layout_marginEnd="5dp"
@@ -350,7 +350,7 @@
                     android:padding="5dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
-                    android:hint="value10"
+                    android:hint="Mark 10"
                     android:textSize="20dp"
                     android:background="@drawable/rank_form_bkg"/>
 
@@ -369,7 +369,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="1"
-                    android:hint="cont11"
+                    android:hint="Subject 11"
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:layout_marginEnd="5dp"
@@ -383,7 +383,7 @@
                     android:padding="5dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
-                    android:hint="value11"
+                    android:hint="Mark 11"
                     android:textSize="20dp"
                     android:background="@drawable/rank_form_bkg"/>
 
@@ -402,7 +402,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_weight="1"
-                    android:hint="cont12"
+                    android:hint="Subject 12"
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:layout_marginEnd="5dp"
@@ -416,7 +416,7 @@
                     android:padding="5dp"
                     android:layout_marginStart="5dp"
                     android:layout_marginTop="10dp"
-                    android:hint="value12"
+                    android:hint="Mark 12"
                     android:textSize="20dp"
                     android:background="@drawable/rank_form_bkg"/>
 
@@ -426,7 +426,7 @@
                 android:id="@+id/rank_send_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Send"
+                android:text="@string/send"
                 android:layout_margin="10dp"
                 android:background="@drawable/rank_form_bkg"
                 android:textColor="@color/lavender"

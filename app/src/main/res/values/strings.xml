@@ -13,6 +13,11 @@
         <item>Female</item>
     </string-array>
 
+    <string-array name="search">
+        <item>By Class</item>
+        <item>By Name</item>
+    </string-array>
+
     <string-array name="student_class">
         <item>nursery</item>
         <item>kg-1</item>
@@ -152,5 +157,22 @@
     <string name="main_news">News</string>
     <string name="main_id">ID</string>
     <string name="main2_studnet">STUDENT</string>
+    <string name="TeacherNotepad">NotePad</string>
+    <string name="TeacherStudnets">Students</string>
+    <string name="TeachersProgress">Progress</string>
+    <string name="make_your_note_here">Make Your Note Here</string>
+    <string name="copy">Copy</string>
+    <string name="set_student_mark_here">Set Student mark here</string>
+    <string name="send">Send</string>
+    <string name="register_users">Register Users</string>
+    <string name="post_news">Post News</string>
+    <string name="post_grade">Post Grade</string>
+    <string name="post_question">Post Question</string>
+    <string name="post_books">Post Books</string>
+    <string name="post_students_profile">Post Students Profile</string>
+    <string name="post_teachers_profile">Post Teachers Profile</string>
+    <string name="post_calendar">Post Calendar</string>
+    <string name="post_fees_information">Post Fees Information</string>
+    <string name="logout">Logout</string>
 
 </resources>

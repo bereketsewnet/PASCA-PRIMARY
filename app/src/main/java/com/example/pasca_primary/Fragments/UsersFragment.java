@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -42,7 +43,6 @@ public class UsersFragment extends Fragment {
     private List<Users> mUsers;
 
     EditText search_users;
-    Spinner search_byClass_filter;
 
 
 
@@ -56,6 +56,7 @@ public class UsersFragment extends Fragment {
         recyclerView = view.findViewById(R.id.recyclerview_users);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
 
         mUsers = new ArrayList<>();
 

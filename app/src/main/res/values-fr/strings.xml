@@ -13,6 +13,11 @@
         <item>Femme</item>
     </string-array>
 
+    <string-array name="search">
+        <item>By Class</item>
+        <item>By Name</item>
+    </string-array>
+
     <string-array name="student_class">
         <item>nursery</item>
         <item>kg-1</item>
@@ -151,6 +156,24 @@
     <string name="main_news">Nouvelles</string>
     <string name="main_id">IDENTIFIANT</string>
     <string name="main2_studnet">ÉTUDIANT</string>
+    <string name="TeacherNotepad">Carnet de notes</string>
+    <string name="TeacherStudnets">Étudiants</string>
+    <string name="TeachersProgress">Niveau</string>
+    <string name="make_your_note_here">Faites votre note ici</string>
+    <string name="copy">copie</string>
+    <string name="set_student_mark_here">Définir la note de l\'élève ici</string>
+    <string name="send">Envoyer</string>
+    <string name="register_users">Enregistrer les utilisateurs</string>
+    <string name="post_news">Publier une notification</string>
+    <string name="post_grade">Publier une note</string>
+    <string name="post_question">Poser une question</string>
+    <string name="post_books">Publier des livres</string>
+    <string name="post_students_profile">Publier les profils des étudiants</string>
+    <string name="post_teachers_profile">Publier le profil de l\'enseignant</string>
+    <string name="post_calendar">Publier un calendrier</string>
+    <string name="post_fees_information">Informations après paiement</string>
+    <string name="logout">sortir</string>
+
 
 
 </resources>

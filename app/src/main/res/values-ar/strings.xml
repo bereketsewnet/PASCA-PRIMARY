@@ -13,6 +13,11 @@
         <item>أنثى</item>
     </string-array>
 
+    <string-array name="search">
+        <item>By Class</item>
+        <item>By Name</item>
+    </string-array>
+
     <string-array name="student_class">
         <item>nursery</item>
         <item>kg-1</item>
@@ -151,5 +156,23 @@
     <string name="main_news">أخبار</string>
     <string name="main_id">بطاقة تعريف</string>
     <string name="main2_studnet">طالب</string>
+    <string name="TeacherNotepad">دفتر</string>
+    <string name="TeacherStudnets">طلاب</string>
+    <string name="TeachersProgress">مستوى</string>
+    <string name="make_your_note_here">اكتب ملاحظتك هنا</string>
+    <string name="copy">ينسخ</string>
+    <string name="set_student_mark_here">ضع علامة الطالب هنا</string>
+    <string name="send">يرسل</string>
+    <string name="register_users">تسجيل المستخدمين</string>
+    <string name="post_news">انشر إشعارًا</string>
+    <string name="post_grade">أضف تقييمًا</string>
+    <string name="post_question">انشر سؤالاً</string>
+    <string name="post_books">كتب بوست</string>
+    <string name="post_students_profile">انشر ملفات تعريف الطلاب</string>
+    <string name="post_teachers_profile">نشر الملف الشخصي للمدرس</string>
+    <string name="post_calendar">انشر تقويمًا</string>
+    <string name="post_fees_information">معلومات الدفع اللاحقة</string>
+    <string name="logout">يخرج</string>
+
 
 </resources>

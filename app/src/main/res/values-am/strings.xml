@@ -13,6 +13,11 @@
         <item>ሴት</item>
     </string-array>
 
+    <string-array name="search">
+    <item>By Class</item>
+    <item>By Name</item>
+    </string-array>
+
     <string-array name="student_class">
         <item>nursery</item>
         <item>kg-1</item>
@@ -151,6 +156,24 @@
     <string name="main_news">ማሳወቂያ</string>
     <string name="main_id">መታወቂያ</string>
     <string name="main2_studnet">ተማሪዎች</string>
+    <string name="TeacherNotepad">ማስታወሻ ደብተር</string>
+    <string name="TeacherStudnets">ተማሪዎች</string>
+    <string name="TeachersProgress">ደረጃ</string>
+    <string name="make_your_note_here">ማስታወሻህን እዚህ አድርግ</string>
+    <string name="copy">ቅዳ</string>
+    <string name="set_student_mark_here">የተማሪ ውጤት እዚህ ያዘጋጁ</string>
+    <string name="send">ላክ</string>
+    <string name="register_users">ተጠቃሚዎችን ይመዝገቡ</string>
+    <string name="post_news">ማሳወቂያ ይለጥፉ</string>
+    <string name="post_grade">ደረጃ ይለጥፉ</string>
+    <string name="post_question">ጥያቄ ይለጥፉ</string>
+    <string name="post_books">መፃሕፍትን ይለጥፉ</string>
+    <string name="post_students_profile">የተማሪዎችን መገለጫ ይለጥፉ</string>
+    <string name="post_teachers_profile">የመምህራን መገለጫ ይለጥፉ</string>
+    <string name="post_calendar">የቀን መቁጠሪያ ይለጥፉ</string>
+    <string name="post_fees_information">ክፍያዎች መረጃ ይለጥፉ</string>
+    <string name="logout">ውጣ</string>
+
 
 
 

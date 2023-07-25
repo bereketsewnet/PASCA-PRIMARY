@@ -201,12 +201,20 @@
             android:name=".MessageActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".MessageActivityT"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"
+            android:parentActivityName=".Main_twoActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="false"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"/>
+            tools:ignore="LockedOrientationActivity"
+            android:parentActivityName=".StudentsHomeActivity"/>
         <activity
             android:name=".SplashScreenActivity"
             android:exported="true"

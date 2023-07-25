@@ -8,15 +8,23 @@ import androidx.cardview.widget.CardView;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.Locale;
 
 public class AdminHomeActivity extends AppCompatActivity {
 
@@ -24,6 +32,8 @@ public class AdminHomeActivity extends AppCompatActivity {
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
     FirebaseAuth mAuth;
+    Spinner spinnerA;
+    public static final String[] languageA = {"Language", "English", "አማረኛ", "عربي", "Français"};
     CardView admin_show_gk,admin_show_books,admin_show_student_profile,admin_show_teacher_profile,admin_show_calendar,admin_show_fees;
 
     @Override
@@ -62,6 +72,41 @@ public class AdminHomeActivity extends AppCompatActivity {
         admin_show_teacher_profile = findViewById(R.id.admin_show_teachers_profile);
         admin_show_calendar = findViewById(R.id.admin_show_calendar);
         admin_show_fees = findViewById(R.id.admin_show_fees);
+
+        spinnerA = findViewById(R.id.lanA);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,languageA);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerA.setAdapter(adapter);
+        spinnerA.setSelection(0);
+        spinnerA.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedLang = parent.getItemAtPosition(position).toString();
+                if(selectedLang.equals("English")){
+                    setLocal(AdminHomeActivity.this,"en");
+                    finish();
+                    startActivity(getIntent());
+                }else if(selectedLang.equals("አማረኛ")){
+                    setLocal(AdminHomeActivity.this,"am");
+                    finish();
+                    startActivity(getIntent());
+                }else if(selectedLang.equals("عربي")){
+                    setLocal(AdminHomeActivity.this,"ar");
+                    finish();
+                    startActivity(getIntent());
+                }else if(selectedLang.equals("Français")){
+                    setLocal(AdminHomeActivity.this,"fr");
+                    finish();
+                    startActivity(getIntent());
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         admin_show_gk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -195,6 +240,15 @@ public class AdminHomeActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void setLocal(Activity activity, String langCode){
+        Locale locale = new Locale(langCode);
+        locale.setDefault(locale);
+        Resources resources = activity.getResources();
+        Configuration config =resources.getConfiguration();
+        config.setLocale(locale);
+        resources.updateConfiguration(config,resources.getDisplayMetrics());
     }
 
 }

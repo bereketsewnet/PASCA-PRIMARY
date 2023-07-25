@@ -98,13 +98,13 @@ public class Main_twoActivity extends AppCompatActivity {
                 }
 
                 if(unread == 0){
-                    viewPagerAdapter.addFragment(new ChatsFragment(), "Daily");
+                    viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.main_daily));
                 }else{
-                    viewPagerAdapter.addFragment(new ChatsFragment(), "("+unread+")Daily");
+                    viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.main_daily)+"("+unread+")");
                 }
-                viewPagerAdapter.addFragment(new NewsTFragment(), "News");
+                viewPagerAdapter.addFragment(new NewsTFragment(), getString(R.string.main_news));
                 viewPagerAdapter.addFragment(new StudentsFragment(), getString(R.string.main2_studnet));
-                viewPagerAdapter.addFragment(new ProfilePasswordFragment(), "ID");
+                viewPagerAdapter.addFragment(new ProfilePasswordFragment(), getString(R.string.main_id));
 
 
                 viewPager.setAdapter(viewPagerAdapter);

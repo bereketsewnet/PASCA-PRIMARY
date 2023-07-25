@@ -1,11 +1,5 @@
 package com.example.pasca_primary;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -16,11 +10,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-
 import com.example.pasca_primary.Adapters.MessageAdapter;
 import com.example.pasca_primary.Model.Chats;
 import com.example.pasca_primary.Model.Users;
@@ -32,14 +29,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class MessageActivity extends AppCompatActivity {
+public class MessageActivityT extends AppCompatActivity {
 
 
     String friendid, message, myid;
@@ -63,12 +59,13 @@ public class MessageActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_message);
+        setContentView(R.layout.activity_messaget);
 
         toolbar = findViewById(R.id.toolbar_message);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         imageViewOnToolbar = findViewById(R.id.profile_image_toolbar_message);
         usernameonToolbar = findViewById(R.id.username_ontoolbar_message);
@@ -184,7 +181,7 @@ public class MessageActivity extends AppCompatActivity {
 
 
 
-                android.content.ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
                 ClipData clipData = clipboardManager.getPrimaryClip();
                 ClipData.Item item = clipData.getItemAt(0);
                 String text1 = item.getText().toString();
@@ -263,7 +260,7 @@ public class MessageActivity extends AppCompatActivity {
                         chatsList.add(chats);
                     }
 
-                    messageAdapter = new MessageAdapter(MessageActivity.this, chatsList, imageURL);
+                    messageAdapter = new MessageAdapter(MessageActivityT.this, chatsList, imageURL);
                     recyclerView.setAdapter(messageAdapter);
 
                 }
@@ -347,6 +344,8 @@ public class MessageActivity extends AppCompatActivity {
         Status("offline");
         reference.removeEventListener(seenlistener);
     }
+
+
 
 
 }
