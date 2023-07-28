@@ -29,7 +29,6 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginTop="10dp"
         android:layout_below="@+id/card"
-        android:layout_above="@+id/bottomNavigation"
         android:id="@+id/recyclerView_fee"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
