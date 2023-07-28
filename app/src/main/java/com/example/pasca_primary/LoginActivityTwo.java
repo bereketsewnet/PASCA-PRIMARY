@@ -123,7 +123,7 @@ public class LoginActivityTwo extends AppCompatActivity {
 
 
                             if(usertype==2){
-                                Intent intent = new Intent(LoginActivityTwo.this,StartChatActivity.class);
+                                Intent intent = new Intent(LoginActivityTwo.this,StartChatPasswordSActivity.class);
                                 startActivity(intent);
                                 Toast.makeText(LoginActivityTwo.this, "Welcome Admin", Toast.LENGTH_SHORT).show();
                                 finish();

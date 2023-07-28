@@ -72,84 +72,83 @@ public class Main_twoActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-     final   TabLayout tabLayout = findViewById(R.id.tablayout);
-     final   ViewPager viewPager = findViewById(R.id.viewPager);
+        final   TabLayout tabLayout = findViewById(R.id.tablayout);
+        final   ViewPager viewPager = findViewById(R.id.viewPager);
 
-     if(uid == null){
-         Intent intent = new Intent(Main_twoActivity.this,TeachersHomeActivity.class);
-         startActivity(intent);
-         Toast.makeText(this, "Please Back To Connection a Moment", Toast.LENGTH_SHORT).show();
-     }else{
+        if(uid == null){
+            Intent intent = new Intent(Main_twoActivity.this,TeachersHomeActivity.class);
+            startActivity(intent);
+            Toast.makeText(this, "Please Back To Connection a Moment", Toast.LENGTH_SHORT).show();
+        }else{
 
 
 
-        reference =FirebaseDatabase.getInstance().getReference("Chats");
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            reference =FirebaseDatabase.getInstance().getReference("Chats");
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                MainActivity.ViewPagerAdapter viewPagerAdapter = new MainActivity.ViewPagerAdapter(getSupportFragmentManager());
-                int unread = 0;
-                for(DataSnapshot snapshot1 : snapshot.getChildren()){
-                    Chats chats = snapshot1.getValue(Chats.class);
-                    if(chats.getReciever().equals(uid) && !chats.isIsseen()){
-                        unread ++;
+                    MainActivity.ViewPagerAdapter viewPagerAdapter = new MainActivity.ViewPagerAdapter(getSupportFragmentManager());
+                    int unread = 0;
+                    for(DataSnapshot snapshot1 : snapshot.getChildren()){
+                        Chats chats = snapshot1.getValue(Chats.class);
+                        if(chats.getReciever().equals(uid) && !chats.isIsseen()){
+                            unread ++;
+                        }
                     }
+
+                    if(unread == 0){
+                        viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.main_daily));
+                    }else{
+                        viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.main_daily)+"("+unread+")");
+                    }
+                    viewPagerAdapter.addFragment(new NewsTFragment(), getString(R.string.main_news));
+                    viewPagerAdapter.addFragment(new ProfilePasswordFragment(), getString(R.string.main_id));
+
+
+                    viewPager.setAdapter(viewPagerAdapter);
+                    tabLayout.setupWithViewPager(viewPager);
                 }
 
-                if(unread == 0){
-                    viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.main_daily));
-                }else{
-                    viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.main_daily)+"("+unread+")");
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
                 }
-                viewPagerAdapter.addFragment(new NewsTFragment(), getString(R.string.main_news));
-                viewPagerAdapter.addFragment(new StudentsFragment(), getString(R.string.main2_studnet));
-                viewPagerAdapter.addFragment(new ProfilePasswordFragment(), getString(R.string.main_id));
-
-
-                viewPager.setAdapter(viewPagerAdapter);
-                tabLayout.setupWithViewPager(viewPager);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+            });
 
 
 
-        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+            firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
 
-        reference = FirebaseDatabase.getInstance().getReference("Users").child(uid);
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            reference = FirebaseDatabase.getInstance().getReference("Users").child(uid);
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
 
 
-                Users users = snapshot.getValue(Users.class);
+                    Users users = snapshot.getValue(Users.class);
 
-                username.setText(users.getUsername()); // set the text of the user on textivew in toolbar
+                    username.setText(users.getUsername()); // set the text of the user on textivew in toolbar
 
-                if (users.getImageURL().equals("default")) {
+                    if (users.getImageURL().equals("default")) {
 
-                    imageView.setImageResource(R.drawable.user);
-                } else {
+                        imageView.setImageResource(R.drawable.user);
+                    } else {
 
-                    Glide.with(getApplicationContext()).load(users.getImageURL()).into(imageView);
+                        Glide.with(getApplicationContext()).load(users.getImageURL()).into(imageView);
+                    }
+
                 }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+                }
+            });
 
 
-     }
+        }
 
 
     }
@@ -228,6 +227,27 @@ public class Main_twoActivity extends AppCompatActivity {
 
 
         }
+
+
+        if(item.getItemId() == R.id.switch_user){
+            Intent intent = new Intent(Main_twoActivity.this,SwitchUserActivity.class);
+            intent.putExtra("uid", uid);
+            startActivity(intent);
+            return  true;
+
+        }
+
+
+        if(item.getItemId() == R.id.add_user){
+            Intent intent = new Intent(Main_twoActivity.this,AddUserActivity.class);
+            startActivity(intent);
+            return  true;
+
+        }
+
+
+
+
 
         return super.onOptionsItemSelected(item);
     }

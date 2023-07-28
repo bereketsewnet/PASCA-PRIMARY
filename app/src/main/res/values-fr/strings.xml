@@ -2,20 +2,20 @@
     <string name="app_name">PASCA</string>
 
     <string-array name="user_type">
-        <item>étudiant</item>
-        <item>Professeur</item>
-        <item>Professeur titulaire</item>
-        <item>Administrateur</item>
+        <item>Student</item>
+        <item>Teacher </item>
+        <item>Home Room Teacher</item>
+        <item>Admin</item>
     </string-array>
 
     <string-array name="student_sex">
-        <item>Homme</item>
-        <item>Femme</item>
+        <item>Male</item>
+        <item>Women</item>
     </string-array>
 
     <string-array name="search">
-        <item>By Class</item>
-        <item>By Name</item>
+        <item>Class</item>
+        <item>Name</item>
     </string-array>
 
     <string-array name="student_class">
@@ -173,6 +173,33 @@
     <string name="post_calendar">Publier un calendrier</string>
     <string name="post_fees_information">Informations après paiement</string>
     <string name="logout">sortir</string>
+    <string name="startchat_pass_t">StartChat Pass T</string>
+    <string name="startchat_pass_s">StartChat Pass S</string>
+    <string name="changeprofile_pass">ChangeProfile Pass</string>
+    <string name="change_password">Change Password</string>
+    <string name="password">Password</string>
+    <string name="conform_password">Conform Password</string>
+    <string name="change">Change</string>
+    <string name="complain_box">Complain Box</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="message">Message</string>
+    <string name="complain">Complain</string>
+    <string name="log_in">Log In</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="create_an_account">Create An Account</string>
+    <string name="register">Register</string>
+    <string name="go">Go</string>
+    <string name="start_chat_password">Start chat password</string>
+    <string name="enter_your_email_address">Enter your email address:</string>
+    <string name="cancel">Cancel</string>
+    <string name="reset">Reset</string>
+    <string name="profile_password">Profile Password</string>
+    <string name="enter">Enter</string>
+    <string name="switch_user">Switch User</string>
+    <string name="add_user">Add User</string>
+    <string name="show_my_id">Show My Id</string>
 
 
 

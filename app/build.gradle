@@ -4,6 +4,20 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('/home/bereket/Documents/mykeystore/keystore1.jks')
+            storePassword '65500639'
+            keyAlias 'key0'
+            keyPassword '65500639'
+        }
+        relsease {
+            storeFile file('/home/bereket/Documents/keystore_pasca_app/ketstore_pasca_key.jks')
+            storePassword '65500639'
+            keyAlias 'key0'
+            keyPassword '65500639'
+        }
+    }
     namespace 'com.example.pasca_primary'
     compileSdk 33
 
@@ -17,6 +31,7 @@ android {
         multiDexEnabled true
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.relsease
     }
 
     buildTypes {

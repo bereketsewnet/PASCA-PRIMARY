@@ -37,6 +37,18 @@
         android:icon="@drawable/feesstud"
         android:title="@string/post_fees_information"/>
 
+    <item android:id="@+id/admin_start_chat_pass_t"
+        android:icon="@drawable/startchatteacher"
+        android:title="@string/startchat_pass_t"/>
+
+    <item android:id="@+id/admin_start_chat_pass_s"
+        android:icon="@drawable/startchatstudent"
+        android:title="@string/startchat_pass_s"/>
+
+    <item android:id="@+id/admin_profile_pass"
+        android:icon="@drawable/profilepasschange"
+        android:title="@string/changeprofile_pass"/>
+
     <item android:id="@+id/admin_logout"
         android:icon="@drawable/logout"
         android:title="@string/logout"/>

@@ -13,11 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.pasca_primary.Adapters.UserAdapter;
-import com.example.pasca_primary.LoginActivityTwo;
 import com.example.pasca_primary.Model.Chatslist;
 import com.example.pasca_primary.Model.Users;
 import com.example.pasca_primary.R;
-import com.example.pasca_primary.StartChatPasswordActivity;
+import com.example.pasca_primary.StartChatPasswordSActivity;
+import com.example.pasca_primary.StartChatPasswordTActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -40,6 +40,7 @@ public class ChatsFragment extends Fragment {
     FirebaseUser firebaseUser;
     FirebaseAuth mAuth;
     FloatingActionButton fab_start_chat;
+    int usertype_flot;
 
 
     @Override
@@ -60,14 +61,21 @@ public class ChatsFragment extends Fragment {
 
         DatabaseReference reference  = FirebaseDatabase.getInstance().getReference("Chatslist")
                 .child(firebaseUser.getUid());
-        fab_start_chat.setVisibility(View.GONE);
+
 
 
         fab_start_chat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), StartChatPasswordActivity.class);
-                startActivity(intent);
+
+                if(usertype_flot == 0){
+                    Intent intent = new Intent(getActivity(), StartChatPasswordSActivity.class);
+                    startActivity(intent);
+                }else{
+                    Intent intent = new Intent(getActivity(), StartChatPasswordTActivity.class);
+                    startActivity(intent);
+                }
+
             }
         });
         reference.addValueEventListener(new ValueEventListener() {
@@ -156,16 +164,9 @@ public class ChatsFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 int usertype = snapshot.getValue(Integer.class);
-                if(usertype==0){
-                    fab_start_chat.setVisibility(View.VISIBLE);
-
-                }
+                usertype_flot = usertype;
 
 
-                if(usertype==1 || usertype==2){
-
-                    fab_start_chat.setVisibility(View.GONE);
-                }
             }
 
             @Override

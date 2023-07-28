@@ -21,12 +21,9 @@ import com.bumptech.glide.Glide;
 
 import com.example.pasca_primary.Fragments.ChatsFragment;
 import com.example.pasca_primary.Fragments.NewsFragment;
-import com.example.pasca_primary.Fragments.ProfileFragment;
 import com.example.pasca_primary.Fragments.ProfilePasswordFragment;
-import com.example.pasca_primary.Fragments.UsersFragment;
 import com.example.pasca_primary.Model.Chats;
 import com.example.pasca_primary.Model.Users;
-import com.example.pasca_primary.additional.CustomProgressDialog;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -77,9 +74,9 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-      final  TabLayout tabLayout = findViewById(R.id.tablayout);
-      final   ViewPager viewPager = findViewById(R.id.viewPager);
-       // if user id is empty back to mainStudent activity and not other function done
+        final  TabLayout tabLayout = findViewById(R.id.tablayout);
+        final   ViewPager viewPager = findViewById(R.id.viewPager);
+        // if user id is empty back to mainStudent activity and not other function done
         if (uid == null) {
             Intent intent = new Intent(MainActivity.this,StudentsHomeActivity.class);
             startActivity(intent);
@@ -87,74 +84,74 @@ public class MainActivity extends AppCompatActivity {
 
         }else {
 
-        reference = FirebaseDatabase.getInstance().getReference("Chats");
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            reference = FirebaseDatabase.getInstance().getReference("Chats");
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-                int unread = 0;
-                for(DataSnapshot snapshot1 : snapshot.getChildren()){
-                    Chats chats = snapshot1.getValue(Chats.class);
-                    if(chats.getReciever().equals(uid) && !chats.isIsseen()){
-                        unread ++;
+                    ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
+                    int unread = 0;
+                    for(DataSnapshot snapshot1 : snapshot.getChildren()){
+                        Chats chats = snapshot1.getValue(Chats.class);
+                        if(chats.getReciever().equals(uid) && !chats.isIsseen()){
+                            unread ++;
+                        }
                     }
+
+                    if(unread == 0){
+                        viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.main_daily));
+                    }else{
+                        viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.main_daily)+"("+unread+")");
+                    }
+                    viewPagerAdapter.addFragment(new NewsFragment(), getString(R.string.main_news));
+                    viewPagerAdapter.addFragment(new ProfilePasswordFragment(), getString(R.string.main_id));
+
+
+                    viewPager.setAdapter(viewPagerAdapter);
+                    tabLayout.setupWithViewPager(viewPager);
+
                 }
 
-                if(unread == 0){
-                    viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.main_daily));
-                }else{
-                    viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.main_daily)+unread);
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
                 }
-                viewPagerAdapter.addFragment(new NewsFragment(), getString(R.string.main_news));
-                viewPagerAdapter.addFragment(new ProfilePasswordFragment(), getString(R.string.main_id));
-
-
-                viewPager.setAdapter(viewPagerAdapter);
-                tabLayout.setupWithViewPager(viewPager);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+            });
 
 
 
 
-        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+            firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
 
-        reference = FirebaseDatabase.getInstance().getReference("Users").child(uid);
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
+            reference = FirebaseDatabase.getInstance().getReference("Users").child(uid);
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
 
 
-                Users users = snapshot.getValue(Users.class);
+                    Users users = snapshot.getValue(Users.class);
 
-                username.setText(users.getUsername()); // set the text of the user on textivew in toolbar
+                    username.setText(users.getUsername()); // set the text of the user on textivew in toolbar
 
-                if (users.getImageURL().equals("default")) {
+                    if (users.getImageURL().equals("default")) {
 
-                    imageView.setImageResource(R.drawable.user);
-                } else {
+                        imageView.setImageResource(R.drawable.user);
+                    } else {
 
-                    Glide.with(getApplicationContext()).load(users.getImageURL()).into(imageView);
+                        Glide.with(getApplicationContext()).load(users.getImageURL()).into(imageView);
+                    }
+
                 }
 
-            }
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+                }
+            });
 
 
-    }
+        }
 
 
     }
@@ -233,6 +230,26 @@ public class MainActivity extends AppCompatActivity {
 
 
         }
+
+
+        if(item.getItemId() == R.id.switch_user){
+            Intent intent = new Intent(MainActivity.this,SwitchUserActivity.class);
+            startActivity(intent);
+            return  true;
+
+        }
+
+
+        if(item.getItemId() == R.id.add_user){
+            Intent intent = new Intent(MainActivity.this,AddUserActivity.class);
+            startActivity(intent);
+            return  true;
+
+        }
+
+
+
+
 
         return super.onOptionsItemSelected(item);
     }

@@ -5,8 +5,19 @@
 
         <item
             android:id="@+id/logout"
-            android:title="Log Out"
+            android:title="@string/logout"
             app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/switch_user"
+        android:title="@string/switch_user"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/add_user"
+        android:title="@string/add_user"
+        app:showAsAction="never"/>
+
 
 
 
