@@ -227,9 +227,27 @@ public class AdminHomeActivity extends AppCompatActivity {
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
-                    case R.id.admin_logout:
-                        Intent intent9 = new Intent(AdminHomeActivity.this,LoginActivity.class);
+                    case R.id.admin_start_chat_pass_t:
+                        Intent intent9 = new Intent(AdminHomeActivity.this, ChangeStartChatPassTeActivity.class);
                         startActivity(intent9);
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+
+                    case R.id.admin_start_chat_pass_s:
+                        Intent intent10 = new Intent(AdminHomeActivity.this, ChangeStartChatPassSActivity.class);
+                        startActivity(intent10);
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+
+                    case R.id.admin_profile_pass:
+                        Intent intent11 = new Intent(AdminHomeActivity.this, ChangeProfilePassActivity.class);
+                        startActivity(intent11);
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
+
+                    case R.id.admin_logout:
+                        Intent intent12 = new Intent(AdminHomeActivity.this,LoginActivity.class);
+                        startActivity(intent12);
                         mAuth.signOut();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
