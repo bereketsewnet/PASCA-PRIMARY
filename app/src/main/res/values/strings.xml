@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">PASCA</string>
+    <string name="done" translatable="false">done</string>
 
     <string-array name="user_type">
         <item>Student</item>

@@ -33,7 +33,7 @@ public class AdminHomeActivity extends AppCompatActivity {
     DrawerLayout drawerLayout;
     FirebaseAuth mAuth;
     Spinner spinnerA;
-    public static final String[] languageA = {"Language", "English", "አማረኛ", "عربي", "Français"};
+    public static final String[] languageA = {"Lang","En", "አማ", "عربي", "Fr"};
     CardView admin_show_gk,admin_show_books,admin_show_student_profile,admin_show_teacher_profile,admin_show_calendar,admin_show_fees;
 
     @Override
@@ -83,11 +83,11 @@ public class AdminHomeActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedLang = parent.getItemAtPosition(position).toString();
-                if(selectedLang.equals("English")){
+                if(selectedLang.equals("En")){
                     setLocal(AdminHomeActivity.this,"en");
                     finish();
                     startActivity(getIntent());
-                }else if(selectedLang.equals("አማረኛ")){
+                }else if(selectedLang.equals("አማ")){
                     setLocal(AdminHomeActivity.this,"am");
                     finish();
                     startActivity(getIntent());
@@ -95,7 +95,7 @@ public class AdminHomeActivity extends AppCompatActivity {
                     setLocal(AdminHomeActivity.this,"ar");
                     finish();
                     startActivity(getIntent());
-                }else if(selectedLang.equals("Français")){
+                }else if(selectedLang.equals("Fr")){
                     setLocal(AdminHomeActivity.this,"fr");
                     finish();
                     startActivity(getIntent());

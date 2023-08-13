@@ -3,13 +3,15 @@
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
-android:background="@drawable/pagebkg"
+android:background="@drawable/backgroudtwo"
 android:orientation="vertical"
 android:layout_height="match_parent"
+android:gravity="center"
 tools:context=".ChangeProfilePassActivity">
 
 
     <com.google.android.material.appbar.AppBarLayout
+        android:visibility="gone"
         android:id="@+id/bar_layout_profile"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

@@ -50,7 +50,7 @@ tools:context=".UploadTActivity">
             android:id="@+id/uploadButtont"
             android:layout_marginStart="10dp"
             android:backgroundTint="@color/lavender"
-            android:src="@drawable/sendone"
+            android:src="@drawable/sendmsg"
             app:tint = "#fff"
             android:background="@color/white"/>
     </LinearLayout>

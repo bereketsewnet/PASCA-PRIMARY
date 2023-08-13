@@ -21,12 +21,11 @@
 
         <Spinner
             android:id="@+id/lan"
-            android:layout_width="105dp"
+            android:layout_width="wrap_content"
             android:layout_height="45dp"
             android:layout_margin="10dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/white_background"
+            android:background="@drawable/lang_spinner_back"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

@@ -50,7 +50,7 @@
                 android:id="@+id/uploadButton_news_t"
                 android:layout_marginStart="10dp"
                 android:backgroundTint="@color/lavender"
-                android:src="@drawable/sendone"
+                android:src="@drawable/sendmsg"
                 app:tint = "#fff"/>
         </LinearLayout>
     </LinearLayout>

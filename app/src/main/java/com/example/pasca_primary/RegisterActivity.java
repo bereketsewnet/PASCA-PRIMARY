@@ -20,6 +20,8 @@ import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.pasca_primary.Model.ChangeProfilePass;
+import com.example.pasca_primary.Model.MultiSelectionId;
 import com.example.pasca_primary.additional.CustomProgressDialog;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -43,7 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
     Button registerbtn;
     Toolbar toolbar;
 
-    String username, email, password,usertype,student_class,student_sex;
+    String username, email, password,usertype,student_class,student_sex,searchusername;
 
     FirebaseAuth mAuth;
 
@@ -100,6 +102,7 @@ public class RegisterActivity extends AppCompatActivity {
                 email = et_email.getText().toString();
                 password = et_password.getText().toString();
                 username = et_username.getText().toString();
+                searchusername = et_username.getText().toString().toLowerCase();
                 usertype = reg_usertype.getSelectedItem().toString();
                 student_class = reg_class.getSelectedItem().toString();
                 student_sex = reg_sex.getSelectedItem().toString();
@@ -202,9 +205,18 @@ public class RegisterActivity extends AppCompatActivity {
 
                 if (task.isSuccessful()) {
 
+
+
                     FirebaseUser user = mAuth.getCurrentUser();
 
                     reference = FirebaseDatabase.getInstance().getReference("Users").child(user.getUid());
+                    String multiId = user.getUid();
+
+                    // multiple sender id settin
+                    DatabaseReference multiSenderRef = FirebaseDatabase.getInstance().getReference().child("MultiSenderId").child(username);
+                    MultiSelectionId multiSelectionId = new MultiSelectionId(multiId);
+                    multiSenderRef.setValue(multiSelectionId);
+                    // end
 
                     if (user!=null) {
 
@@ -212,7 +224,7 @@ public class RegisterActivity extends AppCompatActivity {
                         hashMap.put("username", username);
                         hashMap.put("email", email);
                         hashMap.put("password",password);
-                        hashMap.put("search",username);
+                        hashMap.put("search",searchusername);
                         hashMap.put("id", user.getUid());
                         hashMap.put("imageURL", "default");
                         hashMap.put("status", "offline");

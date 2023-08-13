@@ -68,6 +68,7 @@ public class StartChatPasswordTActivity extends AppCompatActivity {
                                     Intent intent = new Intent(StartChatPasswordTActivity.this, StudentListActivity.class);
                                     startActivity(intent);
                                     dialog.dismiss();
+                                    finish();
                                 }else{
                                     start_chat_password_t.setError("Please Try Again!");
                                     dialog.dismiss();
@@ -77,6 +78,7 @@ public class StartChatPasswordTActivity extends AppCompatActivity {
 
                             }else{
                                 Toast.makeText(StartChatPasswordTActivity.this, "First set The Password in Database", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
                             }
 
 

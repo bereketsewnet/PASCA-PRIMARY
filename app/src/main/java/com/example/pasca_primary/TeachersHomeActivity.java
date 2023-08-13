@@ -34,7 +34,7 @@ public class TeachersHomeActivity extends AppCompatActivity {
     CardView teachers_daily,teachers_rank,teachers_notepad,teachers_gk,teachers_books,teachers_s_profile;
     String uid;
     DatabaseReference reference;
-    public static final String[] languageT = {"Language", "English", "አማረኛ", "عربي", "Français"};
+    public static final String[] languageT = {"Lang","En", "አማ", "عربي", "Fr"};
     FirebaseUser firebaseUser;
     TextView stubjectname;
     CircleImageView imageView;
@@ -65,11 +65,11 @@ public class TeachersHomeActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedLang = parent.getItemAtPosition(position).toString();
-                if(selectedLang.equals("English")){
+                if(selectedLang.equals("En")){
                     setLocal(TeachersHomeActivity.this,"en");
                     finish();
                     startActivity(getIntent());
-                }else if(selectedLang.equals("አማረኛ")){
+                }else if(selectedLang.equals("አማ")){
                     setLocal(TeachersHomeActivity.this,"am");
                     finish();
                     startActivity(getIntent());
@@ -77,7 +77,7 @@ public class TeachersHomeActivity extends AppCompatActivity {
                     setLocal(TeachersHomeActivity.this,"ar");
                     finish();
                     startActivity(getIntent());
-                }else if(selectedLang.equals("Français")){
+                }else if(selectedLang.equals("Fr")){
                     setLocal(TeachersHomeActivity.this,"fr");
                     finish();
                     startActivity(getIntent());
@@ -105,7 +105,7 @@ public class TeachersHomeActivity extends AppCompatActivity {
 
                     imageView.setImageResource(R.drawable.pppp);
                 } else {
-                  //  imageView.setImageResource(R.drawable.pppp);
+                    //  imageView.setImageResource(R.drawable.pppp);
                     Glide.with(getApplicationContext()).load(userModel.getImageURL()).into(imageView);
                 }
 
@@ -156,6 +156,7 @@ public class TeachersHomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(TeachersHomeActivity.this, TeachersNotePadActivity.class);
+                intent.putExtra("userId",uid);
                 startActivity(intent);
             }
         });

@@ -38,7 +38,7 @@ public class StudentsHomeActivity extends AppCompatActivity {
     DatabaseReference reference;
     FirebaseUser firebaseUser;
     String uid;
-    public static final String[] language = {"Language", "English", "አማረኛ", "عربي", "Français"};
+    public static final String[] language = {"Lang", "En", "አማ", "عربي", "Fr"};
     TextView textView2;
     CircleImageView imageView;
     Spinner spinner;
@@ -69,6 +69,9 @@ public class StudentsHomeActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView2);
         spinner = findViewById(R.id.lan);
 
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+        uid = firebaseUser.getUid();
+
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,language);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
@@ -77,11 +80,11 @@ public class StudentsHomeActivity extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String selectedLang = parent.getItemAtPosition(position).toString();
-                if(selectedLang.equals("English")){
+                if(selectedLang.equals("En")){
                     setLocal(StudentsHomeActivity.this,"en");
                     finish();
                     startActivity(getIntent());
-                }else if(selectedLang.equals("አማረኛ")){
+                }else if(selectedLang.equals("አማ")){
                     setLocal(StudentsHomeActivity.this,"am");
                     finish();
                     startActivity(getIntent());
@@ -89,7 +92,7 @@ public class StudentsHomeActivity extends AppCompatActivity {
                     setLocal(StudentsHomeActivity.this,"ar");
                     finish();
                     startActivity(getIntent());
-                }else if(selectedLang.equals("Français")){
+                }else if(selectedLang.equals("Fr")){
                     setLocal(StudentsHomeActivity.this,"fr");
                     finish();
                     startActivity(getIntent());

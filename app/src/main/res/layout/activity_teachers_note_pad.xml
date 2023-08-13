@@ -53,6 +53,17 @@
                 android:background="@drawable/btn_back"
                 android:textColor="@android:color/white"/>
 
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="30dp"
+                android:id="@+id/notepad_multi_btn"
+                android:text="Bulk Message"
+                android:background="@drawable/btn_back"
+                android:textColor="@android:color/white"/>
+
 
         </LinearLayout>
 
