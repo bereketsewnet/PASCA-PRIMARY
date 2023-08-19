@@ -7,9 +7,7 @@
     android:background="@drawable/backone"
     tools:context=".RankActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
 
 
 
@@ -398,6 +396,5 @@
         </TableRow>
         <!--end of data-->
     </TableLayout>
-    </ScrollView>
 
 </RelativeLayout>
