@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
@@ -95,6 +96,7 @@ public class BulkMessagingActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 fiter_search = "student_class";
+                filter_l1.setBackgroundColor(Color.BLACK);
 
             }
         });
@@ -104,6 +106,7 @@ public class BulkMessagingActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 fiter_search = "search";
+                filter_l2.setBackgroundColor(Color.BLACK);
 
             }
         });

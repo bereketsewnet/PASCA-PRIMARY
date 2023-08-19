@@ -6,14 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.pasca_primary.MessageActivity;
-import com.example.pasca_primary.MessageActivityT;
 import com.example.pasca_primary.Model.Chats;
 import com.example.pasca_primary.Model.Users;
 import com.example.pasca_primary.R;
@@ -148,6 +146,11 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyHolder> {
 
             friendid = users.getId();
 
+            Intent intent = new Intent(context, MessageActivity.class);
+            intent.putExtra("friendid", friendid);
+            context.startActivity(intent);
+
+           /*
             if(userTypeR == 0){
                 Intent intent = new Intent(context, MessageActivity.class);
                 intent.putExtra("friendid", friendid);
@@ -161,6 +164,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyHolder> {
                 intent.putExtra("friendid", friendid);
                 context.startActivity(intent);
             }
+            */
 
 
 

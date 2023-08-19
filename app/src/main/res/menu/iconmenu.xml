@@ -49,6 +49,10 @@
         android:icon="@drawable/profilepasschange"
         android:title="@string/changeprofile_pass"/>
 
+    <item android:id="@+id/admin_about"
+        android:icon="@drawable/aboutus"
+        android:title="@string/about"/>
+
     <item android:id="@+id/admin_logout"
         android:icon="@drawable/logout"
         android:title="@string/logout"/>

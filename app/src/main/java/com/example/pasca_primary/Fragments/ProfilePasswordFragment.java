@@ -70,6 +70,7 @@ public class ProfilePasswordFragment extends Fragment {
                                 if(recive_pass.equals(profile_password_store)){
                                     Intent intent = new Intent(getContext(), IdProfileActivity.class);
                                     startActivity(intent);
+                                    dialog.dismiss();
                                 }else{
                                     profile_password.setError("Please Try Again!");
                                     dialog.dismiss();
@@ -79,6 +80,7 @@ public class ProfilePasswordFragment extends Fragment {
 
                             }else{
                                 Toast.makeText(getActivity(), "First set The Password in Database", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
                             }
 
 

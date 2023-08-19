@@ -19,9 +19,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.pasca_primary.Fragments.ChatsFragment;
 import com.example.pasca_primary.Fragments.NewsTFragment;
-import com.example.pasca_primary.Fragments.ProfileFragment;
 import com.example.pasca_primary.Fragments.ProfilePasswordFragment;
-import com.example.pasca_primary.Fragments.StudentsFragment;
 import com.example.pasca_primary.Model.Chats;
 import com.example.pasca_primary.Model.Users;
 import com.google.android.material.tabs.TabLayout;
@@ -242,6 +240,15 @@ public class Main_twoActivity extends AppCompatActivity {
             Intent intent = new Intent(Main_twoActivity.this,AddUserActivity.class);
             startActivity(intent);
             return  true;
+
+        }
+
+
+        if(item.getItemId() == R.id.main_about){
+            Intent intent = new Intent(Main_twoActivity.this,AboutUsActivity.class);
+            startActivity(intent);
+            return  true;
+
 
         }
 

@@ -244,10 +244,15 @@ public class AdminHomeActivity extends AppCompatActivity {
                         startActivity(intent11);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
+                    case R.id.admin_about:
+                        Intent intent12 = new Intent(AdminHomeActivity.this,AboutUsActivity.class);
+                        startActivity(intent12);
+                        drawerLayout.closeDrawer(GravityCompat.START);
+                        break;
 
                     case R.id.admin_logout:
-                        Intent intent12 = new Intent(AdminHomeActivity.this,LoginActivity.class);
-                        startActivity(intent12);
+                        Intent intent13 = new Intent(AdminHomeActivity.this,LoginActivity.class);
+                        startActivity(intent13);
                         mAuth.signOut();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;

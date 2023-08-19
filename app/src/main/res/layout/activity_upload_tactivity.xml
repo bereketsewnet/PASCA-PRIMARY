@@ -38,12 +38,12 @@ tools:context=".UploadTActivity">
         android:background="@color/white">
         <EditText
             android:layout_width="0dp"
-            android:layout_height="50dp"
+            android:layout_height="60dp"
             android:id="@+id/uploadCaptiont"
             android:layout_weight="0.6"
             android:background="@drawable/lavender_borders"
             android:padding="16dp"
-            android:hint="Upload Teachers"/>
+            android:hint="@string/caption"/>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

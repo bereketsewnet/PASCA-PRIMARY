@@ -20,82 +20,82 @@
 
     <string-array name="student_class">
         <item>nursery</item>
-        <item>kg-1</item>
-        <item>kg-2</item>
-        <item>kg-3</item>
+        <item>kg1</item>
+        <item>kg2</item>
+        <item>kg3</item>
         <item>1a</item>
         <item>1b</item>
         <item>2a</item>
         <item>2b</item>
-        <item>3A</item>
-        <item>3B</item>
-        <item>4A</item>
-        <item>4B</item>
-        <item>5A</item>
-        <item>5B</item>
-        <item>6A</item>
-        <item>6B</item>
-        <item>7A</item>
-        <item>7B</item>
-        <item>8A</item>
-        <item>8B</item>
+        <item>3a</item>
+        <item>3b</item>
+        <item>4a</item>
+        <item>4b</item>
+        <item>5a</item>
+        <item>5b</item>
+        <item>6a</item>
+        <item>6b</item>
+        <item>7a</item>
+        <item>7b</item>
+        <item>8a</item>
+        <item>8a</item>
     </string-array>
 
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="school_law">   <br><b>  የተማሪዎች ህጎችና ደንቦች \n</b>\n</br>
+    <string name="school_law">   <br><b>  Rules and Regulations for student\n</b>\n</br>
 
-        <br>1.እንደ አሻንጉሊት ፣ ቢላዎች ፣ እንዲሁም አደገኛ መሳሪያዎች ይዞ ወደ ት / ቤት መምጣት የተከለከለ ነው።\n</br>
-
-        <br>2.በፍፁም ሌላ ተማሪ መምታትም ሆነ አካላዊ ደብድብ ማደረግ አይቻልም::\n</br>
-
-        <br>3.በፍፁም ምንም አይነት ቃላዊም ሆነ አካላዊ የንቀት ምልክት ለአስተማሪዎችም ሆነ ሌሎች የግቢው ማኅበረብ ማሳየት አይቻልም:: \n</br>
-
-        <br>4.መጥፎ ቃላትን በፍፁም መጠቀም የለብንም።  \n</br>
-
-        <br>5.ከቢሮ የመውጫ ወረቀት ሳይሆጥ ግቢን ትቶ መውጣት በፍፁም የተከለከለ ነው ።\n</br>
-
-        <br>6.ሽንት ቤትና ውሃ ስፈራዎች መጫወት ፍፁም የተከለከለ ነው።\n</br>
-
-        <br>7.ከምሳና ከቍርስ ሠዓት ውጪ ያለ አስተማሪ ፍቃድ ከማማሪያ ክፍል መውጣት አይቻም::\n</br>
-
-        <br>8.ስልክ እና  ኤሌክትሮኒክስ  መሳሪያዎችን ይዞ መገኘት በጥብቅ የተከለከለ ነው ፡ ፡ \n</br>
-
-        <br>9.አትዋሹ ሁሌም ታማኝ ሁኑ::  \n</br>
-
-        <br>10.የሌሎችን እቃ መንካት እና ማበላሽት አይቻልም::  \n</br>
-
-        <br>11.ክፋል ዉስጥ ሹል ነገሮች እና ሌሎች አይነት ቍሳቁስ መወርወር አይቻልም::\n</br>
-
-        <br>12.የሌሎችን ሀይማኖት ፣ ቋንቋ፣ ባህል መንቀፍ አይቻልም:: \n</br>
-
-        <br>13.በት/ቤቱ ጠረቤዛዎች እና ሌሎች ነገሮች ላይ መሞነጫጨርና  መፃፍ አይቻልም።\n</br>
-
-        <br>14.እንደ ማስቲካ እና ከረሜላ ይዞ ማምጣትም ሆነ መጠቀም አይቻልም::  \n</br>
-
-        <br>15.ያለ በቂ መረጃ ከት/ቤት መቅረት አይቻልም:: በህመም ጊዜ ህክምና ማስረጃ ወረቀት ማምጣት ይጠበቅባቸዋል::  \n</br>
-
-        <br>16.ማርፈድ አይቻልም::\n</br>
-
-        <br>17.ሁሌም ተማሪዎች ፀጉርና የውነት በጥሩ ሁኔታ መያዣ አለበት።  \n</br>
-
-        <br>18.ምንም ነገር ከመፃፍችሁ በፊት ቀን ፃፍ። \n</br>
-
-        <br>19.ሁሉም የክፍል ስራና የቤት ስራችሁን በሰዓቱ መጨረስ አለባችሁ::  \n</br>
-
-        <br>20.ሁሌም  ቆሻሻን  በቆሻሻ መጠራቀሚያ ውስጥ ጣሉ::  \n</br>
-
-        <br>21.ሁሌም ሞትችሉትን ሁሉ አደርጉ ::\n</br>
-
+        <br>1.Never bring a toy or real gun, or weapon to school. This includes sharp and dangerous items.\n</br>
+<br>  \n</br>
+        <br>2.Never beat or engage in physical conflict with another student.\n</br>
+<br>  \n</br>
+        <br>3.Never, in words or actions, disrespect teacher or any member of the school staff.\n</br>
+<br>  \n</br>
+        <br>4.Never use foul or vulgar language.\n</br>
+<br>  \n</br>
+        <br>5.Never leave the campus without a gate pass from the office.\n</br>
+<br>  \n</br>
+        <br>6.Never play in the water or toilet area. Do not waste water.\n</br>
+<br>  \n</br>
+        <br>7.Never go out to the classroom except break times or without a teacher permission.\n</br>
+<br>  \n</br>
+        <br>8.Never bring electronics or mobile phones to school. Electronics found at school will be confiscated by the administration. Electronics will not be returned.\n</br>
+<br>  \n</br>
+        <br>9.Never cheat be honest.\n</br>
+<br>  \n</br>
+        <br>10.Never touch or disturb the property of others.\n</br>
+<br>  \n</br>
+        <br>11.Never throw sharp objects the property of others.\n</br>
+<br>  \n</br>
+        <br>12.Never disrespect another person culture or religion.\n</br>
+<br>  \n</br>
+        <br>13.Never give gifts or money to any teacher staff member for any reason.\n</br>
+<br>  \n</br>
+        <br>14.Never write on tables, walls or other school property.\n</br>
+<br>  \n</br>
+        <br>15.Never damage or destroy school property.\n</br>
+<br>  \n</br>
+        <br>16.Never bring gum or candy to school or use gum or candy to school.\n</br>
+<br>  \n</br>
+        <br>17.Never play on the stairs or areas that are not play areas.\n</br>
+<br>  \n</br>
+        <br>18.Never be absent from school without good cause. A medical certificate must be produced. In case of illness.\n</br>
+<br>  \n</br>
+        <br>19.Never come late to school.\n</br>
+<br>  \n</br>
+        <br>20.Always wear your uniform with shirt fucked in, stocks and closed sport shoes.\n</br>
+<br>  \n</br>
+        <br>21.Always keep your hair and body well groomed.\n</br>
+<br>  \n</br>
         <br>22.Always raise your hand to speak in class.\n</br>
-
+<br>  \n</br>
         <br>23.Always write date and instructions before write anything else.\n</br>
-
+<br>  \n</br>
         <br>24.Always complete your class work and home word on time.\n</br>
-
+<br>  \n</br>
         <br>25.Always put your trash in the waste basket.\n</br>
-
+<br>  \n</br>
         <br>26.Always do you best in all things!!!\n</br></string>
 
 
@@ -118,11 +118,11 @@
         <br>The Primary School Division:   0113694475 \n</br>
         <br><b> \n</b>\n</br>
         <br><b>  IN SOCIALS FOLLOW US\n</b>\n</br>
-        <br>Website:https://WWW.MountOliveInterNationSchool.com \n</br>
-        <br>Instagram: @mountschool \n</br>
-        <br>Telegram: @mountschool \n</br>
-        <br>FaceBook: @mountschool \n</br>
-        <br>Gmail: MountOliveInternationSchool@gmail.com \n</br>
+         <br>Website:pascaInternationschool.com\n</br>
+        <br>Instagram: @pascaschool\n</br>
+        <br>Telegram: @pascaschool\n</br>
+        <br>FaceBook: @pascaschool\n</br>
+        <br>Gmail: PascaInternation@gmail.com\n</br>
 
 
 
@@ -173,33 +173,58 @@
     <string name="post_calendar">የቀን መቁጠሪያ ይለጥፉ</string>
     <string name="post_fees_information">ክፍያዎች መረጃ ይለጥፉ</string>
     <string name="logout">ውጣ</string>
-    <string name="startchat_pass_t">StartChat Pass T</string>
-    <string name="startchat_pass_s">StartChat Pass S</string>
-    <string name="changeprofile_pass">ChangeProfile Pass</string>
-    <string name="change_password">Change Password</string>
-    <string name="password">Password</string>
-    <string name="conform_password">Conform Password</string>
-    <string name="change">Change</string>
-    <string name="complain_box">Complain Box</string>
-    <string name="name">Name</string>
-    <string name="email">Email</string>
-    <string name="message">Message</string>
-    <string name="complain">Complain</string>
-    <string name="log_in">Log In</string>
-    <string name="login">Login</string>
-    <string name="forgot_password">Forgot Password?</string>
-    <string name="create_an_account">Create An Account</string>
-    <string name="register">Register</string>
-    <string name="go">Go</string>
-    <string name="start_chat_password">Start chat password</string>
-    <string name="enter_your_email_address">Enter your email address:</string>
-    <string name="cancel">Cancel</string>
-    <string name="reset">Reset</string>
-    <string name="profile_password">Profile Password</string>
-    <string name="enter">Enter</string>
-    <string name="switch_user">Switch User</string>
-    <string name="add_user">Add User</string>
-    <string name="show_my_id">Show My Id</string>
+    <string name="startchat_pass_t">የተማሪዎች ማለፊያ</string>
+    <string name="startchat_pass_s">የአስተማሪዎች ማለፊያ </string>
+    <string name="changeprofile_pass">የመገለጫ ይለፍ ቃል ቀይር</string>
+    <string name="change_password">የሚስጥር ቁልፍ ይቀይሩ</string>
+    <string name="password">የይለፍ ቃል</string>
+    <string name="conform_password">የይለፍ ቃል ያሟሉ</string>
+    <string name="change">ለውጥ</string>
+    <string name="complain_box">ቅሬታ አቅርቡ</string>
+    <string name="name">ስም</string>
+    <string name="email">ኢሜይል</string>
+    <string name="message">መልእክት</string>
+    <string name="complain">ቅሬታ አቅርቡ</string>
+    <string name="log_in">ግባ</string>
+    <string name="login">ግባ</string>
+    <string name="forgot_password">መክፈቻ ቁልፉን ረሳኽው?</string>
+    <string name="create_an_account">መለያ ፍጠር</string>
+    <string name="register">ይመዝገቡ</string>
+    <string name="go">ሂድ</string>
+    <string name="start_chat_password">የውይይት ይለፍ ቃል ጀምር</string>
+    <string name="enter_your_email_address">የኢሜይል አድራሻዎን ያስገቡ:</string>
+    <string name="cancel">ሰርዝ</string>
+    <string name="reset">ዳግም አስጀምር</string>
+    <string name="profile_password">የመገለጫ ይለፍ ቃል</string>
+    <string name="enter">አስገባ</string>
+    <string name="switch_user">ተጠቃሚ ቀይር</string>
+    <string name="add_user">ተጠቃሚ አክል</string>
+    <string name="show_my_id">መታወቂያዬን አሳይ</string>
+    <string name="terms_of_sercice"><u>የአገልግሎት ውል</u></string>
+    <string name="privacy_policy"><u>የ ግል የሆነ</u></string>
+    <string name="about">ስለ</string>
+    <string name="current_version">የአሁኑ ስሪት</string>
+    <string name="check_for_update">ዝማኔን ያረጋግጡ</string>
+    <string name="official_website">ኦፊሴላዊ ድር ጣቢያ</string>
+    <string name="follow_us_on_facebook">በ Facebook ላይ ይከተሉን</string>
+    <string name="follow_us_on_instagram">በ Instagram ላይ ይከተሉን</string>
+    <string name="author">ደራሲ</string>
+    <string name="enter_user_name">የተጠቃሚ ስም አስገባ</string>
+    <string name="enter_user_email">የተጠቃሚ ኢሜይል ያስገቡ</string>
+    <string name="enter_user_password">የተጠቃሚ ይለፍ ቃል ያስገቡ</string>
+    <string name="search">ፈልግ...</string>
+    <string name="class_search">ፈልግ...</string>
+    <string name="name_search">ስም</string>
+    <string name="multi_message">ብዙ መልእክት</string>
+    <string name="caption">መግለጫ ጽሑፍ</string>
+    <string name="upload_books">መጽሐፍትን ይስቀሉ</string>
+    <string name="book_name">የመጽሐፍ ስም</string>
+    <string name="upload">ስቀል</string>
+    <string name="success">ስኬት</string>
+    <string name="success_msg">እንኳን ደስ አላችሁ! በተሳካ ሁኔታ ጨርሰዋል.</string>
+    <string name="okay">እሺ</string>
+    <string name="error">ስህተት</string>
+    <string name="error_msg">ስህተት! የሆነ ነገር ተሳስቷል! እባክዎ ዳግም ይሞክሩ.</string>
 
 
 

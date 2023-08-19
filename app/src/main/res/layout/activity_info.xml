@@ -39,23 +39,11 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:padding="5dp"
-                android:justificationMode="inter_word"
                 android:text="@string/phone_numbers"
                 android:textColor="@color/lavender"
                 android:layout_centerInParent="true"
                 android:textSize="14dp" />
 
-            <TextView
-                android:visibility="invisible"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:padding="20dp"
-                android:justificationMode="inter_word"
-                android:text="dihfidshfgoiwreujsladkjfgoaisufjal;alksdfjslad;kfjwoeirujsdkj"
-                android:textColor="@color/white"
-                android:layout_centerInParent="true"
-                android:textSize="14dp" />
 
         </LinearLayout>
     </ScrollView>

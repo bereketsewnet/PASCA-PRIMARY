@@ -60,7 +60,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginBottom="30dp"
                 android:id="@+id/notepad_multi_btn"
-                android:text="Bulk Message"
+                android:text="@string/multi_message"
                 android:background="@drawable/btn_back"
                 android:textColor="@android:color/white"/>
 

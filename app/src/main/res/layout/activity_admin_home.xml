@@ -65,7 +65,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="welcome back"
+                        android:text="@string/studnet_welcome"
                         android:textColor="#ffff"
                         android:textSize="14dp"/>
                     <Spinner

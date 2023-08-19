@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -13,8 +14,13 @@ import com.bumptech.glide.Glide;
 
 import com.example.pasca_primary.Model.Chats;
 import com.example.pasca_primary.R;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
@@ -45,6 +51,40 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
         if (viewType == MESSAGE_RIGHT) {
 
             View view = LayoutInflater.from(context).inflate(R.layout.chat_item_right, parent, false);
+         /* delete message
+
+            view.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+
+                    DeleteMessage();
+                    return true;
+                }
+
+                private void DeleteMessage() {
+
+                    FirebaseUser firebaseUser;
+                    firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+
+                    DatabaseReference Df = FirebaseDatabase.getInstance().getReference("Chatslist").child(firebaseUser.getUid());
+                    Task<Void> task = Df.removeValue();
+                    task.addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void unused) {
+                            Toast.makeText(context, "deleted", Toast.LENGTH_SHORT).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(context, "fail", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+                }
+            });
+          */
+
+
             return new MyViewHolder(view);
 
 
@@ -85,7 +125,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
 
 
             } else {
-                holder.seen.setText("Delivered");
+                holder.seen.setText("Sent");
             }
 
         } else {
@@ -113,6 +153,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MyViewHo
             messagetext = itemView.findViewById(R.id.show_message);
             imageView = itemView.findViewById(R.id.chat_image);
             seen = itemView.findViewById(R.id.text_Seen);
+
         }
     }
 

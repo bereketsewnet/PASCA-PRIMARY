@@ -64,7 +64,7 @@
 
             <EditText
                 android:layout_width="0dp"
-                android:layout_height="55dp"
+                android:layout_height="40dp"
                 android:padding="5dp"
                 android:hint=" Message"
                 android:layout_weight="1"
@@ -77,16 +77,16 @@
 
 
             <Button
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:background="@drawable/paste"
                 android:backgroundTint="@color/lavender"
                 android:id="@+id/paste"
                 android:layout_margin="10dp"/>
 
             <Button
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:enabled="false"
                 android:background="@drawable/sendmsg"
                 android:backgroundTint="@color/lavender"

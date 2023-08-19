@@ -131,7 +131,7 @@ public class TeachersHomeActivity extends AppCompatActivity {
         teachers_rank.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TeachersHomeActivity.this, RankFormActivity.class);
+                Intent intent = new Intent(TeachersHomeActivity.this, RankListActivity.class);
                 startActivity(intent);
             }
         });

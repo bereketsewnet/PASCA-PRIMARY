@@ -5,9 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.pasca_primary.Adapters.UserAdapterRank;
@@ -30,6 +34,8 @@ public class RankListActivity extends AppCompatActivity {
 
     private UserAdapterRank userAdapter;
     private List<Users> mUsers;
+    Button filter_rank1,filter_rank2;
+    String filter_rank_store;
 
     EditText search_users_rank;
 
@@ -39,12 +45,34 @@ public class RankListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rank_list);
 
+        filter_rank1 = findViewById(R.id.filter_rank1);
+        filter_rank2 = findViewById(R.id.filter_rank2);
         recyclerView_rank = findViewById(R.id.recyclerview_users_rank);
         recyclerView_rank.setHasFixedSize(true);
         recyclerView_rank.setLayoutManager(new LinearLayoutManager(RankListActivity.this));
 
         readUsers();
         mUsers = new ArrayList<>();
+
+        filter_rank_store = "search";
+        filter_rank1.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("ResourceType")
+            @Override
+            public void onClick(View v) {
+                filter_rank_store = "student_class";
+                filter_rank1.setBackgroundColor(Color.BLACK);
+
+            }
+
+        });
+
+        filter_rank2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                filter_rank_store = "search";
+                filter_rank2.setBackgroundColor(Color.BLACK);
+            }
+        });
 
         search_users_rank = findViewById(R.id.search_users_rank);
 
@@ -73,7 +101,7 @@ public class RankListActivity extends AppCompatActivity {
     private void searchUsers(String s) {
 
         final FirebaseUser fuser = FirebaseAuth.getInstance().getCurrentUser();
-        Query query = FirebaseDatabase.getInstance().getReference("Users").orderByChild("search")
+        Query query = FirebaseDatabase.getInstance().getReference("Users").orderByChild(filter_rank_store)
                 .startAt(s)
                 .endAt(s+"\uf8ff");
 

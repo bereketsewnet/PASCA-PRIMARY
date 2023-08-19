@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pagebkg"
     android:gravity="center"
     tools:context=".UploadPdfActivity">
 
@@ -29,7 +28,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Upload Books"
+                android:text="@string/upload_books"
                 android:layout_gravity="center"
                 android:textSize="20sp"
                 android:layout_margin="20dp"
@@ -40,7 +39,7 @@
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Book Name"
+                android:hint="@string/book_name"
                 android:inputType="textPersonName"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
@@ -55,7 +54,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginBottom="30dp"
                 android:id="@+id/upload_pdf"
-                android:text="Upload Books"
+                android:text="@string/upload"
                 android:background="@drawable/btn_back"
                 android:textColor="@android:color/white"/>
 

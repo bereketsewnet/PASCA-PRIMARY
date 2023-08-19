@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/lavender</item>
         <item name="colorPrimaryDark">@color/lavender</item>
         <item name="colorAccent">@color/lavender</item>
+        <item name="fontFamily">@font/poppinslight</item>
 
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>

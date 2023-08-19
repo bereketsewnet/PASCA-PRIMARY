@@ -6,8 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".IqDisplayTActivity">
 
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_think_t"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="10dp"
+        android:elevation="10dp">
+
+        <ImageView
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:id="@+id/recyclerImage"
+            android:src="@drawable/thinking"
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"/>
+    </androidx.cardview.widget.CardView>
+
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/card_think_t"
+        android:layout_marginTop="10dp"
         android:id="@+id/recyclerView_iq"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

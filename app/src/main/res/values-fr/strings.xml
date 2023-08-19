@@ -20,25 +20,25 @@
 
     <string-array name="student_class">
         <item>nursery</item>
-        <item>kg-1</item>
-        <item>kg-2</item>
-        <item>kg-3</item>
+        <item>kg1</item>
+        <item>kg2</item>
+        <item>kg3</item>
         <item>1a</item>
         <item>1b</item>
         <item>2a</item>
         <item>2b</item>
-        <item>3A</item>
-        <item>3B</item>
-        <item>4A</item>
-        <item>4B</item>
-        <item>5A</item>
-        <item>5B</item>
-        <item>6A</item>
-        <item>6B</item>
-        <item>7A</item>
-        <item>7B</item>
-        <item>8A</item>
-        <item>8B</item>
+        <item>3a</item>
+        <item>3b</item>
+        <item>4a</item>
+        <item>4b</item>
+        <item>5a</item>
+        <item>5b</item>
+        <item>6a</item>
+        <item>6b</item>
+        <item>7a</item>
+        <item>7b</item>
+        <item>8a</item>
+        <item>8a</item>
     </string-array>
 
 
@@ -48,55 +48,55 @@
     <string name="school_law">   <br><b>  Rules and Regulations for student\n</b>\n</br>
 
         <br>1.Never bring a toy or real gun, or weapon to school. This includes sharp and dangerous items.\n</br>
-
+<br>  \n</br>
         <br>2.Never beat or engage in physical conflict with another student.\n</br>
-
+<br>  \n</br>
         <br>3.Never, in words or actions, disrespect teacher or any member of the school staff.\n</br>
-
+<br>  \n</br>
         <br>4.Never use foul or vulgar language.\n</br>
-
+<br>  \n</br>
         <br>5.Never leave the campus without a gate pass from the office.\n</br>
-
+<br>  \n</br>
         <br>6.Never play in the water or toilet area. Do not waste water.\n</br>
-
+<br>  \n</br>
         <br>7.Never go out to the classroom except break times or without a teacher permission.\n</br>
-
+<br>  \n</br>
         <br>8.Never bring electronics or mobile phones to school. Electronics found at school will be confiscated by the administration. Electronics will not be returned.\n</br>
-
+<br>  \n</br>
         <br>9.Never cheat be honest.\n</br>
-
+<br>  \n</br>
         <br>10.Never touch or disturb the property of others.\n</br>
-
+<br>  \n</br>
         <br>11.Never throw sharp objects the property of others.\n</br>
-
+<br>  \n</br>
         <br>12.Never disrespect another person culture or religion.\n</br>
-
+<br>  \n</br>
         <br>13.Never give gifts or money to any teacher staff member for any reason.\n</br>
-
+<br>  \n</br>
         <br>14.Never write on tables, walls or other school property.\n</br>
-
+<br>  \n</br>
         <br>15.Never damage or destroy school property.\n</br>
-
+<br>  \n</br>
         <br>16.Never bring gum or candy to school or use gum or candy to school.\n</br>
-
+<br>  \n</br>
         <br>17.Never play on the stairs or areas that are not play areas.\n</br>
-
+<br>  \n</br>
         <br>18.Never be absent from school without good cause. A medical certificate must be produced. In case of illness.\n</br>
-
+<br>  \n</br>
         <br>19.Never come late to school.\n</br>
-
+<br>  \n</br>
         <br>20.Always wear your uniform with shirt fucked in, stocks and closed sport shoes.\n</br>
-
+<br>  \n</br>
         <br>21.Always keep your hair and body well groomed.\n</br>
-
+<br>  \n</br>
         <br>22.Always raise your hand to speak in class.\n</br>
-
+<br>  \n</br>
         <br>23.Always write date and instructions before write anything else.\n</br>
-
+<br>  \n</br>
         <br>24.Always complete your class work and home word on time.\n</br>
-
+<br>  \n</br>
         <br>25.Always put your trash in the waste basket.\n</br>
-
+<br>  \n</br>
         <br>26.Always do you best in all things!!!\n</br></string>
 
 
@@ -118,11 +118,11 @@
         <br>The Primary School Division:   0113694475 \n</br>
         <br><b> \n</b>\n</br>
         <br><b>  IN SOCIALS FOLLOW US\n</b>\n</br>
-        <br>Website:https://WWW.MountOliveInterNationSchool.com \n</br>
-        <br>Instagram: @mountschool \n</br>
-        <br>Telegram: @mountschool \n</br>
-        <br>FaceBook: @mountschool \n</br>
-        <br>Gmail: MountOliveInternationSchool@gmail.com \n</br>
+          <br>Website:pascaInternationschool.com\n</br>
+        <br>Instagram: @pascaschool\n</br>
+        <br>Telegram: @pascaschool\n</br>
+        <br>FaceBook: @pascaschool\n</br>
+        <br>Gmail: PascaInternation@gmail.com\n</br>
 
 
 
@@ -173,33 +173,58 @@
     <string name="post_calendar">Publier un calendrier</string>
     <string name="post_fees_information">Informations après paiement</string>
     <string name="logout">sortir</string>
-    <string name="startchat_pass_t">StartChat Pass T</string>
-    <string name="startchat_pass_s">StartChat Pass S</string>
-    <string name="changeprofile_pass">ChangeProfile Pass</string>
-    <string name="change_password">Change Password</string>
-    <string name="password">Password</string>
-    <string name="conform_password">Conform Password</string>
-    <string name="change">Change</string>
-    <string name="complain_box">Complain Box</string>
-    <string name="name">Name</string>
-    <string name="email">Email</string>
+    <string name="startchat_pass_t">Pass étudiant</string>
+    <string name="startchat_pass_s">Laissez-passer des enseignants</string>
+    <string name="changeprofile_pass">Changer le mot de passe du profil</string>
+    <string name="change_password">Changer la clé secrète</string>
+    <string name="password">mot de passe</string>
+    <string name="conform_password">Complétez le mot de passe</string>
+    <string name="change">Changement</string>
+    <string name="complain_box">Déposer une plainte</string>
+    <string name="name">Nom</string>
+    <string name="email">e-mail</string>
     <string name="message">Message</string>
-    <string name="complain">Complain</string>
-    <string name="log_in">Log In</string>
-    <string name="login">Login</string>
-    <string name="forgot_password">Forgot Password?</string>
-    <string name="create_an_account">Create An Account</string>
-    <string name="register">Register</string>
-    <string name="go">Go</string>
-    <string name="start_chat_password">Start chat password</string>
-    <string name="enter_your_email_address">Enter your email address:</string>
-    <string name="cancel">Cancel</string>
-    <string name="reset">Reset</string>
-    <string name="profile_password">Profile Password</string>
-    <string name="enter">Enter</string>
-    <string name="switch_user">Switch User</string>
-    <string name="add_user">Add User</string>
-    <string name="show_my_id">Show My Id</string>
+    <string name="complain">Déposer une plainte</string>
+    <string name="log_in">se connecter</string>
+    <string name="login">se connecter</string>
+    <string name="forgot_password">t\'as oublié la clé ?</string>
+    <string name="create_an_account">Créer un compte</string>
+    <string name="register">Registre</string>
+    <string name="go">passer</string>
+    <string name="start_chat_password">Démarrer le mot de passe du chat</string>
+    <string name="enter_your_email_address">Entrez votre adresse email:</string>
+    <string name="cancel">Supprimer</string>
+    <string name="reset">Réinitialiser</string>
+    <string name="profile_password">Mot de passe du profil</string>
+    <string name="enter">Entrer</string>
+    <string name="switch_user">Changer d\'utilisateur</string>
+    <string name="add_user">Ajouter un utilisateur</string>
+    <string name="show_my_id">Montrer mon identifiant</string>
+    <string name="terms_of_sercice"><u>Conditions d\'utilisation</u></string>
+    <string name="privacy_policy"><u>politique de confidentialité</u></string>
+    <string name="about">Aux soins de</string>
+    <string name="current_version">Version actuelle</string>
+    <string name="check_for_update">Vérifier la mise à jour</string>
+    <string name="official_website">Site officiel</string>
+    <string name="follow_us_on_facebook">Suis nous sur Facebook</string>
+    <string name="follow_us_on_instagram">Suis nous sur instagram.</string>
+    <string name="author">Auteur</string>
+    <string name="enter_user_name">Saisissez votre nom d\'utilisateur</string>
+    <string name="enter_user_email">Entrez l\'e-mail de l\'utilisateur</string>
+    <string name="enter_user_password">Entrez le mot de passe de l\'utilisateur</string>
+    <string name="search">découvrir...</string>
+    <string name="class_search">Chambre</string>
+    <string name="name_search">Nom</string>
+    <string name="multi_message">De nombreux messages</string>
+    <string name="caption">Texte descriptif</string>
+    <string name="upload_books">Télécharger des livres</string>
+    <string name="book_name">Nom du livre</string>
+    <string name="upload">Télécharger</string>
+    <string name="success">Succès</string>
+    <string name="success_msg">Toutes nos félicitations! Vous avez terminé avec succès.</string>
+    <string name="okay">d\'accord</string>
+    <string name="error">Erreur</string>
+    <string name="error_msg">Erreur! Quelque chose s\'est mal passé ! Veuillez réessayer.</string>
 
 
 

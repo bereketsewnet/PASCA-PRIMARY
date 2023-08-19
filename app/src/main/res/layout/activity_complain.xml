@@ -25,7 +25,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Complain Box"
+                android:text="@string/complain_box"
                 android:layout_gravity="center"
                 android:textSize="20sp"
                 android:layout_margin="20dp"
@@ -36,7 +36,7 @@
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Student Name"
+                android:hint="@string/name"
                 android:inputType="textPersonName"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
@@ -47,7 +47,7 @@
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:hint="Complain Email"
+                android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
@@ -58,7 +58,7 @@
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:hint="Message"
+                android:hint="@string/message"
                 android:inputType="textPersonName"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
@@ -73,7 +73,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginBottom="30dp"
                 android:id="@+id/complain_btn"
-                android:text="Complain"
+                android:text="@string/complain"
                 android:background="@drawable/btn_back"
                 android:textColor="@android:color/white"/>
 

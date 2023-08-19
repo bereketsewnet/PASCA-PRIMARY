@@ -19,14 +19,14 @@
             android:layout_weight="1"
             android:layout_marginRight="3dp"
             android:background="@drawable/search_edittext"
-            android:hint="Search..."
+            android:hint="@string/search"
             android:padding="5dp" />
 
         <Button
             android:id="@+id/filter_t1"
             android:layout_weight="2"
             android:layout_width="match_parent"
-            android:text="class"
+            android:text="@string/class_search"
             android:layout_marginRight="3dp"
             android:background="@drawable/search_edittext_btn"
             android:textColor="@color/white"
@@ -35,7 +35,7 @@
         <Button
             android:id="@+id/filter_t2"
             android:layout_weight="2"
-            android:text="name"
+            android:text="@string/name_search"
             android:background="@drawable/search_edittext_btn"
             android:textColor="@color/white"
             android:layout_width="match_parent"

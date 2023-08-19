@@ -46,6 +46,7 @@ public class TeachersNotePadActivity extends AppCompatActivity {
                     clipboardManager.setPrimaryClip(clipData);
                     Toast.makeText(TeachersNotePadActivity.this, "Text copied to clipboard", Toast.LENGTH_SHORT).show();
                     notepad_message.setText("");
+                    Toast.makeText(TeachersNotePadActivity.this, "Copied", Toast.LENGTH_SHORT).show();
 
                 }
             }

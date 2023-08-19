@@ -18,8 +18,8 @@
 
             <androidx.cardview.widget.CardView
                 android:layout_gravity="center_horizontal"
-                android:layout_width="350dp"
-                android:layout_height="250dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginTop="20dp"
@@ -37,27 +37,14 @@
 
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:padding="20dp"
-                android:justificationMode="inter_word"
                 android:text="@string/school_law"
                 android:textColor="@color/lavender"
                 android:layout_centerInParent="true"
                 android:textSize="15dp" />
 
-            <TextView
-                android:visibility="invisible"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:padding="20dp"
-                android:justificationMode="inter_word"
-                android:text="dihfidshfgoiwreujsladkjfgoaisufjal;alksdfjslad;kfjwoeirujsdkj"
-                android:textColor="@color/white"
-                android:layout_centerInParent="true"
-                android:textSize="14dp" />
 
         </LinearLayout>
     </ScrollView>

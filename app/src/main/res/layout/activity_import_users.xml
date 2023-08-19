@@ -5,15 +5,9 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical"
-    tools:context=".CustomDialogActivity">
+    tools:context=".ImportUsersActivity">
 
-    <Button
-        android:id="@+id/dialog_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Show Dialog"
-        android:textAllCaps="false"
-        android:textSize="16sp" />
+
 
 
 </LinearLayout>

@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@drawable/pagebkg"
+    android:background="@drawable/backone"
     android:gravity="center">
 
     <androidx.cardview.widget.CardView
@@ -30,15 +30,18 @@
 
 
             <TextView
+                android:id="@+id/username_profile_frag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/profile_frag_image"
-                android:layout_margin="20dp"
                 android:layout_centerHorizontal="true"
-                android:text="User Name"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/name"
                 android:textSize="20sp"
-                android:id="@+id/username_profile_frag"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
         </RelativeLayout>
 

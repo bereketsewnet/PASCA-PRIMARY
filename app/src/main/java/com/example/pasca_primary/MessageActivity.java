@@ -68,7 +68,6 @@ public class MessageActivity extends AppCompatActivity {
         toolbar = findViewById(R.id.toolbar_message);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         imageViewOnToolbar = findViewById(R.id.profile_image_toolbar_message);
         usernameonToolbar = findViewById(R.id.username_ontoolbar_message);
@@ -188,7 +187,12 @@ public class MessageActivity extends AppCompatActivity {
                 ClipData clipData = clipboardManager.getPrimaryClip();
                 ClipData.Item item = clipData.getItemAt(0);
                 String text1 = item.getText().toString();
-                et_message.setText(text1);
+                if(text1.isEmpty() || text1.equals(null) || text1.equals("")){
+                    Toast.makeText(MessageActivity.this, "First copy text!", Toast.LENGTH_SHORT).show();
+                }else{
+                    et_message.setText(text1);
+                }
+
 
 
             }

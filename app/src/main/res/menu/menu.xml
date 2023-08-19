@@ -18,6 +18,11 @@
         android:title="@string/add_user"
         app:showAsAction="never"/>
 
+    <item
+        android:id="@+id/main_about"
+        android:title="@string/about"
+        app:showAsAction="never"/>
+
 
 
 
