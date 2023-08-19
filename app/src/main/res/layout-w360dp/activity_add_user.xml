@@ -2,16 +2,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/backone"
+    android:background="@drawable/pagebkg"
     android:orientation="vertical"
     android:gravity="center"
     android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    tools:context=".AddUserActivity">
 
-
-    <include layout="@layout/barlayout"
-        android:visibility="gone"
-        android:id="@+id/toolbarlogin"/>
 
 
     <androidx.cardview.widget.CardView
@@ -33,61 +29,74 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/log_in"
+                android:text="@string/add_user"
                 android:layout_gravity="center"
-                android:textSize="25sp"
+                android:textSize="26sp"
                 android:layout_margin="10dp"
                 android:textStyle="bold"/>
-
-
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/email"
+                android:hint="@string/enter_user_name"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="30dp"
+                android:id="@+id/add_userName"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/enter_user_email"
                 android:inputType="textEmailAddress"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginBottom="30dp"
-                android:id="@+id/log_email"/>
-
-
+                android:id="@+id/add_userId"/>
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/password"
+                android:hint="@string/enter_user_password"
                 android:inputType="textPassword"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginBottom="30dp"
-                android:id="@+id/log_password"/>
+                android:id="@+id/add_userpassword"/>
+
+
+            <Spinner
+                android:id="@+id/user_counter_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:background="@drawable/lavender_border_spinner"
+                android:layout_marginBottom="30dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"/>
 
 
             <Button
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginBottom="20dp"
-                android:id="@+id/login_account"
-                android:text="@string/login"
+                android:layout_marginBottom="30dp"
+                android:id="@+id/paste_txt_btn"
+                android:text="Paste"
                 android:background="@drawable/btn_back"
                 android:textColor="@android:color/white"/>
 
-            <TextView
-                android:id="@+id/forgot_password"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:padding="8dp"
-                android:text="@string/forgot_password"
-                android:textColor="@color/lavender"
-                android:layout_marginBottom="20dp"
-                android:textSize="16sp" />
-
-
-
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="30dp"
+                android:id="@+id/add_account"
+                android:text="Add"
+                android:background="@drawable/btn_back"
+                android:textColor="@android:color/white"/>
 
         </LinearLayout>
 

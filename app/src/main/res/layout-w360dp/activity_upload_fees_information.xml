@@ -18,7 +18,7 @@ tools:context=".UploadFeesInformationActivity">
     android:layout_marginTop="23dp">
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="160dp"
+        android:layout_height="190dp"
         android:src="@drawable/uploadimg"
         android:id="@+id/uploadImage_fee"
         android:layout_marginTop="20dp"

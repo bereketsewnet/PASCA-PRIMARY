@@ -10,7 +10,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/bar_layout_switch_user"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="55dp">
 
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"

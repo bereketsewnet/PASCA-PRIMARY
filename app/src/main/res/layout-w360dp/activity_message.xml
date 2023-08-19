@@ -11,7 +11,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/bar_layout"
         android:layout_width="match_parent"
-        android:layout_height="55dp">
+        android:layout_height="60dp">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
@@ -64,7 +64,7 @@
 
             <EditText
                 android:layout_width="0dp"
-                android:layout_height="40dp"
+                android:layout_height="45dp"
                 android:padding="5dp"
                 android:hint=" Message"
                 android:layout_weight="1"

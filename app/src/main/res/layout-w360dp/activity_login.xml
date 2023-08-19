@@ -2,34 +2,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@drawable/backone"
     android:orientation="vertical"
     android:gravity="center"
     android:layout_height="match_parent"
-    tools:context=".StartChatPasswordTActivity">
+    tools:context=".LoginActivity">
 
 
-    <com.google.android.material.appbar.AppBarLayout
+    <include layout="@layout/barlayout"
         android:visibility="gone"
-        android:id="@+id/bar_layout_teacher_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:id="@+id/toolbarlogin"/>
 
-        <androidx.appcompat.widget.Toolbar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/toolbar_start_chat_t_list"
-            android:theme="@style/Base.ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/MenuStyle"
-            android:background="@color/colorPrimaryDark">
-
-        </androidx.appcompat.widget.Toolbar>
-    </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="30dp"
-        android:layout_marginTop="100dp"
+
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:elevation="20dp">
@@ -44,12 +33,23 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/start_chat_password"
+                android:text="@string/log_in"
                 android:layout_gravity="center"
-                android:textSize="21sp"
+                android:textSize="26sp"
                 android:layout_margin="10dp"
                 android:textStyle="bold"/>
 
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="30dp"
+                android:id="@+id/log_email"/>
 
 
 
@@ -57,23 +57,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password"
+                android:inputType="textPassword"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginBottom="30dp"
-                android:inputType="textPassword"
-                android:id="@+id/start_chat_password_t"/>
+                android:id="@+id/log_password"/>
 
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="55dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginBottom="30dp"
-                android:id="@+id/start_chat_password_btn_t"
-                android:text="@string/go"
+                android:layout_marginBottom="20dp"
+                android:id="@+id/login_account"
+                android:text="@string/login"
                 android:background="@drawable/btn_back"
                 android:textColor="@android:color/white"/>
+
+            <TextView
+                android:id="@+id/forgot_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="8dp"
+                android:text="@string/forgot_password"
+                android:textColor="@color/lavender"
+                android:layout_marginBottom="20dp"
+                android:textSize="16sp" />
+
 
 
 

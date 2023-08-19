@@ -5,13 +5,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SchooCalendarActivity">
+    tools:context=".FeesInformationActivity">
 
     <androidx.cardview.widget.CardView
-        android:layout_gravity="center_horizontal"
         android:id="@+id/card"
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="260dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
@@ -22,17 +21,15 @@
             android:layout_width="200dp"
             android:layout_height="200dp"
             android:id="@+id/recyclerImage"
-            android:src="@drawable/calendar"
+            android:src="@drawable/debitcard"
             android:layout_gravity="center"
             android:scaleType="centerCrop"/>
     </androidx.cardview.widget.CardView>
 
-
-
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginTop="10dp"
         android:layout_below="@+id/card"
-        android:id="@+id/recyclerView_calendar"
+        android:id="@+id/recyclerView_fee"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

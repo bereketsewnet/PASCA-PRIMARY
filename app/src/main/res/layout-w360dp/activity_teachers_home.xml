@@ -12,7 +12,7 @@
     <LinearLayout
         android:id="@+id/ll1"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="210dp"
         android:gravity="center"
         android:background="@drawable/photo5"
         android:layout_marginTop="-10dp"
@@ -78,8 +78,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/teachers_daily"
-                android:layout_width="135dp"
-                android:layout_height="135dp"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
                 app:cardCornerRadius="15dp"
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="#51a6ff">
@@ -92,8 +92,8 @@
 
                     <ImageView
                         android:layout_gravity="center"
-                        android:layout_width="55dp"
-                        android:layout_height="55dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:background="@drawable/dailystud"/>
 
                     <TextView
@@ -112,8 +112,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/teachers_notepad"
-                android:layout_width="135dp"
-                android:layout_height="135dp"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
                 app:cardCornerRadius="15dp"
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="#ff5b69">
@@ -126,8 +126,8 @@
 
                     <ImageView
                         android:layout_gravity="center"
-                        android:layout_width="55dp"
-                        android:layout_height="55dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:background="@drawable/notepadtech"/>
 
                     <TextView
@@ -155,8 +155,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/teachers_gk"
-                android:layout_width="135dp"
-                android:layout_height="135dp"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
                 app:cardCornerRadius="15dp"
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="#feb05b">
@@ -169,8 +169,8 @@
 
                     <ImageView
                         android:layout_gravity="center"
-                        android:layout_width="55dp"
-                        android:layout_height="55dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:background="@drawable/gkstud"/>
 
                     <TextView
@@ -189,8 +189,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/teachers_s_profile"
-                android:layout_width="135dp"
-                android:layout_height="135dp"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
                 app:cardCornerRadius="15dp"
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="#b490fe">
@@ -203,8 +203,8 @@
 
                     <ImageView
                         android:layout_gravity="center"
-                        android:layout_width="55dp"
-                        android:layout_height="55dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:background="@drawable/idcardstud"/>
 
                     <TextView
@@ -232,8 +232,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/teachers_rank"
-                android:layout_width="135dp"
-                android:layout_height="135dp"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
                 app:cardCornerRadius="15dp"
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="#ff69b0">
@@ -246,8 +246,8 @@
 
                     <ImageView
                         android:layout_gravity="center"
-                        android:layout_width="55dp"
-                        android:layout_height="55dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:background="@drawable/progressstud"/>
 
                     <TextView
@@ -266,8 +266,8 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/teachers_books"
-                android:layout_width="135dp"
-                android:layout_height="135dp"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
                 app:cardCornerRadius="15dp"
                 android:layout_margin="10dp"
                 app:cardBackgroundColor="#3bbdcd">
@@ -280,8 +280,8 @@
 
                     <ImageView
                         android:layout_gravity="center"
-                        android:layout_width="55dp"
-                        android:layout_height="55dp"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
                         android:background="@drawable/librarystud"/>
 
                     <TextView
