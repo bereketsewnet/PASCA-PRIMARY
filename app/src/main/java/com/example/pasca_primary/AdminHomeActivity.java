@@ -1,6 +1,7 @@
 package com.example.pasca_primary;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -9,7 +10,10 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -19,10 +23,21 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.example.pasca_primary.Model.Users;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Locale;
 
@@ -31,9 +46,10 @@ public class AdminHomeActivity extends AppCompatActivity {
     NavigationView nav;
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
+    TextView admin_home_name;
     FirebaseAuth mAuth;
-    Spinner spinnerA;
-    public static final String[] languageA = {"Lang","En", "አማ", "عربي", "Fr"};
+    ImageView LanA;
+    String langg;
     CardView admin_show_gk,admin_show_books,admin_show_student_profile,admin_show_teacher_profile,admin_show_calendar,admin_show_fees;
 
     @Override
@@ -44,13 +60,14 @@ public class AdminHomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_admin_home);
 
 
+
         Window window = getWindow();
         // Show status bar
         getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         // Hide status bar
         //getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-
+        LanA = findViewById(R.id.LanA);
 
         Toolbar toolbar=(Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -59,6 +76,7 @@ public class AdminHomeActivity extends AppCompatActivity {
 
         nav=(NavigationView)findViewById(R.id.navmenu);
         drawerLayout=(DrawerLayout)findViewById(R.id.drawer);
+        admin_home_name = findViewById(R.id.admin_home_name);
 
         toggle=new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open,R.string.close);
         toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.white));
@@ -73,40 +91,16 @@ public class AdminHomeActivity extends AppCompatActivity {
         admin_show_calendar = findViewById(R.id.admin_show_calendar);
         admin_show_fees = findViewById(R.id.admin_show_fees);
 
-        spinnerA = findViewById(R.id.lanA);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,languageA);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerA.setAdapter(adapter);
-        spinnerA.setSelection(0);
-        spinnerA.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+        LanA.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedLang = parent.getItemAtPosition(position).toString();
-                if(selectedLang.equals("En")){
-                    setLocal(AdminHomeActivity.this,"en");
-                    finish();
-                    startActivity(getIntent());
-                }else if(selectedLang.equals("አማ")){
-                    setLocal(AdminHomeActivity.this,"am");
-                    finish();
-                    startActivity(getIntent());
-                }else if(selectedLang.equals("عربي")){
-                    setLocal(AdminHomeActivity.this,"ar");
-                    finish();
-                    startActivity(getIntent());
-                }else if(selectedLang.equals("Fr")){
-                    setLocal(AdminHomeActivity.this,"fr");
-                    finish();
-                    startActivity(getIntent());
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
+            public void onClick(View v) {
+                showChangeLangDialog();
             }
         });
+
+
 
         admin_show_gk.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -166,6 +160,28 @@ public class AdminHomeActivity extends AppCompatActivity {
 
         // end of indicator
 
+        // setting name to home display
+        DatabaseReference reference;
+        FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+
+                Users student_name = snapshot.getValue(Users.class);
+
+                admin_home_name.setText(student_name.getUsername()); // set the text of the user on textivew in toolbar
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        // end of setting name
+
         nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem)
@@ -173,7 +189,7 @@ public class AdminHomeActivity extends AppCompatActivity {
                 switch (menuItem.getItemId())
                 {
                     case R.id.admin_register:
-                        Intent intent = new Intent(AdminHomeActivity.this,RegisterActivity.class);
+                        Intent intent = new Intent(AdminHomeActivity.this,RegisterUserListActivity.class);
                         startActivity(intent);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
@@ -253,6 +269,7 @@ public class AdminHomeActivity extends AppCompatActivity {
                     case R.id.admin_logout:
                         Intent intent13 = new Intent(AdminHomeActivity.this,LoginActivity.class);
                         startActivity(intent13);
+                        finish();
                         mAuth.signOut();
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
@@ -265,13 +282,94 @@ public class AdminHomeActivity extends AppCompatActivity {
 
     }
 
-    public void setLocal(Activity activity, String langCode){
-        Locale locale = new Locale(langCode);
-        locale.setDefault(locale);
-        Resources resources = activity.getResources();
-        Configuration config =resources.getConfiguration();
-        config.setLocale(locale);
-        resources.updateConfiguration(config,resources.getDisplayMetrics());
+    private void showChangeLangDialog() {
+        final String[] listItems = {"En", "አማ", "عربي", "Fr"};
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(AdminHomeActivity.this);
+        mBuilder.setTitle("Choose Language...");
+        mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                if(which == 0){
+                    setLocal("en");
+                    recreate();
+                }else if(which == 1){
+                    setLocal("am");
+                    recreate();
+                }else if(which == 2){
+                    setLocal("ar");
+                    recreate();
+                }else if(which == 3){
+                    setLocal("fr");
+                    recreate();
+                }
+                dialog.dismiss();
+
+            }
+        });
+
+        AlertDialog mDialog = mBuilder.create();
+        mDialog.show();
+
+    }
+
+    public void setLocal(String lang){
+      Locale locale = new Locale(lang);
+      Locale.setDefault(locale);
+      Configuration config = new Configuration();
+      config.locale = locale;
+      getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+      // save data
+        SharedPreferences.Editor editor = getSharedPreferences("Settings",MODE_PRIVATE).edit();
+        editor.putString("My_Lang", lang);
+        editor.apply();
+    }
+
+
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finishAffinity();
     }
 
 }
+
+/*
+
+ spinnerA = findViewById(R.id.LanA);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,languageA);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinnerA.setAdapter(adapter);
+        spinnerA.setSelection(0);
+        spinnerA.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedLang = parent.getItemAtPosition(position).toString();
+                if(selectedLang.equals("En")){
+                    setLocal(AdminHomeActivity.this,"en");
+                    finish();
+                    startActivity(getIntent());
+                }else if(selectedLang.equals("አማ")){
+                    setLocal(AdminHomeActivity.this,"am");
+                    finish();
+                    startActivity(getIntent());
+                }else if(selectedLang.equals("عربي")){
+                    setLocal(AdminHomeActivity.this,"ar");
+                    finish();
+                    startActivity(getIntent());
+                }else if(selectedLang.equals("Fr")){
+                    setLocal(AdminHomeActivity.this,"fr");
+                    finish();
+                    startActivity(getIntent());
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+ */

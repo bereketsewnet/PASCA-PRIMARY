@@ -11,7 +11,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.example.pasca_primary.AdminHomeActivity;
 import com.example.pasca_primary.MessageActivity;
 import com.example.pasca_primary.Model.Chats;
 import com.example.pasca_primary.Model.Users;
@@ -29,7 +28,7 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class UserAdapterRank extends RecyclerView.Adapter<UserAdapterRank.MyHolder> {
+public class UserRegisterAdapter extends RecyclerView.Adapter<UserRegisterAdapter.MyHolder> {
 
     Context context;
     List<Users> userlist;
@@ -38,10 +37,9 @@ public class UserAdapterRank extends RecyclerView.Adapter<UserAdapterRank.MyHold
     String friendid;
     String getclasss;
     int gettypee;
-
     FirebaseUser firebaseUser;
 
-    public UserAdapterRank(Context context, List<Users> userlist, boolean isChat) {
+    public UserRegisterAdapter(Context context, List<Users> userlist, boolean isChat) {
         this.context = context;
         this.userlist = userlist;
         this.isChat = isChat;
@@ -91,6 +89,8 @@ public class UserAdapterRank extends RecyclerView.Adapter<UserAdapterRank.MyHold
 
         holder.username.setText(user.getUsername());
         holder.user_list_class.setText(getclasss);
+
+
         if (user.getImageURL().equals("default")) {
 
             holder.imageView.setImageResource(R.drawable.user);
@@ -146,13 +146,13 @@ public class UserAdapterRank extends RecyclerView.Adapter<UserAdapterRank.MyHold
             super(itemView);
 
 
-
             username = itemView.findViewById(R.id.username_userfrag);
             user_list_class = itemView.findViewById(R.id.user_list_class);
             user_list_type = itemView.findViewById(R.id.user_list_type);
             imageView = itemView.findViewById(R.id.image_user_userfrag);
             image_on = itemView.findViewById(R.id.image_online);
             image_off = itemView.findViewById(R.id.image_offline);
+
 
             itemView.setOnClickListener(this);
 
@@ -165,7 +165,7 @@ public class UserAdapterRank extends RecyclerView.Adapter<UserAdapterRank.MyHold
 
             friendid = users.getId();
 
-            Intent intent = new Intent(context, RankFormActivity.class);
+            Intent intent = new Intent(context, MessageActivity.class);
             intent.putExtra("friendid", friendid);
             context.startActivity(intent);
 
@@ -173,7 +173,6 @@ public class UserAdapterRank extends RecyclerView.Adapter<UserAdapterRank.MyHold
 
         }
     }
-
 
 
 }

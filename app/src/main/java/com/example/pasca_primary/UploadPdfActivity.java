@@ -114,9 +114,6 @@ public class UploadPdfActivity extends AppCompatActivity {
                         pdfClass pdfClass = new pdfClass(pdf_name.getText().toString(),url.toString());
                         databaseReference.child(databaseReference.push().getKey()).setValue(pdfClass);
 
-                        Intent intent = new Intent(UploadPdfActivity.this,BooksActivity.class);
-                        startActivity(intent);
-
                         Toast.makeText(UploadPdfActivity.this, "Book Uploaded!!", Toast.LENGTH_SHORT).show();
 
                         progressDialog.dismiss();

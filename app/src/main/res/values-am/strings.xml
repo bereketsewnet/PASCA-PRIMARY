@@ -4,8 +4,8 @@
     <string-array name="user_type">
         <item>Student</item>
         <item>Teacher </item>
-        <item>Home Room Teacher</item>
-        <item>Admin</item>
+        <item>HomeRoom Teacher</item>
+        <item>Administration</item>
     </string-array>
 
     <string-array name="student_sex">
@@ -164,17 +164,17 @@
     <string name="set_student_mark_here">የተማሪ ውጤት እዚህ ያዘጋጁ</string>
     <string name="send">ላክ</string>
     <string name="register_users">ተጠቃሚዎችን ይመዝገቡ</string>
-    <string name="post_news">ማሳወቂያ ይለጥፉ</string>
-    <string name="post_grade">ደረጃ ይለጥፉ</string>
-    <string name="post_question">ጥያቄ ይለጥፉ</string>
-    <string name="post_books">መፃሕፍትን ይለጥፉ</string>
-    <string name="post_students_profile">የተማሪዎችን መገለጫ ይለጥፉ</string>
-    <string name="post_teachers_profile">የመምህራን መገለጫ ይለጥፉ</string>
-    <string name="post_calendar">የቀን መቁጠሪያ ይለጥፉ</string>
-    <string name="post_fees_information">ክፍያዎች መረጃ ይለጥፉ</string>
+    <string name="post_news">ይለጥፉ</string>
+    <string name="post_grade">ደረጃ</string>
+    <string name="post_question">ጥያቄ</string>
+    <string name="post_books">መፃሕፍትን</string>
+    <string name="post_students_profile">የተማሪዎችን መገለጫ</string>
+    <string name="post_teachers_profile">የመምህራን መገለጫ</string>
+    <string name="post_calendar">የቀን መቁጠሪያ</string>
+    <string name="post_fees_information">ክፍያዎች መረጃ</string>
     <string name="logout">ውጣ</string>
-    <string name="startchat_pass_t">የተማሪዎች ማለፊያ</string>
-    <string name="startchat_pass_s">የአስተማሪዎች ማለፊያ </string>
+    <string name="startchat_pass_t">የተማሪዎች</string>
+    <string name="startchat_pass_s">የአስተማሪዎች</string>
     <string name="changeprofile_pass">የመገለጫ ይለፍ ቃል ቀይር</string>
     <string name="change_password">የሚስጥር ቁልፍ ይቀይሩ</string>
     <string name="password">የይለፍ ቃል</string>

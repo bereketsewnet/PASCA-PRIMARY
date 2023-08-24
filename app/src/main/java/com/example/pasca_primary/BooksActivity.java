@@ -122,7 +122,7 @@ public class BooksActivity extends AppCompatActivity {
                     @Override
                     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
                         View view = super.getView(position,convertView,parent);
-                        TextView text = (TextView) view.findViewById(android.R.id.text1);
+                        TextView text = view.findViewById(android.R.id.text1);
                         text.setTextColor(Color.BLACK);
                         text.setTextSize(22);
                         return view;

@@ -24,6 +24,9 @@
         android:theme="@style/AppTheming"
         tools:targetApi="31">
         <activity
+            android:name=".RegisterUserListActivity"
+            android:exported="false" />
+        <activity
             android:name=".AboutUsActivity"
             android:exported="false"
             android:screenOrientation="portrait"

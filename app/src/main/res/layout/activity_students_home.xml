@@ -21,13 +21,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <Spinner
+        <ImageView
             android:id="@+id/lan"
-            android:layout_width="wrap_content"
+            android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_margin="10dp"
             android:layout_marginTop="16dp"
-            android:background="@drawable/lang_spinner_back"
+            android:src="@drawable/translate"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

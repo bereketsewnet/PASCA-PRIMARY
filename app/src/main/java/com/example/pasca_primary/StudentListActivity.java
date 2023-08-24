@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.example.pasca_primary.Adapters.UserAdapter;
+import com.example.pasca_primary.Adapters.UserRegisterAdapter;
 import com.example.pasca_primary.Model.Users;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -31,7 +32,7 @@ public class StudentListActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView_l;
 
-    private UserAdapter userAdapter_l;
+    private UserRegisterAdapter userAdapter_l;
     private List<Users> mUsers_l;
 
     EditText search_users_l;
@@ -110,7 +111,7 @@ public class StudentListActivity extends AppCompatActivity {
                     }
                 }
 
-                userAdapter_l = new UserAdapter(StudentListActivity.this, mUsers_l, false);
+                userAdapter_l = new UserRegisterAdapter(StudentListActivity.this, mUsers_l, false);
                 recyclerView_l.setAdapter(userAdapter_l);
             }
 
@@ -144,7 +145,7 @@ public class StudentListActivity extends AppCompatActivity {
 
                     }
 
-                    userAdapter_l = new UserAdapter(StudentListActivity.this, mUsers_l, false);
+                    userAdapter_l = new UserRegisterAdapter(StudentListActivity.this, mUsers_l, false);
                     recyclerView_l.setAdapter(userAdapter_l);
                 }
             }

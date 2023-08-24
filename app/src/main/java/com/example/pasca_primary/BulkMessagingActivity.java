@@ -65,6 +65,12 @@ public class BulkMessagingActivity extends AppCompatActivity {
         filter_l2 = findViewById(R.id.filter_l2);
 
         uid = getIntent().getStringExtra("uid");
+        if(uid == null || uid.isEmpty()){
+            FirebaseUser firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+            uid = firebaseUser.getUid();
+        }
+
+        
         Msg = getIntent().getStringExtra("bulkMsg");
 
         //Create the Dialog here
@@ -201,7 +207,6 @@ public class BulkMessagingActivity extends AppCompatActivity {
                 if(multiSelectionId != null){
                     String reciveId = multiSelectionId.getId();
                     sendMessage(uid,reciveId,Msg);
-                    dialog.dismiss();
                     SuccessDialog.show();
 
 
@@ -226,6 +231,7 @@ public class BulkMessagingActivity extends AppCompatActivity {
                 hashMap.put("isseen", false);
 
                 reference.child("Chats").push().setValue(hashMap);
+                dialog.dismiss();
 
 
                 final DatabaseReference reference1 = FirebaseDatabase.getInstance().getReference("Chatslist").child(myid).child(friendid);
@@ -239,6 +245,7 @@ public class BulkMessagingActivity extends AppCompatActivity {
 
 
                             reference1.child("id").setValue(friendid);
+                            dialog.dismiss();
                         }
 
                     }

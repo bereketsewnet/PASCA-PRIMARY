@@ -5,8 +5,8 @@
     <string-array name="user_type">
         <item>Student</item>
         <item>Teacher </item>
-        <item>Home Room Teacher</item>
-        <item>Admin</item>
+        <item>HomeRoom Teacher</item>
+        <item>Administration</item>
     </string-array>
 
     <string-array name="student_sex">
@@ -177,18 +177,18 @@
     <string name="set_student_mark_here">Set Student mark here</string>
     <string name="send">Send</string>
     <string name="register_users">Register Users</string>
-    <string name="post_news">Post News</string>
-    <string name="post_grade">Post Grade</string>
-    <string name="post_question">Post Question</string>
-    <string name="post_books">Post Books</string>
-    <string name="post_students_profile">Post Students Profile</string>
-    <string name="post_teachers_profile">Post Teachers Profile</string>
-    <string name="post_calendar">Post Calendar</string>
-    <string name="post_fees_information">Post Fees Information</string>
+    <string name="post_news">News</string>
+    <string name="post_grade">Grade</string>
+    <string name="post_question">Question</string>
+    <string name="post_books">Books</string>
+    <string name="post_students_profile">Students Profile</string>
+    <string name="post_teachers_profile">Teachers Profile</string>
+    <string name="post_calendar">Calendar</string>
+    <string name="post_fees_information">Fees</string>
     <string name="logout">Logout</string>
-    <string name="startchat_pass_t">StartChat Pass T</string>
-    <string name="startchat_pass_s">StartChat Pass S</string>
-    <string name="changeprofile_pass">ChangeProfile Pass</string>
+    <string name="startchat_pass_t">StartChat T</string>
+    <string name="startchat_pass_s">StartChat S</string>
+    <string name="changeprofile_pass">ChangeProfile</string>
     <string name="change_password">Change Password</string>
     <string name="password">Password</string>
     <string name="conform_password">Conform Password</string>

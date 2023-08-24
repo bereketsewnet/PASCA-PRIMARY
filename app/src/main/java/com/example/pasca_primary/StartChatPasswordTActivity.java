@@ -67,6 +67,7 @@ public class StartChatPasswordTActivity extends AppCompatActivity {
                                 if(recive_pass_t.equals(start_chat_password_t_store)){
                                     Intent intent = new Intent(StartChatPasswordTActivity.this, StudentListActivity.class);
                                     startActivity(intent);
+                                    start_chat_password_t.setText("");
                                     dialog.dismiss();
                                     finish();
                                 }else{

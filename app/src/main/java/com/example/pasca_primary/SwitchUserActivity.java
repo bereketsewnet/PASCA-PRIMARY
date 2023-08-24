@@ -799,7 +799,6 @@ public class SwitchUserActivity extends AppCompatActivity {
                                 Intent intent = new Intent(SwitchUserActivity.this,StudentsHomeActivity.class);
                                 intent.putExtra("MyId", uid);
                                 startActivity(intent);
-                                Toast.makeText(SwitchUserActivity.this, "Welcome Student", Toast.LENGTH_SHORT).show();
                                 dialog.dismiss();
                                 finish();
 
@@ -812,7 +811,6 @@ public class SwitchUserActivity extends AppCompatActivity {
                                 Intent intent = new Intent(SwitchUserActivity.this, TeachersHomeActivity.class);
                                 intent.putExtra("MyId", uid);
                                 startActivity(intent);
-                                Toast.makeText(SwitchUserActivity.this, "Welcome Teacher", Toast.LENGTH_SHORT).show();
                                 dialog.dismiss();
                                 finish();
                             }
@@ -823,9 +821,13 @@ public class SwitchUserActivity extends AppCompatActivity {
                                 Intent intent = new Intent(SwitchUserActivity.this,AdminHomeActivity.class);
                                 intent.putExtra("MyId", uid);
                                 startActivity(intent);
-                                Toast.makeText(SwitchUserActivity.this, "Welcome Admin", Toast.LENGTH_SHORT).show();
                                 dialog.dismiss();
                                 finish();
+                            }
+
+                            if(usertype==4){
+                                Toast.makeText(SwitchUserActivity.this, "Not Found!", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
                             }
                         }
 

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
@@ -13,11 +14,11 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.example.pasca_primary.Adapters.UserAdapter;
+import com.example.pasca_primary.Adapters.UserAdapterRank;
 import com.example.pasca_primary.Adapters.UserRegisterAdapter;
 import com.example.pasca_primary.Model.Users;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -30,55 +31,57 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TeacherListActivity extends AppCompatActivity {
+public class RegisterUserListActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
+    private RecyclerView recyclerView_register;
 
     private UserRegisterAdapter userAdapter;
     private List<Users> mUsers;
+    Button filter_register1,filter_register2;
+    String filter_register_store;
+    FloatingActionButton fab_register;
 
-    EditText search_users;
-    Button filter_t1, filter_t2;
-    String filter_t_store;
+    EditText search_users_register;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teacher_list);
+        setContentView(R.layout.activity_register_user_list);
 
-        recyclerView = findViewById(R.id.recyclerview_users);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(TeacherListActivity.this));
-        filter_t1 = findViewById(R.id.filter_t1);
-        filter_t2 = findViewById(R.id.filter_t2);
-        filter_t_store = "search";
-        filter_t1.setOnClickListener(new View.OnClickListener() {
+        filter_register1 = findViewById(R.id.filter_register1);
+        filter_register2 = findViewById(R.id.filter_register2);
+        fab_register = findViewById(R.id.fab_register);
+        recyclerView_register = findViewById(R.id.recyclerview_users_register);
+        recyclerView_register.setHasFixedSize(true);
+        recyclerView_register.setLayoutManager(new LinearLayoutManager(RegisterUserListActivity.this));
+
+        readUsers();
+        mUsers = new ArrayList<>();
+
+        filter_register_store = "search";
+        filter_register1.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("ResourceType")
             @Override
             public void onClick(View v) {
-                filter_t_store = "student_class";
-                filter_t1.setBackgroundColor(Color.BLACK);
+                filter_register_store = "student_class";
+                filter_register1.setBackgroundColor(Color.BLACK);
 
             }
 
         });
 
-        filter_t2.setOnClickListener(new View.OnClickListener() {
+        filter_register2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                filter_t_store = "search";
-                filter_t2.setBackgroundColor(Color.BLACK);
+                filter_register_store = "search";
+                filter_register2.setBackgroundColor(Color.BLACK);
             }
         });
 
-        mUsers = new ArrayList<>();
-
-        readUsers();
-
-        search_users = findViewById(R.id.search_users);
+        search_users_register = findViewById(R.id.search_users_register);
 
 
-        search_users.addTextChangedListener(new TextWatcher() {
+        search_users_register.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -96,12 +99,23 @@ public class TeacherListActivity extends AppCompatActivity {
         });
 
 
+        fab_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterUserListActivity.this,RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
+
+
     }
+
 
     private void searchUsers(String s) {
 
         final FirebaseUser fuser = FirebaseAuth.getInstance().getCurrentUser();
-        Query query = FirebaseDatabase.getInstance().getReference("Users").orderByChild(filter_t_store)
+        Query query = FirebaseDatabase.getInstance().getReference("Users").orderByChild(filter_register_store)
                 .startAt(s)
                 .endAt(s+"\uf8ff");
 
@@ -119,8 +133,8 @@ public class TeacherListActivity extends AppCompatActivity {
                     }
                 }
 
-                userAdapter = new UserRegisterAdapter(TeacherListActivity.this, mUsers, false);
-                recyclerView.setAdapter(userAdapter);
+                userAdapter = new UserRegisterAdapter(RegisterUserListActivity.this, mUsers, false);
+                recyclerView_register.setAdapter(userAdapter);
             }
 
             @Override
@@ -130,6 +144,7 @@ public class TeacherListActivity extends AppCompatActivity {
         });
 
     }
+
 
     private void readUsers() {
 
@@ -139,21 +154,21 @@ public class TeacherListActivity extends AppCompatActivity {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (search_users.getText().toString().equals("")) {
+                if (search_users_register.getText().toString().equals("")) {
                     mUsers.clear();
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                         Users user = snapshot.getValue(Users.class);
 
                         if (!user.getId().equals(firebaseUser.getUid())) {
-                            if(user.getUsertype() == 1 || user.getUsertype() == 2){
+                            if(user.getUsertype() == 0){
                                 mUsers.add(user);
                             }
                         }
 
                     }
 
-                    userAdapter = new UserRegisterAdapter(TeacherListActivity.this, mUsers, false);
-                    recyclerView.setAdapter(userAdapter);
+                    userAdapter = new UserRegisterAdapter(RegisterUserListActivity.this, mUsers, false);
+                    recyclerView_register.setAdapter(userAdapter);
                 }
             }
 
@@ -163,7 +178,5 @@ public class TeacherListActivity extends AppCompatActivity {
             }
         });
     }
-
-
 
 }

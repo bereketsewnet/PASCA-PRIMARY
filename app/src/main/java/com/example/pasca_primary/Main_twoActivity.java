@@ -73,11 +73,10 @@ public class Main_twoActivity extends AppCompatActivity {
         final   TabLayout tabLayout = findViewById(R.id.tablayout);
         final   ViewPager viewPager = findViewById(R.id.viewPager);
 
-        if(uid == null){
-            Intent intent = new Intent(Main_twoActivity.this,TeachersHomeActivity.class);
-            startActivity(intent);
-            Toast.makeText(this, "Please Back To Connection a Moment", Toast.LENGTH_SHORT).show();
-        }else{
+        if(uid == null || uid.isEmpty()){
+            firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+            uid = firebaseUser.getUid();
+        }
 
 
 
@@ -116,8 +115,6 @@ public class Main_twoActivity extends AppCompatActivity {
 
 
 
-            firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
 
             reference = FirebaseDatabase.getInstance().getReference("Users").child(uid);
             reference.addValueEventListener(new ValueEventListener() {
@@ -146,7 +143,6 @@ public class Main_twoActivity extends AppCompatActivity {
             });
 
 
-        }
 
 
     }
@@ -261,6 +257,12 @@ public class Main_twoActivity extends AppCompatActivity {
 
 
     private void Status (final String status) {
+
+        if (uid == null || uid.isEmpty()) {
+            firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+            uid = firebaseUser.getUid();
+
+        }
 
 
         final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(uid);

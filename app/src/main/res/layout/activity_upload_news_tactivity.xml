@@ -4,9 +4,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
-
     tools:context=".UploadNewsTActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/white"
+        android:elevation="25dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Post Short News Here"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:textColor="@color/lavender"/>
+    </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,7 +51,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="200dp"
+            android:layout_marginTop="100dp"
             android:orientation="horizontal">
             <EditText
                 android:layout_width="0dp"

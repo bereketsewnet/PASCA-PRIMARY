@@ -113,8 +113,10 @@ public class RegisterActivity extends AppCompatActivity {
                     usertype = "1";
                 }else if(usertype.equals("HomeRoom Teacher")){
                     usertype = "2";
-                }else{
+                }else if(usertype.equals("Administration")){
                     usertype = "3";
+                }else{
+                    usertype = "4";
                 }
 
 

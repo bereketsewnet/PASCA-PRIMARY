@@ -36,7 +36,7 @@
             <LinearLayout
                 android:id="@+id/ll1"
                 android:layout_width="match_parent"
-                android:layout_height="179dp"
+                android:layout_height="199dp"
                 android:gravity="center"
                 android:background="@drawable/photo5"
                 android:layout_marginTop="-10dp"
@@ -57,29 +57,26 @@
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Pasca Internation School"
+                        android:layout_height="45dp"
+                        android:text="@string/studnet_welcome"
                         android:textColor="#ffff"
-                        android:textSize="18dp"/>
+                        android:textSize="18dp" />
 
                     <TextView
+                        android:id="@+id/admin_home_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/studnet_welcome"
+                        android:text="UserName"
                         android:textColor="#ffff"
                         android:textSize="16dp"/>
 
-                    <Spinner
-                        android:id="@+id/lanA"
-                        android:layout_width="wrap_content"
+                    <ImageView
+                        android:id="@+id/LanA"
+                        android:layout_width="35dp"
                         android:layout_height="35dp"
-                        android:layout_margin="10dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="@drawable/lang_spinner_back"
+                        android:src="@drawable/translate"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-
                 </LinearLayout>
 
             </LinearLayout>
@@ -101,8 +98,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_gk"
-                        android:layout_width="125dp"
-                        android:layout_height="125dp"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         app:cardCornerRadius="15dp"
                         android:layout_margin="10dp"
                         app:cardBackgroundColor="#51a6ff">
@@ -135,8 +132,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_books"
-                        android:layout_width="125dp"
-                        android:layout_height="125dp"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         app:cardCornerRadius="15dp"
                         android:layout_margin="10dp"
                         app:cardBackgroundColor="#ff5b69">
@@ -179,8 +176,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_student_profile"
-                        android:layout_width="125dp"
-                        android:layout_height="125dp"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         app:cardCornerRadius="15dp"
                         android:layout_margin="10dp"
                         app:cardBackgroundColor="#feb05b">
@@ -213,8 +210,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_teachers_profile"
-                        android:layout_width="125dp"
-                        android:layout_height="125dp"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         app:cardCornerRadius="15dp"
                         android:layout_margin="10dp"
                         app:cardBackgroundColor="#b490fe">
@@ -257,8 +254,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_calendar"
-                        android:layout_width="125dp"
-                        android:layout_height="125dp"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         app:cardCornerRadius="15dp"
                         android:layout_margin="10dp"
                         app:cardBackgroundColor="#ff69b0">
@@ -291,8 +288,8 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_fees"
-                        android:layout_width="125dp"
-                        android:layout_height="125dp"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         app:cardCornerRadius="15dp"
                         android:layout_margin="10dp"
                         app:cardBackgroundColor="#3bbdcd">
@@ -339,6 +336,7 @@
 
 
         <com.google.android.material.navigation.NavigationView
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             app:itemTextAppearance="@style/DrawerTheme"

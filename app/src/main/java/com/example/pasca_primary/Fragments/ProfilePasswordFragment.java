@@ -70,6 +70,7 @@ public class ProfilePasswordFragment extends Fragment {
                                 if(recive_pass.equals(profile_password_store)){
                                     Intent intent = new Intent(getContext(), IdProfileActivity.class);
                                     startActivity(intent);
+                                    profile_password.setText("");
                                     dialog.dismiss();
                                 }else{
                                     profile_password.setError("Please Try Again!");

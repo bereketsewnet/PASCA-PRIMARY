@@ -21,13 +21,12 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:elevation="20dp"
-        android:layout_below="@id/toolbarregis">
+        app:cardBackgroundColor="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_below="@id/toolbarregis">
+        android:orientation="vertical">
 
 
         <TextView

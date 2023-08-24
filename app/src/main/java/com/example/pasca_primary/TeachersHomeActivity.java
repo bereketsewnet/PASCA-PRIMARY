@@ -5,13 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -38,7 +42,7 @@ public class TeachersHomeActivity extends AppCompatActivity {
     FirebaseUser firebaseUser;
     TextView stubjectname;
     CircleImageView imageView;
-    Spinner spinnerT;
+    ImageView lanT;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,40 +59,9 @@ public class TeachersHomeActivity extends AppCompatActivity {
 
         stubjectname = findViewById(R.id.stubjectname);
         imageView = findViewById(R.id.Student_home_profile);
-        spinnerT = findViewById(R.id.lanT);
+        lanT = findViewById(R.id.lanT);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,languageT);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerT.setAdapter(adapter);
-        spinnerT.setSelection(0);
-        spinnerT.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedLang = parent.getItemAtPosition(position).toString();
-                if(selectedLang.equals("En")){
-                    setLocal(TeachersHomeActivity.this,"en");
-                    finish();
-                    startActivity(getIntent());
-                }else if(selectedLang.equals("አማ")){
-                    setLocal(TeachersHomeActivity.this,"am");
-                    finish();
-                    startActivity(getIntent());
-                }else if(selectedLang.equals("عربي")){
-                    setLocal(TeachersHomeActivity.this,"ar");
-                    finish();
-                    startActivity(getIntent());
-                }else if(selectedLang.equals("Fr")){
-                    setLocal(TeachersHomeActivity.this,"fr");
-                    finish();
-                    startActivity(getIntent());
-                }
-            }
 
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
 
         // get user id from Database
         reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
@@ -169,20 +142,60 @@ public class TeachersHomeActivity extends AppCompatActivity {
             }
         });
 
+        //setting language
+        lanT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showChangeLangDialog();
+            }
+        });
+
 
 
     }
 
-    public void setLocal(Activity activity, String langCode){
-        Locale locale = new Locale(langCode);
-        locale.setDefault(locale);
-        Resources resources = activity.getResources();
-        Configuration config =resources.getConfiguration();
-        config.setLocale(locale);
-        resources.updateConfiguration(config,resources.getDisplayMetrics());
+    private void showChangeLangDialog() {
+        final String[] listItems = {"En", "አማ", "عربي", "Fr"};
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(TeachersHomeActivity.this);
+        mBuilder.setTitle("Choose Language...");
+        mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                if(which == 0){
+                    setLocal("en");
+                    recreate();
+                }else if(which == 1){
+                    setLocal("am");
+                    recreate();
+                }else if(which == 2){
+                    setLocal("ar");
+                    recreate();
+                }else if(which == 3){
+                    setLocal("fr");
+                    recreate();
+                }
+                dialog.dismiss();
+
+            }
+        });
+
+        AlertDialog mDialog = mBuilder.create();
+        mDialog.show();
+
     }
 
-    
+    public void setLocal(String lang){
+        Locale locale = new Locale(lang);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        getBaseContext().getResources().updateConfiguration(config, getBaseContext().getResources().getDisplayMetrics());
+        // save data
+        SharedPreferences.Editor editor = getSharedPreferences("Settings",MODE_PRIVATE).edit();
+        editor.putString("My_Lang", lang);
+        editor.apply();
+    }
 
     public void onBackPressed(){
         super.onBackPressed();

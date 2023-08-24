@@ -77,12 +77,12 @@ public class MainActivity extends AppCompatActivity {
         final  TabLayout tabLayout = findViewById(R.id.tablayout);
         final   ViewPager viewPager = findViewById(R.id.viewPager);
         // if user id is empty back to mainStudent activity and not other function done
-        if (uid == null) {
-            Intent intent = new Intent(MainActivity.this,StudentsHomeActivity.class);
-            startActivity(intent);
-            Toast.makeText(this, "Please Back To Connection a Moment", Toast.LENGTH_SHORT).show();
+        if (uid == null || uid.isEmpty()) {
+            firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+            uid = firebaseUser.getUid();
 
-        }else {
+        }
+
 
             reference = FirebaseDatabase.getInstance().getReference("Chats");
             reference.addValueEventListener(new ValueEventListener() {
@@ -121,9 +121,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-            firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
-
             reference = FirebaseDatabase.getInstance().getReference("Users").child(uid);
             reference.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -151,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
             });
 
 
-        }
+
 
 
     }
@@ -266,13 +263,12 @@ public class MainActivity extends AppCompatActivity {
 
     private void Status (final String status) {
 
-        if(uid == null){
+        if (uid == null || uid.isEmpty()) {
+            firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
+            uid = firebaseUser.getUid();
 
-            Intent intent = new Intent(MainActivity.this,StudentsHomeActivity.class);
-            startActivity(intent);
-            Toast.makeText(this, "Please back to connection a moment!", Toast.LENGTH_SHORT).show();
+        }
 
-        }else{
 
             final DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(uid);
 
@@ -280,9 +276,6 @@ public class MainActivity extends AppCompatActivity {
             hashMap.put("status", status);
 
             reference.updateChildren(hashMap);
-
-        }
-
 
 
     }
