@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+        <item
+            android:id="@+id/bottom_change_profileId_password"
+            android:title="Profile Password"
+            android:icon="@drawable/profilepasschange"/>
+
+    <item
+        android:id="@+id/bottom_change_startChat_student_password"
+        android:title="StartChat Student"
+        android:icon="@drawable/startchatstudent"/>
+
+
+    <item
+        android:id="@+id/bottom_change_startChat_teacher_password"
+        android:title="StartChat Teacher"
+        android:icon="@drawable/startchatteacher"/>
+
+
+    </menu>

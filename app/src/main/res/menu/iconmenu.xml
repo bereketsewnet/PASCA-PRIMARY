@@ -1,53 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:id="@+id/admin_register"
+    <item android:id="@+id/admin_users"
         android:icon="@drawable/register"
-        android:title="@string/register_users"/>
+        android:title="Users"/>
 
-    <item android:id="@+id/admin_news"
+    <item android:id="@+id/admin_post"
         android:icon="@drawable/ringing"
-        android:title="@string/post_news"/>
+        android:title="Post"/>
 
-    <item android:id="@+id/admin_rank"
-        android:icon="@drawable/progressstud"
-        android:title="@string/post_grade"/>
-
-    <item android:id="@+id/admin_iq"
-        android:icon="@drawable/gkstud"
-        android:title="@string/post_question"/>
-
-    <item android:id="@+id/admin_book"
-        android:icon="@drawable/librarystud"
-        android:title="@string/post_books"/>
-
-    <item android:id="@+id/admin_student"
-        android:icon="@drawable/idcardstud"
-        android:title="@string/post_students_profile"/>
-
-    <item android:id="@+id/admin_teacher"
-        android:icon="@drawable/idtech"
-        android:title="@string/post_teachers_profile"/>
-
-    <item android:id="@+id/admin_calendar"
-        android:icon="@drawable/caledarstud"
-        android:title="@string/post_calendar"/>
-
-    <item android:id="@+id/admin_fees"
-        android:icon="@drawable/feesstud"
-        android:title="@string/post_fees_information"/>
-
-    <item android:id="@+id/admin_start_chat_pass_t"
-        android:icon="@drawable/startchatteacher"
-        android:title="@string/startchat_pass_t"/>
-
-    <item android:id="@+id/admin_start_chat_pass_s"
-        android:icon="@drawable/startchatstudent"
-        android:title="@string/startchat_pass_s"/>
-
-    <item android:id="@+id/admin_profile_pass"
+    <item android:id="@+id/admin_password"
         android:icon="@drawable/profilepasschange"
-        android:title="@string/changeprofile_pass"/>
+        android:title="Password"/>
 
     <item android:id="@+id/admin_about"
         android:icon="@drawable/aboutus"

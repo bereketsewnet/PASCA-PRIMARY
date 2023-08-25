@@ -18,6 +18,7 @@ import android.widget.EditText;
 import com.example.pasca_primary.Adapters.UserAdapterRank;
 import com.example.pasca_primary.Adapters.UserRegisterAdapter;
 import com.example.pasca_primary.Model.Users;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -106,6 +107,29 @@ public class RegisterUserListActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // bottom navitation start
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation2);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_register_list);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.bottom_register_list:
+                    return true;
+                case R.id.bottom_student_profile:
+                    startActivity(new Intent(getApplicationContext(), UploadActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_teacher_profile:
+                    startActivity(new Intent(getApplicationContext(), UploadTActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+
+            }
+            return false;
+        });
+        //bottom navitation end
 
 
 

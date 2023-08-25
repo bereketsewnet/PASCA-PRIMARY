@@ -117,7 +117,7 @@ public class UploadIqTActivity extends AppCompatActivity {
                             imageUri = data.getData();
                             uploadImage_iq.setImageURI(imageUri);
                         } else {
-                            Toast.makeText(UploadIqTActivity.this, "No Iq Question Selected", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(UploadIqTActivity.this, "No  Question Selected", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }
@@ -139,17 +139,50 @@ public class UploadIqTActivity extends AppCompatActivity {
                 if (imageUri != null){
                     uploadToFirebase(imageUri);
                 } else  {
-                    Toast.makeText(UploadIqTActivity.this, "Please select Iq Question", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UploadIqTActivity.this, "Please select Question", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+        // bottom navitation start
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_question);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.bottom_news:
+                    startActivity(new Intent(getApplicationContext(), UploadNewsTActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_question:
+                    return true;
+                case R.id.bottom_book:
+                    startActivity(new Intent(getApplicationContext(), UploadPdfActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_calendar:
+                    startActivity(new Intent(getApplicationContext(), UploadCalendarActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+
+                case R.id.bottom_fees:
+                    startActivity(new Intent(getApplicationContext(), UploadFeesInformationActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+            }
+            return false;
+        });
+        //bottom navitation end
 
     }
 
     //Outside onCreate
     private void uploadToFirebase(Uri uri){
         String caption = uploadCaption_iq.getText().toString();
-        final StorageReference imageReference = storageReference.child(System.currentTimeMillis() + "." + getFileExtension(uri));
+        final StorageReference imageReference = storageReference.child("Question/"+System.currentTimeMillis() + "." + getFileExtension(uri));
         imageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -161,7 +194,9 @@ public class UploadIqTActivity extends AppCompatActivity {
                         databaseReference.child(key).setValue(dataClass);
                         progressBar_iq.setVisibility(View.INVISIBLE);
                         Toast.makeText(UploadIqTActivity.this, "Uploaded", Toast.LENGTH_SHORT).show();
-                        SuccessDialog.show();
+                        Intent intent = new Intent(UploadIqTActivity.this, UploadIqTActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 });
             }

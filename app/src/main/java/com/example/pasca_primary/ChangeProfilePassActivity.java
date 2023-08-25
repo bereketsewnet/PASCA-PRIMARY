@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -13,6 +14,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import com.example.pasca_primary.Model.ChangeProfilePass;
 import com.example.pasca_primary.additional.CustomProgressDialog;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -52,6 +54,30 @@ public class ChangeProfilePassActivity extends AppCompatActivity {
 
 
         });
+
+
+        // bottom navitation start
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation3);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_change_profileId_password);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.bottom_change_profileId_password:
+                    return true;
+                case R.id.bottom_change_startChat_student_password:
+                    startActivity(new Intent(getApplicationContext(), ChangeStartChatPassSActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_change_startChat_teacher_password:
+                    startActivity(new Intent(getApplicationContext(), ChangeStartChatPassTeActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+
+            }
+            return false;
+        });
+        //bottom navitation end
 
 
     }

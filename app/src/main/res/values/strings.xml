@@ -238,5 +238,7 @@
     <string name="okay">Okay</string>
     <string name="error">Error</string>
     <string name="error_msg">Error! Something wait wrong! please try again.</string>
+    <string name="main_page_selected">%s page is selected</string>
+    <string name="main_notePad">NotePad</string>
 
 </resources>

@@ -19,6 +19,7 @@ import android.widget.Toast;
 import com.example.pasca_primary.Model.pdfClass;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -74,6 +75,40 @@ public class UploadPdfActivity extends AppCompatActivity {
                 selectFiles();
             }
         });
+
+
+        // bottom navitation start
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_book);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.bottom_news:
+                    startActivity(new Intent(getApplicationContext(), UploadNewsTActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_question:
+                    startActivity(new Intent(getApplicationContext(), UploadIqTActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_book:
+                    return true;
+                case R.id.bottom_calendar:
+                    startActivity(new Intent(getApplicationContext(), UploadCalendarActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+
+                case R.id.bottom_fees:
+                    startActivity(new Intent(getApplicationContext(), UploadFeesInformationActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+            }
+            return false;
+        });
+        //bottom navitation end
 
     }
 

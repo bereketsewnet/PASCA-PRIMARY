@@ -16,7 +16,7 @@ tools:context=".UploadCalendarActivity">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Upload Teachers Profile Here"
+            android:text="Upload Calendar Here"
             android:layout_gravity="center"
             android:textSize="20dp"
             android:padding="5dp"
@@ -72,5 +72,22 @@ tools:context=".UploadCalendarActivity">
     </LinearLayout>
 </LinearLayout>
 
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/bottom_background"
+        android:elevation="2dp"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@drawable/item_selector"
+        app:itemRippleColor="@android:color/transparent"
+        app:labelVisibilityMode="unlabeled"
+        app:menu="@menu/bottom_uploads_menu" />
 
 </RelativeLayout>

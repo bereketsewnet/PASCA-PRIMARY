@@ -143,12 +143,46 @@ public class UploadFeesInformationActivity extends AppCompatActivity {
             }
         });
 
+
+        // bottom navitation start
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_fees);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.bottom_news:
+                    startActivity(new Intent(getApplicationContext(), UploadNewsTActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_question:
+                    startActivity(new Intent(getApplicationContext(), UploadIqTActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_book:
+                    startActivity(new Intent(getApplicationContext(), UploadPdfActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_calendar:
+                    startActivity(new Intent(getApplicationContext(), UploadCalendarActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+
+                case R.id.bottom_fees:
+                    return true;
+            }
+            return false;
+        });
+        //bottom navitation end
+
     }
 
     //Outside onCreate
     private void uploadToFirebase(Uri uri){
         String caption = uploadCaption_fee .getText().toString();
-        final StorageReference imageReference = storageReference.child(System.currentTimeMillis() + "." + getFileExtension(uri));
+        final StorageReference imageReference = storageReference.child("Fees/"+System.currentTimeMillis() + "." + getFileExtension(uri));
         imageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -160,7 +194,9 @@ public class UploadFeesInformationActivity extends AppCompatActivity {
                         databaseReference.child(key).setValue(dataClass);
                         progressBar_fee .setVisibility(View.INVISIBLE);
                         Toast.makeText(UploadFeesInformationActivity.this, "Uploaded", Toast.LENGTH_SHORT).show();
-                        SuccessDialog.show();
+                        Intent intent = new Intent(UploadFeesInformationActivity.this, UploadFeesInformationActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 });
             }

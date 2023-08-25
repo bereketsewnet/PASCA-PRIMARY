@@ -3,6 +3,8 @@ package com.example.pasca_primary;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -22,6 +24,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.Resource;
+import com.example.pasca_primary.Fragments.ProfilePasswordFragment;
 import com.example.pasca_primary.Model.Users;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -207,6 +210,20 @@ public class StudentsHomeActivity extends AppCompatActivity {
 
             }
         });
+
+        // setting long press to profile password
+        imageView.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+
+                Fragment fragment = new ProfilePasswordFragment();
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.student_home_container,fragment).commit();
+
+                return true;
+            }
+        });
+        // end
 
         //setting language
         lan.setOnClickListener(new View.OnClickListener() {

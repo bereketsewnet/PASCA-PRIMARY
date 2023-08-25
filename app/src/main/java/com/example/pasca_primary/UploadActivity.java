@@ -144,12 +144,35 @@ public class UploadActivity extends AppCompatActivity {
             }
         });
 
+        // bottom navitation start
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation2);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_student_profile);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.bottom_register_list:
+                    startActivity(new Intent(getApplicationContext(), RegisterUserListActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_student_profile:
+                    return true;
+                case R.id.bottom_teacher_profile:
+                    startActivity(new Intent(getApplicationContext(), UploadTActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+
+            }
+            return false;
+        });
+        //bottom navitation end
+
     }
 
     //Outside onCreate
     private void uploadToFirebase(Uri uri){
         String caption = uploadCaption.getText().toString();
-        final StorageReference imageReference = storageReference.child(System.currentTimeMillis() + "." + getFileExtension(uri));
+        final StorageReference imageReference = storageReference.child("StudentProfile/"+System.currentTimeMillis() + "." + getFileExtension(uri));
         imageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -161,7 +184,9 @@ public class UploadActivity extends AppCompatActivity {
                         databaseReference.child(key).setValue(dataClass);
                         progressBar.setVisibility(View.INVISIBLE);
                         Toast.makeText(UploadActivity.this, "Uploaded", Toast.LENGTH_SHORT).show();
-                        SuccessDialog.show();
+                        Intent intent = new Intent(UploadActivity.this, UploadActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 });
             }

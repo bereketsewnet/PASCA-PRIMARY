@@ -16,6 +16,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
@@ -28,6 +29,7 @@ import android.widget.Toast;
 import com.example.pasca_primary.Model.DataClass;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -143,13 +145,46 @@ public class UploadNewsTActivity extends AppCompatActivity {
             }
         });
 
+        // bottom navitation start
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_news);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.bottom_news:
+                    return true;
+                case R.id.bottom_question:
+                    startActivity(new Intent(getApplicationContext(), UploadIqTActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_book:
+                    startActivity(new Intent(getApplicationContext(), UploadPdfActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_calendar:
+                    startActivity(new Intent(getApplicationContext(), UploadCalendarActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+
+                case R.id.bottom_fees:
+                    startActivity(new Intent(getApplicationContext(), UploadFeesInformationActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+            }
+            return false;
+        });
+        //bottom navitation end
+
     }
 
 
     //Outside onCreate
     private void uploadToFirebase(Uri uri){
         String caption = uploadCaption_news_t.getText().toString();
-        final StorageReference imageReference = storageReference.child(System.currentTimeMillis() + "." + getFileExtension(uri));
+        final StorageReference imageReference = storageReference.child("News/"+System.currentTimeMillis() + "." + getFileExtension(uri));
         imageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -161,7 +196,9 @@ public class UploadNewsTActivity extends AppCompatActivity {
                         databaseReference.child(key).setValue(dataClass);
                         progressBar_news_t.setVisibility(View.INVISIBLE);
                         Toast.makeText(UploadNewsTActivity.this, "Uploaded", Toast.LENGTH_SHORT).show();
-                        SuccessDialog.show();
+                        Intent intent = new Intent(UploadNewsTActivity.this, UploadNewsTActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 });
             }

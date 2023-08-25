@@ -188,87 +188,33 @@ public class AdminHomeActivity extends AppCompatActivity {
             {
                 switch (menuItem.getItemId())
                 {
-                    case R.id.admin_register:
+                    case R.id.admin_users:
                         Intent intent = new Intent(AdminHomeActivity.this,RegisterUserListActivity.class);
                         startActivity(intent);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
-                    case R.id.admin_news:
+                    case R.id.admin_post:
                         Intent intent1 = new Intent(AdminHomeActivity.this,UploadNewsTActivity.class);
                         startActivity(intent1);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
-                    case R.id.admin_rank:
-                        Intent intent2 = new Intent(AdminHomeActivity.this, RankListActivity.class);
+                    case R.id.admin_password:
+                        Intent intent2 = new Intent(AdminHomeActivity.this, ChangeProfilePassActivity.class);
                         startActivity(intent2);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
-                    case R.id.admin_iq:
-                        Intent intent3 = new Intent(AdminHomeActivity.this,UploadIqTActivity.class);
+                    case R.id.admin_about:
+                        Intent intent3 = new Intent(AdminHomeActivity.this,AboutUsActivity.class);
                         startActivity(intent3);
                         drawerLayout.closeDrawer(GravityCompat.START);
                         break;
 
-                    case R.id.admin_book:
-                        Intent intent4 = new Intent(AdminHomeActivity.this,UploadPdfActivity.class);
-                        startActivity(intent4);
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-
-                    case R.id.admin_student:
-                        Intent intent5 = new Intent(AdminHomeActivity.this,UploadActivity.class);
-                        startActivity(intent5);
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-
-                    case R.id.admin_teacher:
-                        Intent intent6 = new Intent(AdminHomeActivity.this,UploadTActivity.class);
-                        startActivity(intent6);
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-
-                    case R.id.admin_calendar:
-                        Intent intent7 = new Intent(AdminHomeActivity.this,UploadCalendarActivity.class);
-                        startActivity(intent7);
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-
-
-                    case R.id.admin_fees:
-                        Intent intent8 = new Intent(AdminHomeActivity.this,UploadFeesInformationActivity.class);
-                        startActivity(intent8);
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-
-                    case R.id.admin_start_chat_pass_t:
-                        Intent intent9 = new Intent(AdminHomeActivity.this, ChangeStartChatPassTeActivity.class);
-                        startActivity(intent9);
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-
-                    case R.id.admin_start_chat_pass_s:
-                        Intent intent10 = new Intent(AdminHomeActivity.this, ChangeStartChatPassSActivity.class);
-                        startActivity(intent10);
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-
-                    case R.id.admin_profile_pass:
-                        Intent intent11 = new Intent(AdminHomeActivity.this, ChangeProfilePassActivity.class);
-                        startActivity(intent11);
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-                    case R.id.admin_about:
-                        Intent intent12 = new Intent(AdminHomeActivity.this,AboutUsActivity.class);
-                        startActivity(intent12);
-                        drawerLayout.closeDrawer(GravityCompat.START);
-                        break;
-
                     case R.id.admin_logout:
-                        Intent intent13 = new Intent(AdminHomeActivity.this,LoginActivity.class);
-                        startActivity(intent13);
+                        Intent intent4 = new Intent(AdminHomeActivity.this,LoginActivity.class);
+                        startActivity(intent4);
                         finish();
                         mAuth.signOut();
                         drawerLayout.closeDrawer(GravityCompat.START);

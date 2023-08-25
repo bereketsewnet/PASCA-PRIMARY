@@ -145,12 +145,45 @@ public class UploadCalendarActivity extends AppCompatActivity {
             }
         });
 
+        // bottom navitation start
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation);
+        bottomNavigationView.setSelectedItemId(R.id.bottom_calendar);
+        bottomNavigationView.setOnItemSelectedListener(item -> {
+            switch (item.getItemId()) {
+                case R.id.bottom_news:
+                    startActivity(new Intent(getApplicationContext(), UploadNewsTActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_question:
+                    startActivity(new Intent(getApplicationContext(), UploadIqTActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_book:
+                    startActivity(new Intent(getApplicationContext(), UploadPdfActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+                case R.id.bottom_calendar:
+                    return true;
+
+                case R.id.bottom_fees:
+                    startActivity(new Intent(getApplicationContext(), UploadFeesInformationActivity.class));
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                    finish();
+                    return true;
+            }
+            return false;
+        });
+        //bottom navitation end
+
     }
 
     //Outside onCreate
     private void uploadToFirebase(Uri uri){
         String caption = uploadCaption_calendar.getText().toString();
-        final StorageReference imageReference = storageReference.child(System.currentTimeMillis() + "." + getFileExtension(uri));
+        final StorageReference imageReference = storageReference.child("Calendar/"+System.currentTimeMillis() + "." + getFileExtension(uri));
         imageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -162,7 +195,9 @@ public class UploadCalendarActivity extends AppCompatActivity {
                         databaseReference.child(key).setValue(dataClass);
                         progressBar_calendar.setVisibility(View.INVISIBLE);
                         Toast.makeText(UploadCalendarActivity.this, "Uploaded", Toast.LENGTH_SHORT).show();
-                        SuccessDialog.show();
+                        Intent intent = new Intent(UploadCalendarActivity.this, UploadCalendarActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 });
             }

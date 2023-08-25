@@ -225,8 +225,8 @@
     <string name="okay">እሺ</string>
     <string name="error">ስህተት</string>
     <string name="error_msg">ስህተት! የሆነ ነገር ተሳስቷል! እባክዎ ዳግም ይሞክሩ.</string>
-
-
+    <string name="main_page_selected">%s page is selected</string>
+    <string name="main_notePad">NotePad</string>
 
 
 </resources>

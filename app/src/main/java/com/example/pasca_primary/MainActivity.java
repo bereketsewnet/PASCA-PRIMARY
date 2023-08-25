@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                         viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.main_daily)+"("+unread+")");
                     }
                     viewPagerAdapter.addFragment(new NewsFragment(), getString(R.string.main_news));
-                    viewPagerAdapter.addFragment(new ProfilePasswordFragment(), getString(R.string.main_id));
+
 
 
                     viewPager.setAdapter(viewPagerAdapter);

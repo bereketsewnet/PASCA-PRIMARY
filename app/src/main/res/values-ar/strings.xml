@@ -225,6 +225,8 @@
     <string name="okay">حسنًا</string>
     <string name="error">خطأ</string>
     <string name="error_msg">خطأ! هناك خطأ ما! حاول مرة اخرى.</string>
+    <string name="main_page_selected">%s page is selected</string>
+    <string name="main_notePad">NotePad</string>
 
 
 </resources>

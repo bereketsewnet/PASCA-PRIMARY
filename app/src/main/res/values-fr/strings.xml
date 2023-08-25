@@ -225,7 +225,8 @@
     <string name="okay">d\'accord</string>
     <string name="error">Erreur</string>
     <string name="error_msg">Erreur! Quelque chose s\'est mal passé ! Veuillez réessayer.</string>
-
+    <string name="main_page_selected">%s page is selected</string>
+    <string name="main_notePad">NotePad</string>
 
 
 </resources>
