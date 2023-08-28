@@ -88,7 +88,7 @@ public class BooksActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(BooksActivity.this,UploadPdfActivity.class);
+                Intent intent = new Intent(BooksActivity.this,UploadPdf2Activity.class);
                 startActivity(intent);
                 finish();
 

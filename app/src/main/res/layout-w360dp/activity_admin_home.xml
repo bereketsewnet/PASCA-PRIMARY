@@ -342,7 +342,7 @@
             app:itemTextAppearance="@style/DrawerTheme"
             app:theme="@style/DrawerTheme"
             android:id="@+id/navmenu"
-            app:menu="@menu/iconmenu"
+            app:menu="@menu/admin_menu"
             android:fitsSystemWindows="true"
             app:headerLayout="@layout/navheader"
             android:backgroundTint="#ffffff"

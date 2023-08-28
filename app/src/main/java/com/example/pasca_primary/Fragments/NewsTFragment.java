@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import com.example.pasca_primary.Adapters.MyAdapter;
 import com.example.pasca_primary.Model.DataClass;
 import com.example.pasca_primary.R;
+import com.example.pasca_primary.UploadNewsT2Activity;
 import com.example.pasca_primary.UploadNewsTActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
@@ -69,7 +70,7 @@ public class NewsTFragment extends Fragment {
         fab_news_t.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), UploadNewsTActivity.class);
+                Intent intent = new Intent(getActivity(), UploadNewsT2Activity.class);
                 startActivity(intent);
 
             }

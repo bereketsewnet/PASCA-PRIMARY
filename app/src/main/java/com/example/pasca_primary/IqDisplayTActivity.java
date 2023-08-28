@@ -91,7 +91,7 @@ public class IqDisplayTActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(IqDisplayTActivity.this,UploadIqTActivity.class);
+                Intent intent = new Intent(IqDisplayTActivity.this,UploadIqT2Activity.class);
                 startActivity(intent);
                 finish();
 

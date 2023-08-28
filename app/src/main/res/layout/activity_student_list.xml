@@ -15,8 +15,9 @@
         <EditText
             android:id="@+id/search_user_l"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
+            android:textSize="13dp"
             android:layout_marginRight="3dp"
             android:background="@drawable/search_edittext"
             android:hint="@string/search"
@@ -30,7 +31,8 @@
             android:layout_marginRight="3dp"
             android:background="@drawable/search_edittext_btn"
             android:textColor="@color/white"
-            android:layout_height="50dp"/>
+            android:textSize="11dp"
+            android:layout_height="35dp"/>
 
         <Button
             android:id="@+id/filter_s2"
@@ -39,7 +41,8 @@
             android:background="@drawable/search_edittext_btn"
             android:textColor="@color/white"
             android:layout_width="match_parent"
-            android:layout_height="50dp"/>
+            android:textSize="11dp"
+            android:layout_height="35dp"/>
 
     </LinearLayout>
 

@@ -51,9 +51,9 @@
                 android:text="@string/current_version"
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"/>
+                android:textSize="17dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -62,9 +62,9 @@
                 android:textColor="@color/black"
                 android:layout_alignParentEnd="true"
                 android:layout_marginRight="10dp"
-                android:textSize="18dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"/>
+                android:textSize="17dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"/>
 
             <View
                 android:id="@+id/divider1"
@@ -85,9 +85,9 @@
                 android:layout_marginLeft="10dp"
                 android:layout_below="@+id/divider1"
                 android:layout_marginRight="5dp"
-                android:textSize="18dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"/>
+                android:textSize="17dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"/>
 
             <ImageView
                 android:id="@+id/check_for_update_link"
@@ -123,9 +123,9 @@
                 android:text="@string/official_website"
                 android:layout_marginLeft="10dp"
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"/>
+                android:textSize="17dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"/>
 
             <ImageView
                 android:id="@+id/official_website_link"
@@ -158,9 +158,9 @@
                 android:layout_marginLeft="10dp"
                 android:layout_below="@+id/divider2"
                 android:layout_marginRight="5dp"
-                android:textSize="18dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"/>
+                android:textSize="17dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"/>
 
             <ImageView
                 android:id="@+id/follow_facebook_link"
@@ -193,9 +193,9 @@
                 android:layout_marginLeft="10dp"
                 android:layout_below="@+id/divider3"
                 android:layout_marginRight="5dp"
-                android:textSize="18dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"/>
+                android:textSize="17dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"/>
 
             <ImageView
                 android:id="@+id/follow_instagram_link"
@@ -228,9 +228,9 @@
                 android:layout_marginLeft="10dp"
                 android:layout_below="@+id/divider4"
                 android:layout_marginRight="5dp"
-                android:textSize="18dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"/>
+                android:textSize="17dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"/>
 
             <ImageView
                 android:id="@+id/author_link"

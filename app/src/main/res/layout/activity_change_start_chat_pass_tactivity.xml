@@ -52,7 +52,7 @@ tools:context=".ChangeStartChatPassTeActivity">
             android:layout_height="wrap_content"
             android:text="@string/change_password"
             android:layout_gravity="center"
-            android:textSize="25sp"
+            android:textSize="23sp"
             android:layout_margin="10dp"
             android:textStyle="bold"/>
 
@@ -65,7 +65,8 @@ tools:context=".ChangeStartChatPassTeActivity">
             android:hint="@string/password"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="15dp"
+            android:textSize="17dp"
             android:inputType="textPassword"
             android:id="@+id/change_start_chat_t_pass1"/>
 
@@ -75,17 +76,18 @@ tools:context=".ChangeStartChatPassTeActivity">
             android:hint="@string/conform_password"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginBottom="30dp"
+            android:textSize="17dp"
+            android:layout_marginBottom="15dp"
             android:inputType="textPassword"
             android:id="@+id/change_start_chat_t_pass2"/>
 
 
         <Button
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="45dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="15dp"
             android:id="@+id/change_start_chat_t_pass_btn"
             android:text="@string/change"
             android:background="@drawable/btn_back"

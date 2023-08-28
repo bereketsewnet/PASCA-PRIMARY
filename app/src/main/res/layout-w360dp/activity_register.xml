@@ -48,7 +48,7 @@
             android:inputType="text"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:id="@+id/reg_username"/>
 
 
@@ -59,7 +59,7 @@
             android:inputType="textEmailAddress"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:id="@+id/reg_email"/>
 
 
@@ -70,14 +70,14 @@
             android:inputType="textPassword"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:id="@+id/reg_password"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp">
 
@@ -109,7 +109,7 @@
             android:layout_height="60dp"
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/lavender_border"/>
 
         <Button
@@ -118,7 +118,7 @@
             android:layout_height="60dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:id="@+id/register_Account_btn"
             android:text="Register"
             android:background="@drawable/btn_back"

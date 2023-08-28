@@ -22,14 +22,14 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
+            android:layout_height="140dp"
             app:layout_constraintBottom_toBottomOf="@+id/username_userfrag"
             app:layout_constraintTop_toBottomOf="@+id/username_userfrag">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/image_user_userfrag"
-                android:layout_width="75dp"
-                android:layout_height="75dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
@@ -50,7 +50,7 @@
                 android:layout_marginBottom="4dp"
                 android:text="username"
                 android:textColor="@color/lavender"
-                android:textSize="23sp"
+                android:textSize="29sp"
                 app:layout_constraintBottom_toTopOf="@+id/lastMessage"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/image_user_userfrag"
@@ -99,8 +99,8 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginBottom="1dp"
                 android:text="last message"
-                android:textColor="@color/lavender"
-                android:textSize="17sp"
+                android:textColor="@color/black"
+                android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/image_user_userfrag"

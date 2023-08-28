@@ -45,7 +45,7 @@
                 android:inputType="textPersonName"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="15dp"
                 android:id="@+id/name_pdf"/>
 
 
@@ -54,7 +54,7 @@
                 android:layout_height="50dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="15dp"
                 android:id="@+id/upload_pdf"
                 android:text="@string/upload"
                 android:background="@drawable/btn_back"

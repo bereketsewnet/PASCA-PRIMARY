@@ -18,8 +18,9 @@
         <EditText
             android:id="@+id/search_list"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_weight="1"
+            android:textSize="13dp"
             android:layout_marginRight="3dp"
             android:background="@drawable/search_edittext"
             android:hint="@string/search"
@@ -31,9 +32,10 @@
             android:layout_width="match_parent"
             android:text="@string/class_search"
             android:layout_marginRight="3dp"
+            android:textSize="11dp"
             android:background="@drawable/search_edittext_btn"
             android:textColor="@color/white"
-            android:layout_height="50dp"/>
+            android:layout_height="35dp"/>
 
         <Button
             android:id="@+id/filter_l2"
@@ -41,8 +43,9 @@
             android:text="@string/name_search"
             android:background="@drawable/search_edittext_btn"
             android:textColor="@color/white"
+            android:textSize="11dp"
             android:layout_width="match_parent"
-            android:layout_height="50dp"/>
+            android:layout_height="35dp"/>
 
     </LinearLayout>
 
@@ -62,7 +65,7 @@
        <Button
            android:id="@+id/multi_send_btn"
            android:layout_width="match_parent"
-           android:layout_height="50dp"
+           android:layout_height="40dp"
            android:layout_marginTop="10dp"
            android:layout_marginBottom="10dp"
            android:textColor="@color/white"

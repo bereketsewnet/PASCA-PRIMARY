@@ -55,10 +55,10 @@ tools:context=".UploadFeesInformationActivity">
         android:orientation="horizontal">
         <EditText
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:id="@+id/uploadCaption_fee"
             android:layout_weight="0.6"
-            android:background="@drawable/lavender_borders"
+            android:background="@drawable/lavender_borders2"
             android:padding="3dp"
             android:hint="@string/caption"/>
         <com.google.android.material.floatingactionbutton.FloatingActionButton

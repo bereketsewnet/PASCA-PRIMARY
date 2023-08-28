@@ -6,9 +6,11 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -42,7 +44,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class MessageActivity extends AppCompatActivity {
 
 
-    String friendid, message, myid;
+    String friendid, message, myid,friendName;
+    int myUserType;
     CircleImageView imageViewOnToolbar;
     TextView usernameonToolbar;
     Toolbar toolbar;
@@ -82,7 +85,8 @@ public class MessageActivity extends AppCompatActivity {
         et_message = findViewById(R.id.edit_message_text);
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-        myid = firebaseUser.getUid(); // my id or the one who is loggedin
+        myid = firebaseUser.getUid();// my id or the one who is loggedin
+        getUsertype(myid); // get my usertype for dialog
 
         friendid = getIntent().getStringExtra("friendid"); // retreive the friendid when we click on the item
 
@@ -97,7 +101,7 @@ public class MessageActivity extends AppCompatActivity {
                 Users users = snapshot.getValue(Users.class);
 
                 usernameonToolbar.setText(users.getUsername()); // set the text of the user on textivew in toolbar
-
+                friendName = users.getUsername();
                 if (users.getImageURL().equals("default")) {
 
                     imageViewOnToolbar.setImageResource(R.drawable.user);
@@ -124,7 +128,7 @@ public class MessageActivity extends AppCompatActivity {
 
 
 
-        et_message.addTextChangedListener(new TextWatcher() {
+         et_message.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -143,12 +147,14 @@ public class MessageActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
+
                 String text = et_message.getText().toString();
 
                 if (!text.startsWith(" ")) {
                     et_message.getText().insert(0, " ");
 
                 }
+
 
             }
 
@@ -161,19 +167,34 @@ public class MessageActivity extends AppCompatActivity {
 
 
 
+
+
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                   message = et_message.getText().toString();
+                   sendMessage(myid, friendid, message);
+                   et_message.setText("");
 
-                message = et_message.getText().toString();
+            }
+        });
 
-                sendMessage(myid, friendid, message);
+        paste.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                send.setEnabled(true);
+                if(myUserType == 0) {
+                    StudentDialog(myid, friendid);
+                    et_message.setText("");
+                }else if(myUserType == 1 || myUserType == 2 || myUserType == 3){
+                    TeachersDialog(myid,friendid);
+                    et_message.setText("");
+                }else{
+                    Toast.makeText(MessageActivity.this, "You Are Not Found", Toast.LENGTH_SHORT).show();
+                }
 
-                et_message.setText(" ");
-
-
-
+                return true;
             }
         });
 
@@ -187,9 +208,7 @@ public class MessageActivity extends AppCompatActivity {
                 ClipData clipData = clipboardManager.getPrimaryClip();
                 ClipData.Item item = clipData.getItemAt(0);
                 String text1 = item.getText().toString();
-                if(text1.isEmpty() || text1.equals(null) || text1.equals("")){
-                    Toast.makeText(MessageActivity.this, "First copy text!", Toast.LENGTH_SHORT).show();
-                }else{
+                if(text1 != null){
                     et_message.setText(text1);
                 }
 
@@ -204,6 +223,82 @@ public class MessageActivity extends AppCompatActivity {
 
     }
 
+    private void getUsertype(String myid) {
+
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(myid);
+
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                Users users = snapshot.getValue(Users.class);
+                
+                myUserType = users.getUsertype(); // setting usertype to myusertype variable
+                
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void StudentDialog(String mid, String frId) {
+        final String[] listItems = {"Seen And Done","Seen", "Seen But Not Done"};
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(MessageActivity.this);
+        mBuilder.setTitle("Check-In...");
+        mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                if(which == 0){
+                    sendMessage(mid, frId, "Seen And Done");
+                }else if(which == 1){
+                    sendMessage(mid, frId, "Seen");
+                }else if(which == 2){
+                    sendMessage(mid, frId, "Seen But Not Done");
+                }
+                dialog.dismiss();
+
+            }
+        });
+
+        AlertDialog mDialog = mBuilder.create();
+        mDialog.show();
+
+    }
+
+    private void TeachersDialog(String mid, String frId) {
+        final String[] listItems = {"Not Seen","Incomplete HomeWork", "Incomplete ClassWork","Great Day","Forgot Material"};
+        AlertDialog.Builder mBuilder = new AlertDialog.Builder(MessageActivity.this);
+        mBuilder.setTitle("Check-In...");
+        mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                if(which == 0){
+                    sendMessage(mid, frId, friendName+"\'s"+" Sent Action Was Not Seen");
+                }else if(which == 1){
+                    sendMessage(mid, frId, friendName+"\'s"+" HomeWork Was Incomplete");
+                }else if(which == 2){
+                    sendMessage(mid, frId, friendName+"\'s"+" ClassWork Was Incomplete");
+                }else if(which == 3){
+                    sendMessage(mid, frId, "Today Was A Good Day For "+friendName);
+                }else if(which == 4){
+                    sendMessage(mid, frId, friendName+"\'s"+" Educational Equipment Was Incomplete");
+                }
+                dialog.dismiss();
+
+            }
+        });
+
+        AlertDialog mDialog = mBuilder.create();
+        mDialog.show();
+
+    }
 
 
     private void seenMessage(final String friendid) {

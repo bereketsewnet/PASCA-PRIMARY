@@ -63,7 +63,7 @@
                 android:layout_height="60dp"
                 android:id="@+id/uploadCaption_news_t"
                 android:layout_weight="0.6"
-                android:background="@drawable/lavender_borders"
+                android:background="@drawable/lavender_borders2"
                 android:padding="3dp"
                 android:hint="@string/caption"/>
             <com.google.android.material.floatingactionbutton.FloatingActionButton

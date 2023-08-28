@@ -64,7 +64,7 @@ tools:context=".ChangeStartChatPassSActivity">
             android:hint="@string/password"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="20dp"
             android:inputType="textPassword"
             android:id="@+id/change_start_chat_s_pass1"/>
 
@@ -74,7 +74,7 @@ tools:context=".ChangeStartChatPassSActivity">
             android:hint="@string/conform_password"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="22dp"
             android:inputType="textPassword"
             android:id="@+id/change_start_chat_s_pass2"/>
 
@@ -84,7 +84,7 @@ tools:context=".ChangeStartChatPassSActivity">
             android:layout_height="55dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="22dp"
             android:id="@+id/change_start_chat_s_pass_btn"
             android:text="@string/change"
             android:background="@drawable/btn_back"

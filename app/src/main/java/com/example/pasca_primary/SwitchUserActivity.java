@@ -58,7 +58,7 @@ public class SwitchUserActivity extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar_switch_user);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Switch Users");
+        getSupportActionBar().setTitle("Change Student");
 
         cardView1 = findViewById(R.id.cardView1);
         cardView2 = findViewById(R.id.cardView2);

@@ -103,11 +103,6 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".ImportUsersActivity"
-            android:exported="false"
-            android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity" />
-        <activity
             android:name=".RankActivity"
             android:exported="false"
             android:screenOrientation="portrait"
@@ -137,6 +132,11 @@
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".UploadPdfActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".UploadPdf2Activity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
@@ -179,6 +179,11 @@
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
+            android:name=".UploadNewsT2Activity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
             android:name=".ComplainActivity"
             android:exported="false"
             android:screenOrientation="portrait"
@@ -195,6 +200,11 @@
             tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".UploadIqTActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
+        <activity
+            android:name=".UploadIqT2Activity"
             android:exported="false"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />

@@ -86,11 +86,15 @@ public class Main_twoActivity extends AppCompatActivity {
 
                     MainActivity.ViewPagerAdapter viewPagerAdapter = new MainActivity.ViewPagerAdapter(getSupportFragmentManager());
                     int unread = 0;
+                    String id = "kdsaueq9839kjfhksjdhfkjhfdskhy";
                     for(DataSnapshot snapshot1 : snapshot.getChildren()){
                         Chats chats = snapshot1.getValue(Chats.class);
-                        if(chats.getReciever().equals(uid) && !chats.isIsseen()){
-                            unread ++;
+                        if(chats != null){
+                            if(chats.getReciever().equals(uid) && !chats.isIsseen()){
+                                unread ++;
+                            }
                         }
+
                     }
 
                     if(unread == 0){

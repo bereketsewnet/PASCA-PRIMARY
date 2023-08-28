@@ -46,9 +46,10 @@
             android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ "
             android:hint="@string/name"
             android:inputType="text"
+            android:textSize="17dp"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="15dp"
             android:id="@+id/reg_username"/>
 
 
@@ -56,10 +57,11 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="@string/email"
+            android:textSize="17dp"
             android:inputType="textEmailAddress"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="15dp"
             android:id="@+id/reg_email"/>
 
 
@@ -67,23 +69,24 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="@string/password"
+            android:textSize="17dp"
             android:inputType="textPassword"
             android:layout_marginRight="30dp"
             android:layout_marginLeft="30dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="15dp"
             android:id="@+id/reg_password"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="15dp"
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp">
 
             <Spinner
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
                 android:hint="Grade"
                 android:layout_margin="3dp"
@@ -93,7 +96,7 @@
 
             <Spinner
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_weight="1"
                 android:layout_margin="3dp"
                 android:hint="Section"
@@ -106,10 +109,10 @@
         <Spinner
             android:id="@+id/reg_usertype"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:layout_marginRight="15dp"
             android:layout_marginLeft="15dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="15dp"
             android:background="@drawable/lavender_border"/>
 
         <Button
@@ -117,7 +120,7 @@
             android:layout_height="50dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="15dp"
             android:id="@+id/register_Account_btn"
             android:text="@string/register"
             android:background="@drawable/btn_back"

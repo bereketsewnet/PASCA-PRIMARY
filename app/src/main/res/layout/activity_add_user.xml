@@ -29,9 +29,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/add_user"
+                android:text="Add student here"
                 android:layout_gravity="center"
-                android:textSize="25sp"
+                android:textSize="20sp"
                 android:layout_margin="10dp"
                 android:textStyle="bold"/>
 
@@ -41,7 +41,8 @@
                 android:hint="@string/enter_user_name"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="13dp"
+                android:textSize="17dp"
                 android:id="@+id/add_userName"/>
 
             <com.rengwuxian.materialedittext.MaterialEditText
@@ -51,7 +52,8 @@
                 android:inputType="textEmailAddress"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="13dp"
+                android:textSize="17dp"
                 android:id="@+id/add_userId"/>
 
             <com.rengwuxian.materialedittext.MaterialEditText
@@ -61,38 +63,28 @@
                 android:inputType="textPassword"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="13dp"
+                android:textSize="17dp"
                 android:id="@+id/add_userpassword"/>
 
 
             <Spinner
                 android:id="@+id/user_counter_spinner"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:background="@drawable/lavender_border_spinner"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="15dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"/>
 
 
-            <Button
-                android:visibility="gone"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="30dp"
-                android:id="@+id/paste_txt_btn"
-                android:text="Paste"
-                android:background="@drawable/btn_back"
-                android:textColor="@android:color/white"/>
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="30dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
+                android:layout_marginBottom="25dp"
                 android:id="@+id/add_account"
                 android:text="Add"
                 android:background="@drawable/btn_back"

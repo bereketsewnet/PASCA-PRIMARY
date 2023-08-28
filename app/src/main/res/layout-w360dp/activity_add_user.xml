@@ -29,9 +29,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/add_user"
+                android:text="Add student here"
                 android:layout_gravity="center"
-                android:textSize="26sp"
+                android:textSize="25sp"
                 android:layout_margin="10dp"
                 android:textStyle="bold"/>
 
@@ -41,7 +41,7 @@
                 android:hint="@string/enter_user_name"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="15dp"
                 android:id="@+id/add_userName"/>
 
             <com.rengwuxian.materialedittext.MaterialEditText
@@ -51,7 +51,7 @@
                 android:inputType="textEmailAddress"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="15dp"
                 android:id="@+id/add_userId"/>
 
             <com.rengwuxian.materialedittext.MaterialEditText
@@ -61,7 +61,7 @@
                 android:inputType="textPassword"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="15dp"
                 android:id="@+id/add_userpassword"/>
 
 
@@ -70,7 +70,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:background="@drawable/lavender_border_spinner"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"/>
 
@@ -89,9 +89,9 @@
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginLeft="25dp"
                 android:layout_marginBottom="30dp"
                 android:id="@+id/add_account"
                 android:text="Add"

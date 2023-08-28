@@ -41,7 +41,7 @@
                 android:inputType="textPersonName"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="20dp"
                 android:id="@+id/complain_name"/>
 
 
@@ -52,7 +52,7 @@
                 android:inputType="textEmailAddress"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="20dp"
                 android:id="@+id/complain_email"/>
 
 
@@ -63,7 +63,7 @@
                 android:inputType="textPersonName"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="20dp"
                 android:padding="10dp"
                 android:id="@+id/complain_content"/>
 
@@ -72,7 +72,7 @@
                 android:layout_height="60dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginBottom="30dp"
+                android:layout_marginBottom="20dp"
                 android:id="@+id/complain_btn"
                 android:text="@string/complain"
                 android:background="@drawable/btn_back"

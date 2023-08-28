@@ -10,12 +10,12 @@
 
     <item
         android:id="@+id/switch_user"
-        android:title="@string/switch_user"
+        android:title="Change Student"
         app:showAsAction="never"/>
 
     <item
         android:id="@+id/add_user"
-        android:title="@string/add_user"
+        android:title="Add Student"
         app:showAsAction="never"/>
 
     <item
