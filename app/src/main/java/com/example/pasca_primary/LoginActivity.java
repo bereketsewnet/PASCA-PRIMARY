@@ -137,7 +137,7 @@ public class LoginActivity extends AppCompatActivity {
                     String uid = task.getResult().getUser().getUid();
 
                     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-                    firebaseDatabase.getReference().child("Users").child(uid).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
+                    firebaseDatabase.getReference().child("UserType").child(uid).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             int usertype = snapshot.getValue(Integer.class);

@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.example.pasca_primary.Model.ChangeProfilePass;
 import com.example.pasca_primary.Model.MultiSelectionId;
+import com.example.pasca_primary.Model.UserTypeStore;
 import com.example.pasca_primary.additional.CustomProgressDialog;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -213,11 +214,19 @@ public class RegisterActivity extends AppCompatActivity {
 
                     reference = FirebaseDatabase.getInstance().getReference("Users").child(user.getUid());
                     String multiId = user.getUid();
+                    int usetypeee = usertype;
 
-                    // multiple sender id settin
+                    // multiple sender id setting to database
                     DatabaseReference multiSenderRef = FirebaseDatabase.getInstance().getReference().child("MultiSenderId").child(username);
                     MultiSelectionId multiSelectionId = new MultiSelectionId(multiId);
                     multiSenderRef.setValue(multiSelectionId);
+                    // end
+
+
+                    // setting usertype to database
+                    DatabaseReference usetypee = FirebaseDatabase.getInstance().getReference().child("UserType").child(user.getUid());
+                    UserTypeStore userTypeStore = new UserTypeStore(usetypeee);
+                    usetypee.setValue(userTypeStore);
                     // end
 
                     if (user!=null) {

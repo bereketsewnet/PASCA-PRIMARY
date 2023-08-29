@@ -1,14 +1,29 @@
 package com.example.pasca_primary;
 
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.Settings;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -44,12 +59,14 @@ public class SwitchUserActivity extends AppCompatActivity {
             uPass_sotre6,uPass_sotre7,uPass_sotre8,uPass_sotre9,uPass_sotre10;
     TextView switchName1,switchName2,switchName3,switchName4,switchName5,
             switchName6,switchName7,switchName8,switchName9,switchName10;
+    private ActivityResultLauncher<Intent> activityResultLauncher;
 
 
     Dialog ErrorRegisterDialog;
     FirebaseAuth mAuth;
     FirebaseUser user;
     Toolbar toolbar;
+    private String[] permissions = {READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -81,6 +98,27 @@ public class SwitchUserActivity extends AppCompatActivity {
         switchName8 = findViewById(R.id.switchName8);
         switchName9 = findViewById(R.id.switchName9);
         switchName10 = findViewById(R.id.switchName10);
+
+        if (!checkPermission()) {
+            requestPermission(); // Request Permission
+        }
+
+
+        activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult( ActivityResult result ) {
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    if (Environment.isExternalStorageManager())
+                        Toast.makeText(SwitchUserActivity.this,"We Have Permission",Toast.LENGTH_SHORT).show();
+                    else
+                        Toast.makeText(SwitchUserActivity.this, "You Denied the permission", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(SwitchUserActivity.this, "You Denied the permission", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
 
         // setting name to cards
 
@@ -791,7 +829,7 @@ public class SwitchUserActivity extends AppCompatActivity {
                     String uid = task.getResult().getUser().getUid();
 
                     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-                    firebaseDatabase.getReference().child("Users").child(uid).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
+                    firebaseDatabase.getReference().child("UserType").child(uid).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             int usertype = snapshot.getValue(Integer.class);
@@ -847,5 +885,46 @@ public class SwitchUserActivity extends AppCompatActivity {
         });
     }
 
+    // Checking permission
+    private boolean checkPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            return Environment.isExternalStorageManager();
+        } else {
+            int readCheck = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
+            int writeCheck = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
+            return readCheck == PackageManager.PERMISSION_GRANTED && writeCheck == PackageManager.PERMISSION_GRANTED;
+        }
+    }
+    // end
+// reuqest permission
+    private void requestPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            new AlertDialog.Builder(SwitchUserActivity.this)
+                    .setTitle("Permission")
+                    .setMessage("Please give the Storage permission")
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick( DialogInterface dialog, int which ) {
+                            try {
+                                Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                                intent.addCategory("android.intent.category.DEFAULT");
+                                intent.setData(Uri.parse(String.format("package:%s", new Object[]{getApplicationContext().getPackageName()})));
+                                activityResultLauncher.launch(intent);
+                            } catch (Exception e) {
+                                Intent intent = new Intent();
+                                intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                                activityResultLauncher.launch(intent);
+                            }
+                        }
+                    })
+                    .setCancelable(false)
+                    .show();
+
+        } else {
+
+            ActivityCompat.requestPermissions(SwitchUserActivity.this, permissions, 30);
+        }
+    }
+
+    //end
 
 }

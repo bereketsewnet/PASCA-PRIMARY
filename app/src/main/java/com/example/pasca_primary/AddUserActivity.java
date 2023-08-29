@@ -1,19 +1,19 @@
 package com.example.pasca_primary;
 
+
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import android.Manifest;
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -21,38 +21,22 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.Settings;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
-
-import com.google.android.material.snackbar.Snackbar;
-import com.karumi.dexter.Dexter;
-import com.karumi.dexter.MultiplePermissionsReport;
-import com.karumi.dexter.PermissionToken;
-import com.karumi.dexter.listener.PermissionRequest;
-import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
-
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
-import java.net.URI;
-import java.util.List;
-
 public class AddUserActivity extends AppCompatActivity {
     Button add_account;
     MaterialEditText add_userId, add_userpassword, add_userName;
     Spinner user_counter_spinner;
     String user_counter_spinner_sotre, pathNameStorege, pathNameStoregeEmail, pathUserName;
-    private static final String TAG = "PERMISSION_TAG";
-    private static final int STORAGE_PERMISSION_CODE = 100;
+    private ActivityResultLauncher<Intent> activityResultLauncher;
+    private String[] permissions = {READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE};
 
 
     @Override
@@ -60,7 +44,7 @@ public class AddUserActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_user);
 
-        Permissions();
+
 
 
         add_userId = findViewById(R.id.add_userId);
@@ -75,18 +59,33 @@ public class AddUserActivity extends AppCompatActivity {
         user_counter_spinner.setAdapter(adapter_user_counter);
 
 
+
         add_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if(checkPermission()){
-                    Log.d(TAG,"onClick: Permission already granted...");
-                    cerateFile();
-                }else{
-                    Log.d(TAG,"onClick: Permission was not granted, request...");
-                    requestPermission();
+                if (checkPermission()) {
+                     cerateFile();
+                } else {
+                    requestPermission(); // Request Permission
                 }
 
+
+            }
+        });
+
+        //Add these line of code in onCreate Method
+        activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+            @Override
+            public void onActivityResult( ActivityResult result ) {
+
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+                    if (Environment.isExternalStorageManager())
+                        Toast.makeText(AddUserActivity.this,"We Have Permission",Toast.LENGTH_SHORT).show();
+                    else
+                        Toast.makeText(AddUserActivity.this, "You Denied the permission", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(AddUserActivity.this, "You Denied the permission", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -221,117 +220,44 @@ public class AddUserActivity extends AppCompatActivity {
     }
     //end
 
-    // for permisson
-    private void Permissions() {
 
-
-        Dexter.withContext(getApplicationContext())
-                .withPermissions(
-                        Manifest.permission.MANAGE_EXTERNAL_STORAGE,
-                        Manifest.permission.READ_EXTERNAL_STORAGE,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE
-                ).withListener(new MultiplePermissionsListener() {
-                    @Override
-                    public void onPermissionsChecked(MultiplePermissionsReport report) {
-                    }
-
-                    @Override
-                    public void onPermissionRationaleShouldBeShown(List<PermissionRequest> list, PermissionToken permissionToken) {
-
-                    }
-
-                }).check();
-
-
+    private boolean checkPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            return Environment.isExternalStorageManager();
+        } else {
+            int readCheck = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
+            int writeCheck = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
+            return readCheck == PackageManager.PERMISSION_GRANTED && writeCheck == PackageManager.PERMISSION_GRANTED;
+        }
     }
-    // end
 
-    // request premisssion
 
     private void requestPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            // android is 11 (R) or above
-            try {
-
-                Log.d(TAG, "requestPermission: try");
-                Intent intent = new Intent();
-                intent.setAction(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
-                Uri uri = Uri.fromParts("packge", this.getPackageName(), null);
-                intent.setData(uri);
-                storegeActivityResultLauncher.launch(intent);
-
-            } catch (Exception e) {
-
-                Log.d(TAG, "requestPermission: catch", e);
-                Intent intent = new Intent();
-                intent.setAction(Settings.ACTION_MANAGE_APP_ALL_FILES_ACCESS_PERMISSION);
-                storegeActivityResultLauncher.launch(intent);
-
-            }
-        } else {
-            // android is 11 (R) or below
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,
-                    Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
-        }
-    }
-
-    private ActivityResultLauncher<Intent> storegeActivityResultLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
-                @Override
-                public void onActivityResult(ActivityResult result) {
-                    // Manage External Permission is granted
-                    Log.d(TAG, "onActivity: ");
-                    // here were we handle the result
-                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                        if (Environment.isExternalStorageManager()) {
-                            Log.d(TAG, "onActivityResult: Manage External Permission is granted");
-                            cerateFile();
-                        }else{
-                            // Manage External Storage Permission is denied
-                            Log.d(TAG,"onActivityResult: Manage External Storage Permission is denied");
-                            Toast.makeText(AddUserActivity.this, "Manage External Storage Permission is denied", Toast.LENGTH_SHORT).show();
+            new AlertDialog.Builder(AddUserActivity.this)
+                    .setTitle("Permission")
+                    .setMessage("Please give the Storage permission")
+                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                        public void onClick( DialogInterface dialog, int which ) {
+                            try {
+                                Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                                intent.addCategory("android.intent.category.DEFAULT");
+                                intent.setData(Uri.parse(String.format("package:%s", new Object[]{getApplicationContext().getPackageName()})));
+                                activityResultLauncher.launch(intent);
+                            } catch (Exception e) {
+                                Intent intent = new Intent();
+                                intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
+                                activityResultLauncher.launch(intent);
+                            }
                         }
-                    }else {
-                        // Android is below 11 (R)
+                    })
+                    .setCancelable(false)
+                    .show();
 
-                    }
-                }
-            }
-    );
+        } else {
 
-    public boolean checkPermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            // android is 11 (R) or above
-            return Environment.isExternalStorageManager();
-
-        }else{
-            // android is 11 (R) or below
-            int write = ContextCompat.checkSelfPermission(this,Manifest.permission.WRITE_EXTERNAL_STORAGE);
-            int read = ContextCompat.checkSelfPermission(this,Manifest.permission.READ_EXTERNAL_STORAGE);
-
-            return write == PackageManager.PERMISSION_GRANTED && read == PackageManager.PERMISSION_GRANTED;
+            ActivityCompat.requestPermissions(AddUserActivity.this, permissions, 30);
         }
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if(requestCode == STORAGE_PERMISSION_CODE){
-            if(grantResults.length > 0){
-                //check each permission if granted or not
-                boolean write = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-                boolean read = grantResults[1] == PackageManager.PERMISSION_GRANTED;
-
-                if(write && read){
-                    // External Storage Permission granted
-                    Log.d(TAG,"onRequestPermissionResult: External Storage Permission granted");
-                    cerateFile();
-                }else {
-                    // External Storage Permission denied
-                    Log.d(TAG,"onRequestPermissionResult: External Storage Permission denied");
-                    Toast.makeText(this, "External Storage Permission denied", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }
-    }
 }

@@ -197,7 +197,7 @@ public class SplashScreenActivity extends AppCompatActivity {
 
                     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 
-                    firebaseDatabase.getReference().child("Users").child(user.getUid()).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
+                    firebaseDatabase.getReference().child("UserType").child(user.getUid()).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             int usertype = snapshot.getValue(Integer.class);

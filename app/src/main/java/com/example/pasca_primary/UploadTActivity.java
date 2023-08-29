@@ -174,7 +174,7 @@ public class UploadTActivity extends AppCompatActivity {
     //Outside onCreate
     private void uploadToFirebase(Uri uri){
         String caption = uploadCaptiont.getText().toString();
-        final StorageReference imageReference = storageReference.child(System.currentTimeMillis() + "." + getFileExtension(uri));
+        final StorageReference imageReference = storageReference.child("TeachersProfile/"+System.currentTimeMillis() + "." + getFileExtension(uri));
         imageReference.putFile(uri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
