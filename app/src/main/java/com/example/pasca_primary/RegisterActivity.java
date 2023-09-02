@@ -234,7 +234,7 @@ public class RegisterActivity extends AppCompatActivity {
                         HashMap<String, Object> hashMap = new HashMap<>();
                         hashMap.put("username", username);
                         hashMap.put("email", email);
-                        hashMap.put("password",password);
+                        hashMap.put("password","******");
                         hashMap.put("search",searchusername);
                         hashMap.put("id", user.getUid());
                         hashMap.put("imageURL", "default");

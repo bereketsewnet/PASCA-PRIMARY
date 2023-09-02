@@ -1,95 +1,120 @@
 package com.example.pasca_primary;
 
-import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
-import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
-
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.appcompat.app.AlertDialog;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.net.Uri;
-import android.os.Build;
+import android.app.Activity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Environment;
-import android.provider.Settings;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
-public class BulkRegisterActivity extends AppCompatActivity {
+import com.example.pasca_primary.Model.MultiRegisterUsers;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.rengwuxian.materialedittext.MaterialEditText;
 
-    private ActivityResultLauncher<Intent> activityResultLauncher;
+public class BulkRegisterActivity extends AppCompatActivity {
+    String name,email,password,studentClass,studentSex,userRollNo;
+   int usertype;
+   Button register_from,register_save;
+   MaterialEditText getnumber;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bulk_register);
 
-        if (checkPermission()) {
-            Toast.makeText(BulkRegisterActivity.this,"WE Have Permission", Toast.LENGTH_SHORT).show();   // WE have a permission just start your work.
-        } else {
-            requestPermission(); // Request Permission
-        }
+        register_from = findViewById(R.id.register_from);
+        register_save = findViewById(R.id.register_save);
+        getnumber = findViewById(R.id.getnumber);
 
-        //Add these line of code in onCreate Method
-        activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
+        register_save.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onActivityResult( ActivityResult result ) {
+            public void onClick(View v) {
 
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-                    if (Environment.isExternalStorageManager())
-                        Toast.makeText(BulkRegisterActivity.this,"We Have Permission",Toast.LENGTH_SHORT).show();
-                    else
-                        Toast.makeText(BulkRegisterActivity.this, "You Denied the permission", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(BulkRegisterActivity.this, "You Denied the permission", Toast.LENGTH_SHORT).show();
-                }
+
+
             }
         });
 
+        register_save.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+
+
+
+                return true;
+            }
+        });
+
+        register_from.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+            }
+        });
+
+        register_from.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+
+                getUsersFromDatabase("1");
+                return true;
+            }
+        });
+
+
     }
 
-    private boolean checkPermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            return Environment.isExternalStorageManager();
-        } else {
-            int readCheck = ContextCompat.checkSelfPermission(getApplicationContext(), READ_EXTERNAL_STORAGE);
-            int writeCheck = ContextCompat.checkSelfPermission(getApplicationContext(), WRITE_EXTERNAL_STORAGE);
-            return readCheck == PackageManager.PERMISSION_GRANTED && writeCheck == PackageManager.PERMISSION_GRANTED;
+    private void register(String userRollNo){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("MultiRegister").child(userRollNo);
+        MultiRegisterUsers multiRegisterUsers = new MultiRegisterUsers("azme","azme@gmail.com","123456","kg1","male",0);
+        reference.setValue(multiRegisterUsers);
+    }
+
+    private void getUsersFromDatabase(String userRollNo){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("MultiRegister").child(userRollNo);
+
+        if (reference != null) {
+
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    MultiRegisterUsers multiRegisterUsers = snapshot.getValue(MultiRegisterUsers.class);
+
+                    if (multiRegisterUsers != null) {
+                        name = multiRegisterUsers.getName();
+                        email = multiRegisterUsers.getEmail();
+                        password = multiRegisterUsers.getPassword();
+                        studentClass = multiRegisterUsers.getStudentClass();
+                        studentSex = multiRegisterUsers.getStudentSex();
+                        usertype = multiRegisterUsers.getUsertype();
+
+                        Toast.makeText(BulkRegisterActivity.this, ""+name, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BulkRegisterActivity.this, ""+email, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BulkRegisterActivity.this, ""+password, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BulkRegisterActivity.this, ""+usertype, Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(BulkRegisterActivity.this, "first Import User Data", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }else{
+            Toast.makeText(this, "first set data on database", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private String[] permissions = {READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE};
-    private void requestPermission() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-            new AlertDialog.Builder(BulkRegisterActivity.this)
-                    .setTitle("Permission")
-                    .setMessage("Please give the Storage permission")
-                    .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                        public void onClick( DialogInterface dialog, int which ) {
-                            try {
-                                Intent intent = new Intent(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                                intent.addCategory("android.intent.category.DEFAULT");
-                                intent.setData(Uri.parse(String.format("package:%s", new Object[]{getApplicationContext().getPackageName()})));
-                                activityResultLauncher.launch(intent);
-                            } catch (Exception e) {
-                                Intent intent = new Intent();
-                                intent.setAction(Settings.ACTION_MANAGE_ALL_FILES_ACCESS_PERMISSION);
-                                activityResultLauncher.launch(intent);
-                            }
-                        }
-                    })
-                    .setCancelable(false)
-                    .show();
-
-        } else {
-
-            ActivityCompat.requestPermissions(BulkRegisterActivity.this, permissions, 30);
-        }
-    }
 }

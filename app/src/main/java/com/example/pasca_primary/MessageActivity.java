@@ -272,7 +272,8 @@ public class MessageActivity extends AppCompatActivity {
     }
 
     private void TeachersDialog(String mid, String frId) {
-        final String[] listItems = {"Not Seen","Incomplete HomeWork", "Incomplete ClassWork","Great Day","Forgot Material"};
+        final String[] listItems = {"Not Seen","Incomplete HomeWork", "Incomplete ClassWork",
+                                    "Check News","Check Progress","Great Day","Forgot Material"};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(MessageActivity.this);
         mBuilder.setTitle("Check-In...");
         mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
@@ -286,8 +287,12 @@ public class MessageActivity extends AppCompatActivity {
                 }else if(which == 2){
                     sendMessage(mid, frId, friendName+"\'s"+" ClassWork Was Incomplete");
                 }else if(which == 3){
-                    sendMessage(mid, frId, "Today Was A Good Day For "+friendName);
+                    sendMessage(mid, frId, "Please Check "+friendName+"\'s"+" News Page");
                 }else if(which == 4){
+                    sendMessage(mid, frId, "Please Check "+friendName+"\'s"+" Progress Page");
+                }else if(which == 5){
+                    sendMessage(mid, frId, "Today Was A Good Day For "+friendName);
+                }else if(which == 6){
                     sendMessage(mid, frId, friendName+"\'s"+" Educational Equipment Was Incomplete");
                 }
                 dialog.dismiss();
@@ -341,6 +346,7 @@ public class MessageActivity extends AppCompatActivity {
 
     }
 
+
     private void readMessages(final String myid, final String friendid, final String imageURL) {
 
         chatsList = new ArrayList<>();
@@ -355,6 +361,7 @@ public class MessageActivity extends AppCompatActivity {
                 for (DataSnapshot ds: snapshot.getChildren()) {
 
                     Chats chats = ds.getValue(Chats.class);
+
 
                     if (chats.getSender().equals(myid) && chats.getReciever().equals(friendid) ||
                             chats.getSender().equals(friendid) && chats.getReciever().equals(myid)) {
@@ -382,13 +389,14 @@ public class MessageActivity extends AppCompatActivity {
 
         final DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
 
-
+                String key = reference.getKey();
 
                 HashMap<String, Object> hashMap = new HashMap<>();
                 hashMap.put("sender", myid);
                 hashMap.put("reciever", friendid);
                 hashMap.put("message", message);
                 hashMap.put("isseen", false);
+                hashMap.put("key",key);
 
                 reference.child("Chats").push().setValue(hashMap);
 

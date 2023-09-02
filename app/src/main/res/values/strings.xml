@@ -15,16 +15,16 @@
     </string-array>
 
     <string-array name="counter_user">
-        <item>User 1</item>
-        <item>User 2</item>
-        <item>User 3</item>
-        <item>User 4</item>
-        <item>User 5</item>
-        <item>User 6</item>
-        <item>User 7</item>
-        <item>User 8</item>
-        <item>User 9</item>
-        <item>User 10</item>
+        <item>Student 1</item>
+        <item>Student 2</item>
+        <item>Student 3</item>
+        <item>Student 4</item>
+        <item>Student 5</item>
+        <item>Student 6</item>
+        <item>Student 7</item>
+        <item>Student 8</item>
+        <item>Student 9</item>
+        <item>Student 10</item>
     </string-array>
 
     <string-array name="search">
@@ -32,27 +32,20 @@
         <item>Name</item>
     </string-array>
 
-    <string-array name="student_class">
+    <string-array name="student_class" translatable="false">
         <item>nursery</item>
         <item>kg1</item>
         <item>kg2</item>
         <item>kg3</item>
-        <item>1a</item>
-        <item>1b</item>
-        <item>2a</item>
-        <item>2b</item>
-        <item>3a</item>
-        <item>3b</item>
-        <item>4a</item>
-        <item>4b</item>
-        <item>5a</item>
-        <item>5b</item>
-        <item>6a</item>
-        <item>6b</item>
-        <item>7a</item>
-        <item>7b</item>
-        <item>8a</item>
-        <item>8a</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+       
     </string-array>
 
 
@@ -113,22 +106,22 @@
 <br>  \n</br>
         <br>26.Always do you best in all things!!!\n</br></string>
 
-    <string name="phone_numbers">   <br><b>  HOW DO YOU FIND US?\n</b>\n</br>
+    <string name="phone_numbers">   <br><b>HOW DO YOU FIND US?\n</b>\n</br>
 
-        <br>The Kindergarten Division:  +251965500639 \n</br>
-        <br>The Kindergarten Division:   0113694475 \n</br>
+        <br>The Kindergarten Division: +251965500639\n</br>
+        <br>The Kindergarten Division: 0113694475\n</br>
+        <br><b>\n</b>\n</br>
+        <br><b>PRIMARY (1-4) COMP\n</b>\n</br>
+        <br>The Primary School Division: +251965500639\n</br>
+        <br>The Primary School Division: 0113694475\n</br>
         <br><b> \n</b>\n</br>
-        <br><b>  PRIMARY (1-4) COMP\n</b>\n</br>
-        <br>The Primary School Division:+251965500639 \n</br>
-        <br>The Primary School Division:0113694475 \n</br>
-        <br><b> \n</b>\n</br>
-        <br><b>  PRIMARY (5-8) COMP\n</b>\n</br>
-        <br>The Primary School Division:  +251965500639 \n</br>
-        <br>The Primary School Division:   0113694475 \n</br>
+        <br><b>PRIMARY (5-8) COMP\n</b>\n</br>
+        <br>The Primary School Division: +251965500639\n</br>
+        <br>The Primary School Division: 0113694475\n</br>
         <br><b> \n</b>\n</br>
         <br><b>  PRIMARY (9-12) COMP\n</b>\n</br>
-        <br>The Primary School Division:  +251965500639 \n</br>
-        <br>The Primary School Division:   0113694475 \n</br>
+        <br>The Primary School Division: +251965500639\n</br>
+        <br>The Primary School Division: 0113694475\n</br>
         <br><b> \n</b>\n</br>
         <br><b>  IN SOCIALS FOLLOW US\n</b>\n</br>
         <br>Website:pascaInternationschool.com\n</br>

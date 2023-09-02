@@ -33,6 +33,7 @@ public class SplashScreenActivity extends AppCompatActivity {
     private View topView1,topView2,topView3;
     private View bottomView1,bottomView2,bottomView3;
     private ProgressBar accelerate;
+    String uid;
 
     private int count = 0;
     private int UserTypeInt;
@@ -192,59 +193,90 @@ public class SplashScreenActivity extends AppCompatActivity {
                     finish();
 
                 }else{
+
                     mAuth = FirebaseAuth.getInstance();
                     FirebaseUser user = mAuth.getCurrentUser();
+                    uid = user.getUid();
+                    SharedPreferences preferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+                    String usertypeS = preferences.getString(uid,"");
 
-                    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+                    if (usertypeS.equals("")){
+                        // usertype is empty. then get user type from firebase database
+                        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 
-                    firebaseDatabase.getReference().child("UserType").child(user.getUid()).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            int usertype = snapshot.getValue(Integer.class);
+                        firebaseDatabase.getReference().child("Users").child(user.getUid()).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                int usertype = snapshot.getValue(Integer.class);
+
+                                if(usertype==0){
+                                    Intent intent = new Intent(SplashScreenActivity.this,StudentsHomeActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
 
 
-                            FirebaseUser user;
+                                if(usertype==1 || usertype==2){
+                                    Intent intent = new Intent(SplashScreenActivity.this, TeachersHomeActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
 
-                            user = FirebaseAuth.getInstance().getCurrentUser();
+
+                                if(usertype==3){
+                                    Intent intent = new Intent(SplashScreenActivity.this,AdminHomeActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
 
 
+                                if(usertype==4){
+                                    Toast.makeText(SplashScreenActivity.this, "Not Found!", Toast.LENGTH_SHORT).show();
+                                }
 
-                            if(usertype==0){
-                                Intent intent = new Intent(SplashScreenActivity.this,StudentsHomeActivity.class);
-                                startActivity(intent);
-                                finish();
+
                             }
 
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
 
-                            if(usertype==1 || usertype==2){
-                                Intent intent = new Intent(SplashScreenActivity.this, TeachersHomeActivity.class);
-                                startActivity(intent);
-                                finish();
                             }
+                        });
 
-
-
-
-
-                            if(usertype==3){
-                                Intent intent = new Intent(SplashScreenActivity.this,AdminHomeActivity.class);
-                                startActivity(intent);
-                                finish();
-                            }
-
-
-                            if(usertype==4){
-                                Toast.makeText(SplashScreenActivity.this, "Not Found!", Toast.LENGTH_SHORT).show();
-                            }
-
-
+                    }else{
+                        // usertype is not empty. then get and go to other activity
+                        if(usertypeS.equals("0")){
+                            Intent intent = new Intent(SplashScreenActivity.this,StudentsHomeActivity.class);
+                            startActivity(intent);
+                            finish();
                         }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
 
+                        if(usertypeS.equals("1") || usertypeS.equals("2")){
+                            Intent intent = new Intent(SplashScreenActivity.this, TeachersHomeActivity.class);
+                            startActivity(intent);
+                            finish();
                         }
-                    });
+
+
+
+
+
+                        if(usertypeS.equals("3")){
+                            Intent intent = new Intent(SplashScreenActivity.this,AdminHomeActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
+
+                        if(usertypeS.equals("4")){
+                            Toast.makeText(SplashScreenActivity.this, "Not Found!", Toast.LENGTH_SHORT).show();
+                        }
+
+
+                    }
+
+
                 }
 
 
@@ -299,5 +331,6 @@ public class SplashScreenActivity extends AppCompatActivity {
 
 
     }
+
 
 }

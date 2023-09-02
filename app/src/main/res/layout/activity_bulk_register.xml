@@ -6,15 +6,89 @@
     android:layout_height="match_parent"
     tools:context=".BulkRegisterActivity">
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="30dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:elevation="20dp">
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Coming Soon !!"
-    android:layout_centerInParent="true"
-    android:textSize="30dp"
-    android:textColor="@color/lavender"
-    android:textStyle="bold"/>
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Multi Register"
+                android:layout_gravity="center"
+                android:textSize="21sp"
+                android:layout_margin="10dp"
+                android:textStyle="bold"/>
+
+
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Student Number"
+                android:digits="1234567890"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:textSize="17dp"
+                android:layout_marginBottom="15dp"
+                android:inputType="number"
+                android:id="@+id/getnumber"/>
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="15dp"
+                android:id="@+id/register_from"
+                android:text="Get Started"
+                android:background="@drawable/btn_back"
+                android:textColor="@android:color/white"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginBottom="15dp"
+                android:id="@+id/register_save"
+                android:text="Sava Data"
+                android:background="@drawable/btn_back"
+                android:textColor="@android:color/white"/>
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
 
 </RelativeLayout>
+
+
+    <!--
+    <Button
+        android:id="@+id/register_from"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:layout_centerInParent="true"
+        android:textColor="@color/lavender"
+        android:textStyle="bold"/>
+        -->
 

@@ -18,28 +18,7 @@
         <item>Name</item>
     </string-array>
 
-    <string-array name="student_class">
-        <item>nursery</item>
-        <item>kg1</item>
-        <item>kg2</item>
-        <item>kg3</item>
-        <item>1a</item>
-        <item>1b</item>
-        <item>2a</item>
-        <item>2b</item>
-        <item>3a</item>
-        <item>3b</item>
-        <item>4a</item>
-        <item>4b</item>
-        <item>5a</item>
-        <item>5b</item>
-        <item>6a</item>
-        <item>6b</item>
-        <item>7a</item>
-        <item>7b</item>
-        <item>8a</item>
-        <item>8a</item>
-    </string-array>
+
 
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -100,24 +79,24 @@
 
 
 
-    <string name="phone_numbers">   <br><b>  HOW DO YOU FIND US?\n</b>\n</br>
+    <string name="phone_numbers">   <br><b>HOW DO YOU FIND US?\n</b>\n</br>
 
-        <br>The Kindergarten Division:  +251965500639 \n</br>
-        <br>The Kindergarten Division:   0113694475 \n</br>
-        <br><b> \n</b>\n</br>
-        <br><b>  PRIMARY (1-4) COMP\n</b>\n</br>
-        <br>The Primary School Division:+251965500639 \n</br>
-        <br>The Primary School Division:0113694475 \n</br>
+        <br>The Kindergarten Division: +251965500639\n</br>
+        <br>The Kindergarten Division: 0113694475\n</br>
+        <br><b>\n</b>\n</br>
+        <br><b>PRIMARY (1-4) COMP\n</b>\n</br>
+        <br>The Primary School Division:+251965500639\n</br>
+        <br>The Primary School Division:0113694475\n</br>
         <br><b> \n</b>\n</br>
         <br><b>  PRIMARY (5-8) COMP\n</b>\n</br>
-        <br>The Primary School Division:  +251965500639 \n</br>
-        <br>The Primary School Division:   0113694475 \n</br>
-        <br><b> \n</b>\n</br>
-        <br><b>  PRIMARY (9-12) COMP\n</b>\n</br>
-        <br>The Primary School Division:  +251965500639 \n</br>
-        <br>The Primary School Division:   0113694475 \n</br>
-        <br><b> \n</b>\n</br>
-        <br><b>  IN SOCIALS FOLLOW US\n</b>\n</br>
+        <br>The Primary School Division: +251965500639\n</br>
+        <br>The Primary School Division: 0113694475\n</br>
+        <br><b>\n</b>\n</br>
+        <br><b>PRIMARY (9-12) COMP\n</b>\n</br>
+        <br>The Primary School Division: +251965500639\n</br>
+        <br>The Primary School Division: 0113694475\n</br>
+        <br><b>\n</b>\n</br>
+        <br><b>IN SOCIALS FOLLOW US\n</b>\n</br>
          <br>Website:pascaInternationschool.com\n</br>
         <br>Instagram: @pascaschool\n</br>
         <br>Telegram: @pascaschool\n</br>

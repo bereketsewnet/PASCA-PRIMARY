@@ -15,9 +15,11 @@ import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
@@ -827,54 +829,85 @@ public class SwitchUserActivity extends AppCompatActivity {
 
                     //start of filter Student and  Teacher
                     String uid = task.getResult().getUser().getUid();
+                    SharedPreferences preferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+                    String usertypeS = preferences.getString(uid,"");
 
-                    FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-                    firebaseDatabase.getReference().child("UserType").child(uid).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            int usertype = snapshot.getValue(Integer.class);
-                            if(usertype==0){
-                                Intent intent = new Intent(SwitchUserActivity.this,StudentsHomeActivity.class);
-                                intent.putExtra("MyId", uid);
-                                startActivity(intent);
-                                dialog.dismiss();
-                                finish();
+                    if (usertypeS.equals("")){
+                        // usertype is empty. then get user type from firebase database
+                        Toast.makeText(SwitchUserActivity.this, "Login to this account.For Fast Changing User", Toast.LENGTH_SHORT).show();
+                        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
 
+                        firebaseDatabase.getReference().child("Users").child(uid).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                int usertype = snapshot.getValue(Integer.class);
+
+                                if(usertype==0){
+                                    Intent intent = new Intent(SwitchUserActivity.this,StudentsHomeActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+
+
+                                if(usertype==1 || usertype==2){
+                                    Intent intent = new Intent(SwitchUserActivity.this, TeachersHomeActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+
+
+                                if(usertype==3){
+                                    Intent intent = new Intent(SwitchUserActivity.this,AdminHomeActivity.class);
+                                    startActivity(intent);
+                                    finish();
+                                }
+
+
+                                if(usertype==4){
+                                    Toast.makeText(SwitchUserActivity.this, "Not Found!", Toast.LENGTH_SHORT).show();
+                                }
 
 
                             }
 
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError error) {
 
-                            if(usertype==1 || usertype==2){
-                                Intent intent = new Intent(SwitchUserActivity.this, TeachersHomeActivity.class);
-                                intent.putExtra("MyId", uid);
-                                startActivity(intent);
-                                dialog.dismiss();
-                                finish();
                             }
+                        });
 
-
-
-                            if(usertype==3){
-                                Intent intent = new Intent(SwitchUserActivity.this,AdminHomeActivity.class);
-                                intent.putExtra("MyId", uid);
-                                startActivity(intent);
-                                dialog.dismiss();
-                                finish();
-                            }
-
-                            if(usertype==4){
-                                Toast.makeText(SwitchUserActivity.this, "Not Found!", Toast.LENGTH_SHORT).show();
-                                dialog.dismiss();
-                            }
+                    }else{
+                        // usertype is not empty. then get and go to other activity
+                        if(usertypeS.equals("0")){
+                            Intent intent = new Intent(SwitchUserActivity.this,StudentsHomeActivity.class);
+                            startActivity(intent);
+                            finish();
                         }
 
-                        @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
 
+                        if(usertypeS.equals("1") || usertypeS.equals("2")){
+                            Intent intent = new Intent(SwitchUserActivity.this, TeachersHomeActivity.class);
+                            startActivity(intent);
+                            finish();
                         }
-                    });
-                    //end of filter
+
+
+
+
+
+                        if(usertypeS.equals("3")){
+                            Intent intent = new Intent(SwitchUserActivity.this,AdminHomeActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+
+
+                        if(usertypeS.equals("4")){
+                            Toast.makeText(SwitchUserActivity.this, "Not Found!", Toast.LENGTH_SHORT).show();
+                        }
+
+
+                    }
 
                 }else{
                     ErrorRegisterDialog.show();

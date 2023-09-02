@@ -7,6 +7,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -137,10 +138,11 @@ public class LoginActivity extends AppCompatActivity {
                     String uid = task.getResult().getUser().getUid();
 
                     FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
-                    firebaseDatabase.getReference().child("UserType").child(uid).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
+                    firebaseDatabase.getReference().child("Users").child(uid).child("usertype").addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             int usertype = snapshot.getValue(Integer.class);
+                            saveUserType(uid, String.valueOf(usertype)); // saving usertype by in preferance using uid as name
                             if(usertype==0){
                                 Intent intent = new Intent(LoginActivity.this,StudentsHomeActivity.class);
                                 intent.putExtra("MyId", uid);
@@ -240,6 +242,14 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
+    }
+
+    public void saveUserType(String uid, String UserType){
+        // save data
+        SharedPreferences.Editor editor = getSharedPreferences("Settings",MODE_PRIVATE).edit();
+        editor.putString(uid, UserType);
+        editor.apply();
+        Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
     }
 
     @Override

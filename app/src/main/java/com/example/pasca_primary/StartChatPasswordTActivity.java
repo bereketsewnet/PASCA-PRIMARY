@@ -95,5 +95,58 @@ public class StartChatPasswordTActivity extends AppCompatActivity {
             }
         });
 
+        start_chat_password_btn_t.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+
+                start_chat_password_t_store = start_chat_password_t.getText().toString();
+
+                if(TextUtils.isEmpty(start_chat_password_t_store)){
+                    start_chat_password_t.setError("Please Insert Password");
+                }else{
+                    // start
+                    dialog.show();
+                    reference.addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                            ChangeProfilePass changeProfilePass = snapshot.getValue(ChangeProfilePass.class);
+
+
+                            if(changeProfilePass != null){
+                                recive_pass_t = changeProfilePass.getPassword();
+                                if(recive_pass_t.equals(start_chat_password_t_store)){
+                                    Intent intent = new Intent(StartChatPasswordTActivity.this, BulkStartChatMessageActivity.class);
+                                    startActivity(intent);
+                                    start_chat_password_t.setText("");
+                                    dialog.dismiss();
+                                    finish();
+                                }else{
+                                    start_chat_password_t.setError("Please Try Again!");
+                                    dialog.dismiss();
+                                }
+
+
+
+                            }else{
+                                Toast.makeText(StartChatPasswordTActivity.this, "First set The Password in Database", Toast.LENGTH_SHORT).show();
+                                dialog.dismiss();
+                            }
+
+
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+                    // end
+                }
+
+                return true;
+            }
+        });
+
     }
 }

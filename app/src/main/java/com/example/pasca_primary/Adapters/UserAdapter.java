@@ -2,6 +2,10 @@ package com.example.pasca_primary.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +15,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.pasca_primary.Fragments.ChatsFragment;
+import com.example.pasca_primary.Fragments.NewsFragment;
+import com.example.pasca_primary.MainActivity;
 import com.example.pasca_primary.MessageActivity;
 import com.example.pasca_primary.Model.Chats;
 import com.example.pasca_primary.Model.Users;
@@ -34,7 +41,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyHolder> {
     boolean isChat;
 
     String friendid;
-    int userTypeR;
+    int userTypeR,lastmessagecolor;
     String thelastmessage;
     FirebaseUser firebaseUser;
 
@@ -64,6 +71,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyHolder> {
 
 
         holder.username.setText(user.getUsername());
+        holder.layout_class.setText(user.getStudent_class());
 
         if (user.getImageURL().equals("default")) {
 
@@ -104,10 +112,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyHolder> {
         if (isChat) {
 
             LastMessage(user.getId(), holder.last_msg);
+            if(userTypeR == 2 || userTypeR == 3 || userTypeR == 1){
+                holder.layout_class.setVisibility(View.INVISIBLE);
+            }
 
         } else {
 
-            holder.last_msg.setVisibility(View.GONE);
+            holder.last_msg.setVisibility(View.INVISIBLE);
         }
 
 
@@ -122,7 +133,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyHolder> {
     class MyHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
 
-        TextView username, last_msg;
+        TextView username, last_msg,layout_class;
         CircleImageView imageView, image_on, image_off;
 
         public MyHolder(@NonNull View itemView) {
@@ -134,6 +145,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyHolder> {
             image_on = itemView.findViewById(R.id.image_online);
             image_off = itemView.findViewById(R.id.image_offline);
             last_msg = itemView.findViewById(R.id.lastMessage);
+            layout_class = itemView.findViewById(R.id.layout_class);
+
+
 
             itemView.setOnClickListener(this);
 
@@ -149,33 +163,15 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyHolder> {
             Intent intent = new Intent(context, MessageActivity.class);
             intent.putExtra("friendid", friendid);
             context.startActivity(intent);
-
-           /*
-            if(userTypeR == 0){
-                Intent intent = new Intent(context, MessageActivity.class);
-                intent.putExtra("friendid", friendid);
-                context.startActivity(intent);
-            }else if(userTypeR == 1 || userTypeR == 2){
-                Intent intent = new Intent(context, MessageActivityT.class);
-                intent.putExtra("friendid", friendid);
-                context.startActivity(intent);
-            }else{
-                Intent intent = new Intent(context, MessageActivityT.class);
-                intent.putExtra("friendid", friendid);
-                context.startActivity(intent);
-            }
-            */
-
-
-
-
-
         }
     }
 
+
     private void LastMessage(final String friendid, final TextView last_msg) {
 
+
         thelastmessage = "default";
+        lastmessagecolor = 0;
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -196,8 +192,20 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyHolder> {
                                 chats.getSender().equals(firebaseUser.getUid()) && chats.getReciever().equals(friendid)) {
 
 
-                            thelastmessage = chats.getMessage();
+
+                            if(chats.getReciever().equals(firebaseUser.getUid()) && !chats.isIsseen()){
+                                lastmessagecolor++;
+                                thelastmessage ="New("+lastmessagecolor+") "+chats.getMessage();
+                                last_msg.setTextColor(Color.RED);
+
+
+                            }else {
+                                thelastmessage = chats.getMessage();
+                            }
                         }
+
+
+
 
 
 
@@ -215,6 +223,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.MyHolder> {
                         break;
 
                     default:
+
                         last_msg.setText(thelastmessage);
 
                 }
