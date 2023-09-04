@@ -76,10 +76,10 @@
                 android:background="@color/gray" />
 
             <TextView
-                android:id="@+id/check_for_update"
+                android:id="@+id/official_school_website"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/check_for_update"
+                android:text="Official School Website"
                 android:textColor="@color/black"
                 android:layout_alignParentStart="true"
                 android:layout_marginLeft="10dp"
@@ -90,7 +90,7 @@
                 android:paddingBottom="10dp"/>
 
             <ImageView
-                android:id="@+id/check_for_update_link"
+                android:id="@+id/official_school_website_link"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:layout_below="@id/divider1"
@@ -223,7 +223,7 @@
                 android:id="@+id/author"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/author"
+                android:text="Developer"
                 android:textColor="@color/black"
                 android:layout_alignParentStart="true"
                 android:layout_marginLeft="10dp"
@@ -248,35 +248,16 @@
 
     </androidx.cardview.widget.CardView>
 
-    <RelativeLayout
-        android:id="@+id/terms_polcicy"
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/privacy_policy"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/copyright">
-
-        <TextView
-            android:id="@+id/terms_of_service"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_centerInParent="true"
-            android:layout_marginStart="45dp"
-            android:layout_marginBottom="20dp"
-            android:text="@string/terms_of_sercice"
-            android:textColor="@color/blue" />
-
-        <TextView
-            android:id="@+id/privacy_policy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_centerInParent="true"
-            android:layout_marginEnd="45dp"
-            android:layout_marginBottom="20dp"
-            android:text="@string/privacy_policy"
-            android:textColor="@color/blue" />
-
-    </RelativeLayout>
+        android:layout_marginEnd="45dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/copyright"
+        android:layout_marginBottom="20dp"
+        android:text="@string/privacy_policy"
+        android:textColor="@color/blue" />
 
     <RelativeLayout
         android:id="@+id/copyright"

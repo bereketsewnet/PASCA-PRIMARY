@@ -115,11 +115,6 @@ public class RegisterUserListActivity extends AppCompatActivity {
             switch (item.getItemId()) {
                 case R.id.bottom_register_list:
                     return true;
-                case R.id.bottom_student_profile:
-                    startActivity(new Intent(getApplicationContext(), UploadActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
                 case R.id.bottom_teacher_profile:
                     startActivity(new Intent(getApplicationContext(), UploadTActivity.class));
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);

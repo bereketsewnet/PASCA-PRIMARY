@@ -20,7 +20,7 @@
 
         <ImageView
             android:layout_width="200dp"
-            android:layout_height="120dp"
+            android:layout_height="150dp"
             android:id="@+id/recyclerImage"
             android:src="@drawable/calendar"
             android:layout_gravity="center"

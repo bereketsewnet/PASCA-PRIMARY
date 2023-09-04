@@ -3,7 +3,7 @@
 
     <string-array name="user_type">
         <item>Student</item>
-        <item>Teacher </item>
+        <item>Teacher</item>
         <item>HomeRoom Teacher</item>
         <item>Administration</item>
     </string-array>

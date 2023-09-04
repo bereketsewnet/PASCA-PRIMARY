@@ -17,6 +17,10 @@
         android:icon="@drawable/aboutus"
         android:title="@string/about"/>
 
+    <item android:id="@+id/admin_multi_register"
+        android:icon="@drawable/register"
+        android:title="Multi Register"/>
+
     <item android:id="@+id/admin_logout"
         android:icon="@drawable/logout"
         android:title="@string/logout"/>

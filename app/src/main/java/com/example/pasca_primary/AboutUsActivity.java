@@ -10,8 +10,8 @@ import android.widget.Toast;
 
 public class AboutUsActivity extends AppCompatActivity {
 
-    TextView check_for_update,official_website,follow_facebook,follow_instagram,author,terms_of_service,privacy_policy;
-    ImageView check_for_update_link,official_website_link,follow_facebook_link,follow_instagram_link,author_link;
+    TextView official_school_website,official_website,follow_facebook,follow_instagram,author,privacy_policy;
+    ImageView official_school_website_link,official_website_link,follow_facebook_link,follow_instagram_link,author_link;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,8 +19,8 @@ public class AboutUsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about_us);
 
 
-        check_for_update = findViewById(R.id.check_for_update);
-        check_for_update_link = findViewById(R.id.check_for_update_link);
+        official_school_website = findViewById(R.id.official_school_website);
+        official_school_website_link = findViewById(R.id.official_school_website_link);
         official_website = findViewById(R.id.official_website);
         official_website_link = findViewById(R.id.official_website_link);
         follow_facebook = findViewById(R.id.follow_facebook);
@@ -29,10 +29,9 @@ public class AboutUsActivity extends AppCompatActivity {
         follow_instagram_link = findViewById(R.id.follow_instagram_link);
         author = findViewById(R.id.author);
         author_link = findViewById(R.id.author_link);
-        terms_of_service = findViewById(R.id.terms_of_service);
         privacy_policy = findViewById(R.id.privacy_policy);
 
-        check_for_update.setOnClickListener(new View.OnClickListener() {
+        official_school_website.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -41,7 +40,7 @@ public class AboutUsActivity extends AppCompatActivity {
             }
         });
 
-        check_for_update_link.setOnClickListener(new View.OnClickListener() {
+        official_school_website_link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(AboutUsActivity.this, "Comming Soon", Toast.LENGTH_SHORT).show();
@@ -52,7 +51,7 @@ public class AboutUsActivity extends AppCompatActivity {
         official_website.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AboutUsActivity.this, "WWW.Pasca.com", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AboutUsActivity.this, "Comming Soon", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -60,7 +59,7 @@ public class AboutUsActivity extends AppCompatActivity {
         official_website_link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AboutUsActivity.this, "WWW.Pasca.com", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AboutUsActivity.this, "Comming Soon", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -68,7 +67,7 @@ public class AboutUsActivity extends AppCompatActivity {
         follow_instagram.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AboutUsActivity.this, "@pasca-primary", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AboutUsActivity.this, "Comming Soon", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -76,7 +75,7 @@ public class AboutUsActivity extends AppCompatActivity {
         follow_instagram_link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AboutUsActivity.this, "@pasca-primary", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AboutUsActivity.this, "@Comming Soon", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -84,7 +83,7 @@ public class AboutUsActivity extends AppCompatActivity {
         follow_facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AboutUsActivity.this, "@pasca-primary", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AboutUsActivity.this, "Comming Soon", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -92,7 +91,7 @@ public class AboutUsActivity extends AppCompatActivity {
         follow_facebook_link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(AboutUsActivity.this, "@pasca-primary", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AboutUsActivity.this, "Comming Soon", Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -110,13 +109,6 @@ public class AboutUsActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(AboutUsActivity.this, "Bereket Sewnet", Toast.LENGTH_SHORT).show();
 
-            }
-        });
-
-        terms_of_service.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(AboutUsActivity.this, "Terms of Service", Toast.LENGTH_SHORT).show();
             }
         });
 

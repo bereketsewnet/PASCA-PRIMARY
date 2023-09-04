@@ -155,11 +155,6 @@ public class UploadTActivity extends AppCompatActivity {
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                     finish();
                     return true;
-                case R.id.bottom_student_profile:
-                    startActivity(new Intent(getApplicationContext(), UploadActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
                 case R.id.bottom_teacher_profile:
                     return true;
 

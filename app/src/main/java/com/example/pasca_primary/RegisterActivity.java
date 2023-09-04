@@ -14,15 +14,15 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
+
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.example.pasca_primary.Model.ChangeProfilePass;
+
 import com.example.pasca_primary.Model.MultiSelectionId;
-import com.example.pasca_primary.Model.UserTypeStore;
+
 import com.example.pasca_primary.additional.CustomProgressDialog;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -223,18 +223,14 @@ public class RegisterActivity extends AppCompatActivity {
                     // end
 
 
-                    // setting usertype to database
-                    DatabaseReference usetypee = FirebaseDatabase.getInstance().getReference().child("UserType").child(user.getUid());
-                    UserTypeStore userTypeStore = new UserTypeStore(usetypeee);
-                    usetypee.setValue(userTypeStore);
-                    // end
+
 
                     if (user!=null) {
 
                         HashMap<String, Object> hashMap = new HashMap<>();
                         hashMap.put("username", username);
                         hashMap.put("email", email);
-                        hashMap.put("password","******");
+                        hashMap.put("password",password);
                         hashMap.put("search",searchusername);
                         hashMap.put("id", user.getUid());
                         hashMap.put("imageURL", "default");

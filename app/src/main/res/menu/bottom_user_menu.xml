@@ -8,11 +8,6 @@
             android:title="Users"
             android:icon="@drawable/register"/>
 
-    <item
-        android:id="@+id/bottom_student_profile"
-        android:title="Studnet Profile"
-        android:icon="@drawable/idcardstud"/>
-
 
     <item
         android:id="@+id/bottom_teacher_profile"

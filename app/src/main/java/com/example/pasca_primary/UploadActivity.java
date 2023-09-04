@@ -144,29 +144,6 @@ public class UploadActivity extends AppCompatActivity {
             }
         });
 
-        // bottom navitation start
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigation2);
-        bottomNavigationView.setSelectedItemId(R.id.bottom_student_profile);
-        bottomNavigationView.setOnItemSelectedListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.bottom_register_list:
-                    startActivity(new Intent(getApplicationContext(), RegisterUserListActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-                case R.id.bottom_student_profile:
-                    return true;
-                case R.id.bottom_teacher_profile:
-                    startActivity(new Intent(getApplicationContext(), UploadTActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                    finish();
-                    return true;
-
-            }
-            return false;
-        });
-        //bottom navitation end
-
     }
 
     //Outside onCreate

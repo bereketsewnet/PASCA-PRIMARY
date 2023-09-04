@@ -6,16 +6,18 @@ public class Users {
 
     }
 
-    public Users(String username, String imageURL, String id, String status, int usertype , String student_class) {
+    public Users(String username, String imageURL, String id, String status, int usertype , String student_class,String email,String password) {
         this.username = username;
         this.student_class = student_class;
         this.imageURL = imageURL;
         this.id = id;
         this.status = status;
         this.usertype = usertype;
+        this.email = email;
+        this.password = password;
     }
 
-    private String username,imageURL,id,status,student_class;
+    private String username,imageURL,id,status,student_class,email,password;
     private int usertype;
 
     public String getUsername() {
@@ -24,6 +26,22 @@ public class Users {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getEmail(){
+        return email;
+    }
+
+    public void setEmail(String email){
+        this.email = email;
+    }
+
+    public String getPassword(){
+        return password;
+    }
+
+    public void setPassword(String password){
+        this.password = password;
     }
 
     public String getStudent_class(){return student_class;}

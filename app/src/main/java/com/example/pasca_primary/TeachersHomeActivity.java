@@ -38,10 +38,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class TeachersHomeActivity extends AppCompatActivity {
 
-    CardView teachers_daily,teachers_rank,teachers_notepad,teachers_gk,teachers_books,teachers_s_profile;
+    CardView teachers_daily,teachers_rank,teachers_notepad,teachers_gk,teachers_books,teachers_ai;
     String uid;
     DatabaseReference reference;
-    public static final String[] languageT = {"Lang","En", "አማ", "عربي", "Fr"};
     FirebaseUser firebaseUser;
     TextView stubjectname;
     CircleImageView imageView;
@@ -57,7 +56,7 @@ public class TeachersHomeActivity extends AppCompatActivity {
         teachers_notepad = findViewById(R.id.teachers_notepad);
         teachers_gk = findViewById(R.id.teachers_gk);
         teachers_books = findViewById(R.id.teachers_books);
-        teachers_s_profile = findViewById(R.id.teachers_s_profile);
+        teachers_ai = findViewById(R.id.teachers_ai);
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
         stubjectname = findViewById(R.id.stubjectname);
@@ -125,10 +124,10 @@ public class TeachersHomeActivity extends AppCompatActivity {
             }
         });
 
-        teachers_s_profile.setOnClickListener(new View.OnClickListener() {
+        teachers_ai.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TeachersHomeActivity.this, ProfilePhotoActivity.class);
+                Intent intent = new Intent(TeachersHomeActivity.this, ChatGptActivity.class);
                 startActivity(intent);
             }
         });

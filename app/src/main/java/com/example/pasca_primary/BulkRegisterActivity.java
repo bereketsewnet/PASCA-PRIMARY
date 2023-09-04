@@ -4,13 +4,22 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
 import com.example.pasca_primary.Model.MultiRegisterUsers;
+import com.example.pasca_primary.Model.MultiSelectionId;
+import com.example.pasca_primary.additional.CustomProgressDialog;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -19,11 +28,16 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.rengwuxian.materialedittext.MaterialEditText;
 
+import java.util.HashMap;
+
 public class BulkRegisterActivity extends AppCompatActivity {
-    String name,email,password,studentClass,studentSex,userRollNo;
-   int usertype;
-   Button register_from,register_save;
-   MaterialEditText getnumber;
+    String name,email,password,studentClass,studentSex,usertype;
+    Long passwordd;
+    Button register_from;
+    MaterialEditText getnumber,getnumber_start;
+    FirebaseAuth mAuth;
+    DatabaseReference reference;
+    int usetypeC;
 
 
     @Override
@@ -32,55 +46,34 @@ public class BulkRegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_bulk_register);
 
         register_from = findViewById(R.id.register_from);
-        register_save = findViewById(R.id.register_save);
         getnumber = findViewById(R.id.getnumber);
+        getnumber_start = findViewById(R.id.getnumber_start);
 
-        register_save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-
-
-            }
-        });
-
-        register_save.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-
-
-
-                return true;
-            }
-        });
 
         register_from.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+           int StudentNumEnd = Integer.parseInt(getnumber.getText().toString());
+           int StudentNumStart = Integer.parseInt(getnumber_start.getText().toString());
 
+           for(int i = StudentNumStart; i <= StudentNumEnd; i++){
+
+               String userRollNo = String.valueOf(i);
+               getUsersFromDatabase(userRollNo);
+           }
 
             }
         });
 
-        register_from.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-
-                getUsersFromDatabase("1");
-                return true;
-            }
-        });
 
 
     }
 
-    private void register(String userRollNo){
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("MultiRegister").child(userRollNo);
-        MultiRegisterUsers multiRegisterUsers = new MultiRegisterUsers("azme","azme@gmail.com","123456","kg1","male",0);
-        reference.setValue(multiRegisterUsers);
-    }
+
 
     private void getUsersFromDatabase(String userRollNo){
+        final CustomProgressDialog dialog = new CustomProgressDialog(BulkRegisterActivity.this);
+       // dialog.show();
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("MultiRegister").child(userRollNo);
 
         if (reference != null) {
@@ -93,17 +86,31 @@ public class BulkRegisterActivity extends AppCompatActivity {
                     if (multiRegisterUsers != null) {
                         name = multiRegisterUsers.getName();
                         email = multiRegisterUsers.getEmail();
-                        password = multiRegisterUsers.getPassword();
+                        passwordd = multiRegisterUsers.getPassword();
                         studentClass = multiRegisterUsers.getStudentClass();
                         studentSex = multiRegisterUsers.getStudentSex();
                         usertype = multiRegisterUsers.getUsertype();
 
-                        Toast.makeText(BulkRegisterActivity.this, ""+name, Toast.LENGTH_SHORT).show();
-                        Toast.makeText(BulkRegisterActivity.this, ""+email, Toast.LENGTH_SHORT).show();
-                        Toast.makeText(BulkRegisterActivity.this, ""+password, Toast.LENGTH_SHORT).show();
-                        Toast.makeText(BulkRegisterActivity.this, ""+usertype, Toast.LENGTH_SHORT).show();
+                        password = String.valueOf(passwordd); // change password long variable to string variable.
+
+
+                        if(usertype.equals("Student")){
+                            usetypeC = 0;
+                        }else if(usertype.equals("Teacher")){
+                            usetypeC = 1;
+                        }else if(usertype.equals("HomeRoom Teacher")){
+                            usetypeC = 2;
+                        }else if(usertype.equals("Admin")){
+                            usetypeC = 3;
+                        }else{
+                            usetypeC = 0;
+                        }
+
+                        registerUser(name,email,password,usetypeC,studentClass,studentSex);
+
+
                     } else {
-                        Toast.makeText(BulkRegisterActivity.this, "first Import User Data", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BulkRegisterActivity.this, "User Not Found!!"+userRollNo, Toast.LENGTH_SHORT).show();
                     }
                 }
 
@@ -115,6 +122,81 @@ public class BulkRegisterActivity extends AppCompatActivity {
         }else{
             Toast.makeText(this, "first set data on database", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void registerUser(final String username, final String email, String password, final int usertype, final String studentClass, final String studentSex) {
+
+        mAuth = FirebaseAuth.getInstance();
+
+        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+
+                if (task.isSuccessful()) {
+
+
+                    String searchusername = username.toLowerCase();
+
+                    FirebaseUser user = mAuth.getCurrentUser();
+
+                    reference = FirebaseDatabase.getInstance().getReference("Users").child(user.getUid());
+                    String multiId = user.getUid();
+
+                    // multiple sender id setting to database
+                    DatabaseReference multiSenderRef = FirebaseDatabase.getInstance().getReference().child("MultiSenderId").child(username);
+                    MultiSelectionId multiSelectionId = new MultiSelectionId(multiId);
+                    multiSenderRef.setValue(multiSelectionId);
+                    // end
+
+
+
+
+                    if (user!=null) {
+
+                        HashMap<String, Object> hashMap = new HashMap<>();
+                        hashMap.put("username", username);
+                        hashMap.put("email", email);
+                        hashMap.put("password",password);
+                        hashMap.put("search",searchusername);
+                        hashMap.put("id", user.getUid());
+                        hashMap.put("imageURL", "default");
+                        hashMap.put("status", "offline");
+                        hashMap.put("usertype", usertype);
+                        hashMap.put("student_class", studentClass);
+                        hashMap.put("sex", studentSex);
+
+
+                        reference.setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+
+
+                                if (task.isSuccessful()) {
+
+                                    Toast.makeText(BulkRegisterActivity.this, "Registered "+username, Toast.LENGTH_SHORT).show();
+
+
+                                }
+                            }
+                        });
+
+
+
+
+
+
+                    }
+
+
+                }else{
+                    Toast.makeText(BulkRegisterActivity.this, username+" Not Register", Toast.LENGTH_SHORT).show();
+                }
+
+
+
+            }
+        });
+
     }
 
 }

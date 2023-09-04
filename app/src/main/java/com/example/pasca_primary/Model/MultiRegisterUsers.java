@@ -2,9 +2,10 @@ package com.example.pasca_primary.Model;
 
 public class MultiRegisterUsers {
 
-   String name,email,password,studentClass,studentSex;
-   int usertype;
-   public MultiRegisterUsers(String name,String email,String password,String studentClass,String studentSex, int userype){
+   String name,email,studentClass,studentSex;
+   Long password;
+   String usertype;
+   public MultiRegisterUsers(String name,String email,Long password,String studentClass,String studentSex, String userype){
        this.name = name;
        this.email = email;
        this.password = password;
@@ -32,11 +33,11 @@ public class MultiRegisterUsers {
         this.email = email;
     }
 
-    public String getPassword(){
+    public Long getPassword(){
         return password;
     }
 
-    public void setPassword(String password){
+    public void setPassword(Long password){
         this.password = password;
     }
 
@@ -56,11 +57,11 @@ public class MultiRegisterUsers {
         this.studentSex = studentSex;
     }
 
-    public int getUsertype(){
+    public String getUsertype(){
        return usertype;
     }
 
-    public void setUsertype(int usertype){
+    public void setUsertype(String usertype){
        this.usertype = usertype;
     }
 }

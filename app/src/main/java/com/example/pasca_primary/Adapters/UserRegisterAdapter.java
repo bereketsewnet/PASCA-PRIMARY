@@ -1,21 +1,32 @@
 package com.example.pasca_primary.Adapters;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.pasca_primary.AdminHomeActivity;
 import com.example.pasca_primary.MessageActivity;
 import com.example.pasca_primary.Model.Chats;
 import com.example.pasca_primary.Model.Users;
 import com.example.pasca_primary.R;
 import com.example.pasca_primary.RankFormActivity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -35,7 +46,7 @@ public class UserRegisterAdapter extends RecyclerView.Adapter<UserRegisterAdapte
     boolean isChat;
 
     String friendid;
-    String getclasss;
+    String getclasss,usernamefordelete,friendemail,friedpassword;
     int gettypee;
     FirebaseUser firebaseUser;
 
@@ -59,6 +70,8 @@ public class UserRegisterAdapter extends RecyclerView.Adapter<UserRegisterAdapte
     public void onBindViewHolder(@NonNull MyHolder holder, int position) {
 
         Users user = userlist.get(position);
+
+
 
         friendid = user.getId();
         getclasss = "Class: " + user.getStudent_class();
@@ -155,8 +168,19 @@ public class UserRegisterAdapter extends RecyclerView.Adapter<UserRegisterAdapte
 
 
             itemView.setOnClickListener(this);
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+
+
+                    return true;
+                }
+            });
 
         }
+
+
+
 
         @Override
         public void onClick(View v) {
@@ -173,6 +197,7 @@ public class UserRegisterAdapter extends RecyclerView.Adapter<UserRegisterAdapte
 
         }
     }
+
 
 
 }

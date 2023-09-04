@@ -188,7 +188,7 @@
 
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/teachers_s_profile"
+                android:id="@+id/teachers_ai"
                 android:layout_width="145dp"
                 android:layout_height="145dp"
                 app:cardCornerRadius="15dp"
@@ -205,12 +205,12 @@
                         android:layout_gravity="center"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:background="@drawable/idcardstud"/>
+                        android:background="@drawable/aistud"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/TeacherStudnets"
+                        android:text="@string/ai"
                         android:textSize="16sp"
                         android:gravity="center"
                         android:layout_gravity="center_horizontal"

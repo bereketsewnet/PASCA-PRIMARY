@@ -3,6 +3,8 @@ package com.example.pasca_primary;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,9 +13,11 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,8 +28,15 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 
 import com.example.pasca_primary.Adapters.MessageAdapter;
+import com.example.pasca_primary.Fragments.ProfilePasswordFragment;
 import com.example.pasca_primary.Model.Chats;
 import com.example.pasca_primary.Model.Users;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthCredential;
+import com.google.firebase.auth.EmailAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -44,7 +55,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class MessageActivity extends AppCompatActivity {
 
 
-    String friendid, message, myid,friendName;
+    String friendid, message, myid,friendName,friendEmail,friendPassword;
     int myUserType;
     CircleImageView imageViewOnToolbar;
     TextView usernameonToolbar;
@@ -94,31 +105,35 @@ public class MessageActivity extends AppCompatActivity {
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Users").child(friendid);
 
-        reference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                Users users = snapshot.getValue(Users.class);
+            reference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                usernameonToolbar.setText(users.getUsername()); // set the text of the user on textivew in toolbar
-                friendName = users.getUsername();
-                if (users.getImageURL().equals("default")) {
+                    Users users = snapshot.getValue(Users.class);
+                    if(users != null) {
 
-                    imageViewOnToolbar.setImageResource(R.drawable.user);
-                } else {
+                        usernameonToolbar.setText(users.getUsername()); // set the text of the user on textivew in toolbar
+                        friendName = users.getUsername();
+                        friendEmail = users.getEmail();
+                        friendPassword = users.getPassword();
+                        if (users.getImageURL().equals("default")) {
 
-                    Glide.with(getApplicationContext()).load(users.getImageURL()).into(imageViewOnToolbar);
+                            imageViewOnToolbar.setImageResource(R.drawable.user);
+                        } else {
+
+                            Glide.with(getApplicationContext()).load(users.getImageURL()).into(imageViewOnToolbar);
+                        }
+
+                        readMessages(myid, friendid, users.getImageURL());
+                    }
                 }
 
-                readMessages(myid, friendid, users.getImageURL());
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+                }
+            });
 
 
         seenMessage(friendid);
@@ -126,6 +141,17 @@ public class MessageActivity extends AppCompatActivity {
 
 
 
+        imageViewOnToolbar.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+
+                Fragment fragment = new ProfilePasswordFragment();
+                FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.message_activity_container,fragment).commit();
+
+                return true;
+            }
+        });
 
 
          et_message.addTextChangedListener(new TextWatcher() {

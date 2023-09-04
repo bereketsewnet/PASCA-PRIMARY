@@ -26,7 +26,7 @@
 
                 <ImageView
                     android:layout_width="200dp"
-                    android:layout_height="140dp"
+                    android:layout_height="170dp"
                     android:id="@+id/recyclerImage"
                     android:src="@drawable/advertmain"
                     android:layout_gravity="center"
@@ -37,12 +37,118 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginTop="10dp"
                 android:padding="5dp"
-                android:text="@string/phone_numbers"
-                android:textColor="@color/lavender"
+                android:layout_marginBottom="10dp"
+                android:text="How Do You Find Us?"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/black"
                 android:layout_centerInParent="true"
-                android:textSize="14dp" />
+                android:textSize="22dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="left"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:text="Contact Us"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Mobile: +251 911104182"
+                android:layout_gravity="left"
+                android:textColor="@color/lavender"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Mobile: +251 965500639"
+                android:layout_marginTop="5dp"
+                android:layout_gravity="left"
+                android:textColor="@color/lavender"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="Phone: 011342698214"
+                android:layout_gravity="left"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/lavender"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:padding="2dp"
+                android:text="Follow Us On Social Media"
+                android:layout_gravity="left"
+                android:textColor="@color/black"
+                android:layout_centerInParent="true"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:text="FaceBook: @pasca_primary"
+                android:layout_gravity="left"
+                android:textColor="@color/lavender"
+                android:textSize="18dp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Instagram: @pasca_primary"
+                android:layout_gravity="left"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/lavender"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="LinkedIn: @pasca_primary"
+                android:layout_gravity="left"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/lavender"
+                android:textSize="18dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:padding="2dp"
+                android:text="Official School Website"
+                android:layout_gravity="left"
+                android:textColor="@color/black"
+                android:layout_centerInParent="true"
+                android:textSize="20dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="Website: https://pasca.com"
+                android:layout_gravity="left"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/lavender"
+                android:textSize="18dp" />
 
 
         </LinearLayout>
