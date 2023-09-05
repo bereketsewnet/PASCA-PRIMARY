@@ -170,7 +170,7 @@ public class TeachersHomeActivity extends AppCompatActivity {
     }
 
     private void showChangeLangDialog() {
-        final String[] listItems = {"En", "አማ", "عربي", "Fr"};
+        final String[] listItems = {"English", "አማርኛ", "عربي", "Français","中国人"};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(TeachersHomeActivity.this);
         mBuilder.setTitle("Choose Language...");
         mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
@@ -188,6 +188,9 @@ public class TeachersHomeActivity extends AppCompatActivity {
                     recreate();
                 }else if(which == 3){
                     setLocal("fr");
+                    recreate();
+                }else if(which == 4){
+                    setLocal("zh");
                     recreate();
                 }
                 dialog.dismiss();

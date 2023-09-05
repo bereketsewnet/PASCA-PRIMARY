@@ -26,21 +26,21 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Multi Register"
+                android:text="@string/multi_register"
                 android:layout_gravity="center"
-                android:textSize="21sp"
+                android:textSize="20sp"
                 android:layout_margin="10dp"
                 android:textStyle="bold"/>
 
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Student Start Number"
+                android:hint="@string/student_start_number"
                 android:digits="1234567890"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
-                android:textSize="17dp"
-                android:layout_marginBottom="15dp"
+                android:textSize="15dp"
+                android:layout_marginBottom="10dp"
                 android:inputType="number"
                 android:id="@+id/getnumber_start"/>
 
@@ -48,37 +48,27 @@
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Student End Number"
+                android:hint="@string/student_end_number"
                 android:digits="1234567890"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
-                android:textSize="17dp"
-                android:layout_marginBottom="15dp"
+                android:textSize="15dp"
+                android:layout_marginBottom="10dp"
                 android:inputType="number"
                 android:id="@+id/getnumber"/>
 
 
             <Button
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="45dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginBottom="15dp"
                 android:id="@+id/register_from"
-                android:text="Get Started"
+                android:text="@string/get_started"
                 android:background="@drawable/btn_back"
                 android:textColor="@android:color/white"/>
 
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginBottom="15dp"
-                android:id="@+id/delete_database"
-                android:text="Delete Database"
-                android:background="@drawable/btn_back"
-                android:textColor="@android:color/white"/>
 
 
 

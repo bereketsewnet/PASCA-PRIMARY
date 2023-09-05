@@ -19,7 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Loading..."
+        android:text="@string/loading"
         android:layout_below="@+id/spin_kit"
         android:textColor="@color/lavender"/>
 

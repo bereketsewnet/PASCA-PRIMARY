@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">PASCA</string>
+    <string name="done" translatable="false">done</string>
 
     <string-array name="user_type">
         <item>Student</item>
@@ -10,14 +12,38 @@
 
     <string-array name="student_sex">
         <item>Male</item>
-        <item>Women</item>
+        <item>Female</item>
     </string-array>
 
-    <string-array name="search">
-        <item>Class</item>
-        <item>Name</item>
+    <string-array name="counter_user">
+        <item>الطالب 1</item>
+        <item>الطالب 2</item>
+        <item>الطالب 3</item>
+        <item>الطالب 4</item>
+        <item>الطالب 5</item>
+        <item>الطالب 6</item>
+        <item>الطالب 7</item>
+        <item>الطالب 8</item>
+        <item>الطالب 9</item>
+        <item>الطالب 10</item>
     </string-array>
 
+
+    <string-array name="student_class" translatable="false">
+        <item>nursery</item>
+        <item>kg1</item>
+        <item>kg2</item>
+        <item>kg3</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+
+    </string-array>
 
 
     <!-- TODO: Remove or change this placeholder text -->
@@ -25,8 +51,8 @@
 
     <string name="school_law">   <br><b>  Rules and Regulations for student\n</b>\n</br>
 
-        <br>1.Never bring a toy or real gun, or weapon to school. This includes sharp and dangerous items.\n</br>
-<br>  \n</br>
+        <br>1.Never bring a toy or real gun, or weapon to school.This includes sharp and dangerous items.\n</br>
+        <br>  \n</br>
         <br>2.Never beat or engage in physical conflict with another student.\n</br>
 <br>  \n</br>
         <br>3.Never, in words or actions, disrespect teacher or any member of the school staff.\n</br>
@@ -75,36 +101,9 @@
 <br>  \n</br>
         <br>25.Always put your trash in the waste basket.\n</br>
 <br>  \n</br>
-        <br>26.Always do you best in all things!!!\n</br></string>
+        <br>26.Always do you best in all things!!!\n</br>
+    </string>
 
-
-    <string name="phone_numbers">   <br><b>HOW DO YOU FIND US?\n</b>\n</br>
-
-        <br>The Kindergarten Division: +251965500639\n</br>
-        <br>The Kindergarten Division: 0113694475\n</br>
-        <br><b>\n</b>\n</br>
-        <br><b>PRIMARY (1-4) COMP\n</b>\n</br>
-        <br>The Primary School Division: +251965500639\n</br>
-        <br>The Primary School Division: 0113694475\n</br>
-        <br><b> \n</b>\n</br>
-        <br><b>PRIMARY (5-8) COMP\n</b>\n</br>
-        <br>The Primary School Division: +251965500639\n</br>
-        <br>The Primary School Division: 0113694475\n</br>
-        <br><b>\n</b>\n</br>
-        <br><b>PRIMARY (9-12) COMP\n</b>\n</br>
-        <br>The Primary School Division: +251965500639\n</br>
-        <br>The Primary School Division: 0113694475\n</br>
-        <br><b>\n</b>\n</br>
-        <br><b>IN SOCIALS FOLLOW US\n</b>\n</br>
-         <br>Website:pascaInternationschool.com\n</br>
-        <br>Instagram: @pascaschool\n</br>
-        <br>Telegram: @pascaschool\n</br>
-        <br>FaceBook: @pascaschool\n</br>
-        <br>Gmail: PascaInternation@gmail.com\n</br>
-
-
-
-       </string>
 
 
     <string name="title_activity_home">HomeActivity</string>
@@ -116,95 +115,84 @@
 
     <string name="open">Open</string>
     <string name="close">Close</string>
-    <string name="studnet_welcome">مرحبًا بعودتك</string>
-    <string name="student_myactivity">نشاطي</string>
-    <string name="student_daily">يوميًا</string>
-    <string name="student_library">مكتبة</string>
-    <string name="student_rank">رتبة</string>
-    <string name="gk">أسئلة</string>
-    <string name="ai">منظمة العفو الدولية</string>
-    <string name="student_teachers">معلمون</string>
-    <string name="student_complain">يشتكي</string>
-    <string name="student_calendar">تقويم</string>
-    <string name="student_fees">مصاريف</string>
-    <string name="student_report">تقرير الطالب</string>
-    <string name="subject">موضوع</string>
-    <string name="mark">علامة</string>
-    <string name="main_daily">يوميًا</string>
-    <string name="main_news">أخبار</string>
-    <string name="main_id">بطاقة تعريف</string>
-    <string name="main2_studnet">طالب</string>
-    <string name="TeacherNotepad">دفتر</string>
-    <string name="TeacherStudnets">طلاب</string>
-    <string name="TeachersProgress">مستوى</string>
-    <string name="make_your_note_here">اكتب ملاحظتك هنا</string>
-    <string name="copy">ينسخ</string>
-    <string name="set_student_mark_here">ضع علامة الطالب هنا</string>
-    <string name="send">يرسل</string>
-    <string name="register_users">تسجيل المستخدمين</string>
-    <string name="post_news">انشر إشعارًا</string>
-    <string name="post_grade">أضف تقييمًا</string>
-    <string name="post_question">انشر سؤالاً</string>
-    <string name="post_books">كتب بوست</string>
-    <string name="post_students_profile">انشر ملفات تعريف الطلاب</string>
-    <string name="post_teachers_profile">نشر الملف الشخصي للمدرس</string>
-    <string name="post_calendar">انشر تقويمًا</string>
-    <string name="post_fees_information">معلومات الدفع اللاحقة</string>
-    <string name="logout">يخرج</string>
-    <string name="startchat_pass_t">الطالب نجح</string>
-    <string name="startchat_pass_s">يمر المعلمون</string>
-    <string name="changeprofile_pass">تغيير كلمة مرور ملف التعريف</string>
-    <string name="change_password">قم بتغيير المفتاح السري</string>
+    <string name="users">المستخدمين</string>
+    <string name="post">بريد</string>
     <string name="password">كلمة المرور</string>
-    <string name="conform_password">أكمل كلمة المرور</string>
-    <string name="change">يتغير</string>
-    <string name="complain_box">تقديم شكوى</string>
+    <string name="about">عن</string>
+    <string name="multi_register">تسجيل متعدد</string>
+    <string name="logout">تسجيل خروج</string>
+    <string name="change_student">تغيير الطالب</string>
+    <string name="add_student">إضافة طالب</string>
+    <string name="current_version">النسخة الحالية</string>
+    <string name="official_school_website">الموقع الرسمي للمدرسة</string>
+    <string name="official_website">الموقع الرسمي</string>
+    <string name="follow_facebook">تابعونا على الفيسبوك</string>
+    <string name="follow_instagram">متابعتنا على الانستقرام</string>
+    <string name="developer">مطور</string>
+    <string name="privacy_policy">سياسة الخصوصية</string>
+    <string name="add_student_here">أضف الطالب هنا</string>
     <string name="name">اسم</string>
     <string name="email">بريد إلكتروني</string>
+    <string name="welcome_back">مرحبًا بعودتك</string>
+    <string name="questions">أسئلة</string>
+    <string name="library">مكتبة</string>
+    <string name="ai">منظمة العفو الدولية</string>
+    <string name="teachers">معلمون</string>
+    <string name="calendar">تقويم</string>
+    <string name="fees">مصاريف</string>
+    <string name="student_start_number">رقم بداية الطالب</string>
+    <string name="student_end_number">الرقم النهائي للطالب</string>
+    <string name="get_started">البدء</string>
+    <string name="search">يبحث</string>
+    <string name="classs">فصل</string>
+    <string name="profile_photo_password">كلمة مرور الصورة الشخصية</string>
+    <string name="change_password">تغيير كلمة المرور</string>
+    <string name="conform_password">مطابقة كلمة المرور</string>
+    <string name="change">يتغير</string>
+    <string name="startchat_student_password">كلمة مرور الطالب startChat</string>
+    <string name="startchat_teacher_password">كلمة مرور المعلم startChat</string>
+    <string name="send">يرسل</string>
     <string name="message">رسالة</string>
-    <string name="complain">تقديم شكوى</string>
-    <string name="log_in">تسجيل دخول</string>
-    <string name="login">تسجيل دخول</string>
-    <string name="forgot_password">هل نسيت المفتاح؟</string>
-    <string name="create_an_account">إنشاء حساب</string>
+    <string name="message_form">نموذج الرسالة</string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="forgot_password">هل نسيت كلمة السر</string>
+    <string name="daily">يوميًا</string>
+    <string name="news">أخبار</string>
+    <string name="teachers_profile_photo">صورة الملف الشخصي للمعلمين</string>
+    <string name="student_progress_report">تقرير تقدم الطالب</string>
+    <string name="subject">موضوع</string>
+    <string name="mark">علامة</string>
+    <string name="set_student_mark_here">قم بتعيين علامة الطالب هنا</string>
+    <string name="create_account">إنشاء حساب</string>
     <string name="register">يسجل</string>
-    <string name="go">يتجاوز</string>
-    <string name="start_chat_password">ابدأ الدردشة بكلمة مرور</string>
-    <string name="enter_your_email_address">أدخل عنوان بريدك الالكتروني:</string>
-    <string name="cancel">يمسح</string>
+    <string name="startchat_password">كلمة مرور بدء الدردشة</string>
+    <string name="my_activity">نشاطي</string>
+    <string name="progress">تقدم</string>
+    <string name="note_pad">المفكرة</string>
+    <string name="make_your_note">قم بعمل ملاحظتك</string>
+    <string name="common_message">رسالة مشتركة</string>
+    <string name="copy">ينسخ</string>
+    <string name="multi_message">رسالة متعددة</string>
+    <string name="upload_student_profile_here">قم بتحميل الملف التعريفي للطالب هنا</string>
+    <string name="caption">التسمية التوضيحية</string>
+    <string name="upload_calendar_here">تحميل التقويم هنا</string>
+    <string name="upload_fees_info_here">تحميل معلومات الرسوم هنا</string>
+    <string name="upload_question_here">تحميل السؤال هنا</string>
+    <string name="post_short_news_here">نشر أخبار قصيرة هنا</string>
+    <string name="upload_book">تحميل الكتاب</string>
+    <string name="upload">رفع</string>
+    <string name="upload_teacher_profile_here">قم بتحميل ملف تعريف المعلم هنا</string>
+    <string name="sucess">تهانينا! لقد أكملت بنجاح.</string>
+    <string name="successs">نجاح</string>
+    <string name="okay">تمام</string>
+    <string name="cancel">يلغي</string>
+    <string name="something">شيء انتظر خطأ</string>
+    <string name="error">خطأ</string>
+    <string name="enter_your_email">أدخل بريدك الإلكتروني</string>
     <string name="reset">إعادة ضبط</string>
     <string name="profile_password">كلمة مرور الملف الشخصي</string>
     <string name="enter">يدخل</string>
-    <string name="switch_user">تغير المستخدم</string>
-    <string name="add_user">إضافة مستخدم</string>
-    <string name="show_my_id">إظهار هويتي</string>
-    <string name="terms_of_sercice"><u>شروط الخدمة</u></string>
-    <string name="privacy_policy"><u>سياسة الخصوصية</u></string>
-    <string name="about">في رعاية</string>
-    <string name="current_version">النسخة الحالية</string>
-    <string name="check_for_update">فحص التحديثات</string>
-    <string name="official_website">الموقع الرسمي</string>
-    <string name="follow_us_on_facebook">تابعونا على الفيسبوك</string>
-    <string name="follow_us_on_instagram">متابعتنا على الانستقرام.</string>
-    <string name="author">مؤلف</string>
-    <string name="enter_user_name">ادخل اسم المستخدم</string>
-    <string name="enter_user_email">أدخل البريد الإلكتروني للمستخدم</string>
-    <string name="enter_user_password">أدخل كلمة مرور المستخدم</string>
-    <string name="search">اكتشف...</string>
-    <string name="class_search">غرفة</string>
-    <string name="name_search">اسم</string>
-    <string name="multi_message">رسائل كثيرة</string>
-    <string name="caption">نص الوصف</string>
-    <string name="upload_books">تحميل الكتب</string>
-    <string name="book_name">اسم الكتاب</string>
-    <string name="upload">رفع</string>
-    <string name="success">نجاح</string>
-    <string name="success_msg">تهانينا! لقد أكملت بنجاح.</string>
-    <string name="okay">حسنًا</string>
-    <string name="error">خطأ</string>
-    <string name="error_msg">خطأ! هناك خطأ ما! حاول مرة اخرى.</string>
-    <string name="main_page_selected">%s page is selected</string>
-    <string name="main_notePad">NotePad</string>
-
+    <string name="lastmessage">اخر رسالة</string>
+    <string name="loading">اخر رسالة</string>
 
 </resources>

@@ -16,7 +16,7 @@ tools:context=".ChangeProfilePassActivity">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Profile photo password"
+            android:text="@string/profile_photo_password"
             android:layout_gravity="center"
             android:textSize="19dp"
 

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:orientation="vertical"
+    tools:context=".BulkStartChatMessageActivity">
+
+
+    <LinearLayout
+        android:id="@+id/leaner_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/search_list_s"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:textSize="30dp"
+            android:layout_marginRight="4dp"
+            android:background="@drawable/search_edittext"
+            android:hint="@string/search"
+            android:padding="10dp" />
+
+        <Button
+            android:id="@+id/filter_l1_s"
+            android:layout_weight="2"
+            android:layout_width="match_parent"
+            android:text="@string/classs"
+            android:layout_marginRight="5dp"
+            android:textSize="25dp"
+            android:background="@drawable/search_edittext_btn"
+            android:textColor="@color/white"
+            android:layout_height="90dp"/>
+
+        <Button
+            android:id="@+id/filter_l2_s"
+            android:layout_weight="2"
+            android:text="@string/name"
+            android:background="@drawable/search_edittext_btn"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ListView
+            android:id="@+id/ListView_s"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/multi_send_btn_s"
+            android:layout_marginTop="20dp"
+            android:choiceMode="multipleChoice" />
+
+        <Button
+            android:id="@+id/multi_send_btn_s"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:textSize="35dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/search_edittext_btn"
+            android:text="@string/send" />
+
+    </RelativeLayout>
+
+
+
+</LinearLayout>

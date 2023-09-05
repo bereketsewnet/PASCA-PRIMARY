@@ -29,7 +29,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add student here"
+                android:text="@string/add_student_here"
                 android:layout_gravity="center"
                 android:textSize="20sp"
                 android:layout_margin="10dp"
@@ -38,7 +38,7 @@
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/enter_user_name"
+                android:hint="@string/name"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginBottom="13dp"
@@ -48,7 +48,7 @@
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/enter_user_email"
+                android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
@@ -59,7 +59,7 @@
             <com.rengwuxian.materialedittext.MaterialEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/enter_user_password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
@@ -86,7 +86,7 @@
                 android:layout_marginLeft="25dp"
                 android:layout_marginBottom="25dp"
                 android:id="@+id/add_account"
-                android:text="Add"
+                android:text="@string/add_student"
                 android:background="@drawable/btn_back"
                 android:textColor="@android:color/white"/>
 
