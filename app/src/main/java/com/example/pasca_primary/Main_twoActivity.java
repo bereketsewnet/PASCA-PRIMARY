@@ -86,7 +86,6 @@ public class Main_twoActivity extends AppCompatActivity {
 
                     MainActivity.ViewPagerAdapter viewPagerAdapter = new MainActivity.ViewPagerAdapter(getSupportFragmentManager());
                     int unread = 0;
-                    String id = "kdsaueq9839kjfhksjdhfkjhfdskhy";
                     for(DataSnapshot snapshot1 : snapshot.getChildren()){
                         Chats chats = snapshot1.getValue(Chats.class);
                         if(chats != null){
@@ -98,11 +97,11 @@ public class Main_twoActivity extends AppCompatActivity {
                     }
 
                     if(unread == 0){
-                        viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.main_daily));
+                        viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.daily));
                     }else{
-                        viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.main_daily)+"("+unread+")");
+                        viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.daily)+"("+unread+")");
                     }
-                    viewPagerAdapter.addFragment(new NewsTFragment(), getString(R.string.main_news));
+                    viewPagerAdapter.addFragment(new NewsTFragment(), getString(R.string.news));
 
 
                     viewPager.setAdapter(viewPagerAdapter);

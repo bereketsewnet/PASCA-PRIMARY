@@ -16,7 +16,7 @@ tools:context=".ChangeStartChatPassTeActivity">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="startChat teacher password"
+            android:text="@string/startchat_teacher_password"
             android:layout_gravity="center"
             android:textSize="19dp"
 

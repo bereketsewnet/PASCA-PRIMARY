@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/studnet_welcome"
+                android:text="@string/welcome_back"
                 android:textColor="#ffff"
                 android:textSize="18dp"/>
 
@@ -46,7 +46,7 @@
                 android:id="@+id/stubjectname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name"
+                android:text="@string/name"
                 android:textColor="#ffff"
                 android:textSize="18dp"/>
 
@@ -102,7 +102,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/student_daily"
+                        android:text="@string/daily"
                         android:textSize="14sp"
                         android:gravity="center"
                         android:layout_gravity="center_horizontal"
@@ -136,7 +136,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/TeacherNotepad"
+                        android:text="@string/note_pad"
                         android:textSize="14sp"
                         android:gravity="center"
                         android:layout_gravity="center_horizontal"
@@ -179,7 +179,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/gk"
+                        android:text="@string/questions"
                         android:textSize="14sp"
                         android:gravity="center"
                         android:layout_gravity="center_horizontal"
@@ -256,7 +256,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/TeachersProgress"
+                        android:text="@string/progress"
                         android:textSize="14sp"
                         android:gravity="center"
                         android:layout_gravity="center_horizontal"
@@ -290,7 +290,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/student_library"
+                        android:text="@string/library"
                         android:textSize="14sp"
                         android:gravity="center"
                         android:layout_gravity="center_horizontal"

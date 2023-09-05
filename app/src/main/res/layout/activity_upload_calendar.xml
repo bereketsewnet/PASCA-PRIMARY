@@ -17,7 +17,7 @@ tools:context=".UploadCalendarActivity">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Upload Calendar Here"
+            android:text="@string/upload_calendar_here"
             android:layout_gravity="center"
             android:textSize="20dp"
             android:padding="5dp"

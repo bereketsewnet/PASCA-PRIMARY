@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">PASCA</string>
+    <string name="done" translatable="false">done</string>
 
     <string-array name="user_type">
         <item>Student</item>
@@ -10,23 +12,48 @@
 
     <string-array name="student_sex">
         <item>Male</item>
-        <item>Women</item>
+        <item>Female</item>
     </string-array>
 
-    <string-array name="search">
-        <item>Class</item>
-        <item>Name</item>
+    <string-array name="counter_user">
+        <item>ተማሪ 1</item>
+        <item>ተማሪ 2</item>
+        <item>ተማሪ 3</item>
+        <item>ተማሪ 4</item>
+        <item>ተማሪ 5</item>
+        <item>ተማሪ 6</item>
+        <item>ተማሪ 7</item>
+        <item>ተማሪ 8</item>
+        <item>ተማሪ 9</item>
+        <item>ተማሪ 10</item>
     </string-array>
 
 
+
+    <string-array name="student_class" translatable="false">
+        <item>nursery</item>
+        <item>kg1</item>
+        <item>kg2</item>
+        <item>kg3</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+
+    </string-array>
 
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="school_law">   <br><b>  Rules and Regulations for student\n</b>\n</br>
 
-        <br>1.Never bring a toy or real gun, or weapon to school. This includes sharp and dangerous items.\n</br>
-<br>  \n</br>
+        <br>1.Never bring a toy or real gun, or weapon to school.This includes sharp and dangerous items.\n</br>
+        <br>  \n</br>
         <br>2.Never beat or engage in physical conflict with another student.\n</br>
 <br>  \n</br>
         <br>3.Never, in words or actions, disrespect teacher or any member of the school staff.\n</br>
@@ -75,37 +102,9 @@
 <br>  \n</br>
         <br>25.Always put your trash in the waste basket.\n</br>
 <br>  \n</br>
-        <br>26.Always do you best in all things!!!\n</br></string>
+        <br>26.Always do you best in all things!!!\n</br>
+    </string>
 
-
-
-    <string name="phone_numbers">   <br><b>HOW DO YOU FIND US?\n</b>\n</br>
-
-        <br>The Kindergarten Division: +251965500639\n</br>
-        <br>The Kindergarten Division: 0113694475\n</br>
-        <br><b>\n</b>\n</br>
-        <br><b>PRIMARY (1-4) COMP\n</b>\n</br>
-        <br>The Primary School Division:+251965500639\n</br>
-        <br>The Primary School Division:0113694475\n</br>
-        <br><b> \n</b>\n</br>
-        <br><b>  PRIMARY (5-8) COMP\n</b>\n</br>
-        <br>The Primary School Division: +251965500639\n</br>
-        <br>The Primary School Division: 0113694475\n</br>
-        <br><b>\n</b>\n</br>
-        <br><b>PRIMARY (9-12) COMP\n</b>\n</br>
-        <br>The Primary School Division: +251965500639\n</br>
-        <br>The Primary School Division: 0113694475\n</br>
-        <br><b>\n</b>\n</br>
-        <br><b>IN SOCIALS FOLLOW US\n</b>\n</br>
-         <br>Website:pascaInternationschool.com\n</br>
-        <br>Instagram: @pascaschool\n</br>
-        <br>Telegram: @pascaschool\n</br>
-        <br>FaceBook: @pascaschool\n</br>
-        <br>Gmail: PascaInternation@gmail.com\n</br>
-
-
-
-       </string>
 
 
     <string name="title_activity_home">HomeActivity</string>
@@ -117,95 +116,84 @@
 
     <string name="open">Open</string>
     <string name="close">Close</string>
-    <string name="studnet_welcome">እንኳን ደህና መጣህ</string>
-    <string name="student_myactivity">ተግባራት</string>
-    <string name="student_daily">በየቀኑ</string>
-    <string name="student_library">ቤተ መጻሕፍት</string>
-    <string name="student_rank">ደረጃ</string>
-    <string name="gk">ጥያቄዎች</string>
-    <string name="ai">መሳሪያዎች</string>
-    <string name="student_teachers">አስተማሪዎች</string>
-    <string name="student_complain">ቅሬታ</string>
-    <string name="student_calendar">ካላንደር</string>
-    <string name="student_fees">ክፍያዎች</string>
-    <string name="student_report">የትምህርት መረጃ</string>
-    <string name="subject">የት/አይነት</string>
-    <string name="mark">ውጤት</string>
-    <string name="main_daily">በየቀኑ</string>
-    <string name="main_news">ማሳወቂያ</string>
-    <string name="main_id">መታወቂያ</string>
-    <string name="main2_studnet">ተማሪዎች</string>
-    <string name="TeacherNotepad">ማስታወሻ ደብተር</string>
-    <string name="TeacherStudnets">ተማሪዎች</string>
-    <string name="TeachersProgress">ደረጃ</string>
-    <string name="make_your_note_here">ማስታወሻህን እዚህ አድርግ</string>
-    <string name="copy">ቅዳ</string>
-    <string name="set_student_mark_here">የተማሪ ውጤት እዚህ ያዘጋጁ</string>
-    <string name="send">ላክ</string>
-    <string name="register_users">ተጠቃሚዎችን ይመዝገቡ</string>
-    <string name="post_news">ይለጥፉ</string>
-    <string name="post_grade">ደረጃ</string>
-    <string name="post_question">ጥያቄ</string>
-    <string name="post_books">መፃሕፍትን</string>
-    <string name="post_students_profile">የተማሪዎችን መገለጫ</string>
-    <string name="post_teachers_profile">የመምህራን መገለጫ</string>
-    <string name="post_calendar">የቀን መቁጠሪያ</string>
-    <string name="post_fees_information">ክፍያዎች መረጃ</string>
-    <string name="logout">ውጣ</string>
-    <string name="startchat_pass_t">የተማሪዎች</string>
-    <string name="startchat_pass_s">የአስተማሪዎች</string>
-    <string name="changeprofile_pass">የመገለጫ ይለፍ ቃል ቀይር</string>
-    <string name="change_password">የሚስጥር ቁልፍ ይቀይሩ</string>
+    <string name="users">ተጠቃሚዎች</string>
+    <string name="post">ለጥፍ</string>
     <string name="password">የይለፍ ቃል</string>
-    <string name="conform_password">የይለፍ ቃል ያሟሉ</string>
-    <string name="change">ለውጥ</string>
-    <string name="complain_box">ቅሬታ አቅርቡ</string>
+    <string name="about">ስለ እኛ</string>
+    <string name="multi_register">ብዙ መመዝገቢያ</string>
+    <string name="logout">ውጣ</string>
+    <string name="change_student">ተማሪን ቀይር</string>
+    <string name="add_student">ተማሪ ጨምር</string>
+    <string name="current_version">የአሁኑ ስሪት</string>
+    <string name="official_school_website">ኦፊሴላዊ የትምህርት ቤት ድህረ-ገፅ</string>
+    <string name="official_website">ኦፊሴላዊ ድህረ-ገፅ</string>
+    <string name="follow_facebook">በ Facebook ላይ ይከተሉን።</string>
+    <string name="follow_instagram">በ Instagram ላይ ይከተሉን።</string>
+    <string name="developer">ዋና ሠሪ</string>
+    <string name="privacy_policy">የ ግል የሆነ</string>
+    <string name="add_student_here">ተማሪ እዚህ ጨምር</string>
     <string name="name">ስም</string>
     <string name="email">ኢሜይል</string>
+    <string name="welcome_back">እንኳን በደህና መጣህ/ሽ</string>
+    <string name="questions">ጥያቄዎች</string>
+    <string name="library">ቤተ-መጽሐፍት</string>
+    <string name="ai">መሳሪያ</string>
+    <string name="teachers">አስተማሪዎች</string>
+    <string name="calendar">የቀን መቁጠሪያ</string>
+    <string name="fees">ክፍያዎች</string>
+    <string name="student_start_number">የተማሪ መነሻ ቁጥር</string>
+    <string name="student_end_number">የተማሪ የመጨረሻ ቁጥር</string>
+    <string name="get_started">ጀምር</string>
+    <string name="search">ፈልግ</string>
+    <string name="classs">ክፍል</string>
+    <string name="profile_photo_password">የመገለጫ ፎቶ ይለፍ ቃል</string>
+    <string name="change_password">የሚስጥር ቁልፍ ይቀይሩ</string>
+    <string name="conform_password">የይለፍ ቃል ይደገሙ</string>
+    <string name="change">ለውጥ</string>
+    <string name="startchat_student_password">startChat የተማሪ ይለፍ ቃል</string>
+    <string name="startchat_teacher_password">startChat መምህር ይለፍ ቃል</string>
+    <string name="send">ላክ</string>
     <string name="message">መልእክት</string>
-    <string name="complain">ቅሬታ አቅርቡ</string>
-    <string name="log_in">ግባ</string>
+    <string name="message_form">የመልእክት ቅጽ</string>
     <string name="login">ግባ</string>
-    <string name="forgot_password">መክፈቻ ቁልፉን ረሳኽው?</string>
-    <string name="create_an_account">መለያ ፍጠር</string>
+    <string name="forgot_password">መክፈቻ ቁልፉን ረሳኽው</string>
+    <string name="daily">ዕለታዊ</string>
+    <string name="news">ዜና</string>
+    <string name="teachers_profile_photo">የመምህራን መገለጫ ፎቶ</string>
+    <string name="student_progress_report">የተማሪ ውጤት ሪፖርት</string>
+    <string name="subject">የት/ት አይነት</string>
+    <string name="mark">ማርክ</string>
+    <string name="set_student_mark_here">የተማሪ ማርክን እዚህ ያዘጋጁ</string>
+    <string name="create_account">መለያ ይፍጠሩ</string>
     <string name="register">ይመዝገቡ</string>
-    <string name="go">ሂድ</string>
-    <string name="start_chat_password">የውይይት ይለፍ ቃል ጀምር</string>
-    <string name="enter_your_email_address">የኢሜይል አድራሻዎን ያስገቡ:</string>
+    <string name="startchat_password">የ StartChat የይለፍ ቃል</string>
+    <string name="my_activity">የእኔ ተግባር</string>
+    <string name="progress">ውጤት</string>
+    <string name="note_pad">የማስታወሻ ደብተር</string>
+    <string name="make_your_note">ማስታወሻዎን ያዘጋጁ</string>
+    <string name="common_message">የተለመደ መልእክት</string>
+    <string name="copy">ግልባጭ</string>
+    <string name="multi_message">ብዙ መልእክት</string>
+    <string name="upload_student_profile_here">የተማሪ መገለጫ እዚህ ለጥፍ</string>
+    <string name="caption">መግለጫ ጽሑፍ</string>
+    <string name="upload_calendar_here">የቀን መቁጠሪያ እዚህ ለጥፍ</string>
+    <string name="upload_fees_info_here">የክፍያ መረጃ እዚህ ለጥፍ</string>
+    <string name="upload_question_here">ጥያቄ እዚህ ለጥፍ</string>
+    <string name="post_short_news_here">አጫጭር ዜናዎችን እዚህ ይለጥፉ</string>
+    <string name="upload_book">መጽሐፍ ለጥፍ</string>
+    <string name="upload">ለጥፍ</string>
+    <string name="upload_teacher_profile_here">የመምህር መገለጫ እዚህ ለጥፍ</string>
+    <string name="sucess">እንኳን ደስ አላችሁ! በተሳካ ሁኔታ አጠናቅቀዋል።</string>
+    <string name="successs">ስኬት</string>
+    <string name="okay">እሺ</string>
     <string name="cancel">ሰርዝ</string>
-    <string name="reset">ዳግም አስጀምር</string>
+    <string name="something">የሆነ ነገር ተሳስቷል።</string>
+    <string name="error">ስህተት</string>
+    <string name="enter_your_email">የእርስዎን ኢሜይል ያስገቡ</string>
+    <string name="reset">እንደገና አስጀምር</string>
     <string name="profile_password">የመገለጫ ይለፍ ቃል</string>
     <string name="enter">አስገባ</string>
-    <string name="switch_user">ተጠቃሚ ቀይር</string>
-    <string name="add_user">ተጠቃሚ አክል</string>
-    <string name="show_my_id">መታወቂያዬን አሳይ</string>
-    <string name="terms_of_sercice"><u>የአገልግሎት ውል</u></string>
-    <string name="privacy_policy"><u>የ ግል የሆነ</u></string>
-    <string name="about">ስለ</string>
-    <string name="current_version">የአሁኑ ስሪት</string>
-    <string name="check_for_update">ዝማኔን ያረጋግጡ</string>
-    <string name="official_website">ኦፊሴላዊ ድር ጣቢያ</string>
-    <string name="follow_us_on_facebook">በ Facebook ላይ ይከተሉን</string>
-    <string name="follow_us_on_instagram">በ Instagram ላይ ይከተሉን</string>
-    <string name="author">ደራሲ</string>
-    <string name="enter_user_name">የተጠቃሚ ስም አስገባ</string>
-    <string name="enter_user_email">የተጠቃሚ ኢሜይል ያስገቡ</string>
-    <string name="enter_user_password">የተጠቃሚ ይለፍ ቃል ያስገቡ</string>
-    <string name="search">ፈልግ...</string>
-    <string name="class_search">ፈልግ...</string>
-    <string name="name_search">ስም</string>
-    <string name="multi_message">ብዙ መልእክት</string>
-    <string name="caption">መግለጫ ጽሑፍ</string>
-    <string name="upload_books">መጽሐፍትን ይስቀሉ</string>
-    <string name="book_name">የመጽሐፍ ስም</string>
-    <string name="upload">ስቀል</string>
-    <string name="success">ስኬት</string>
-    <string name="success_msg">እንኳን ደስ አላችሁ! በተሳካ ሁኔታ ጨርሰዋል.</string>
-    <string name="okay">እሺ</string>
-    <string name="error">ስህተት</string>
-    <string name="error_msg">ስህተት! የሆነ ነገር ተሳስቷል! እባክዎ ዳግም ይሞክሩ.</string>
-    <string name="main_page_selected">%s page is selected</string>
-    <string name="main_notePad">NotePad</string>
-
+    <string name="lastmessage">የመጨረሻው መልእክት</string>
+    <string name="loading">በመጫን ላይ...</string>
 
 </resources>

@@ -235,7 +235,7 @@ public class AdminHomeActivity extends AppCompatActivity {
     }
 
     private void showChangeLangDialog() {
-        final String[] listItems = {"En", "አማ", "عربي", "Fr"};
+        final String[] listItems = {"English", "አማርኛ", "عربي", "Français","中国人"};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(AdminHomeActivity.this);
         mBuilder.setTitle("Choose Language...");
         mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
@@ -253,6 +253,9 @@ public class AdminHomeActivity extends AppCompatActivity {
                     recreate();
                 }else if(which == 3){
                     setLocal("fr");
+                    recreate();
+                }else if(which == 4){
+                    setLocal("zh");
                     recreate();
                 }
                 dialog.dismiss();
@@ -287,41 +290,3 @@ public class AdminHomeActivity extends AppCompatActivity {
     }
 
 }
-
-/*
-
- spinnerA = findViewById(R.id.LanA);
-
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item,languageA);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerA.setAdapter(adapter);
-        spinnerA.setSelection(0);
-        spinnerA.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String selectedLang = parent.getItemAtPosition(position).toString();
-                if(selectedLang.equals("En")){
-                    setLocal(AdminHomeActivity.this,"en");
-                    finish();
-                    startActivity(getIntent());
-                }else if(selectedLang.equals("አማ")){
-                    setLocal(AdminHomeActivity.this,"am");
-                    finish();
-                    startActivity(getIntent());
-                }else if(selectedLang.equals("عربي")){
-                    setLocal(AdminHomeActivity.this,"ar");
-                    finish();
-                    startActivity(getIntent());
-                }else if(selectedLang.equals("Fr")){
-                    setLocal(AdminHomeActivity.this,"fr");
-                    finish();
-                    startActivity(getIntent());
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
- */

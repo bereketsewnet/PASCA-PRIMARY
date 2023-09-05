@@ -30,7 +30,7 @@
             android:id="@+id/filter_l1_s"
             android:layout_weight="2"
             android:layout_width="match_parent"
-            android:text="@string/class_search"
+            android:text="@string/classs"
             android:layout_marginRight="3dp"
             android:textSize="11dp"
             android:background="@drawable/search_edittext_btn"
@@ -40,7 +40,7 @@
         <Button
             android:id="@+id/filter_l2_s"
             android:layout_weight="2"
-            android:text="@string/name_search"
+            android:text="@string/name"
             android:background="@drawable/search_edittext_btn"
             android:textColor="@color/white"
             android:textSize="11dp"
@@ -72,7 +72,7 @@
             android:gravity="center"
             android:layout_alignParentEnd="true"
             android:background="@drawable/search_edittext_btn"
-            android:text="@string/send" />
+            android:text="send" />
 
     </RelativeLayout>
 

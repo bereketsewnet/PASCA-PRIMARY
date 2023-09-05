@@ -26,7 +26,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/complain_box"
+                android:text="@string/message_form"
                 android:layout_gravity="center"
                 android:textSize="20sp"
                 android:layout_margin="20dp"
@@ -74,7 +74,7 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginBottom="20dp"
                 android:id="@+id/complain_btn"
-                android:text="@string/complain"
+                android:text="@string/send"
                 android:background="@drawable/btn_back"
                 android:textColor="@android:color/white"/>
 

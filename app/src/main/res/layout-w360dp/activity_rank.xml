@@ -26,7 +26,7 @@
             <TextView
                 android:width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/student_report"
+                android:text="@string/student_progress_report"
                 android:textColor="@color/lavender"
                 android:padding="10sp"
                 android:textSize="14sp"

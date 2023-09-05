@@ -1,5 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">PASCA</string>
+    <string name="done" translatable="false">done</string>
 
     <string-array name="user_type">
         <item>Student</item>
@@ -10,12 +12,36 @@
 
     <string-array name="student_sex">
         <item>Male</item>
-        <item>Women</item>
+        <item>Female</item>
     </string-array>
 
-    <string-array name="search">
-        <item>Class</item>
-        <item>Name</item>
+    <string-array name="counter_user">
+        <item>Étudiant 1</item>
+        <item>Étudiant 2</item>
+        <item>Étudiant 3</item>
+        <item>Étudiant 4</item>
+        <item>Étudiant 5</item>
+        <item>Étudiant 6</item>
+        <item>Étudiant 7</item>
+        <item>Étudiant 8</item>
+        <item>Étudiant 9</item>
+        <item>Étudiant 10</item>
+    </string-array>
+
+    <string-array name="student_class" translatable="false">
+        <item>nursery</item>
+        <item>kg1</item>
+        <item>kg2</item>
+        <item>kg3</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+
     </string-array>
 
 
@@ -24,8 +50,8 @@
 
     <string name="school_law">   <br><b>  Rules and Regulations for student\n</b>\n</br>
 
-        <br>1.Never bring a toy or real gun, or weapon to school. This includes sharp and dangerous items.\n</br>
-<br>  \n</br>
+        <br>1.Never bring a toy or real gun, or weapon to school.This includes sharp and dangerous items.\n</br>
+        <br>  \n</br>
         <br>2.Never beat or engage in physical conflict with another student.\n</br>
 <br>  \n</br>
         <br>3.Never, in words or actions, disrespect teacher or any member of the school staff.\n</br>
@@ -74,36 +100,9 @@
 <br>  \n</br>
         <br>25.Always put your trash in the waste basket.\n</br>
 <br>  \n</br>
-        <br>26.Always do you best in all things!!!\n</br></string>
+        <br>26.Always do you best in all things!!!\n</br>
+    </string>
 
-
-    <string name="phone_numbers">   <br><b>HOW DO YOU FIND US?\n</b>\n</br>
-
-        <br>The Kindergarten Division: +251965500639\n</br>
-        <br>The Kindergarten Division: 0113694475\n</br>
-        <br><b>\n</b>\n</br>
-        <br><b>PRIMARY (1-4) COMP\n</b>\n</br>
-        <br>The Primary School Division: +251965500639\n</br>
-        <br>The Primary School Division: 0113694475\n</br>
-        <br><b> \n</b>\n</br>
-        <br><b>PRIMARY (5-8) COMP\n</b>\n</br>
-        <br>The Primary School Division: +251965500639\n</br>
-        <br>The Primary School Division: 0113694475\n</br>
-        <br><b> \n</b>\n</br>
-        <br><b>  PRIMARY (9-12) COMP\n</b>\n</br>
-        <br>The Primary School Division:  +251965500639 \n</br>
-        <br>The Primary School Division:   0113694475 \n</br>
-        <br><b>\n</b>\n</br>
-        <br><b>IN SOCIALS FOLLOW US\n</b>\n</br>
-          <br>Website:pascaInternationschool.com\n</br>
-        <br>Instagram: @pascaschool\n</br>
-        <br>Telegram: @pascaschool\n</br>
-        <br>FaceBook: @pascaschool\n</br>
-        <br>Gmail: PascaInternation@gmail.com\n</br>
-
-
-
-       </string>
 
 
     <string name="title_activity_home">HomeActivity</string>
@@ -115,95 +114,84 @@
 
     <string name="open">Open</string>
     <string name="close">Close</string>
-    <string name="studnet_welcome">Content de te revoir</string>
-    <string name="student_myactivity">Mon activité</string>
-    <string name="student_daily">Quotidien</string>
-    <string name="student_library">Bibliothèque</string>
-    <string name="student_rank">Rang</string>
-    <string name="gk">Des questions</string>
-    <string name="ai">IA</string>
-    <string name="student_teachers">Enseignants</string>
-    <string name="student_complain">Se plaindre</string>
-    <string name="student_calendar">Calendrier</string>
-    <string name="student_fees">Frais</string>
-    <string name="student_report">Rapport étudiant</string>
-    <string name="subject">Sujet</string>
-    <string name="mark">Marquer</string>
-    <string name="main_daily">Quotidien</string>
-    <string name="main_news">Nouvelles</string>
-    <string name="main_id">IDENTIFIANT</string>
-    <string name="main2_studnet">ÉTUDIANT</string>
-    <string name="TeacherNotepad">Carnet de notes</string>
-    <string name="TeacherStudnets">Étudiants</string>
-    <string name="TeachersProgress">Niveau</string>
-    <string name="make_your_note_here">Faites votre note ici</string>
-    <string name="copy">copie</string>
-    <string name="set_student_mark_here">Définir la note de l\'élève ici</string>
-    <string name="send">Envoyer</string>
-    <string name="register_users">Enregistrer les utilisateurs</string>
-    <string name="post_news">Publier une notification</string>
-    <string name="post_grade">Publier une note</string>
-    <string name="post_question">Poser une question</string>
-    <string name="post_books">Publier des livres</string>
-    <string name="post_students_profile">Publier les profils des étudiants</string>
-    <string name="post_teachers_profile">Publier le profil de l\'enseignant</string>
-    <string name="post_calendar">Publier un calendrier</string>
-    <string name="post_fees_information">Informations après paiement</string>
-    <string name="logout">sortir</string>
-    <string name="startchat_pass_t">Pass étudiant</string>
-    <string name="startchat_pass_s">Laissez-passer des enseignants</string>
-    <string name="changeprofile_pass">Changer le mot de passe du profil</string>
-    <string name="change_password">Changer la clé secrète</string>
-    <string name="password">mot de passe</string>
-    <string name="conform_password">Complétez le mot de passe</string>
-    <string name="change">Changement</string>
-    <string name="complain_box">Déposer une plainte</string>
+    <string name="users">Utilisateurs</string>
+    <string name="post">Poste</string>
+    <string name="password">Mot de passe</string>
+    <string name="about">À propos</string>
+    <string name="multi_register">Registre multiple</string>
+    <string name="logout">Se déconnecter</string>
+    <string name="change_student">Changer d\'élève</string>
+    <string name="add_student">Ajouter un étudiant</string>
+    <string name="current_version">Version actuelle</string>
+    <string name="official_school_website">Site officiel de l\'école</string>
+    <string name="official_website">Site officiel</string>
+    <string name="follow_facebook">Suis nous sur Facebook</string>
+    <string name="follow_instagram">Suis nous sur instagram</string>
+    <string name="developer">Développeur</string>
+    <string name="privacy_policy">politique de confidentialité</string>
+    <string name="add_student_here">Ajouter un étudiant ici</string>
     <string name="name">Nom</string>
-    <string name="email">e-mail</string>
+    <string name="email">E-mail</string>
+    <string name="welcome_back">Content de te revoir</string>
+    <string name="questions">Des questions</string>
+    <string name="library">Bibliothèque</string>
+    <string name="ai">Aï</string>
+    <string name="teachers">Enseignants</string>
+    <string name="calendar">Calendrier</string>
+    <string name="fees">Frais</string>
+    <string name="student_start_number">Numéro de départ de l\'étudiant</string>
+    <string name="student_end_number">Numéro de fin d\'étudiant</string>
+    <string name="get_started">Commencer</string>
+    <string name="search">Recherche</string>
+    <string name="classs">Classe</string>
+    <string name="profile_photo_password">Mot de passe de la photo de profil</string>
+    <string name="change_password">Changer le mot de passe</string>
+    <string name="conform_password">Conformez le mot de passe</string>
+    <string name="change">Changement</string>
+    <string name="startchat_student_password">mot de passe étudiant startChat</string>
+    <string name="startchat_teacher_password">Mot de passe du professeur startChat</string>
+    <string name="send">Envoyer</string>
     <string name="message">Message</string>
-    <string name="complain">Déposer une plainte</string>
-    <string name="log_in">se connecter</string>
-    <string name="login">se connecter</string>
-    <string name="forgot_password">t\'as oublié la clé ?</string>
-    <string name="create_an_account">Créer un compte</string>
+    <string name="message_form">Formulaire de message</string>
+    <string name="login">Se connecter</string>
+    <string name="forgot_password">Mot de passe oublié</string>
+    <string name="daily">Tous les jours</string>
+    <string name="news">Nouvelles</string>
+    <string name="teachers_profile_photo">Photo de profil des enseignants</string>
+    <string name="student_progress_report">Rapport de progrès des étudiants</string>
+    <string name="subject">Sujet</string>
+    <string name="mark">Marque</string>
+    <string name="set_student_mark_here">Définir la note de l\'élève ici</string>
+    <string name="create_account">Créer un compte</string>
     <string name="register">Registre</string>
-    <string name="go">passer</string>
-    <string name="start_chat_password">Démarrer le mot de passe du chat</string>
-    <string name="enter_your_email_address">Entrez votre adresse email:</string>
-    <string name="cancel">Supprimer</string>
+    <string name="startchat_password">Mot de passe de démarrage du chat</string>
+    <string name="my_activity">Mon activité</string>
+    <string name="progress">Progrès</string>
+    <string name="note_pad">Bloc-notes</string>
+    <string name="make_your_note">Faites votre note</string>
+    <string name="common_message">Message commun</string>
+    <string name="copy">Copie</string>
+    <string name="multi_message">Messages multiples</string>
+    <string name="upload_student_profile_here">Téléchargez le profil de l\'étudiant ici</string>
+    <string name="caption">Légende</string>
+    <string name="upload_calendar_here">Téléchargez le calendrier ici</string>
+    <string name="upload_fees_info_here">Téléchargez les informations sur les frais ici</string>
+    <string name="upload_question_here">Télécharger la question ici</string>
+    <string name="post_short_news_here">Publier de courtes nouvelles ici</string>
+    <string name="upload_book">Télécharger le livre</string>
+    <string name="upload">Télécharger</string>
+    <string name="upload_teacher_profile_here">Téléchargez le profil de l\'enseignant ici</string>
+    <string name="sucess">Toutes nos félicitations! Vous avez terminé avec </string>
+    <string name="successs">succès.</string>
+    <string name="okay">D\'accord</string>
+    <string name="cancel">Annuler</string>
+    <string name="something">Quelque chose n\'attend pas</string>
+    <string name="error">Erreur</string>
+    <string name="enter_your_email">Entrer votre Email</string>
     <string name="reset">Réinitialiser</string>
     <string name="profile_password">Mot de passe du profil</string>
     <string name="enter">Entrer</string>
-    <string name="switch_user">Changer d\'utilisateur</string>
-    <string name="add_user">Ajouter un utilisateur</string>
-    <string name="show_my_id">Montrer mon identifiant</string>
-    <string name="terms_of_sercice"><u>Conditions d\'utilisation</u></string>
-    <string name="privacy_policy"><u>politique de confidentialité</u></string>
-    <string name="about">Aux soins de</string>
-    <string name="current_version">Version actuelle</string>
-    <string name="check_for_update">Vérifier la mise à jour</string>
-    <string name="official_website">Site officiel</string>
-    <string name="follow_us_on_facebook">Suis nous sur Facebook</string>
-    <string name="follow_us_on_instagram">Suis nous sur instagram.</string>
-    <string name="author">Auteur</string>
-    <string name="enter_user_name">Saisissez votre nom d\'utilisateur</string>
-    <string name="enter_user_email">Entrez l\'e-mail de l\'utilisateur</string>
-    <string name="enter_user_password">Entrez le mot de passe de l\'utilisateur</string>
-    <string name="search">découvrir...</string>
-    <string name="class_search">Chambre</string>
-    <string name="name_search">Nom</string>
-    <string name="multi_message">De nombreux messages</string>
-    <string name="caption">Texte descriptif</string>
-    <string name="upload_books">Télécharger des livres</string>
-    <string name="book_name">Nom du livre</string>
-    <string name="upload">Télécharger</string>
-    <string name="success">Succès</string>
-    <string name="success_msg">Toutes nos félicitations! Vous avez terminé avec succès.</string>
-    <string name="okay">d\'accord</string>
-    <string name="error">Erreur</string>
-    <string name="error_msg">Erreur! Quelque chose s\'est mal passé ! Veuillez réessayer.</string>
-    <string name="main_page_selected">%s page is selected</string>
-    <string name="main_notePad">NotePad</string>
-
+    <string name="lastmessage">Dernier message</string>
+    <string name="loading">Chargement...</string>
 
 </resources>

@@ -7,7 +7,6 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -20,7 +19,6 @@ import android.widget.Toast;
 
 import com.example.pasca_primary.IdProfileActivity;
 import com.example.pasca_primary.LoginActivity;
-import com.example.pasca_primary.MessageActivity;
 import com.example.pasca_primary.Model.ChangeProfilePass;
 import com.example.pasca_primary.Model.Users;
 import com.example.pasca_primary.R;
@@ -50,7 +48,7 @@ public class ProfilePasswordFragment extends Fragment {
     DatabaseReference databaseReference;
     String uid,myEmail,myPassword,myName;
     FirebaseUser firebaseUser;
-    FirebaseAuth mAuth;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

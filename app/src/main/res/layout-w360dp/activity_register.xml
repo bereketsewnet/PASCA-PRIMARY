@@ -32,7 +32,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/create_an_account"
+            android:text="@string/create_account"
             android:layout_gravity="center"
             android:textSize="20sp"
             android:layout_margin="20dp"
@@ -120,7 +120,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginBottom="20dp"
             android:id="@+id/register_Account_btn"
-            android:text="Register"
+            android:text="@string/register"
             android:background="@drawable/btn_back"
             android:textColor="@android:color/white"/>
 

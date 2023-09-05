@@ -3,15 +3,15 @@
 
     <item android:id="@+id/admin_users"
         android:icon="@drawable/register"
-        android:title="Users"/>
+        android:title="@string/users"/>
 
     <item android:id="@+id/admin_post"
         android:icon="@drawable/ringing"
-        android:title="Post"/>
+        android:title="@string/post"/>
 
     <item android:id="@+id/admin_password"
         android:icon="@drawable/profilepasschange"
-        android:title="Password"/>
+        android:title="@string/password"/>
 
     <item android:id="@+id/admin_about"
         android:icon="@drawable/aboutus"
@@ -19,7 +19,7 @@
 
     <item android:id="@+id/admin_multi_register"
         android:icon="@drawable/register"
-        android:title="Multi Register"/>
+        android:title="@string/multi_register"/>
 
     <item android:id="@+id/admin_logout"
         android:icon="@drawable/logout"

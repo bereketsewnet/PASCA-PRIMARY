@@ -99,11 +99,11 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     if(unread == 0){
-                        viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.main_daily));
+                        viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.daily));
                     }else{
-                        viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.main_daily)+"("+unread+")");
+                        viewPagerAdapter.addFragment(new ChatsFragment(), getString(R.string.daily)+"("+unread+")");
                     }
-                    viewPagerAdapter.addFragment(new NewsFragment(), getString(R.string.main_news));
+                    viewPagerAdapter.addFragment(new NewsFragment(), getString(R.string.news));
 
 
 
