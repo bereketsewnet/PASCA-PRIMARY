@@ -13,7 +13,7 @@
     <LinearLayout
         android:id="@+id/ll1"
         android:layout_width="match_parent"
-        android:layout_height="185dp"
+        android:layout_height="210dp"
         android:gravity="center"
         android:background="@drawable/photo5"
         android:layout_marginTop="-10dp"
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/welcome_back"
                 android:textColor="#ffff"
-                android:textSize="22dp"/>
+                android:textSize="23dp"/>
 
             <TextView
                 android:id="@+id/stubjectname"
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/name"
                 android:textColor="#ffff"
-                android:textSize="21dp"/>
+                android:textSize="22dp"/>
             <ImageView
                 android:id="@+id/lanT"
                 android:layout_width="35dp"
@@ -65,7 +65,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/ll1">
+        android:layout_below="@+id/ll1"
+        android:layout_marginTop="20dp">
 
 
         <LinearLayout
@@ -77,10 +78,10 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/teachers_daily"
-                android:layout_width="133dp"
-                android:layout_height="133dp"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
                 app:cardCornerRadius="15dp"
-                android:layout_margin="7dp"
+                android:layout_margin="10dp"
                 app:cardBackgroundColor="#51a6ff">
 
                 <LinearLayout
@@ -111,10 +112,10 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/teachers_notepad"
-                android:layout_width="133dp"
-                android:layout_height="133dp"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
                 app:cardCornerRadius="15dp"
-                android:layout_margin="7dp"
+                android:layout_margin="10dp"
                 app:cardBackgroundColor="#ff5b69">
 
                 <LinearLayout
@@ -154,10 +155,10 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/teachers_gk"
-                android:layout_width="133dp"
-                android:layout_height="133dp"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
                 app:cardCornerRadius="15dp"
-                android:layout_margin="7dp"
+                android:layout_margin="10dp"
                 app:cardBackgroundColor="#feb05b">
 
                 <LinearLayout
@@ -188,10 +189,10 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/teachers_ai"
-                android:layout_width="133dp"
-                android:layout_height="133dp"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
                 app:cardCornerRadius="15dp"
-                android:layout_margin="7dp"
+                android:layout_margin="10dp"
                 app:cardBackgroundColor="#b490fe">
 
                 <LinearLayout
@@ -231,10 +232,10 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/teachers_rank"
-                android:layout_width="133dp"
-                android:layout_height="133dp"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
                 app:cardCornerRadius="15dp"
-                android:layout_margin="7dp"
+                android:layout_margin="10dp"
                 app:cardBackgroundColor="#ff69b0">
 
                 <LinearLayout
@@ -265,10 +266,10 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/teachers_books"
-                android:layout_width="133dp"
-                android:layout_height="133dp"
+                android:layout_width="145dp"
+                android:layout_height="145dp"
                 app:cardCornerRadius="15dp"
-                android:layout_margin="7dp"
+                android:layout_margin="10dp"
                 app:cardBackgroundColor="#3bbdcd">
 
                 <LinearLayout

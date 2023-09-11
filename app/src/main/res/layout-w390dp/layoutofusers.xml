@@ -10,10 +10,10 @@
         android:id="@+id/cardView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="3dp"
+        android:layout_margin="8dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        app:cardCornerRadius="6dp"
+        app:cardCornerRadius="3dp"
         app:cardElevation="10dp"
         app:cardBackgroundColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,8 +28,8 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/image_user_userfrag"
-                android:layout_width="65dp"
-                android:layout_height="65dp"
+                android:layout_width="66dp"
+                android:layout_height="66dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
@@ -42,14 +42,26 @@
                 app:layout_constraintVertical_bias="0.49" />
 
             <TextView
+                android:id="@+id/layout_class"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text=""
+                android:textColor="@color/green"
+                android:textSize="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
                 android:id="@+id/username_userfrag"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="@string/name"
                 android:textColor="@color/lavender"
-                android:textSize="15sp"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/lastMessage"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/image_user_userfrag"
                 app:layout_constraintTop_toTopOf="parent"
@@ -57,18 +69,19 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/image_online"
-                android:layout_width="15dp"
+                android:layout_width="0dp"
                 android:layout_height="15dp"
                 android:layout_below="@id/username_userfrag"
                 android:layout_marginLeft="-15dp"
+                android:layout_marginEnd="263dp"
                 android:layout_toEndOf="@id/image_user_userfrag"
                 android:layout_toRightOf="@id/image_user_userfrag"
                 android:src="@drawable/pppp"
                 android:visibility="gone"
-                app:civ_border_color="#05df29"
+                app:civ_border_color="@color/green"
                 app:civ_border_width="10dp"
                 app:layout_constraintBottom_toTopOf="parent"
-                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/layout_class"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -91,31 +104,19 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/user_list_type"
-                android:layout_width="wrap_content"
+                android:id="@+id/lastMessage"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginBottom="10dp"
-                android:text="UserType"
+                android:layout_marginBottom="1dp"
+                android:text="@string/lastmessage"
                 android:textColor="@color/black"
-                android:textSize="11sp"
+                android:textSize="13sp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/image_user_userfrag"
                 app:layout_constraintTop_toBottomOf="@+id/username_userfrag" />
 
-            <TextView
-                android:id="@+id/user_list_class"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:text="Class"
-                android:textColor="@color/black"
-                android:textSize="11sp"
-                android:layout_marginStart="15dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/user_list_type"
-                app:layout_constraintTop_toBottomOf="@+id/username_userfrag" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

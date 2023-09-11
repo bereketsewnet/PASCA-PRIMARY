@@ -14,7 +14,7 @@
     <LinearLayout
         android:id="@+id/ll1"
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="165dp"
         android:gravity="center"
         android:background="@drawable/photo5"
         android:layout_marginTop="-10dp"
@@ -68,8 +68,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/ll1"
-        android:layout_marginTop="10dp">
+        android:layout_below="@+id/ll1">
 
 
         <LinearLayout

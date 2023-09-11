@@ -36,15 +36,15 @@
             <LinearLayout
                 android:id="@+id/ll1"
                 android:layout_width="match_parent"
-                android:layout_height="165dp"
+                android:layout_height="199dp"
                 android:gravity="center"
                 android:background="@drawable/photo5"
                 android:layout_marginTop="-10dp"
                 android:layout_marginRight="-10dp">
 
                 <ImageView
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
                     android:src="@drawable/pppp"
                     android:layout_gravity="center"/>
 
@@ -57,28 +57,26 @@
 
                     <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="45dp"
                         android:text="@string/welcome_back"
                         android:textColor="#ffff"
-                        android:textSize="16dp"/>
+                        android:textSize="18dp" />
 
                     <TextView
                         android:id="@+id/admin_home_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/name"
+                        android:text="UserName"
                         android:textColor="#ffff"
-                        android:textSize="14dp"/>
+                        android:textSize="16dp"/>
 
                     <ImageView
                         android:id="@+id/LanA"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:src="@drawable/translate"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-
-
                 </LinearLayout>
 
             </LinearLayout>
@@ -95,14 +93,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_marginTop="10dp"
                     android:gravity="center">
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_gk"
-                        android:layout_width="97dp"
-                        android:layout_height="97dp"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         app:cardCornerRadius="15dp"
-                        android:layout_margin="8dp"
+                        android:layout_margin="10dp"
                         app:cardBackgroundColor="#51a6ff">
 
                         <LinearLayout
@@ -113,15 +112,15 @@
 
                             <ImageView
                                 android:layout_gravity="center"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
                                 android:background="@drawable/gkstud"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/questions"
-                                android:textSize="12sp"
+                                android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_gravity="center_horizontal"
                                 android:textColor="@color/white"/>
@@ -133,10 +132,10 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_books"
-                        android:layout_width="97dp"
-                        android:layout_height="97dp"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         app:cardCornerRadius="15dp"
-                        android:layout_margin="8dp"
+                        android:layout_margin="10dp"
                         app:cardBackgroundColor="#ff5b69">
 
                         <LinearLayout
@@ -147,15 +146,15 @@
 
                             <ImageView
                                 android:layout_gravity="center"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
                                 android:background="@drawable/librarystud"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/library"
-                                android:textSize="12sp"
+                                android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_gravity="center_horizontal"
                                 android:textColor="@color/white"/>
@@ -172,14 +171,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_marginTop="10dp"
                     android:gravity="center">
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_student_profile"
-                        android:layout_width="97dp"
-                        android:layout_height="97dp"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         app:cardCornerRadius="15dp"
-                        android:layout_margin="8dp"
+                        android:layout_margin="10dp"
                         app:cardBackgroundColor="#feb05b">
 
                         <LinearLayout
@@ -190,15 +190,15 @@
 
                             <ImageView
                                 android:layout_gravity="center"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
                                 android:background="@drawable/aistud"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/ai"
-                                android:textSize="12sp"
+                                android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_gravity="center_horizontal"
                                 android:textColor="@color/white"/>
@@ -210,10 +210,10 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_teachers_profile"
-                        android:layout_width="97dp"
-                        android:layout_height="97dp"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         app:cardCornerRadius="15dp"
-                        android:layout_margin="8dp"
+                        android:layout_margin="10dp"
                         app:cardBackgroundColor="#b490fe">
 
                         <LinearLayout
@@ -224,15 +224,15 @@
 
                             <ImageView
                                 android:layout_gravity="center"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
                                 android:background="@drawable/idtech"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/teachers"
-                                android:textSize="12sp"
+                                android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_gravity="center_horizontal"
                                 android:textColor="@color/white"/>
@@ -249,14 +249,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:layout_marginTop="10dp"
                     android:gravity="center">
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_calendar"
-                        android:layout_width="97dp"
-                        android:layout_height="97dp"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         app:cardCornerRadius="15dp"
-                        android:layout_margin="8dp"
+                        android:layout_margin="10dp"
                         app:cardBackgroundColor="#ff69b0">
 
                         <LinearLayout
@@ -267,15 +268,15 @@
 
                             <ImageView
                                 android:layout_gravity="center"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
                                 android:background="@drawable/caledarstud"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/calendar"
-                                android:textSize="12sp"
+                                android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_gravity="center_horizontal"
                                 android:textColor="@color/white"/>
@@ -287,10 +288,10 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_fees"
-                        android:layout_width="97dp"
-                        android:layout_height="97dp"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
                         app:cardCornerRadius="15dp"
-                        android:layout_margin="8dp"
+                        android:layout_margin="10dp"
                         app:cardBackgroundColor="#3bbdcd">
 
                         <LinearLayout
@@ -301,15 +302,15 @@
 
                             <ImageView
                                 android:layout_gravity="center"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
+                                android:layout_width="45dp"
+                                android:layout_height="45dp"
                                 android:background="@drawable/feesstud"/>
 
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="@string/fees"
-                                android:textSize="12sp"
+                                android:textSize="14sp"
                                 android:gravity="center"
                                 android:layout_gravity="center_horizontal"
                                 android:textColor="@color/white"/>
@@ -346,8 +347,9 @@
             android:backgroundTint="#ffffff"
             app:itemBackground="@drawable/nav_item_background"
             app:itemTextColor="@color/lavender"
+            app:itemIconSize="35dp"
             app:itemIconTint="@color/lavender"
-            android:layout_gravity="start" />
+            android:layout_gravity="start"/>
 
 
 

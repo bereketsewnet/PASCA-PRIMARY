@@ -129,7 +129,8 @@ public class AdminHomeActivity extends AppCompatActivity {
         admin_show_student_profile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(AdminHomeActivity.this, ProfilePhotoActivity.class);
+                // i change student profile to chatGpt activity b/c it's not important.. student profile so i change
+                Intent intent = new Intent(AdminHomeActivity.this, ChatGptActivity.class);
                 startActivity(intent);
             }
         });

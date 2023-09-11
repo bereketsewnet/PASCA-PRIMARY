@@ -249,6 +249,7 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
+        android:visibility="invisible"
         android:id="@+id/privacy_policy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

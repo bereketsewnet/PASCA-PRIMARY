@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="160dp"
         android:layout_marginStart="-3dp"
         android:layout_marginTop="-10dp"
         android:layout_marginEnd="-3dp"
@@ -172,14 +172,13 @@
                 android:text="@string/my_activity"
                 android:textSize="17dp"
                 android:textStyle="bold"
-                android:textColor="#2e3d6d"
-                android:layout_marginTop="0dp"/>
+                android:textColor="#2e3d6d"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:layout_marginTop="10dp">
+                android:layout_marginTop="3dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"

@@ -36,15 +36,15 @@
             <LinearLayout
                 android:id="@+id/ll1"
                 android:layout_width="match_parent"
-                android:layout_height="199dp"
+                android:layout_height="170dp"
                 android:gravity="center"
                 android:background="@drawable/photo5"
                 android:layout_marginTop="-10dp"
                 android:layout_marginRight="-10dp">
 
                 <ImageView
-                    android:layout_width="110dp"
-                    android:layout_height="110dp"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
                     android:src="@drawable/pppp"
                     android:layout_gravity="center"/>
 
@@ -60,13 +60,13 @@
                         android:layout_height="45dp"
                         android:text="@string/welcome_back"
                         android:textColor="#ffff"
-                        android:textSize="18dp" />
+                        android:textSize="17dp" />
 
                     <TextView
                         android:id="@+id/admin_home_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="UserName"
+                        android:text="@string/name"
                         android:textColor="#ffff"
                         android:textSize="16dp"/>
 
@@ -98,10 +98,10 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_gk"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
+                        android:layout_width="118dp"
+                        android:layout_height="118dp"
                         app:cardCornerRadius="15dp"
-                        android:layout_margin="10dp"
+                        android:layout_margin="7dp"
                         app:cardBackgroundColor="#51a6ff">
 
                         <LinearLayout
@@ -132,10 +132,10 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_books"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
+                        android:layout_width="118dp"
+                        android:layout_height="118dp"
                         app:cardCornerRadius="15dp"
-                        android:layout_margin="10dp"
+                        android:layout_margin="7dp"
                         app:cardBackgroundColor="#ff5b69">
 
                         <LinearLayout
@@ -176,10 +176,10 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_student_profile"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
+                        android:layout_width="118dp"
+                        android:layout_height="118dp"
                         app:cardCornerRadius="15dp"
-                        android:layout_margin="10dp"
+                        android:layout_margin="7dp"
                         app:cardBackgroundColor="#feb05b">
 
                         <LinearLayout
@@ -210,10 +210,10 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_teachers_profile"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
+                        android:layout_width="118dp"
+                        android:layout_height="118dp"
                         app:cardCornerRadius="15dp"
-                        android:layout_margin="10dp"
+                        android:layout_margin="7dp"
                         app:cardBackgroundColor="#b490fe">
 
                         <LinearLayout
@@ -254,10 +254,10 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_calendar"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
+                        android:layout_width="118dp"
+                        android:layout_height="118dp"
                         app:cardCornerRadius="15dp"
-                        android:layout_margin="10dp"
+                        android:layout_margin="7dp"
                         app:cardBackgroundColor="#ff69b0">
 
                         <LinearLayout
@@ -288,10 +288,10 @@
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/admin_show_fees"
-                        android:layout_width="130dp"
-                        android:layout_height="130dp"
+                        android:layout_width="118dp"
+                        android:layout_height="118dp"
                         app:cardCornerRadius="15dp"
-                        android:layout_margin="10dp"
+                        android:layout_margin="7dp"
                         app:cardBackgroundColor="#3bbdcd">
 
                         <LinearLayout
@@ -344,7 +344,7 @@
             app:menu="@menu/admin_menu"
             android:fitsSystemWindows="true"
             app:headerLayout="@layout/navheader"
-            android:backgroundTint="#ffffff"
+            android:backgroundTint="@color/white"
             app:itemBackground="@drawable/nav_item_background"
             app:itemTextColor="@color/lavender"
             app:itemIconSize="35dp"
