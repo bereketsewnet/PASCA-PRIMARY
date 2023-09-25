@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,6 +13,7 @@ import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Patterns;
 import android.view.View;
 import android.view.ViewGroup;
@@ -37,10 +39,11 @@ import com.rengwuxian.materialedittext.MaterialEditText;
 public class LoginActivity extends AppCompatActivity {
 
 
-    MaterialEditText et_email, et_password;
+    MaterialEditText et_email, et_password,log_yourname;
     Dialog ErrorRegisterDialog;
     Button loginBtn;
     Toolbar toolbar;
+    String getYourName;
     String email, password;
     FirebaseAuth mAuth;
     FirebaseUser user;
@@ -61,23 +64,30 @@ public class LoginActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Login");
        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
+
         et_email = findViewById(R.id.log_email);
         et_password = findViewById(R.id.log_password);
+        log_yourname = findViewById(R.id.log_yourname);
         loginBtn = findViewById(R.id.login_account);
         forgotPassword = findViewById(R.id.forgot_password);
 
 
         mAuth = FirebaseAuth.getInstance();
-
+       // check if yourName preferance not null
+        loadyourName();
 
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
-
                 email = et_email.getText().toString();
                 password = et_password.getText().toString();
+                getYourName = log_yourname.getText().toString();
+
+
+
 
 
                 if (TextUtils.isEmpty(email)) {
@@ -87,9 +97,12 @@ public class LoginActivity extends AppCompatActivity {
                 } else if (TextUtils.isEmpty(password)) {
 
                     et_password.setError("Required");
+                }else if (TextUtils.isEmpty(getYourName)) {
+                    log_yourname.setError("Required");
                 } else {
-                    
+
                     LoginMeIn(email, password);
+
                 }
 
 
@@ -134,6 +147,11 @@ public class LoginActivity extends AppCompatActivity {
 
 
                 if (task.isSuccessful()) {
+
+                    // save data
+                    SharedPreferences.Editor editor = getSharedPreferences("Settings",MODE_PRIVATE).edit();
+                    editor.putString("YourName", getYourName);
+                    editor.apply();
 
                     //start of filter Student and  Teacher
                     String uid = task.getResult().getUser().getUid();
@@ -257,6 +275,20 @@ public class LoginActivity extends AppCompatActivity {
         editor.putString(uid, UserType);
         editor.apply();
         Toast.makeText(this, "Saved", Toast.LENGTH_SHORT).show();
+    }
+
+
+
+    // load save file
+    public void loadyourName(){
+        SharedPreferences preferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        String Name = preferences.getString("YourName","");
+        if (!Name.equals("")){
+            // default  is visible the edite text
+            log_yourname.setVisibility(View.GONE);
+            log_yourname.setText(Name);
+
+        }
     }
 
     @Override

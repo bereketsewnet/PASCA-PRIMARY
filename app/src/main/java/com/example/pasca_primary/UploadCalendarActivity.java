@@ -53,7 +53,6 @@ public class UploadCalendarActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_upload_calendar);
 
-
         //Create the Dialog here
         SuccessDialog = new Dialog(this);
         SuccessDialog.setContentView(R.layout.custom_dialog_layout);
@@ -138,7 +137,7 @@ public class UploadCalendarActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (imageUri != null){
-                    uploadToFirebase(imageUri);
+                        uploadToFirebase(imageUri);
                 } else  {
                     Toast.makeText(UploadCalendarActivity.this, "Please select image", Toast.LENGTH_SHORT).show();
                 }

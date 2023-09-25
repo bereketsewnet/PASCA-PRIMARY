@@ -109,39 +109,39 @@ public class AddUserActivity extends AppCompatActivity {
             user_counter_spinner_sotre = user_counter_spinner.getSelectedItem().toString();
 
 
-            if (user_counter_spinner_sotre.equals("User 1")) {
+            if (user_counter_spinner_sotre.equals("Student 1")) {
                 pathNameStorege = "/sdcard/Android/MultiUserId_1.txt";
                 pathNameStoregeEmail = "/sdcard/Android/MultiUserPassword_1.txt";
                 pathUserName = "/sdcard/Android/MultiUserName_1";
-            } else if (user_counter_spinner_sotre.equals("User 2")) {
+            } else if (user_counter_spinner_sotre.equals("Student 2")) {
                 pathNameStorege = "/sdcard/Android/MultiUserId_2.txt";
                 pathNameStoregeEmail = "/sdcard/Android/MultiUserPassword_2.txt";
                 pathUserName = "/sdcard/Android/MultiUserName_2";
-            } else if (user_counter_spinner_sotre.equals("User 3")) {
+            } else if (user_counter_spinner_sotre.equals("Student 3")) {
                 pathNameStorege = "/sdcard/Android/MultiUserId_3.txt";
                 pathNameStoregeEmail = "/sdcard/Android/MultiUserPassword_3.txt";
                 pathUserName = "/sdcard/Android/MultiUserName_3";
-            } else if (user_counter_spinner_sotre.equals("User 4")) {
+            } else if (user_counter_spinner_sotre.equals("Student 4")) {
                 pathNameStorege = "/sdcard/Android/MultiUserId_4.txt";
                 pathNameStoregeEmail = "/sdcard/Android/MultiUserPassword_4.txt";
                 pathUserName = "/sdcard/Android/MultiUserName_4";
-            } else if (user_counter_spinner_sotre.equals("User 5")) {
+            } else if (user_counter_spinner_sotre.equals("Student 5")) {
                 pathNameStorege = "/sdcard/Android/MultiUserId_5.txt";
                 pathNameStoregeEmail = "/sdcard/Android/MultiUserPassword_5.txt";
                 pathUserName = "/sdcard/Android/MultiUserName_5";
-            } else if (user_counter_spinner_sotre.equals("User 6")) {
+            } else if (user_counter_spinner_sotre.equals("Student 6")) {
                 pathNameStorege = "/sdcard/Android/MultiUserId_6.txt";
                 pathNameStoregeEmail = "/sdcard/Android/MultiUserPassword_6.txt";
                 pathUserName = "/sdcard/Android/MultiUserName_6";
-            } else if (user_counter_spinner_sotre.equals("User 7")) {
+            } else if (user_counter_spinner_sotre.equals("Student 7")) {
                 pathNameStorege = "/sdcard/Android/MultiUserId_7.txt";
                 pathNameStoregeEmail = "/sdcard/Android/MultiUserPassword_7.txt";
                 pathUserName = "/sdcard/Android/MultiUserName_7";
-            } else if (user_counter_spinner_sotre.equals("User 8")) {
+            } else if (user_counter_spinner_sotre.equals("Student 8")) {
                 pathNameStorege = "/sdcard/Android/MultiUserId_8.txt";
                 pathNameStoregeEmail = "/sdcard/Android/MultiUserPassword_8.txt";
                 pathUserName = "/sdcard/Android/MultiUserName_8";
-            } else if (user_counter_spinner_sotre.equals("User 9")) {
+            } else if (user_counter_spinner_sotre.equals("Student 9")) {
                 pathNameStorege = "/sdcard/Android/MultiUserId_9.txt";
                 pathNameStoregeEmail = "/sdcard/Android/MultiUserPassword_9.txt";
                 pathUserName = "/sdcard/Android/MultiUserName_9";

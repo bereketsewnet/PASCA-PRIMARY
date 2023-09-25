@@ -5,14 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
 import com.example.pasca_primary.Adapters.MyAdapter;
 import com.example.pasca_primary.Model.DataClass;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,7 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class SchooCalendarActivity extends AppCompatActivity {
+public class SchoolCalendarActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView_calendar;
     private ArrayList<DataClass> dataList;
@@ -35,7 +31,10 @@ public class SchooCalendarActivity extends AppCompatActivity {
 
         recyclerView_calendar = findViewById(R.id.recyclerView_calendar);
         recyclerView_calendar.setHasFixedSize(true);
-        recyclerView_calendar.setLayoutManager(new LinearLayoutManager(this,RecyclerView.VERTICAL,true));
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView_calendar.setLayoutManager(layoutManager);
+        layoutManager.setReverseLayout(true);
+        layoutManager.setStackFromEnd(true);
         dataList = new ArrayList<>();
         adapter = new MyAdapter(this, dataList);
         recyclerView_calendar.setAdapter(adapter);

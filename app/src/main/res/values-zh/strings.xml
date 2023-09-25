@@ -193,5 +193,16 @@
     <string name="enter">进入</string>
     <string name="lastmessage">最后一条消息</string>
     <string name="loading">正在加载...</string>
+    <string name="seenanddone">见过</string>
+    <string name="seen"> 看过并完成</string>
+    <string name="seennotdone">看过但没看完</string>
+    <string name="notseen">没有见过</string>
+    <string name="checknews">查看新闻</string>
+    <string name="checkprogress"> 检查排名</string>
+    <string name="incompleteschoolequipment">学校设备不齐全</string>
+    <string name="dintworkhome"> 没做作业</string>
+    <string name="didntworkclas"> 没有做功课</string>
+    <string name="disorder">不遵守学校规定</string>
+    <string name="your_name">YourName</string>
 
 </resources>

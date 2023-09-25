@@ -8,12 +8,14 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -55,7 +57,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class MessageActivity extends AppCompatActivity {
 
 
-    String friendid, message, myid,friendName,friendEmail,friendPassword;
+    String friendid, message, myid,friendName,friendEmail,friendPassword,getYourName;
     int myUserType;
     CircleImageView imageViewOnToolbar;
     TextView usernameonToolbar;
@@ -94,6 +96,7 @@ public class MessageActivity extends AppCompatActivity {
         send = findViewById(R.id.send_messsage_btn);
         paste = findViewById(R.id.paste);
         et_message = findViewById(R.id.edit_message_text);
+        loadyourName();
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         myid = firebaseUser.getUid();// my id or the one who is loggedin
@@ -273,7 +276,7 @@ public class MessageActivity extends AppCompatActivity {
     }
 
     private void StudentDialog(String mid, String frId) {
-        final String[] listItems = {"Seen And Done","Seen", "Seen But Not Done"};
+        final String[] listItems = {getString(R.string.seenanddone),getString(R.string.seen), getString(R.string.seennotdone)};
         AlertDialog.Builder mBuilder = new AlertDialog.Builder(MessageActivity.this);
         mBuilder.setTitle("Check-In...");
         mBuilder.setSingleChoiceItems(listItems, -1, new DialogInterface.OnClickListener() {
@@ -281,11 +284,11 @@ public class MessageActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
 
                 if(which == 0){
-                    sendMessage(mid, frId, "Seen And Done");
+                    sendMessage(mid, frId, "Seen And Done.\n@ "+getYourName); //
                 }else if(which == 1){
-                    sendMessage(mid, frId, "Seen");
+                    sendMessage(mid, frId, "Seen.\n@ "+getYourName);
                 }else if(which == 2){
-                    sendMessage(mid, frId, "Seen But Not Done");
+                    sendMessage(mid, frId, "Seen But Not Done.\n@ "+getYourName);
                 }
                 dialog.dismiss();
 
@@ -465,6 +468,19 @@ public class MessageActivity extends AppCompatActivity {
 
 
 
+    }
+
+    // load save file
+    public void loadyourName(){
+        SharedPreferences preferences = getSharedPreferences("Settings", Activity.MODE_PRIVATE);
+        String Name = preferences.getString("YourName","");
+        if (!Name.equals("")){
+            // default  is visible the edite text
+           getYourName = Name;
+
+        }else{
+            getYourName = "UnKnown User";
+        }
     }
 
     @Override

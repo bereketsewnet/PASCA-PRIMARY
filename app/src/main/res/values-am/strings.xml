@@ -195,5 +195,16 @@
     <string name="enter">አስገባ</string>
     <string name="lastmessage">የመጨረሻው መልእክት</string>
     <string name="loading">በመጫን ላይ...</string>
+    <string name="seenanddone">ታይቶ ተከናውኗል</string>
+    <string name="seen">ታይቷል</string>
+    <string name="seennotdone">ታይቷል ግን አልተከናወነም</string>
+    <string name="notseen">ያልታየ</string>
+    <string name="checknews">ቼክ ዜና </string>
+    <string name="checkprogress">ቼክ ውጤት</string>
+    <string name="incompleteschoolequipment">ያልተሟላ መሳሪያ</string>
+    <string name="dintworkhome">የክፍል ስራ ያልሠራ</string>
+    <string name="didntworkclas">የቤት ስራ ያልሠራ</string>
+    <string name="disorder">የት/ቤት ህግ የማያከብር </string>
+    <string name="your_name">YourName</string>
 
 </resources>

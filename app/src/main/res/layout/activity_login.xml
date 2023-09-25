@@ -63,8 +63,20 @@
                 android:inputType="textPassword"
                 android:layout_marginRight="30dp"
                 android:layout_marginLeft="30dp"
-                android:layout_marginBottom="15dp"
+                android:layout_marginBottom="5dp"
                 android:id="@+id/log_password"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/log_yourname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/your_name"
+                android:textSize="15dp"
+                android:inputType="textPersonName"
+                android:layout_marginRight="30dp"
+                android:layout_marginLeft="30dp"
+                android:layout_marginBottom="15dp"
+                />
 
 
             <Button

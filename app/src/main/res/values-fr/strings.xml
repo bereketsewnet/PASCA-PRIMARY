@@ -193,5 +193,16 @@
     <string name="enter">Entrer</string>
     <string name="lastmessage">Dernier message</string>
     <string name="loading">Chargement...</string>
+    <string name="seenanddone"> vu et fini</string>
+    <string name="seen">vu</string>
+    <string name="seennotdone">vu mais pas fini</string>
+    <string name="notseen">Pas vu</string>
+    <string name="checknews"> Consultez les actualités</string>
+    <string name="checkprogress"> Vérifier le classement</string>
+    <string name="incompleteschoolequipment">Matériel scolaire incomplet</string>
+    <string name="dintworkhome"> Je n\'ai pas fait mes devoirs</string>
+    <string name="didntworkclas">N\'a pas travaillé en classe</string>
+    <string name="disorder">Désobéir aux règles de l\'école</string>
+    <string name="your_name">YourName</string>
 
 </resources>

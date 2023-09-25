@@ -194,5 +194,16 @@
     <string name="enter">يدخل</string>
     <string name="lastmessage">اخر رسالة</string>
     <string name="loading">اخر رسالة</string>
+    <string name="seenanddone"> رأى وانتهى</string>
+    <string name="seen">مرئي</string>
+    <string name="seennotdone"> رأيت ولكن لم تنتهي</string>
+    <string name="notseen">لم يرى</string>
+    <string name="checknews"> تحقق من الأخبار</string>
+    <string name="checkprogress"> التحقق من الرتبة</string>
+    <string name="incompleteschoolequipment"> تجهيزات مدرسية غير مكتملة</string>
+    <string name="dintworkhome">لم تعمل الواجبات المنزلية</string>
+    <string name="didntworkclas"> لم تعمل في الفصل الدراسي</string>
+    <string name="disorder">مخالفة قواعد المدرسة</string>
+    <string name="your_name">YourName</string>
 
 </resources>

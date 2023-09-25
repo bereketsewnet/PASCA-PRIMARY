@@ -198,5 +198,16 @@
     <string name="enter">Enter</string>
     <string name="lastmessage">last message</string>
     <string name="loading">Loading...</string>
+    <string name="seenanddone">Seen And Done</string>
+    <string name="seen">Seen</string>
+    <string name="seennotdone">Seen But Not Done</string>
+    <string name="notseen">Not seen</string>
+    <string name="checknews">Check news</string>
+    <string name="checkprogress">Check Progress</string>
+    <string name="incompleteschoolequipment">Incomplete school equipment</string>
+    <string name="dintworkhome">Didn\'t work homework</string>
+    <string name="didntworkclas">Didn\'t work classwork</string>
+    <string name="disorder">Disobeying an order</string>
+    <string name="your_name">YourName</string>
 
 </resources>
